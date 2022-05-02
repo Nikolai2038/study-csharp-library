@@ -27,11 +27,36 @@ partial class Form_Data
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "Form1";
+            this.Button_UpdateData = new MetroFramework.Controls.MetroButton();
+            this.SuspendLayout();
+            // 
+            // Button_UpdateData
+            // 
+            this.Button_UpdateData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Button_UpdateData.Highlight = false;
+            this.Button_UpdateData.Location = new System.Drawing.Point(20, 60);
+            this.Button_UpdateData.Name = "Button_UpdateData";
+            this.Button_UpdateData.Size = new System.Drawing.Size(760, 39);
+            this.Button_UpdateData.Style = MetroFramework.MetroColorStyle.Blue;
+            this.Button_UpdateData.StyleManager = null;
+            this.Button_UpdateData.TabIndex = 0;
+            this.Button_UpdateData.Text = "Обновить данные";
+            this.Button_UpdateData.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // Form_Data
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Button_UpdateData);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "Form_Data";
+            this.Text = "Данные";
+            this.ResumeLayout(false);
+
     }
 
     #endregion
+
+    private MetroFramework.Controls.MetroButton Button_UpdateData;
 }
