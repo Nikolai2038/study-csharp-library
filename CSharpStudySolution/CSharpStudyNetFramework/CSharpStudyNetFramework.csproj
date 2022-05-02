@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form_Data.cs">
+    <Compile Include="Forms\Form_Data.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Data.Designer.cs">
+    <Compile Include="Forms\Form_Data.Designer.cs">
       <DependentUpon>Form_Data.cs</DependentUpon>
     </Compile>
     <Compile Include="ORM\CustomDbContext.cs" />

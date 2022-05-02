@@ -1,4 +1,4 @@
-﻿namespace CSharpStudyNetFramework
+﻿namespace CSharpStudyNetFramework.Forms
 {
     partial class Form_Data
     {

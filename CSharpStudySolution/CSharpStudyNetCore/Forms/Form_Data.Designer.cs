@@ -1,4 +1,4 @@
-﻿namespace CSharpStudyNetCore;
+﻿namespace CSharpStudyNetCore.Forms;
 
 partial class Form_Data
 {

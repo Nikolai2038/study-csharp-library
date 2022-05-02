@@ -1,6 +1,6 @@
 ﻿using MetroFramework.Forms;
 
-namespace CSharpStudyNetFramework
+namespace CSharpStudyNetFramework.Forms
 {
     public partial class Form_Data : MetroForm
     {

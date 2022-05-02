@@ -1,3 +1,5 @@
+using CSharpStudyNetCore.Forms;
+
 namespace CSharpStudyNetCore;
 
 internal static class Program
