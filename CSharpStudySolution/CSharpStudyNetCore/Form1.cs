@@ -1,9 +1,11 @@
+using MetroFramework.Forms;
+
 namespace CSharpStudyNetCore;
 
-public partial class Form1 : Form
+public partial class Form1 : MetroForm
 {
     public Form1()
     {
-        InitializeComponent();
+        this.InitializeComponent();
     }
 }
