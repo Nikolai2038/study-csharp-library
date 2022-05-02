@@ -10,8 +10,8 @@ namespace CSharpStudyNetFramework.ORM
 
         public CustomDbContext()
         {
-            Database.EnsureCreated();
-            Database.Migrate();
+            this.Database.EnsureCreated();
+            this.Database.Migrate();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

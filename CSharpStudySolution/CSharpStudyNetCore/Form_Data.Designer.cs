@@ -1,6 +1,6 @@
 ﻿namespace CSharpStudyNetCore;
 
-partial class Form1
+partial class Form_Data
 {
     /// <summary>
     ///  Required designer variable.

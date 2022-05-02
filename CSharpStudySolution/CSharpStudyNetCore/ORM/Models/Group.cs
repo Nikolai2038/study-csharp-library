@@ -1,4 +1,6 @@
-﻿namespace CSharpStudyNetCore.ORM.Models;
-internal class Group
+﻿namespace CSharpStudyNetCore.ORM.Models
 {
+    internal class Group
+    {
+    }
 }

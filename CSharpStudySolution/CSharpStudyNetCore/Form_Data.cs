@@ -2,9 +2,9 @@ using MetroFramework.Forms;
 
 namespace CSharpStudyNetCore;
 
-public partial class Form1 : MetroForm
+public partial class Form_Data : MetroForm
 {
-    public Form1()
+    public Form_Data()
     {
         this.InitializeComponent();
     }
