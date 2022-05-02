@@ -20,25 +20,27 @@ namespace CSharpStudyNetFramework.Forms
         /// <summary>Событие загрузки формы</summary>
         private void Form_Data_Load(object sender, EventArgs e)
         {
-            // В случае возникновения ошибки, повторяем скрипт пока выбирается "Retry"
-            do {
-                try {
-                    CustomDbContext db_context = new CustomDbContext();
-                    this.Grid_Data.DataSource = db_context.authors.ToList();
-                    break;
-                } catch (Exception exception) {
-                    DialogResult dialogResult = MetroMessageBox.Show(this, exception.Message, "Возникла ошибка!", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
-                    // Если была выбрана "Cancel"
-                    if (dialogResult == DialogResult.Abort) {
-                        // Выход из программы
-                        Environment.Exit(1);
-                    }
-                    else if (dialogResult == DialogResult.Ignore) {
-                        // Продолжение выполнения программы
-                        break;
-                    }
+            try {
+                this.Grid_Data.DataSource = DatabaseHelper.db_context.authors.ToList();
+            } catch (Exception exception) {
+                DialogResult dialogResult = MetroMessageBox.Show(this,
+                    "\nИсключение:\n" + exception.GetBaseException().Message + "\n\n" +
+                    "Метод:\n" + exception.TargetSite,
+                    "Возникла ошибка!",
+                    MessageBoxButtons.AbortRetryIgnore,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button2,
+                    300
+                );
+                // Если была выбрана "Cancel"
+                if (dialogResult == DialogResult.Abort) {
+                    // Выход из программы
+                    Environment.Exit(1);
+                } else if (dialogResult == DialogResult.Retry) {
+                    // Вызываем метод заново
+                    this.Form_Data_Load(sender, e);
                 }
-            } while (true);
+            }
         }
     }
 }
