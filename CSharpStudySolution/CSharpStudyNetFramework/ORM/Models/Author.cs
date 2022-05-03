@@ -6,5 +6,10 @@
         public string fName { get; set; }
         public string iName { get; set; }
         public string sName { get; set; }
+
+        public Author(string fName)
+        {
+            this.fName = fName;
+        }
     }
 }
