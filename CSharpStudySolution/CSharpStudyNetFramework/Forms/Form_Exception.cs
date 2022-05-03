@@ -1,5 +1,4 @@
-﻿using CSharpStudyNetFramework.Helpers;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CSharpStudyNetFramework.Forms
@@ -17,7 +16,7 @@ namespace CSharpStudyNetFramework.Forms
             // Значение по умолчанию (случай закрытия формы)
             this.DialogResult = DialogResult.Abort;
             // Установка темы для формы
-            ThemeHelper.SetTheme(this, MetroFramework.MetroThemeStyle.Dark, MetroFramework.MetroColorStyle.Red);
+            this.SetStyleManager(MetroStyleManager_FormsErrors);
         }
 
         /// <summary>Событие нажатия на кнопку повтора</summary>
