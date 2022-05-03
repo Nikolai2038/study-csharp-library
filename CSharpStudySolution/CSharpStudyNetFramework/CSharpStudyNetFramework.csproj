@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,7 +53,14 @@
     <Compile Include="Forms\Form_Data.Designer.cs">
       <DependentUpon>Form_Data.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_Exception.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Exception.Designer.cs">
+      <DependentUpon>Form_Exception.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\DatabaseHelper.cs" />
+    <Compile Include="Helpers\ExceptionHelper.cs" />
     <Compile Include="ORM\CustomDbContext.cs" />
     <Compile Include="ORM\Models\Author.cs" />
     <Compile Include="ORM\Models\Bookmaker.cs" />
@@ -62,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form_Data.resx">
       <DependentUpon>Form_Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Exception.resx">
+      <DependentUpon>Form_Exception.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Button_UpdateData = new MetroFramework.Controls.MetroButton();
             this.Grid_Data = new MetroFramework.Controls.MetroGrid();
+            this.Label_Data = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             // Grid_Data
             // 
             this.Grid_Data.AllowUserToResizeRows = false;
+            this.Grid_Data.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Grid_Data.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.Grid_Data.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid_Data.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -73,7 +75,7 @@
             this.Grid_Data.EnableHeadersVisualStyles = false;
             this.Grid_Data.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Grid_Data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_Data.Location = new System.Drawing.Point(20, 102);
+            this.Grid_Data.Location = new System.Drawing.Point(20, 121);
             this.Grid_Data.Name = "Grid_Data";
             this.Grid_Data.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -86,8 +88,17 @@
             this.Grid_Data.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Grid_Data.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Data.Size = new System.Drawing.Size(760, 328);
+            this.Grid_Data.Size = new System.Drawing.Size(760, 309);
             this.Grid_Data.TabIndex = 1;
+            // 
+            // Label_Data
+            // 
+            this.Label_Data.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_Data.Location = new System.Drawing.Point(20, 102);
+            this.Label_Data.Name = "Label_Data";
+            this.Label_Data.Size = new System.Drawing.Size(760, 19);
+            this.Label_Data.TabIndex = 2;
+            this.Label_Data.Text = " ";
             // 
             // Form_Data
             // 
@@ -95,6 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Grid_Data);
+            this.Controls.Add(this.Label_Data);
             this.Controls.Add(this.Button_UpdateData);
             this.Name = "Form_Data";
             this.Text = "Данные";
@@ -108,6 +120,7 @@
 
         private MetroFramework.Controls.MetroButton Button_UpdateData;
         private MetroFramework.Controls.MetroGrid Grid_Data;
+        private MetroFramework.Controls.MetroLabel Label_Data;
     }
 }
 
