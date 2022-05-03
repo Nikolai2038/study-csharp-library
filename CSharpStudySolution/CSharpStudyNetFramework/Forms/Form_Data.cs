@@ -32,21 +32,8 @@ namespace CSharpStudyNetFramework.Forms
             this.UpdateData();
         }
 
-        /// <summary>Событие нажатия на кнопку создания новой записи</summary>
-        private void Button_Create_Click(object sender, EventArgs e)
-        {
-            ExceptionHelper.CheckCode(this, () => {
-                // Создаём и добавляем в БД новую запись
-                Author item = new Author("Димооон");
-                DatabaseHelper.db_context.authors.Add(item);
-                DatabaseHelper.db_context.SaveChanges();
-            });
-            // Обновление данных таблицы
-            this.UpdateData();
-        }
-
         /// <summary>Событие нажатия на кнопку удаления выбранной записи</summary>
-        private void Button_Delete_Click(object sender, EventArgs e)
+        private void Button_DeleteData_Click(object sender, EventArgs e)
         {
             // Должна быть выбрана строчка
             if (this.Grid_Data.SelectedRows.Count > 0) {
@@ -59,7 +46,7 @@ namespace CSharpStudyNetFramework.Forms
                 }
 
                 // Удаляем все выбранные записи
-                foreach (DataGridViewRow row in this.Grid_Data.SelectedRows) { 
+                foreach (DataGridViewRow row in this.Grid_Data.SelectedRows) {
                     // Находим ID записи, которую необходимо удалить
                     int selected_row_id = row.Index;
                     int item_id = Convert.ToInt32(this.Grid_Data.Rows[selected_row_id].Cells[0].Value);
@@ -89,6 +76,23 @@ namespace CSharpStudyNetFramework.Forms
                 // Обновление данных таблицы
                 this.UpdateData();
             }
+        }
+
+        /// <summary>Событие нажатия на кнопку создания новой записи</summary>
+        private void Button_Author_Create_Click(object sender, EventArgs e)
+        {
+            ExceptionHelper.CheckCode(this, () => {
+                // Создаём и добавляем в БД новую запись
+                Author item = new Author {
+                    fName = this.TextBox_Author_FirstName.Text,
+                    lName = this.TextBox_Author_LastName.Text,
+                    mName = this.TextBox_Author_MiddleName.Text
+                };
+                DatabaseHelper.db_context.authors.Add(item);
+                DatabaseHelper.db_context.SaveChanges();
+            });
+            // Обновление данных таблицы
+            this.UpdateData();
         }
 
         /// <summary>Обновляет данные в таблице</summary>

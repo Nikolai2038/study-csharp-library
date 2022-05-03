@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CSharpStudyNetFramework.ORM.Models
+﻿namespace CSharpStudyNetFramework.ORM.Models
 {
     internal class Author
     {
@@ -14,10 +12,5 @@ namespace CSharpStudyNetFramework.ORM.Models
         // ===============
         // public List<Book> Books { get; set; }
         // ===============
-
-        public Author(string fName)
-        {
-            this.fName = fName;
-        }
     }
 }
