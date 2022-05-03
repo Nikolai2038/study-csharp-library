@@ -1,6 +1,7 @@
 ﻿using MetroFramework.Components;
 using MetroFramework.Forms;
 using MetroFramework.Interfaces;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace CSharpStudyNetFramework.Helpers
@@ -16,14 +17,29 @@ namespace CSharpStudyNetFramework.Helpers
             // Если элемент является компонентом MetroFramework - устанавливаем для него тему
             if (element is IMetroControl) {
                 (element as IMetroControl).StyleManager = style_manager;
-            } else {
-                // Здесь по желанию можно сделать обработку стандартных элементов WindowsForms
-                // ...
+            }
+            // Обработка стандартных компонентов
+            else {
+                if (element is TabPage) {
+                    if (style_manager.Theme == MetroFramework.MetroThemeStyle.Dark) {
+                        (element as TabPage).BackColor = Color.FromArgb(16, 16, 16);
+                        (element as TabPage).ForeColor = Color.White;
+                    } else if (style_manager.Theme == MetroFramework.MetroThemeStyle.Light) {
+                        (element as TabPage).BackColor = Color.White;
+                        (element as TabPage).ForeColor = Color.FromArgb(16, 16, 16);
+                    }
+                }
             }
 
             // Применяем тему для каждого из дочерних элементов
             foreach (Control child in element.Controls) {
                 SetTheme(child, style_manager);
+            }
+
+            if (element is TabControl) {
+                foreach (Control child in (element as TabControl).TabPages) {
+                    SetTheme(child, style_manager);
+                }
             }
         }
 
