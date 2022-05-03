@@ -12,8 +12,8 @@ namespace CSharpStudyNetFramework.Forms
         public Form_Data()
         {
             this.InitializeComponent();
-            // Установка тёмной темы для формы
-            ThemeHelper.SetThemeDark(this);
+            // Установка темы для формы
+            ThemeHelper.SetTheme(this, MetroFramework.MetroThemeStyle.Dark, MetroFramework.MetroColorStyle.Yellow);
         }
 
         /// <summary>Событие загрузки формы</summary>

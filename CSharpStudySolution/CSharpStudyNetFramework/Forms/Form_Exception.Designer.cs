@@ -80,12 +80,10 @@
             // 
             // 
             this.TextBox_Exception.CustomButton.Image = null;
-            this.TextBox_Exception.CustomButton.Location = new System.Drawing.Point(550, 1);
+            this.TextBox_Exception.CustomButton.Location = new System.Drawing.Point(542, 1);
             this.TextBox_Exception.CustomButton.Name = "";
-            this.TextBox_Exception.CustomButton.Size = new System.Drawing.Size(49, 49);
-            this.TextBox_Exception.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextBox_Exception.CustomButton.Size = new System.Drawing.Size(57, 57);
             this.TextBox_Exception.CustomButton.TabIndex = 1;
-            this.TextBox_Exception.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBox_Exception.CustomButton.UseSelectable = true;
             this.TextBox_Exception.CustomButton.Visible = false;
             this.TextBox_Exception.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -123,12 +121,10 @@
             // 
             // 
             this.TextBox_Stack.CustomButton.Image = null;
-            this.TextBox_Stack.CustomButton.Location = new System.Drawing.Point(518, 1);
+            this.TextBox_Stack.CustomButton.Location = new System.Drawing.Point(526, 1);
             this.TextBox_Stack.CustomButton.Name = "";
-            this.TextBox_Stack.CustomButton.Size = new System.Drawing.Size(81, 81);
-            this.TextBox_Stack.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TextBox_Stack.CustomButton.Size = new System.Drawing.Size(73, 73);
             this.TextBox_Stack.CustomButton.TabIndex = 1;
-            this.TextBox_Stack.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBox_Stack.CustomButton.UseSelectable = true;
             this.TextBox_Stack.CustomButton.Visible = false;
             this.TextBox_Stack.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -183,7 +179,6 @@
             this.Button_Retry.Location = new System.Drawing.Point(0, 0);
             this.Button_Retry.Name = "Button_Retry";
             this.Button_Retry.Size = new System.Drawing.Size(201, 30);
-            this.Button_Retry.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Button_Retry.TabIndex = 1;
             this.Button_Retry.Text = "Попробовать ещё раз";
             this.Button_Retry.UseSelectable = true;
@@ -212,7 +207,6 @@
             this.Button_Abort.Location = new System.Drawing.Point(0, 0);
             this.Button_Abort.Name = "Button_Abort";
             this.Button_Abort.Size = new System.Drawing.Size(197, 30);
-            this.Button_Abort.Style = MetroFramework.MetroColorStyle.Red;
             this.Button_Abort.TabIndex = 2;
             this.Button_Abort.Text = "Остановить программу";
             this.Button_Abort.UseSelectable = true;
@@ -224,7 +218,6 @@
             this.Button_Ignore.Location = new System.Drawing.Point(0, 0);
             this.Button_Ignore.Name = "Button_Ignore";
             this.Button_Ignore.Size = new System.Drawing.Size(194, 30);
-            this.Button_Ignore.Style = MetroFramework.MetroColorStyle.Green;
             this.Button_Ignore.TabIndex = 3;
             this.Button_Ignore.Text = "Игнорировать ошибку";
             this.Button_Ignore.UseSelectable = true;
@@ -248,9 +241,7 @@
             this.Controls.Add(this.SplitContainer_Main);
             this.MinimumSize = new System.Drawing.Size(640, 320);
             this.Name = "Form_Exception";
-            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Возникло исключение!";
-            this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.SplitContainer_Main.Panel1.ResumeLayout(false);
             this.SplitContainer_Main.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Main)).EndInit();

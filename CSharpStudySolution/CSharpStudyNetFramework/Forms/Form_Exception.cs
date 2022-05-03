@@ -17,8 +17,8 @@ namespace CSharpStudyNetFramework.Forms
             this.TextBox_Stack.Text = exception.GetBaseException().StackTrace;
             // Значение по умолчанию (случай закрытия формы)
             this.DialogResult = DialogResult.Abort;
-            // Установка тёмной темы для формы
-            ThemeHelper.SetThemeDark(this);
+            // Установка темы для формы
+            ThemeHelper.SetTheme(this, MetroFramework.MetroThemeStyle.Dark, MetroFramework.MetroColorStyle.Red);
         }
 
         /// <summary>Событие нажатия на кнопку повтора</summary>
