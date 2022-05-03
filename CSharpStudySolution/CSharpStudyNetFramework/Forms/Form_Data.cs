@@ -1,7 +1,9 @@
 ﻿using CSharpStudyNetFramework.Helpers;
 using CSharpStudyNetFramework.ORM.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace CSharpStudyNetFramework.Forms
 {
@@ -48,24 +50,41 @@ namespace CSharpStudyNetFramework.Forms
         {
             // Должна быть выбрана строчка
             if (this.Grid_Data.SelectedRows.Count > 0) {
-                // Находим ID записи, которую необходимо удалить
-                int selected_row_id = this.Grid_Data.SelectedRows[0].Index;
-                int item_id = Convert.ToInt32(this.Grid_Data.Rows[selected_row_id].Cells[0].Value);
+                // Находим ID строчки, которую нужно выбрать после удаления данных
+                int first_selected_row_id = this.Grid_Data.SelectedRows[0].Index;
+                int last_selected_row_id = this.Grid_Data.SelectedRows[this.Grid_Data.SelectedRows.Count - 1].Index;
+                int row_id_to_select = first_selected_row_id;
+                if (last_selected_row_id < first_selected_row_id) {
+                    row_id_to_select = last_selected_row_id;
+                }
 
-                ExceptionHelper.CheckCode(this, () => {
-                    // Ищем запись с нужным ID
-                    Author item = DatabaseHelper.db_context.authors.FirstOrDefault(c => c.Id == item_id);
+                // Удаляем все выбранные записи
+                foreach (DataGridViewRow row in this.Grid_Data.SelectedRows) { 
+                    // Находим ID записи, которую необходимо удалить
+                    int selected_row_id = row.Index;
+                    int item_id = Convert.ToInt32(this.Grid_Data.Rows[selected_row_id].Cells[0].Value);
 
-                    // Если запись не найдена - вызываем исключение
-                    if (item == null) {
-                        throw new Exception("Запись с ID = " + item_id + " не найдена!");
-                    }
-                    // Иначе - удаляем найденную запись и сохраняем БД
-                    else {
-                        DatabaseHelper.db_context.authors.Remove(item);
-                        DatabaseHelper.db_context.SaveChanges();
-                    }
-                });
+                    ExceptionHelper.CheckCode(this, () => {
+                        // Ищем запись с нужным ID
+                        Author item = DatabaseHelper.db_context.authors.FirstOrDefault(c => c.Id == item_id);
+
+                        // Если запись не найдена - вызываем исключение
+                        if (item == null) {
+                            throw new Exception("Запись с ID = " + item_id + " не найдена!");
+                        }
+                        // Иначе - удаляем найденную запись и сохраняем БД
+                        else {
+                            DatabaseHelper.db_context.authors.Remove(item);
+                            DatabaseHelper.db_context.SaveChanges();
+                        }
+                    });
+                }
+
+                // Так как таблица обновилась - выбираем ранее сохранённую строчку
+                this.Grid_Data.ClearSelection();
+                if (row_id_to_select < this.Grid_Data.Rows.Count) {
+                    this.Grid_Data.Rows[row_id_to_select].Selected = true;
+                }
 
                 // Обновление данных таблицы
                 this.UpdateData();
@@ -75,9 +94,25 @@ namespace CSharpStudyNetFramework.Forms
         /// <summary>Обновляет данные в таблице</summary>
         private void UpdateData()
         {
+            // Сохраняем ID выбранных строчек
+            List<int> selected_rows_ids = new List<int>();
+            foreach (DataGridViewRow row in this.Grid_Data.SelectedRows) {
+                selected_rows_ids.Add(row.Index);
+            }
+
             ExceptionHelper.CheckCode(this, () => {
+                // Обновляем сами данные
                 this.Grid_Data.DataSource = DatabaseHelper.db_context.authors.ToList();
             });
+
+            // Так как таблица обновилась - заново выбираем все строчки, которые были выбраны
+            this.Grid_Data.ClearSelection();
+            foreach (int selected_row_id in selected_rows_ids) {
+                // Выбираем строчку только если сохранённое значение выбранной строки не превышает количество строк
+                if (selected_row_id < this.Grid_Data.Rows.Count) {
+                    this.Grid_Data.Rows[selected_row_id].Selected = true;
+                }
+            }
         }
     }
 }
