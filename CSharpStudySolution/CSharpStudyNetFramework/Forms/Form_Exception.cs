@@ -1,16 +1,15 @@
 ﻿using CSharpStudyNetFramework.Helpers;
-using MetroFramework.Forms;
 using System;
 using System.Windows.Forms;
 
 namespace CSharpStudyNetFramework.Forms
 {
     /// <summary>Форма с сообщением об исключении и вариантами действий</summary>
-    public partial class Form_Exception : MetroForm
+    public partial class Form_Exception : Form_Base
     {
         /// <summary>Конструктор формы</summary>
         /// <param name="exception">Вызванное исключение</param>
-        public Form_Exception(Exception exception)
+        public Form_Exception(Exception exception) : base()
         {
             this.InitializeComponent();
             this.TextBox_Exception.Text = exception.GetBaseException().Message;

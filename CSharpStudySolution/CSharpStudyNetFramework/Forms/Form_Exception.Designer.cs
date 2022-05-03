@@ -1,6 +1,6 @@
 ﻿namespace CSharpStudyNetFramework.Forms
 {
-    partial class Form_Exception
+    partial class Form_Exception : Form_Base
     {
         /// <summary>
         /// Required designer variable.

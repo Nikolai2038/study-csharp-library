@@ -1,6 +1,6 @@
 ﻿namespace CSharpStudyNetFramework.Forms
 {
-    partial class Form_Data
+    partial class Form_Data : Form_Base
     {
         /// <summary>
         /// Обязательная переменная конструктора.

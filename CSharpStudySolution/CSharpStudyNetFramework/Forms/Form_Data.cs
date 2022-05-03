@@ -1,19 +1,18 @@
 ﻿using CSharpStudyNetFramework.Helpers;
-using MetroFramework.Forms;
 using System;
 using System.Linq;
 
 namespace CSharpStudyNetFramework.Forms
 {
     /// <summary>Форма с данными</summary>
-    public partial class Form_Data : MetroForm
+    public partial class Form_Data : Form_Base
     {
         /// <summary>Конструктор формы</summary>
-        public Form_Data()
+        public Form_Data() : base()
         {
             this.InitializeComponent();
-            // Установка темы для формы
-            ThemeHelper.SetTheme(this, MetroFramework.MetroThemeStyle.Dark, MetroFramework.MetroColorStyle.Yellow);
+            // Установка темы для всех форм
+            ThemeHelper.SetTheme(this, MetroFramework.MetroThemeStyle.Dark, MetroFramework.MetroColorStyle.Blue);
         }
 
         /// <summary>Событие загрузки формы</summary>
