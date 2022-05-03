@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using CSharpStudyNetFramework.Helpers;
+using MetroFramework.Forms;
 using System;
 using System.Windows.Forms;
 
@@ -16,6 +17,8 @@ namespace CSharpStudyNetFramework.Forms
             this.TextBox_Stack.Text = exception.GetBaseException().StackTrace;
             // Значение по умолчанию (случай закрытия формы)
             this.DialogResult = DialogResult.Abort;
+            // Установка тёмной темы для формы
+            ThemeHelper.SetThemeDark(this);
         }
 
         /// <summary>Событие нажатия на кнопку повтора</summary>

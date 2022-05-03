@@ -103,7 +103,6 @@
             this.TextBox_Exception.ShortcutsEnabled = true;
             this.TextBox_Exception.Size = new System.Drawing.Size(600, 59);
             this.TextBox_Exception.TabIndex = 5;
-            this.TextBox_Exception.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TextBox_Exception.UseSelectable = true;
             this.TextBox_Exception.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBox_Exception.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -117,7 +116,6 @@
             this.Label_Exception.TabIndex = 4;
             this.Label_Exception.Text = "Исключение:";
             this.Label_Exception.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.Label_Exception.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // TextBox_Stack
             // 
@@ -148,7 +146,6 @@
             this.TextBox_Stack.ShortcutsEnabled = true;
             this.TextBox_Stack.Size = new System.Drawing.Size(600, 75);
             this.TextBox_Stack.TabIndex = 7;
-            this.TextBox_Stack.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TextBox_Stack.UseSelectable = true;
             this.TextBox_Stack.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.TextBox_Stack.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -162,7 +159,6 @@
             this.Label_Buttons.TabIndex = 10;
             this.Label_Buttons.Text = " ";
             this.Label_Buttons.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.Label_Buttons.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // SplitContainer_Buttons_1
             // 
@@ -190,7 +186,6 @@
             this.Button_Retry.Style = MetroFramework.MetroColorStyle.Yellow;
             this.Button_Retry.TabIndex = 1;
             this.Button_Retry.Text = "Попробовать ещё раз";
-            this.Button_Retry.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Button_Retry.UseSelectable = true;
             this.Button_Retry.Click += new System.EventHandler(this.Button_Retry_Click);
             // 
@@ -220,7 +215,6 @@
             this.Button_Abort.Style = MetroFramework.MetroColorStyle.Red;
             this.Button_Abort.TabIndex = 2;
             this.Button_Abort.Text = "Остановить программу";
-            this.Button_Abort.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Button_Abort.UseSelectable = true;
             this.Button_Abort.Click += new System.EventHandler(this.Button_Abort_Click);
             // 
@@ -233,7 +227,6 @@
             this.Button_Ignore.Style = MetroFramework.MetroColorStyle.Green;
             this.Button_Ignore.TabIndex = 3;
             this.Button_Ignore.Text = "Игнорировать ошибку";
-            this.Button_Ignore.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Button_Ignore.UseSelectable = true;
             this.Button_Ignore.Click += new System.EventHandler(this.Button_Ignore_Click);
             // 
@@ -246,7 +239,6 @@
             this.Label_Stack.TabIndex = 6;
             this.Label_Stack.Text = "Стек вызовов:";
             this.Label_Stack.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.Label_Stack.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // Form_Exception
             // 
@@ -258,7 +250,7 @@
             this.Name = "Form_Exception";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Возникло исключение!";
-            this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.SplitContainer_Main.Panel1.ResumeLayout(false);
             this.SplitContainer_Main.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Main)).EndInit();
