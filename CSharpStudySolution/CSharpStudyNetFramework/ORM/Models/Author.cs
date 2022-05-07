@@ -7,5 +7,8 @@
         public string fName { get; set; }
         public string lName { get; set; }
         public string mName { get; set; }
+
+        /// <summary>Полное ФИО автора</summary>
+        public string FullName => this.lName + " " + this.fName + " " + this.mName;
     }
 }

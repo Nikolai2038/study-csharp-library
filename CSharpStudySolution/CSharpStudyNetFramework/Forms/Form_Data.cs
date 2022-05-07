@@ -177,20 +177,48 @@ namespace CSharpStudyNetFramework.Forms
                 }
                 // Если заполняется вкладка "Каталог книг"
                 else if (grid.Equals(this.Grid_Catalog)) {
-                    List<Book> books = DatabaseHelper.db.books.ToList();
-                    grid.DataSource = books;
+                    // Содержимое текстового поля
+                    string filter_string = this.TextBox_Catalog_Search.Text;
+
+                    Func<Book, bool> filter_function;
+                    // Если выбрана фильтрация по полю "Автор"
+                    if (this.RadioButton_Catalog_Author.Checked) {
+                        filter_function = book => book.Author.FullName.Contains(filter_string);
+                    }
+                    // Если выбрана фильтрация по полю "Жанр"
+                    else if (this.RadioButton_Catalog_Group.Checked) {
+                        filter_function = book => book.Group.Title.Contains(filter_string);
+                    }
+                    // Если выбрана фильтрация по полю "Издатель"
+                    else if (this.RadioButton_Catalog_Bookmaker.Checked) {
+                        filter_function = book => book.Bookmaker.Title.Contains(filter_string);
+                    }
+                    // Если выбрана фильтрация по полю "Дата регистрации"
+                    else if (this.RadioButton_Catalog_RegistrationDate.Checked) {
+                        filter_function = book => book.YearRegistr.Contains(filter_string);
+                    }
+                    // Иначе что-то пошло не так - никакие записи не выбираем
+                    else {
+                        filter_function = book => false;
+                    }
+
+                    grid.DataSource = DatabaseHelper.db.books.Where(filter_function).ToList();
                 }
             });
         }
 
+        /// <summary>Событие нажатия на кнопку "Поиск" на вкладке "Каталог книг"</summary>
         private void Button_Catalog_Search_Click(object sender, EventArgs e)
         {
-
+            this.UpdateData(this.Grid_Catalog);
         }
 
+        /// <summary>Событие нажатия на кнопку "Сбросить фильтр" на вкладке "Каталог книг"</summary>
         private void Button_Catalog_Reset_Click(object sender, EventArgs e)
         {
-
+            this.RadioButton_Catalog_Author.Select();
+            this.TextBox_Catalog_Search.Text = "";
+            this.UpdateData(this.Grid_Catalog);
         }
 
         private void Button_Registration_Book_Tab_Click(object sender, EventArgs e)
