@@ -175,5 +175,15 @@ namespace CSharpStudyNetFramework.Forms
                 }
             });
         }
+
+        private void ButtonSurchBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonReset_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
