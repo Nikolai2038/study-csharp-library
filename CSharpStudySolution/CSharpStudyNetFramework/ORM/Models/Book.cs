@@ -1,5 +1,8 @@
-﻿namespace CSharpStudyNetFramework.ORM.Models
+﻿using System.Collections.Generic;
+
+namespace CSharpStudyNetFramework.ORM.Models
 {
+    /// <summary>Сущность "Книга"</summary>
     internal class Book
     {
         public int? Id { get; set; }
@@ -11,14 +14,5 @@
         public Group Group { get; set; }
         public Bookmaker Bookmaker { get; set; }
         public string Photo { get; set; }
-
-        // ===============
-        // Связанные поля
-        // ===============
-        // public List<Bookmaker> Bookmakers { get; set; }
-        // public List<Author> Authors { get; set; }
-        // public List<Group> Groups { get; set; }
-        // public List<CopyBook> CopyBooks { get; set; }
-        // ===============
     }
 }

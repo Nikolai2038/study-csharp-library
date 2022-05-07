@@ -62,7 +62,7 @@ namespace CSharpStudyNetFramework.Forms
 
                     ExceptionHelper.CheckCode(this, () => {
                         // Ищем запись с нужным ID
-                        Author item = DatabaseHelper.db_context.authors.FirstOrDefault(c => c.Id == item_id);
+                        Author item = DatabaseHelper.db.authors.FirstOrDefault(c => c.Id == item_id);
 
                         // Если запись не найдена - вызываем исключение
                         if (item == null) {
@@ -70,8 +70,8 @@ namespace CSharpStudyNetFramework.Forms
                         }
                         // Иначе - удаляем найденную запись и сохраняем БД
                         else {
-                            DatabaseHelper.db_context.authors.Remove(item);
-                            DatabaseHelper.db_context.SaveChanges();
+                            DatabaseHelper.db.authors.Remove(item);
+                            DatabaseHelper.db.SaveChanges();
                         }
                     });
                 }
@@ -97,8 +97,8 @@ namespace CSharpStudyNetFramework.Forms
                     lName = this.TextBox_Author_LastName.Text,
                     mName = this.TextBox_Author_MiddleName.Text
                 };
-                DatabaseHelper.db_context.authors.Add(item);
-                DatabaseHelper.db_context.SaveChanges();
+                DatabaseHelper.db.authors.Add(item);
+                DatabaseHelper.db.SaveChanges();
             });
             // Обновление данных таблицы
             this.UpdateData(this.Grid_Data);
@@ -170,8 +170,13 @@ namespace CSharpStudyNetFramework.Forms
         {
             ExceptionHelper.CheckCode(this, () => {
                 // Если заполняется вкладка "Регистрация книг"
-                if(grid.Equals(this.Grid_Data)) {
-                    grid.DataSource = DatabaseHelper.db_context.authors.ToList();
+                if (grid.Equals(this.Grid_Data)) {
+                    grid.DataSource = DatabaseHelper.db.authors.ToList();
+                }
+                // Если заполняется вкладка "Каталог книг"
+                else if (grid.Equals(this.BookGrid)) {
+                    List<Book> books = DatabaseHelper.db.books.ToList();
+                    grid.DataSource = books;
                 }
             });
         }
