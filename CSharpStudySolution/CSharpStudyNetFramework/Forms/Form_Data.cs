@@ -11,25 +11,33 @@ namespace CSharpStudyNetFramework.Forms
     /// <summary>Форма с данными</summary>
     public partial class Form_Data : Form_Base
     {
+        /// <summary>Список всех таблиц с данными</summary>
+        private List<MetroGrid> AllGrids;
+
         /// <summary>Конструктор формы</summary>
         public Form_Data() : base()
         {
             this.InitializeComponent();
             // Установка темы для формы
             this.SetStyleManager();
+
+            // Список, который содержит все таблицы с данными (нужен для функции обновления всех таблиц)
+            this.AllGrids = new List<MetroGrid>();
+            this.AllGrids.Add(this.Grid_Data);
+            this.AllGrids.Add(this.BookGrid);
         }
 
         /// <summary>Событие загрузки формы</summary>
         private void Form_Data_Load(object sender, EventArgs e)
         {
-            // Обновление данных таблицы
+            // Обновление данных таблиц
             this.UpdateData();
         }
 
         /// <summary>Событие нажатия на кнопку обновления данных</summary>
         private void Button_UpdateData_Click(object sender, EventArgs e)
         {
-            // Обновление данных таблицы
+            // Обновление данных таблиц
             this.UpdateData();
         }
 
@@ -93,31 +101,7 @@ namespace CSharpStudyNetFramework.Forms
                 DatabaseHelper.db_context.SaveChanges();
             });
             // Обновление данных таблицы
-            this.UpdateData();
-        }
-
-        /// <summary>Обновляет данные в таблице</summary>
-        private void UpdateData()
-        {
-            // Сохраняем ID выбранных строчек
-            List<int> selected_rows_ids = new List<int>();
-            foreach (DataGridViewRow row in this.Grid_Data.SelectedRows) {
-                selected_rows_ids.Add(row.Index);
-            }
-
-            ExceptionHelper.CheckCode(this, () => {
-                // Обновляем сами данные
-                this.Grid_Data.DataSource = DatabaseHelper.db_context.authors.ToList();
-            });
-
-            // Так как таблица обновилась - заново выбираем все строчки, которые были выбраны
-            this.Grid_Data.ClearSelection();
-            foreach (int selected_row_id in selected_rows_ids) {
-                // Выбираем строчку только если сохранённое значение выбранной строки не превышает количество строк
-                if (selected_row_id < this.Grid_Data.Rows.Count) {
-                    this.Grid_Data.Rows[selected_row_id].Selected = true;
-                }
-            }
+            this.UpdateData(this.Grid_Data);
         }
 
         private void TabControl_Data_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,8 +109,7 @@ namespace CSharpStudyNetFramework.Forms
             int selected_tab_index = this.TabControl_Data.SelectedIndex;
             MetroGrid grid_to_update;
 
-            switch (selected_tab_index)
-            {
+            switch (selected_tab_index) {
                 case 0:
                     grid_to_update = this.Grid_Data;
                     break;
@@ -136,6 +119,61 @@ namespace CSharpStudyNetFramework.Forms
                 default:
                     return;
             }
+
+            // Обновляем данные таблицы на вкладке, на которую перешли
+            this.UpdateData(grid_to_update);
+        }
+
+        /// <summary>Обновляет данные во всех таблицах</summary>
+        /// <param name="grids_to_update">Список таблиц, данные которых нужно обновить. Если не указан - обновляются все таблицы</param>
+        private void UpdateData(List<MetroGrid> grids_to_update = null)
+        {
+            // Если не указаны таблицы для обновления - обновляем все
+            if (grids_to_update == null) { 
+                grids_to_update = this.AllGrids;
+            }
+
+            // Обновляем все гриды из указанного списка
+            grids_to_update.ForEach(grid => {
+                // Сохраняем ID выбранных строчек
+                List<int> selected_rows_ids = new List<int>();
+                foreach (DataGridViewRow row in grid.SelectedRows) {
+                    selected_rows_ids.Add(row.Index);
+                }
+
+                // Обновляет сами данные в зависимости от таблицы
+                this.FillData(grid);
+
+                // Так как таблица обновилась - заново выбираем все строчки, которые были выбраны
+                grid.ClearSelection();
+                foreach (int selected_row_id in selected_rows_ids) {
+                    // Выбираем строчку только если сохранённое значение выбранной строки не превышает количество строк
+                    if (selected_row_id < grid.Rows.Count) {
+                        grid.Rows[selected_row_id].Selected = true;
+                    }
+                }
+            });
+        }
+
+        /// <summary>Обновляет данные в указанной таблице</summary>
+        /// <param name="grid_to_update">Таблица, которую необходимо обновить</param>
+        private void UpdateData(MetroGrid grid_to_update)
+        {
+            List<MetroGrid> grids_to_update = new List<MetroGrid>();
+            grids_to_update.Add(grid_to_update);
+            this.UpdateData(grids_to_update);
+        }
+
+        /// <summary>Обновляет данные таблицы в зависимости от того, какая она</summary>
+        /// <param name="grid">Таблица данных</param>
+        private void FillData(MetroGrid grid)
+        {
+            ExceptionHelper.CheckCode(this, () => {
+                // Если заполняется вкладка "Регистрация книг"
+                if(grid.Equals(this.Grid_Data)) {
+                    grid.DataSource = DatabaseHelper.db_context.authors.ToList();
+                }
+            });
         }
     }
 }
