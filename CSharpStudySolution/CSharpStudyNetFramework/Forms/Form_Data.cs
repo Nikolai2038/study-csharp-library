@@ -185,5 +185,10 @@ namespace CSharpStudyNetFramework.Forms
         {
 
         }
+
+        private void ButtonPic_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
