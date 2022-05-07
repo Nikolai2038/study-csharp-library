@@ -78,6 +78,9 @@
     <Compile Include="ORM\Models\Reader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Form_Base.resx">
+      <DependentUpon>Form_Base.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Data.resx">
       <DependentUpon>Form_Data.cs</DependentUpon>
     </EmbeddedResource>

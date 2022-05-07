@@ -1,4 +1,5 @@
-﻿using CSharpStudyNetFramework.Helpers;
+﻿
+using CSharpStudyNetFramework.Helpers;
 using MetroFramework;
 using MetroFramework.Components;
 using MetroFramework.Forms;
@@ -52,6 +53,18 @@ namespace CSharpStudyNetFramework.Forms
             }
             // Установка темы для всех форм
             ThemeHelper.SetStyleManager(this, style_manager);
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Form_Base
+            // 
+            this.ClientSize = new System.Drawing.Size(545, 364);
+            this.Name = "Form_Base";
+            this.ResumeLayout(false);
+
         }
     }
 }

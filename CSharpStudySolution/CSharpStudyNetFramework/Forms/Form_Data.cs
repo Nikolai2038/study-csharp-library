@@ -1,5 +1,6 @@
 ﻿using CSharpStudyNetFramework.Helpers;
 using CSharpStudyNetFramework.ORM.Models;
+using MetroFramework.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -116,6 +117,24 @@ namespace CSharpStudyNetFramework.Forms
                 if (selected_row_id < this.Grid_Data.Rows.Count) {
                     this.Grid_Data.Rows[selected_row_id].Selected = true;
                 }
+            }
+        }
+
+        private void TabControl_Data_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selected_tab_index = this.TabControl_Data.SelectedIndex;
+            MetroGrid grid_to_update;
+
+            switch (selected_tab_index)
+            {
+                case 0:
+                    grid_to_update = this.Grid_Data;
+                    break;
+                case 1:
+                    grid_to_update = this.BookGrid;
+                    break;
+                default:
+                    return;
             }
         }
     }
