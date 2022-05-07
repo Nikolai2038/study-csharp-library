@@ -1,5 +1,6 @@
 ﻿namespace CSharpStudyNetFramework.ORM.Models
 {
+    /// <summary>Сущность "Запись"</summary>
     internal class Order
     {
         public int? Id { get; set; }
