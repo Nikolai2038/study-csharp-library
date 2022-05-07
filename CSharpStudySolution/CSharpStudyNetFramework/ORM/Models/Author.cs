@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CSharpStudyNetFramework.ORM.Models
+﻿namespace CSharpStudyNetFramework.ORM.Models
 {
     /// <summary>Сущность "Автор"</summary>
     internal class Author

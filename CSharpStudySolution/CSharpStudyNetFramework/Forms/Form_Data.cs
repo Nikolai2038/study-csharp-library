@@ -12,7 +12,7 @@ namespace CSharpStudyNetFramework.Forms
     public partial class Form_Data : Form_Base
     {
         /// <summary>Список всех таблиц с данными</summary>
-        private List<MetroGrid> AllGrids;
+        private readonly List<MetroGrid> AllGrids;
 
         /// <summary>Конструктор формы</summary>
         public Form_Data() : base()
@@ -22,9 +22,10 @@ namespace CSharpStudyNetFramework.Forms
             this.SetStyleManager();
 
             // Список, который содержит все таблицы с данными (нужен для функции обновления всех таблиц)
-            this.AllGrids = new List<MetroGrid>();
-            this.AllGrids.Add(this.Grid_Data);
-            this.AllGrids.Add(this.BookGrid);
+            this.AllGrids = new List<MetroGrid> {
+                this.Grid_References,
+                this.Grid_Catalog
+            };
         }
 
         /// <summary>Событие загрузки формы</summary>
@@ -45,20 +46,20 @@ namespace CSharpStudyNetFramework.Forms
         private void Button_DeleteData_Click(object sender, EventArgs e)
         {
             // Должна быть выбрана строчка
-            if (this.Grid_Data.SelectedRows.Count > 0) {
+            if (this.Grid_References.SelectedRows.Count > 0) {
                 // Находим ID строчки, которую нужно выбрать после удаления данных
-                int first_selected_row_id = this.Grid_Data.SelectedRows[0].Index;
-                int last_selected_row_id = this.Grid_Data.SelectedRows[this.Grid_Data.SelectedRows.Count - 1].Index;
+                int first_selected_row_id = this.Grid_References.SelectedRows[0].Index;
+                int last_selected_row_id = this.Grid_References.SelectedRows[this.Grid_References.SelectedRows.Count - 1].Index;
                 int row_id_to_select = first_selected_row_id;
                 if (last_selected_row_id < first_selected_row_id) {
                     row_id_to_select = last_selected_row_id;
                 }
 
                 // Удаляем все выбранные записи
-                foreach (DataGridViewRow row in this.Grid_Data.SelectedRows) {
+                foreach (DataGridViewRow row in this.Grid_References.SelectedRows) {
                     // Находим ID записи, которую необходимо удалить
                     int selected_row_id = row.Index;
-                    int item_id = Convert.ToInt32(this.Grid_Data.Rows[selected_row_id].Cells[0].Value);
+                    int item_id = Convert.ToInt32(this.Grid_References.Rows[selected_row_id].Cells[0].Value);
 
                     ExceptionHelper.CheckCode(this, () => {
                         // Ищем запись с нужным ID
@@ -77,9 +78,9 @@ namespace CSharpStudyNetFramework.Forms
                 }
 
                 // Так как таблица обновилась - выбираем ранее сохранённую строчку
-                this.Grid_Data.ClearSelection();
-                if (row_id_to_select < this.Grid_Data.Rows.Count) {
-                    this.Grid_Data.Rows[row_id_to_select].Selected = true;
+                this.Grid_References.ClearSelection();
+                if (row_id_to_select < this.Grid_References.Rows.Count) {
+                    this.Grid_References.Rows[row_id_to_select].Selected = true;
                 }
 
                 // Обновление данных таблицы
@@ -101,7 +102,7 @@ namespace CSharpStudyNetFramework.Forms
                 DatabaseHelper.db.SaveChanges();
             });
             // Обновление данных таблицы
-            this.UpdateData(this.Grid_Data);
+            this.UpdateData(this.Grid_References);
         }
 
         private void TabControl_Data_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,10 +112,10 @@ namespace CSharpStudyNetFramework.Forms
 
             switch (selected_tab_index) {
                 case 0:
-                    grid_to_update = this.Grid_Data;
+                    grid_to_update = this.Grid_References;
                     break;
                 case 1:
-                    grid_to_update = this.BookGrid;
+                    grid_to_update = this.Grid_Catalog;
                     break;
                 default:
                     return;
@@ -129,7 +130,7 @@ namespace CSharpStudyNetFramework.Forms
         private void UpdateData(List<MetroGrid> grids_to_update = null)
         {
             // Если не указаны таблицы для обновления - обновляем все
-            if (grids_to_update == null) { 
+            if (grids_to_update == null) {
                 grids_to_update = this.AllGrids;
             }
 
@@ -159,8 +160,9 @@ namespace CSharpStudyNetFramework.Forms
         /// <param name="grid_to_update">Таблица, которую необходимо обновить</param>
         private void UpdateData(MetroGrid grid_to_update)
         {
-            List<MetroGrid> grids_to_update = new List<MetroGrid>();
-            grids_to_update.Add(grid_to_update);
+            List<MetroGrid> grids_to_update = new List<MetroGrid> {
+                grid_to_update
+            };
             this.UpdateData(grids_to_update);
         }
 
@@ -170,28 +172,44 @@ namespace CSharpStudyNetFramework.Forms
         {
             ExceptionHelper.CheckCode(this, () => {
                 // Если заполняется вкладка "Регистрация книг"
-                if (grid.Equals(this.Grid_Data)) {
+                if (grid.Equals(this.Grid_References)) {
                     grid.DataSource = DatabaseHelper.db.authors.ToList();
                 }
                 // Если заполняется вкладка "Каталог книг"
-                else if (grid.Equals(this.BookGrid)) {
+                else if (grid.Equals(this.Grid_Catalog)) {
                     List<Book> books = DatabaseHelper.db.books.ToList();
                     grid.DataSource = books;
                 }
             });
         }
 
-        private void ButtonSurchBook_Click(object sender, EventArgs e)
+        private void Button_Catalog_Search_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ButtonReset_Click(object sender, EventArgs e)
+        private void Button_Catalog_Reset_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ButtonPic_Click(object sender, EventArgs e)
+        private void Button_Registration_Book_Tab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Registration_CopyBook_Tab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Registration_Book_Cover_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void Button_Registration_Book_Register_Click(object sender, EventArgs e)
         {
 
         }
