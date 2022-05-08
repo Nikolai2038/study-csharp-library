@@ -23,7 +23,7 @@ namespace CSharpStudyNetFramework.Forms
 
             // Список, который содержит все таблицы с данными (нужен для функции обновления всех таблиц)
             this.AllGrids = new List<MetroGrid> {
-                this.Grid_References,
+                this.Grid_References_Author,
                 this.Grid_Catalog
             };
         }
@@ -46,20 +46,20 @@ namespace CSharpStudyNetFramework.Forms
         private void Button_DeleteData_Click(object sender, EventArgs e)
         {
             // Должна быть выбрана строчка
-            if (this.Grid_References.SelectedRows.Count > 0) {
+            if (this.Grid_References_Author.SelectedRows.Count > 0) {
                 // Находим ID строчки, которую нужно выбрать после удаления данных
-                int first_selected_row_id = this.Grid_References.SelectedRows[0].Index;
-                int last_selected_row_id = this.Grid_References.SelectedRows[this.Grid_References.SelectedRows.Count - 1].Index;
+                int first_selected_row_id = this.Grid_References_Author.SelectedRows[0].Index;
+                int last_selected_row_id = this.Grid_References_Author.SelectedRows[this.Grid_References_Author.SelectedRows.Count - 1].Index;
                 int row_id_to_select = first_selected_row_id;
                 if (last_selected_row_id < first_selected_row_id) {
                     row_id_to_select = last_selected_row_id;
                 }
 
                 // Удаляем все выбранные записи
-                foreach (DataGridViewRow row in this.Grid_References.SelectedRows) {
+                foreach (DataGridViewRow row in this.Grid_References_Author.SelectedRows) {
                     // Находим ID записи, которую необходимо удалить
                     int selected_row_id = row.Index;
-                    int item_id = Convert.ToInt32(this.Grid_References.Rows[selected_row_id].Cells[0].Value);
+                    int item_id = Convert.ToInt32(this.Grid_References_Author.Rows[selected_row_id].Cells[0].Value);
 
                     ExceptionHelper.CheckCode(this, () => {
                         // Ищем запись с нужным ID
@@ -78,9 +78,9 @@ namespace CSharpStudyNetFramework.Forms
                 }
 
                 // Так как таблица обновилась - выбираем ранее сохранённую строчку
-                this.Grid_References.ClearSelection();
-                if (row_id_to_select < this.Grid_References.Rows.Count) {
-                    this.Grid_References.Rows[row_id_to_select].Selected = true;
+                this.Grid_References_Author.ClearSelection();
+                if (row_id_to_select < this.Grid_References_Author.Rows.Count) {
+                    this.Grid_References_Author.Rows[row_id_to_select].Selected = true;
                 }
 
                 // Обновление данных таблицы
@@ -102,7 +102,7 @@ namespace CSharpStudyNetFramework.Forms
                 DatabaseHelper.db.SaveChanges();
             });
             // Обновление данных таблицы
-            this.UpdateData(this.Grid_References);
+            this.UpdateData(this.Grid_References_Author);
         }
 
         private void TabControl_Data_SelectedIndexChanged(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace CSharpStudyNetFramework.Forms
 
             switch (selected_tab_index) {
                 case 0:
-                    grid_to_update = this.Grid_References;
+                    grid_to_update = this.Grid_References_Author;
                     break;
                 case 1:
                     grid_to_update = this.Grid_Catalog;
@@ -172,7 +172,7 @@ namespace CSharpStudyNetFramework.Forms
         {
             ExceptionHelper.CheckCode(this, () => {
                 // Если заполняется вкладка "Регистрация книг"
-                if (grid.Equals(this.Grid_References)) {
+                if (grid.Equals(this.Grid_References_Author)) {
                     grid.DataSource = DatabaseHelper.db.authors.ToList();
                 }
                 // Если заполняется вкладка "Каталог книг"

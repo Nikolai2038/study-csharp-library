@@ -20,8 +20,8 @@ namespace CSharpStudyNetFramework.Forms
         {
             // TODO: Загрузка информации о темах
             // ...
-            MetroThemeStyle theme_forms_all = MetroThemeStyle.Dark;
-            MetroColorStyle style_forms_all = MetroColorStyle.Blue;
+            MetroThemeStyle theme_forms_all = MetroThemeStyle.Light;
+            MetroColorStyle style_forms_all = MetroColorStyle.Teal;
             MetroThemeStyle theme_forms_errors = theme_forms_all;
             MetroColorStyle style_forms_errors = MetroColorStyle.Red;
             // ...
