@@ -14,6 +14,18 @@ namespace CSharpStudyNetFramework.Forms
         /// <summary>Список всех таблиц с данными</summary>
         private readonly List<MetroGrid> AllGrids;
 
+        /// <summary>Список кнопок-вкладок на вкладке "Регистрация книг"</summary>
+        private readonly List<Button> TabRegistration_TabsButtons;
+
+        /// <summary>Список соответствующих контейнеров кнопок-вкладок на вкладке "Регистрация книг"</summary>
+        private readonly List<Control> TabRegistration_TabsContainers;
+
+        /// <summary>Список кнопок-вкладок на вкладке "Справочники"</summary>
+        private readonly List<Button> TabReferences_TabsButtons;
+
+        /// <summary>Список соответствующих контейнеров кнопок-вкладок на вкладке "Справочники"</summary>
+        private readonly List<Control> TabReferences_TabsContainers;
+
         /// <summary>Конструктор формы</summary>
         public Form_Data() : base()
         {
@@ -23,8 +35,33 @@ namespace CSharpStudyNetFramework.Forms
 
             // Список, который содержит все таблицы с данными (нужен для функции обновления всех таблиц)
             this.AllGrids = new List<MetroGrid> {
+                this.Grid_Catalog,
                 this.Grid_References_Author,
-                this.Grid_Catalog
+                this.Grid_References_Bookmaker,
+                this.Grid_References_Group
+            };
+
+
+            this.TabRegistration_TabsButtons = new List<Button> {
+                this.Button_Registration_Book_Tab,
+                this.Button_Registration_CopyBook_Tab
+            };
+
+            this.TabRegistration_TabsContainers = new List<Control> {
+                this.Panel_Registration_Book,
+                this.Panel_Registration_CopyBook
+            };
+
+            this.TabReferences_TabsButtons = new List<Button> {
+                this.Button_References_Author_Tab,
+                this.Button_References_Group_Tab,
+                this.Button_References_Bookmaker_Tab
+            };
+
+            this.TabReferences_TabsContainers = new List<Control> {
+                this.Panel_References_Author,
+                this.Panel_References_Group,
+                this.Panel_References_Bookmaker,
             };
         }
 
@@ -33,6 +70,24 @@ namespace CSharpStudyNetFramework.Forms
         {
             // Обновление данных таблиц
             this.UpdateData();
+
+            // -----------------------------
+            // Выбор кнопок-вкладок
+            // Вызываются напрямую (через PerformClick не выйдет, так как кнопки недоступны, если в другой вкладке)
+            // -----------------------------
+            // На вкладке "Регистрация книг" выбираем кнопку-вкладку "Регистрация книги"
+            this.SelectButtonTab(
+                this.TabRegistration_TabsButtons,
+                this.TabRegistration_TabsContainers,
+                this.Button_Registration_Book_Tab
+            );
+            // На вкладке "Справочники" выбираем кнопку-вкладку "Редактировать авторов"
+            this.SelectButtonTab(
+                this.TabReferences_TabsButtons,
+                this.TabReferences_TabsContainers,
+                this.Button_References_Author_Tab
+            );
+            // -----------------------------
         }
 
         /// <summary>Событие нажатия на кнопку обновления данных</summary>
@@ -94,9 +149,9 @@ namespace CSharpStudyNetFramework.Forms
             ExceptionHelper.CheckCode(this, () => {
                 // Создаём и добавляем в БД новую запись
                 Author item = new Author {
-                    fName = this.TextBox_Author_FirstName.Text,
-                    lName = this.TextBox_Author_LastName.Text,
-                    mName = this.TextBox_Author_MiddleName.Text
+                    fName = this.TextBox_References_Author_FirstName.Text,
+                    lName = this.TextBox_References_Author_LastName.Text,
+                    mName = this.TextBox_References_Author_MiddleName.Text
                 };
                 DatabaseHelper.db.authors.Add(item);
                 DatabaseHelper.db.SaveChanges();
@@ -105,7 +160,7 @@ namespace CSharpStudyNetFramework.Forms
             this.UpdateData(this.Grid_References_Author);
         }
 
-        private void TabControl_Data_SelectedIndexChanged(object sender, EventArgs e)
+        private void UpdateCurrentSelectedTab()
         {
             int selected_tab_index = this.TabControl_Data.SelectedIndex;
             MetroGrid grid_to_update;
@@ -116,6 +171,18 @@ namespace CSharpStudyNetFramework.Forms
                     break;
                 case 1:
                     grid_to_update = this.Grid_Catalog;
+                    break;
+                case 2:
+                    // В зависимости от выбора кнопки-вкладки будет обновлена соответствующая таблица
+                    if (this.Button_References_Author_Tab.Enabled) {
+                        grid_to_update = this.Grid_References_Author;
+                    } else if (this.Button_References_Group_Tab.Enabled) {
+                        grid_to_update = this.Grid_References_Bookmaker;
+                    } else if (this.Button_References_Bookmaker_Tab.Enabled) {
+                        grid_to_update = this.Grid_References_Group;
+                    } else {
+                        return;
+                    }
                     break;
                 default:
                     return;
@@ -171,12 +238,8 @@ namespace CSharpStudyNetFramework.Forms
         private void FillData(MetroGrid grid)
         {
             ExceptionHelper.CheckCode(this, () => {
-                // Если заполняется вкладка "Регистрация книг"
-                if (grid.Equals(this.Grid_References_Author)) {
-                    grid.DataSource = DatabaseHelper.db.authors.ToList();
-                }
                 // Если заполняется вкладка "Каталог книг"
-                else if (grid.Equals(this.Grid_Catalog)) {
+                if (grid.Equals(this.Grid_Catalog)) {
                     // Содержимое текстового поля
                     string filter_string = this.TextBox_Catalog_Search.Text;
 
@@ -204,6 +267,18 @@ namespace CSharpStudyNetFramework.Forms
 
                     grid.DataSource = DatabaseHelper.db.books.Where(filter_function).ToList();
                 }
+                // Если заполняется вкладка "Справочники" - "Авторы"
+                else if (grid.Equals(this.Grid_References_Author)) {
+                    grid.DataSource = DatabaseHelper.db.authors.ToList();
+                }
+                // Если заполняется вкладка "Справочники" - "Жанры"
+                else if (grid.Equals(this.Grid_References_Group)) {
+                    grid.DataSource = DatabaseHelper.db.groups.ToList();
+                }
+                // Если заполняется вкладка "Справочники" - "Издатели"
+                else if (grid.Equals(this.Grid_References_Bookmaker)) {
+                    grid.DataSource = DatabaseHelper.db.bookmakers.ToList();
+                }
             });
         }
 
@@ -221,26 +296,73 @@ namespace CSharpStudyNetFramework.Forms
             this.UpdateData(this.Grid_Catalog);
         }
 
-        private void Button_Registration_Book_Tab_Click(object sender, EventArgs e)
-        {
 
+        /// <summary>Выбирает кнопку-вкладку</summary>
+        /// <param name="tabs_buttons">Список кнопок-вкладок</param>
+        /// <param name="tabs_containers">Список соответствующих контейнеров для кнопок-вкладок</param>
+        /// <param name="selected_button">Выбранная кнопка-вкладка</param>
+        private void SelectButtonTab(
+            List<Button> tabs_buttons,
+            List<Control> tabs_containers,
+            Button selected_button
+        )
+        {
+            int tabs_count = tabs_buttons.Count;
+
+            // Дополнительные проверки на правильность кода
+            if (tabs_count != tabs_containers.Count) {
+                throw new Exception("Количество кнопок-вкладок не соответствует количеству контейнеров для них!");
+            }
+            if (!tabs_buttons.Contains(selected_button)) {
+                throw new Exception("Указанная кнопка не найдена в переданном списке кнопок-вкладок!");
+            }
+
+            for (int tab_id = 0; tab_id < tabs_count; tab_id++) {
+                Button tab_button = tabs_buttons[tab_id];
+                Control tab_container = tabs_containers[tab_id];
+
+                // Выбранную кнопку блокируем, а её соответствующий контейнер показываем
+                if (tab_button.Equals(selected_button)) {
+                    tab_button.Enabled = false;
+                    tab_container.Enabled = true;
+                    tab_container.Visible = true;
+                    tab_container.Dock = DockStyle.Fill;
+                }
+                // Другие кнопки разблокируем, но все их соответствующие контейнеры скрываем
+                else {
+                    tab_button.Enabled = true;
+                    tab_container.Enabled = false;
+                    tab_container.Visible = false;
+                    tab_container.Dock = DockStyle.None;
+                }
+            }
+
+            // Убираем фокус с любого элемента
+            this.ActiveControl = null;
         }
 
-        private void Button_Registration_CopyBook_Tab_Click(object sender, EventArgs e)
+        /// <summary>Нажатие на кнопку-вкладку на вкладке "Регистрация книг"</summary>
+        private void Button_Registration_Tab_Click(object sender, EventArgs e)
         {
-
+            ExceptionHelper.CheckCode(this, () => {
+                this.SelectButtonTab(
+                    this.TabRegistration_TabsButtons,
+                    this.TabRegistration_TabsContainers,
+                    sender as Button
+                );
+            });
         }
 
-        private void Button_Registration_Book_Cover_Click(object sender, EventArgs e)
+        /// <summary>Нажатие на кнопку-вкладку на вкладке "Справочники"</summary>
+        private void Button_References_Tab_Click(object sender, EventArgs e)
         {
-
+            ExceptionHelper.CheckCode(this, () => {
+                this.SelectButtonTab(
+                    this.TabReferences_TabsButtons,
+                    this.TabReferences_TabsContainers,
+                    sender as Button
+                );
+            });
         }
-
-
-        private void Button_Registration_Book_Register_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

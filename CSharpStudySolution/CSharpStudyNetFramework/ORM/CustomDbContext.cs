@@ -19,7 +19,7 @@ namespace CSharpStudyNetFramework.ORM
         public DbSet<CopyBook> copybooks { get; set; }
 
         /// <summary>Таблица "Жанры книг"</summary>
-        public DbSet<Group> group { get; set; }
+        public DbSet<Group> groups { get; set; }
 
         /// <summary>Таблица "Записи"</summary>
         public DbSet<Order> orders { get; set; }
@@ -35,7 +35,7 @@ namespace CSharpStudyNetFramework.ORM
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=library_data.db");
+            optionsBuilder.UseSqlite("Filename=library_data_v_1_0_1.db");
         }
     }
 }
