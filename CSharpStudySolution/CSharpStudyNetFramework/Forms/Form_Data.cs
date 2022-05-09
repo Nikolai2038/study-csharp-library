@@ -88,6 +88,15 @@ namespace CSharpStudyNetFramework.Forms
         /// <summary>Событие загрузки формы</summary>
         private void Form_Data_Load(object sender, EventArgs e)
         {
+            // Добавление всплывающей подсказки для чекбокса "Поиск в реальном времени"
+            ToolTip tool_tip = new ToolTip {
+                ToolTipIcon = ToolTipIcon.Info,
+                IsBalloon = true,
+                ShowAlways = true,
+                UseAnimation = true
+            };
+            tool_tip.SetToolTip(this.CheckBox_IsSearchInRealTime, "Если включен поиск в реальном времени, то данные в таблице будут обновляться сразу же после любого изменения параметров фильтрации.");
+
             // Обновление данных таблиц
             this.UpdateData();
 
@@ -207,7 +216,7 @@ namespace CSharpStudyNetFramework.Forms
                 // Если заполняется вкладка "Книги"
                 if (grid.Equals(this.Grid_Books)) {
                     // Содержимое текстового поля
-                    string filter_string = this.TextBox_Books_Search.Text;
+                    string filter_string = this.TextBox_Books_Search.Text.Trim();
 
                     Func<Book, bool> filter_function;
                     // Если выбрана фильтрация по полю "Автор"
@@ -218,6 +227,12 @@ namespace CSharpStudyNetFramework.Forms
                                 return filter_string == "";
                             }
                             return book.Author.FullName.Contains(filter_string);
+                        };
+                    }
+                    // Если выбрана фильтрация по полю "Название"
+                    else if (this.RadioButton_Books_Title.Checked) {
+                        filter_function = book => {
+                            return book.Title.Contains(filter_string);
                         };
                     }
                     // Если выбрана фильтрация по полю "Жанр"
@@ -240,8 +255,14 @@ namespace CSharpStudyNetFramework.Forms
                             return book.Bookmaker.Title.Contains(filter_string);
                         };
                     }
+                    // Если выбрана фильтрация по полю "Год издания"
+                    else if (this.RadioButton_Books_PublicationYear.Checked) {
+                        filter_function = book => {
+                            return book.PublicationYear.ToString().Contains(filter_string);
+                        };
+                    }
                     // Если выбрана фильтрация по полю "Дата регистрации"
-                    else if (this.RadioButton_Books_CopyBooksDate.Checked) {
+                    else if (this.RadioButton_Books_RegistrationDate.Checked) {
                         filter_function = book => {
                             return book.RegistrationDate.ToString().Contains(filter_string);
                         };
@@ -880,6 +901,15 @@ namespace CSharpStudyNetFramework.Forms
 
         }
 
+        /// <summary>Событие изменения параметров фильтрации на вкладке "Книги"</summary>
+        private void Component_Books_Search_ConditionsChanged(object sender, EventArgs e)
+        {
+            // Обновляем данные только если установлена галочка "Поиск в реальном времени"
+            if (this.CheckBox_IsSearchInRealTime.Checked) {
+                this.UpdateData(this.Grid_Books);
+            }
+        }
+
         /// <summary>Событие нажатия на кнопку "Поиск" на вкладке "Книги"</summary>
         private void Button_Books_Search_Click(object sender, EventArgs e)
         {
@@ -892,6 +922,16 @@ namespace CSharpStudyNetFramework.Forms
         {
             this.RadioButton_Books_Author.Select();
             this.TextBox_Books_Search.Text = "";
+            this.UpdateData(this.Grid_Books);
+            this.UnfocusAll();
+        }
+
+        /// <summary>Событие изменения галочки "Поиск в реальном времени"</summary>
+        private void CheckBox_IsSearchInRealTime_CheckedChanged(object sender, EventArgs e)
+        {
+            // Блокируем кнопку поиска, если включён поиск в реальном времени, и наоборот
+            this.Button_Books_Search.Enabled = !this.CheckBox_IsSearchInRealTime.Checked;
+
             this.UpdateData(this.Grid_Books);
             this.UnfocusAll();
         }
