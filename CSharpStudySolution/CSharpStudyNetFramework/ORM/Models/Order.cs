@@ -8,5 +8,10 @@
         public string City { get; set; }
         public Reader Reader { get; set; }
         public CopyBook CopyBook { get; set; }
+
+        public override string ToString()
+        {
+            return this.Title;
+        }
     }
 }

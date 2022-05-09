@@ -11,5 +11,10 @@
         public Group Group { get; set; }
         public Bookmaker Bookmaker { get; set; }
         public string Photo { get; set; }
+
+        public override string ToString()
+        {
+            return this.Title;
+        }
     }
 }

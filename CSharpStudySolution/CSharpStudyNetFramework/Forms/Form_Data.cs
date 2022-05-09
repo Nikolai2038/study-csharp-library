@@ -26,6 +26,8 @@ namespace CSharpStudyNetFramework.Forms
         /// <summary>Список соответствующих контейнеров кнопок-вкладок на вкладке "Справочники"</summary>
         private readonly List<Control> TabReferences_TabsContainers;
 
+        private readonly Dictionary<MetroGrid, List<ComboBox>> LinkedComboboxes;
+
         /// <summary>Конструктор формы</summary>
         public Form_Data() : base()
         {
@@ -41,27 +43,53 @@ namespace CSharpStudyNetFramework.Forms
                 this.Grid_References_Group
             };
 
-
+            // -------------------------------------------------------
+            // Кнопки-вкладки
+            // -------------------------------------------------------
+            // Кнопки-вкладки на вкладке "Регистрация книг"
             this.TabRegistration_TabsButtons = new List<Button> {
                 this.Button_Registration_Book_Tab,
                 this.Button_Registration_CopyBook_Tab
             };
-
+            // Соответствующие контейнеры кнопки-вкладки на вкладке "Регистрация книг"
             this.TabRegistration_TabsContainers = new List<Control> {
                 this.Panel_Registration_Book,
                 this.Panel_Registration_CopyBook
             };
-
+            // Кнопки-вкладки на вкладке "Справочники"
             this.TabReferences_TabsButtons = new List<Button> {
                 this.Button_References_Author_Tab,
                 this.Button_References_Group_Tab,
                 this.Button_References_Bookmaker_Tab
             };
-
+            // Соответствующие контейнеры кнопки-вкладки на вкладке "Справочники"
             this.TabReferences_TabsContainers = new List<Control> {
                 this.Panel_References_Author,
                 this.Panel_References_Group,
                 this.Panel_References_Bookmaker,
+            };
+            // -------------------------------------------------------
+
+            // Комбобоксы, привязанные к таблицам - при обновлении таблиц обновляются и комбобоксы
+            this.LinkedComboboxes = new Dictionary<MetroGrid, List<ComboBox>> {
+                {
+                    this.Grid_References_Author,
+                    new List<ComboBox>() {
+                        this.ComboBox_Registration_Book_Author
+                    }
+                },
+                {
+                    this.Grid_References_Group,
+                    new List<ComboBox>() {
+                        this.ComboBox_Registration_Book_Group
+                    }
+                },
+                {
+                    this.Grid_References_Bookmaker,
+                    new List<ComboBox>() {
+                        this.ComboBox_Registration_Book_Bookmaker
+                    }
+                }
             };
         }
 
@@ -242,6 +270,8 @@ namespace CSharpStudyNetFramework.Forms
                 Dictionary<string, string> replaces = new Dictionary<string, string> {
                     { "Id", "ID" }
                 };
+                // Данные для комбобоксов
+                string[] data_for_comboboxes = null;
 
                 // Если заполняется вкладка "Каталог книг"
                 if (grid.Equals(this.Grid_Catalog)) {
@@ -274,22 +304,27 @@ namespace CSharpStudyNetFramework.Forms
                 }
                 // Если заполняется вкладка "Справочники" - "Авторы"
                 else if (grid.Equals(this.Grid_References_Author)) {
-                    List<Author> authors = DatabaseHelper.db.authors.ToList();
-                    grid.DataSource = authors;
+                    List<Author> data = DatabaseHelper.db.authors.ToList();
+                    grid.DataSource = data;
                     replaces.Add("fName", "Имя");
                     replaces.Add("lName", "Фамилия");
                     replaces.Add("mName", "Отчество");
+                    data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
                 }
                 // Если заполняется вкладка "Справочники" - "Жанры"
                 else if (grid.Equals(this.Grid_References_Group)) {
-                    grid.DataSource = DatabaseHelper.db.groups.ToList();
+                    List<Group> data = DatabaseHelper.db.groups.ToList();
+                    grid.DataSource = data;
                     replaces.Add("Title", "Название");
+                    data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
                 }
                 // Если заполняется вкладка "Справочники" - "Издатели"
                 else if (grid.Equals(this.Grid_References_Bookmaker)) {
-                    grid.DataSource = DatabaseHelper.db.bookmakers.ToList();
+                    List<Bookmaker> data = DatabaseHelper.db.bookmakers.ToList();
+                    grid.DataSource = data;
                     replaces.Add("Title", "Название");
                     replaces.Add("City", "Город");
+                    data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
                 }
 
                 // Замена названий колонок
@@ -298,6 +333,23 @@ namespace CSharpStudyNetFramework.Forms
                         if (column.HeaderText == replace.Key) {
                             column.HeaderText = replace.Value;
                         }
+                    }
+                }
+
+                // Обновляем данные для комбобоксов, если нужно
+                if (data_for_comboboxes != null) {
+                    bool is_exist = this.LinkedComboboxes.TryGetValue(grid, out List<ComboBox> linked_comboboxes);
+                    if (is_exist) {
+                        linked_comboboxes.ForEach(combobox => {
+                            // Заполнение самого списка
+                            combobox.Items.Clear();
+                            combobox.Items.AddRange(data_for_comboboxes);
+                            // Настройки для автодополнения
+                            combobox.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+                            combobox.AutoCompleteCustomSource.AddRange(data_for_comboboxes);
+                            combobox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                            combobox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                        });
                     }
                 }
             });
@@ -591,6 +643,11 @@ namespace CSharpStudyNetFramework.Forms
                 DatabaseHelper.db.SaveChanges();
                 this.UpdateCurrentSelectedTab();
             }
+        }
+
+        private void ComboBox_Registration_Book_Author_TextUpdate(object sender, EventArgs e)
+        {
+
         }
     }
 }

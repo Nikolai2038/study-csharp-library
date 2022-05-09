@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CSharpStudyNetFramework.ORM
 {
-    /// <summary>Вспомогательный класс по работе с БД</summary>
+    /// <summary>Вспомогательный класс для работы с сущностями БД</summary>
     internal class CustomDbContext : DbContext
     {
         /// <summary>Таблица "Авторы"</summary>

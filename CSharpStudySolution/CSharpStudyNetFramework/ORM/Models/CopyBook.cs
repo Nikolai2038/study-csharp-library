@@ -11,5 +11,10 @@
         public bool IsExist { get; set; }
         public bool IsLost { get; set; }
         public Book Book { get; set; }
+
+        public override string ToString()
+        {
+            return this.Title;
+        }
     }
 }

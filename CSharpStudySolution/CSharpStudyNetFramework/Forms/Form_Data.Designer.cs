@@ -2313,7 +2313,7 @@
             this.DateTime_Registration_Book_RegistrationDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTime_Registration_Book_RegistrationDate.Location = new System.Drawing.Point(119, 2);
             this.DateTime_Registration_Book_RegistrationDate.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
-            this.DateTime_Registration_Book_RegistrationDate.MinimumSize = new System.Drawing.Size(4, 29);
+            this.DateTime_Registration_Book_RegistrationDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.DateTime_Registration_Book_RegistrationDate.Name = "DateTime_Registration_Book_RegistrationDate";
             this.DateTime_Registration_Book_RegistrationDate.Size = new System.Drawing.Size(132, 29);
             this.DateTime_Registration_Book_RegistrationDate.TabIndex = 24;
@@ -2533,6 +2533,7 @@
             this.ComboBox_Registration_Book_Author.Name = "ComboBox_Registration_Book_Author";
             this.ComboBox_Registration_Book_Author.Size = new System.Drawing.Size(132, 28);
             this.ComboBox_Registration_Book_Author.TabIndex = 21;
+            this.ComboBox_Registration_Book_Author.TextUpdate += new System.EventHandler(this.ComboBox_Registration_Book_Author_TextUpdate);
             // 
             // Label_Registration_Book_Author
             // 
@@ -2829,7 +2830,7 @@
             this.TabControl_Data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_Data.Location = new System.Drawing.Point(12, 79);
             this.TabControl_Data.Name = "TabControl_Data";
-            this.TabControl_Data.SelectedIndex = 2;
+            this.TabControl_Data.SelectedIndex = 1;
             this.TabControl_Data.Size = new System.Drawing.Size(976, 579);
             this.TabControl_Data.TabIndex = 5;
             this.TabControl_Data.UseSelectable = true;
