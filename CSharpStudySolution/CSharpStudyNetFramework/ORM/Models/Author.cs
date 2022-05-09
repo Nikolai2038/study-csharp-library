@@ -9,6 +9,7 @@
         public string mName { get; set; }
 
         /// <summary>Полное ФИО автора</summary>
+        [System.ComponentModel.Browsable(false)]
         public string FullName => this.lName + " " + this.fName + " " + this.mName;
     }
 }

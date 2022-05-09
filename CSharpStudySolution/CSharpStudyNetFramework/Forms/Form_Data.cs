@@ -174,12 +174,12 @@ namespace CSharpStudyNetFramework.Forms
                     break;
                 case 2:
                     // В зависимости от выбора кнопки-вкладки будет обновлена соответствующая таблица
-                    if (this.Button_References_Author_Tab.Enabled) {
+                    if (!this.Button_References_Author_Tab.Enabled) {
                         grid_to_update = this.Grid_References_Author;
-                    } else if (this.Button_References_Group_Tab.Enabled) {
-                        grid_to_update = this.Grid_References_Bookmaker;
-                    } else if (this.Button_References_Bookmaker_Tab.Enabled) {
+                    } else if (!this.Button_References_Group_Tab.Enabled) {
                         grid_to_update = this.Grid_References_Group;
+                    } else if (!this.Button_References_Bookmaker_Tab.Enabled) {
+                        grid_to_update = this.Grid_References_Bookmaker;
                     } else {
                         return;
                     }
@@ -238,6 +238,11 @@ namespace CSharpStudyNetFramework.Forms
         private void FillData(MetroGrid grid)
         {
             ExceptionHelper.CheckCode(this, () => {
+                // Список замен для названий колонок
+                Dictionary<string, string> replaces = new Dictionary<string, string> {
+                    { "Id", "ID" }
+                };
+
                 // Если заполняется вкладка "Каталог книг"
                 if (grid.Equals(this.Grid_Catalog)) {
                     // Содержимое текстового поля
@@ -269,15 +274,31 @@ namespace CSharpStudyNetFramework.Forms
                 }
                 // Если заполняется вкладка "Справочники" - "Авторы"
                 else if (grid.Equals(this.Grid_References_Author)) {
-                    grid.DataSource = DatabaseHelper.db.authors.ToList();
+                    List<Author> authors = DatabaseHelper.db.authors.ToList();
+                    grid.DataSource = authors;
+                    replaces.Add("fName", "Имя");
+                    replaces.Add("lName", "Фамилия");
+                    replaces.Add("mName", "Отчество");
                 }
                 // Если заполняется вкладка "Справочники" - "Жанры"
                 else if (grid.Equals(this.Grid_References_Group)) {
                     grid.DataSource = DatabaseHelper.db.groups.ToList();
+                    replaces.Add("Title", "Название");
                 }
                 // Если заполняется вкладка "Справочники" - "Издатели"
                 else if (grid.Equals(this.Grid_References_Bookmaker)) {
                     grid.DataSource = DatabaseHelper.db.bookmakers.ToList();
+                    replaces.Add("Title", "Название");
+                    replaces.Add("City", "Город");
+                }
+
+                // Замена названий колонок
+                foreach (DataGridViewColumn column in grid.Columns) {
+                    foreach (KeyValuePair<string, string> replace in replaces) {
+                        if (column.HeaderText == replace.Key) {
+                            column.HeaderText = replace.Value;
+                        }
+                    }
                 }
             });
         }
@@ -363,6 +384,213 @@ namespace CSharpStudyNetFramework.Forms
                     sender as Button
                 );
             });
+        }
+
+        /// <summary>Событие изменения текста во вкладке "Справочники" - "Авторы"</summary>
+        private void TextBox_References_Author_TextChanged(object sender, EventArgs e)
+        {
+            this.Button_References_Author_Create.Enabled = (this.TextBox_References_Author_FirstName.Text != "") && (this.TextBox_References_Author_LastName.Text != "");
+        }
+
+        /// <summary>Событие изменения текста во вкладке "Справочники" - "Жанры"</summary>
+        private void TextBox_References_Group_TextChanged(object sender, EventArgs e)
+        {
+            this.Button_References_Group_Create.Enabled = this.TextBox_References_Group_Title.Text != "";
+        }
+
+        /// <summary>Событие изменения текста во вкладке "Справочники" - "Издатели"</summary>
+        private void TextBox_References_Bookmaker_TextChanged(object sender, EventArgs e)
+        {
+            this.Button_References_Bookmaker_Create.Enabled = this.TextBox_References_Bookmaker_Title.Text != "";
+        }
+
+        /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Справочники" - "Авторы"</summary>
+        private void Grid_References_Author_SelectionChanged(object sender, EventArgs e)
+        {
+            // Кнопки изменения и удаления записи будут доступны только если выбрана строчка в таблице
+            this.Button_References_Author_Edit.Enabled = this.Button_References_Author_Delete.Enabled =
+                this.Grid_References_Author.SelectedRows.Count > 0;
+
+            // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
+            if (this.Grid_References_Author.SelectedRows.Count > 0) {
+                DataGridViewRow selected_row = this.Grid_References_Author.SelectedRows[0];
+                this.TextBox_References_Author_FirstName.Text = selected_row.Cells[1].Value.ToString();
+                this.TextBox_References_Author_LastName.Text = selected_row.Cells[2].Value.ToString();
+                this.TextBox_References_Author_MiddleName.Text = selected_row.Cells[3].Value.ToString();
+            }
+            // Если нет выбора - очищаем текстбоксы
+            else {
+                this.TextBox_References_Author_FirstName.Clear();
+                this.TextBox_References_Author_LastName.Clear();
+                this.TextBox_References_Author_MiddleName.Clear();
+            }
+        }
+
+        /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Справочники" - "Жанры"</summary>
+        private void Grid_References_Group_SelectionChanged(object sender, EventArgs e)
+        {
+            // Кнопки изменения и удаления записи будут доступны только если выбрана строчка в таблице
+            this.Button_References_Group_Edit.Enabled = this.Button_References_Group_Delete.Enabled =
+                this.Grid_References_Group.SelectedRows.Count > 0;
+
+            // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
+            if (this.Grid_References_Group.SelectedRows.Count > 0) {
+                DataGridViewRow selected_row = this.Grid_References_Group.SelectedRows[0];
+                this.TextBox_References_Group_Title.Text = selected_row.Cells[1].Value.ToString();
+            }
+            // Если нет выбора - очищаем текстбоксы
+            else {
+                this.TextBox_References_Group_Title.Clear();
+            }
+        }
+
+        /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Справочники" - "Издатели"</summary>
+        private void Grid_References_Bookmaker_SelectionChanged(object sender, EventArgs e)
+        {
+            // Кнопки изменения и удаления записи будут доступны только если выбрана строчка в таблице
+            this.Button_References_Bookmaker_Edit.Enabled = this.Button_References_Bookmaker_Delete.Enabled =
+                this.Grid_References_Bookmaker.SelectedRows.Count > 0;
+
+            // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
+            if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
+                DataGridViewRow selected_row = this.Grid_References_Bookmaker.SelectedRows[0];
+                this.TextBox_References_Bookmaker_Title.Text = selected_row.Cells[1].Value.ToString();
+                this.TextBox_References_Bookmaker_City.Text = selected_row.Cells[2].Value.ToString();
+            }
+            // Если нет выбора - очищаем текстбоксы
+            else {
+                this.TextBox_References_Bookmaker_Title.Clear();
+                this.TextBox_References_Bookmaker_City.Clear();
+            }
+        }
+
+        /// <summary>Событие нажатия на кнопку создания во вкладке "Справочники" - "Авторы"</summary>
+        private void Button_References_Author_Create_Click(object sender, EventArgs e)
+        {
+            ExceptionHelper.CheckCode(this, () => {
+                // Создаём и сохраняем нового автора
+                Author new_entity = new Author {
+                    fName = this.TextBox_References_Author_FirstName.Text,
+                    lName = this.TextBox_References_Author_LastName.Text,
+                    mName = this.TextBox_References_Author_MiddleName.Text
+                };
+                DatabaseHelper.db.authors.Add(new_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+            });
+        }
+
+        /// <summary>Событие нажатия на кнопку создания во вкладке "Справочники" - "Жанры"</summary>
+        private void Button_References_Group_Create_Click(object sender, EventArgs e)
+        {
+            ExceptionHelper.CheckCode(this, () => {
+                // Создаём и сохраняем новый жанр
+                Group new_entity = new Group {
+                    Title = this.TextBox_References_Group_Title.Text
+                };
+                DatabaseHelper.db.groups.Add(new_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+            });
+        }
+
+        /// <summary>Событие нажатия на кнопку создания во вкладке "Справочники" - "Издатели"</summary>
+        private void Button_References_Bookmaker_Create_Click(object sender, EventArgs e)
+        {
+            ExceptionHelper.CheckCode(this, () => {
+                // Создаём и сохраняем нового издателя
+                Bookmaker new_entity = new Bookmaker {
+                    Title = this.TextBox_References_Bookmaker_Title.Text,
+                    City = this.TextBox_References_Bookmaker_City.Text
+                };
+                DatabaseHelper.db.bookmakers.Add(new_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+            });
+        }
+
+        /// <summary>Событие нажатия на кнопку изменения во вкладке "Справочники" - "Авторы"</summary>
+        private void Button_References_Author_Edit_Click(object sender, EventArgs e)
+        {
+            if (this.Grid_References_Author.SelectedRows.Count > 0) {
+                // Изменяем и сохраняем выбранного автора в таблице
+                int selected_id = Convert.ToInt32(this.Grid_References_Author.SelectedRows[0].Cells[0].Value);
+                Author found_entity = DatabaseHelper.db.authors.FirstOrDefault(entity => entity.Id == selected_id);
+                found_entity.fName = this.TextBox_References_Author_FirstName.Text;
+                found_entity.lName = this.TextBox_References_Author_LastName.Text;
+                found_entity.mName = this.TextBox_References_Author_MiddleName.Text;
+                DatabaseHelper.db.authors.Update(found_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+            }
+        }
+
+        /// <summary>Событие нажатия на кнопку изменения во вкладке "Справочники" - "Жанры"</summary>
+        private void Button_References_Group_Edit_Click(object sender, EventArgs e)
+        {
+            if (this.Grid_References_Group.SelectedRows.Count > 0) {
+                // Изменяем и сохраняем выбранный жанр в таблице
+                int selected_id = Convert.ToInt32(this.Grid_References_Group.SelectedRows[0].Cells[0].Value);
+                Group found_entity = DatabaseHelper.db.groups.FirstOrDefault(entity => entity.Id == selected_id);
+                found_entity.Title = this.TextBox_References_Group_Title.Text;
+                DatabaseHelper.db.groups.Update(found_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+            }
+        }
+
+        /// <summary>Событие нажатия на кнопку изменения во вкладке "Справочники" - "Издатели"</summary>
+        private void Button_References_Bookmaker_Edit_Click(object sender, EventArgs e)
+        {
+            if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
+                // Изменяем и сохраняем выбранного издателя в таблице
+                int selected_id = Convert.ToInt32(this.Grid_References_Bookmaker.SelectedRows[0].Cells[0].Value);
+                Bookmaker found_entity = DatabaseHelper.db.bookmakers.FirstOrDefault(entity => entity.Id == selected_id);
+                found_entity.Title = this.TextBox_References_Bookmaker_Title.Text;
+                found_entity.City = this.TextBox_References_Bookmaker_City.Text;
+                DatabaseHelper.db.bookmakers.Update(found_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+            }
+        }
+
+        /// <summary>Событие нажатия на кнопку удаления во вкладке "Справочники" - "Авторы"</summary>
+        private void Button_References_Author_Delete_Click(object sender, EventArgs e)
+        {
+            if (this.Grid_References_Author.SelectedRows.Count > 0) {
+                // Удаляем выбранного автора в таблице
+                int selected_id = Convert.ToInt32(this.Grid_References_Author.SelectedRows[0].Cells[0].Value);
+                Author found_entity = DatabaseHelper.db.authors.FirstOrDefault(entity => entity.Id == selected_id);
+                DatabaseHelper.db.authors.Remove(found_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+            }
+        }
+
+        /// <summary>Событие нажатия на кнопку удаления во вкладке "Справочники" - "Жанры"</summary>
+        private void Button_References_Group_Delete_Click(object sender, EventArgs e)
+        {
+            if (this.Grid_References_Group.SelectedRows.Count > 0) {
+                // Удаляем выбранный жанр в таблице
+                int selected_id = Convert.ToInt32(this.Grid_References_Group.SelectedRows[0].Cells[0].Value);
+                Group found_entity = DatabaseHelper.db.groups.FirstOrDefault(entity => entity.Id == selected_id);
+                DatabaseHelper.db.groups.Remove(found_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+            }
+        }
+
+        /// <summary>Событие нажатия на кнопку удаления во вкладке "Справочники" - "Издатели"</summary>
+        private void Button_References_Bookmaker_Delete_Click(object sender, EventArgs e)
+        {
+            if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
+                // Удаляем выбранного издателя в таблице
+                int selected_id = Convert.ToInt32(this.Grid_References_Bookmaker.SelectedRows[0].Cells[0].Value);
+                Bookmaker found_entity = DatabaseHelper.db.bookmakers.FirstOrDefault(entity => entity.Id == selected_id);
+                DatabaseHelper.db.bookmakers.Remove(found_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+            }
         }
     }
 }
