@@ -575,14 +575,28 @@ namespace CSharpStudyNetFramework.Forms
         {
             ExceptionHelper.CheckCode(this, true, () => {
                 if (this.Grid_References_Author.SelectedRows.Count > 0) {
-                    // Изменяем и сохраняем выбранного автора в таблице
+                    // Находим выбранного в таблице автора в БД
                     int selected_id = Convert.ToInt32(this.Grid_References_Author.SelectedRows[0].Cells[0].Value);
-                    Author found_entity = DatabaseHelper.db.Authors.FirstOrDefault(entity => entity.Id == selected_id);
+                    Author found_entity;
+                    try {
+                        found_entity = DatabaseHelper.db.Authors.First(entity => entity.Id == selected_id);
+                    }
+                    // Если книга не была найдена
+                    catch (Exception) {
+                        // Обновляем таблицу с данными, чтобы убрать оттуда отсутствующие записи
+                        this.UpdateData(new List<MetroGrid>() {
+                            this.Grid_References_Author
+                        });
+                        throw new FormException("Автор с ID = " + selected_id + " не найдена в базе данных!");
+                    }
+
                     found_entity.FirstName = this.TextBox_References_Author_FirstName.Text;
                     found_entity.LastName = this.TextBox_References_Author_LastName.Text;
                     found_entity.MiddleName = this.TextBox_References_Author_MiddleName.Text;
+
                     DatabaseHelper.db.Authors.Update(found_entity);
                     DatabaseHelper.db.SaveChanges();
+
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
@@ -598,12 +612,26 @@ namespace CSharpStudyNetFramework.Forms
         {
             ExceptionHelper.CheckCode(this, true, () => {
                 if (this.Grid_References_Group.SelectedRows.Count > 0) {
-                    // Изменяем и сохраняем выбранный жанр в таблице
+                    // Находим выбранный в таблице жанр в БД
                     int selected_id = Convert.ToInt32(this.Grid_References_Group.SelectedRows[0].Cells[0].Value);
-                    Group found_entity = DatabaseHelper.db.Groups.FirstOrDefault(entity => entity.Id == selected_id);
+                    Group found_entity;
+                    try {
+                        found_entity = DatabaseHelper.db.Groups.First(entity => entity.Id == selected_id);
+                    }
+                    // Если книга не была найдена
+                    catch (Exception) {
+                        // Обновляем таблицу с данными, чтобы убрать оттуда отсутствующие записи
+                        this.UpdateData(new List<MetroGrid>() {
+                            this.Grid_References_Group
+                        });
+                        throw new FormException("Жанр с ID = " + selected_id + " не найден в базе данных!");
+                    }
+
                     found_entity.Title = this.TextBox_References_Group_Title.Text;
+
                     DatabaseHelper.db.Groups.Update(found_entity);
                     DatabaseHelper.db.SaveChanges();
+
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
@@ -619,13 +647,27 @@ namespace CSharpStudyNetFramework.Forms
         {
             ExceptionHelper.CheckCode(this, true, () => {
                 if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
-                    // Изменяем и сохраняем выбранного издателя в таблице
+                    // Находим выбранного в таблице издателя в БД
                     int selected_id = Convert.ToInt32(this.Grid_References_Bookmaker.SelectedRows[0].Cells[0].Value);
-                    Bookmaker found_entity = DatabaseHelper.db.Bookmakers.FirstOrDefault(entity => entity.Id == selected_id);
+                    Bookmaker found_entity;
+                    try {
+                        found_entity = DatabaseHelper.db.Bookmakers.First(entity => entity.Id == selected_id);
+                    }
+                    // Если книга не была найдена
+                    catch (Exception) {
+                        // Обновляем таблицу с данными, чтобы убрать оттуда отсутствующие записи
+                        this.UpdateData(new List<MetroGrid>() {
+                            this.Grid_References_Bookmaker
+                        });
+                        throw new FormException("Издатель с ID = " + selected_id + " не найден в базе данных!");
+                    }
+
                     found_entity.Title = this.TextBox_References_Bookmaker_Title.Text;
                     found_entity.City = this.TextBox_References_Bookmaker_City.Text;
+
                     DatabaseHelper.db.Bookmakers.Update(found_entity);
                     DatabaseHelper.db.SaveChanges();
+
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
@@ -641,11 +683,24 @@ namespace CSharpStudyNetFramework.Forms
         {
             ExceptionHelper.CheckCode(this, true, () => {
                 if (this.Grid_References_Author.SelectedRows.Count > 0) {
-                    // Удаляем выбранного автора в таблице
+                    // Находим выбранного в таблице автора в БД
                     int selected_id = Convert.ToInt32(this.Grid_References_Author.SelectedRows[0].Cells[0].Value);
-                    Author found_entity = DatabaseHelper.db.Authors.FirstOrDefault(entity => entity.Id == selected_id);
+                    Author found_entity;
+                    try {
+                        found_entity = DatabaseHelper.db.Authors.First(entity => entity.Id == selected_id);
+                    }
+                    // Если книга не была найдена
+                    catch (Exception) {
+                        // Обновляем таблицу с данными, чтобы убрать оттуда отсутствующие записи
+                        this.UpdateData(new List<MetroGrid>() {
+                            this.Grid_References_Author
+                        });
+                        throw new FormException("Автор с ID = " + selected_id + " не найдена в базе данных!");
+                    }
+
                     DatabaseHelper.db.Authors.Remove(found_entity);
                     DatabaseHelper.db.SaveChanges();
+
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
@@ -665,11 +720,24 @@ namespace CSharpStudyNetFramework.Forms
         {
             ExceptionHelper.CheckCode(this, true, () => {
                 if (this.Grid_References_Group.SelectedRows.Count > 0) {
-                    // Удаляем выбранный жанр в таблице
+                    // Находим выбранный в таблице жанр в БД
                     int selected_id = Convert.ToInt32(this.Grid_References_Group.SelectedRows[0].Cells[0].Value);
-                    Group found_entity = DatabaseHelper.db.Groups.FirstOrDefault(entity => entity.Id == selected_id);
+                    Group found_entity;
+                    try {
+                        found_entity = DatabaseHelper.db.Groups.First(entity => entity.Id == selected_id);
+                    }
+                    // Если книга не была найдена
+                    catch (Exception) {
+                        // Обновляем таблицу с данными, чтобы убрать оттуда отсутствующие записи
+                        this.UpdateData(new List<MetroGrid>() {
+                            this.Grid_References_Group
+                        });
+                        throw new FormException("Жанр с ID = " + selected_id + " не найден в базе данных!");
+                    }
+
                     DatabaseHelper.db.Groups.Remove(found_entity);
                     DatabaseHelper.db.SaveChanges();
+
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
@@ -689,11 +757,24 @@ namespace CSharpStudyNetFramework.Forms
         {
             ExceptionHelper.CheckCode(this, true, () => {
                 if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
-                    // Удаляем выбранного издателя в таблице
+                    // Находим выбранного в таблице издателя в БД
                     int selected_id = Convert.ToInt32(this.Grid_References_Bookmaker.SelectedRows[0].Cells[0].Value);
-                    Bookmaker found_entity = DatabaseHelper.db.Bookmakers.FirstOrDefault(entity => entity.Id == selected_id);
+                    Bookmaker found_entity;
+                    try {
+                        found_entity = DatabaseHelper.db.Bookmakers.First(entity => entity.Id == selected_id);
+                    }
+                    // Если книга не была найдена
+                    catch (Exception) {
+                        // Обновляем таблицу с данными, чтобы убрать оттуда отсутствующие записи
+                        this.UpdateData(new List<MetroGrid>() {
+                            this.Grid_References_Bookmaker
+                        });
+                        throw new FormException("Издатель с ID = " + selected_id + " не найден в базе данных!");
+                    }
+
                     DatabaseHelper.db.Bookmakers.Remove(found_entity);
                     DatabaseHelper.db.SaveChanges();
+
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
@@ -799,87 +880,8 @@ namespace CSharpStudyNetFramework.Forms
         private void Button_Books_Create_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                // ------------
-                // Автор книги
-                // ------------
-                Author selected_author;
-                try {
-                    selected_author = DatabaseHelper.db.Authors.First(
-                        // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
-                        entity => (entity.LastName + " " + entity.FirstName + " " + entity.MiddleName).Trim() == this.ComboBox_Books_Author.Text.Trim()
-                    );
-                } catch (Exception) {
-                    throw new FormException("Выбранный автор не найден в базе данных!");
-                }
-                // ------------
-
-                // ------------
-                // Название книги
-                // ------------
-                string title = this.TextBox_Books_Title.Text.Trim();
-                if (title == "") {
-                    throw new FormException("Необходимо указать название книги!");
-                }
-                // ------------
-
-                // ------------
-                // Жанр книги
-                // ------------
-                Group selected_group;
-                try {
-                    selected_group = DatabaseHelper.db.Groups.First(
-                        // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
-                        entity => entity.Title.Trim() == this.ComboBox_Books_Group.Text.Trim()
-                    );
-                } catch (Exception) {
-                    throw new FormException("Выбранный жанр не найден в базе данных!");
-                }
-                // ------------
-
-                // ------------
-                // Издатель книги
-                // ------------
-                Bookmaker selected_bookmaker;
-                try {
-                    // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
-                    selected_bookmaker = DatabaseHelper.db.Bookmakers.First(
-                        new Func<Bookmaker, bool>((Bookmaker entity) => {
-                            string bookmaker_to_string;
-                            if (entity.City.Trim() == "") {
-                                bookmaker_to_string = entity.Title;
-                            } else {
-                                bookmaker_to_string = entity.Title + " г. " + entity.City;
-                            }
-                            return bookmaker_to_string.Trim() == this.ComboBox_Books_Bookmaker.Text.Trim();
-                        })
-                    );
-                } catch (Exception) {
-                    throw new FormException("Выбранный издатель не найден в базе данных!");
-                }
-                // ------------
-
-                // ------------
-                // Обложка книги
-                // ------------
-                string photo_as_string = null;
-                if (this.PictureBox_Books_Cover.Image != null) {
-                    photo_as_string = ImageHelper.GetStringFromBitmap(this.PictureBox_Books_Cover.Image);
-                }
-                // ------------
-
-                // Создаём и сохраняем новую книгу
-                Book new_entity = new Book {
-                    Author = selected_author,
-                    Title = title,
-                    Group = selected_group,
-                    Bookmaker = selected_bookmaker,
-                    PublicationYear = Convert.ToInt32(this.NumericUpDown_Books_Year.Value),
-                    RegistrationDate = this.DateTime_Books_CopyBooksDate.Value,
-                    Photo = photo_as_string
-                };
-                DatabaseHelper.db.Books.Add(new_entity);
-                DatabaseHelper.db.SaveChanges();
-                this.UpdateCurrentSelectedTab();
+                this.CreateOrEditBook(true);
+                this.UnfocusAll();
 
                 // Выбираем последнюю строчку в таблице
                 this.Grid_Books.ClearSelection();
@@ -892,13 +894,170 @@ namespace CSharpStudyNetFramework.Forms
         /// <summary>Событие нажатия на кнопку "Изменить информацию о книге"</summary>
         private void Button_Books_Edit_Click(object sender, EventArgs e)
         {
+            ExceptionHelper.CheckCode(this, true, () => {
+                this.CreateOrEditBook(false);
+                this.UnfocusAll();
+                FormHelper.SendSuccessMessage(this, "Книга успешно отредактирована!");
+            });
+        }
 
+        /// <summary>Создаёт новую или изменяет выбранную книгу (смотрит на поля ввода)</summary>
+        /// <param name="is_new">Если true - из введённых данных будет создана новая книга. Если false - будет изменена выбранная книга в таблице</param>
+        private void CreateOrEditBook(bool is_new)
+        {
+            // ------------
+            // Автор книги
+            // ------------
+            Author selected_author;
+            try {
+                selected_author = DatabaseHelper.db.Authors.First(
+                    // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
+                    entity => (entity.LastName + " " + entity.FirstName + " " + entity.MiddleName).Trim() == this.ComboBox_Books_Author.Text.Trim()
+                );
+            } catch (Exception) {
+                throw new FormException("Выбранный автор не найден в базе данных!");
+            }
+            // ------------
+
+            // ------------
+            // Название книги
+            // ------------
+            string title = this.TextBox_Books_Title.Text.Trim();
+            if (title == "") {
+                throw new FormException("Необходимо указать название книги!");
+            }
+            // ------------
+
+            // ------------
+            // Жанр книги
+            // ------------
+            Group selected_group;
+            try {
+                selected_group = DatabaseHelper.db.Groups.First(
+                    // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
+                    entity => entity.Title.Trim() == this.ComboBox_Books_Group.Text.Trim()
+                );
+            } catch (Exception) {
+                throw new FormException("Выбранный жанр не найден в базе данных!");
+            }
+            // ------------
+
+            // ------------
+            // Издатель книги
+            // ------------
+            Bookmaker selected_bookmaker;
+            try {
+                // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
+                selected_bookmaker = DatabaseHelper.db.Bookmakers.First(
+                    new Func<Bookmaker, bool>((Bookmaker entity) => {
+                        string bookmaker_to_string;
+                        if (entity.City.Trim() == "") {
+                            bookmaker_to_string = entity.Title;
+                        } else {
+                            bookmaker_to_string = entity.Title + " г. " + entity.City;
+                        }
+                        return bookmaker_to_string.Trim() == this.ComboBox_Books_Bookmaker.Text.Trim();
+                    })
+                );
+            } catch (Exception) {
+                throw new FormException("Выбранный издатель не найден в базе данных!");
+            }
+            // ------------
+
+            // ------------
+            // Обложка книги
+            // ------------
+            string photo_as_string = null;
+            if (this.PictureBox_Books_Cover.Image != null) {
+                photo_as_string = ImageHelper.GetStringFromBitmap(this.PictureBox_Books_Cover.Image);
+            }
+            // ------------
+
+            // Создание новой книги
+            if (is_new) {
+                // Создаём и сохраняем новую книгу
+                Book new_entity = new Book {
+                    Author = selected_author,
+                    Title = title,
+                    Group = selected_group,
+                    Bookmaker = selected_bookmaker,
+                    PublicationYear = Convert.ToInt32(this.NumericUpDown_Books_Year.Value),
+                    RegistrationDate = this.DateTime_Books_CopyBooksDate.Value,
+                    Photo = photo_as_string
+                };
+                DatabaseHelper.db.Books.Add(new_entity);
+            }
+            // Изменение выбранной книги
+            else {
+                if (this.Grid_Books.SelectedRows.Count > 0) {
+                    // Изменяем и сохраняем выбранного автора в таблице
+                    int selected_id = Convert.ToInt32(this.Grid_Books.SelectedRows[0].Cells[0].Value);
+                    Book found_entity;
+                    try {
+                        found_entity = DatabaseHelper.db.Books.First(entity => entity.Id == selected_id);
+                    }
+                    // Если книга не была найдена
+                    catch (Exception) {
+                        // Обновляем таблицу с данными
+                        this.UpdateData(new List<MetroGrid>() {
+                            this.Grid_Books
+                        });
+                        throw new FormException("Книга с ID = " + selected_id + " не найдена в базе данных!");
+                    }
+
+                    // Обновление полей
+                    found_entity.Author = selected_author;
+                    found_entity.Title = title;
+                    found_entity.Group = selected_group;
+                    found_entity.Bookmaker = selected_bookmaker;
+                    found_entity.PublicationYear = Convert.ToInt32(this.NumericUpDown_Books_Year.Value);
+                    found_entity.RegistrationDate = this.DateTime_Books_CopyBooksDate.Value;
+                    found_entity.Photo = photo_as_string;
+
+                    DatabaseHelper.db.Books.Update(found_entity);
+                } else {
+                    throw new FormException("Книга для изменения не выбрана!");
+                }
+            }
+
+            DatabaseHelper.db.SaveChanges();
+            this.UpdateCurrentSelectedTab();
         }
 
         /// <summary>Событие нажатия на кнопку "Удалить книгу"</summary>
         private void Button_Books_Delete_Click(object sender, EventArgs e)
         {
+            ExceptionHelper.CheckCode(this, true, () => {
+                if (this.Grid_Books.SelectedRows.Count > 0) {
+                    // Находим выбранного в таблице издателя в БД
+                    int selected_id = Convert.ToInt32(this.Grid_Books.SelectedRows[0].Cells[0].Value);
+                    Book found_entity;
+                    try {
+                        found_entity = DatabaseHelper.db.Books.First(entity => entity.Id == selected_id);
+                    }
+                    // Если книга не была найдена
+                    catch (Exception) {
+                        // Обновляем таблицу с данными, чтобы убрать оттуда отсутствующие записи
+                        this.UpdateData(new List<MetroGrid>() {
+                            this.Grid_Books
+                        });
+                        throw new FormException("Книга с ID = " + selected_id + " не найдена в базе данных!");
+                    }
 
+                    DatabaseHelper.db.Books.Remove(found_entity);
+                    DatabaseHelper.db.SaveChanges();
+
+                    // Обновляем как справочник, так и каталог книг
+                    this.UpdateData(new List<MetroGrid>() {
+                        this.Grid_Books,
+                    });
+
+                    // Снимаем выделение в таблице
+                    this.Grid_Books.ClearSelection();
+
+                    FormHelper.SendSuccessMessage(this, "Книга успешно удалёна!");
+                }
+            });
         }
 
         /// <summary>Событие изменения параметров фильтрации на вкладке "Книги"</summary>
