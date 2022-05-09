@@ -256,7 +256,7 @@ namespace CSharpStudyNetFramework.Forms
                     }
                     // Если выбрана фильтрация по полю "Дата регистрации"
                     else if (this.RadioButton_Catalog_RegistrationDate.Checked) {
-                        filter_function = book => book.YearRegistr.Contains(filter_string);
+                        filter_function = book => book.RegistrationDate.Contains(filter_string);
                     }
                     // Иначе что-то пошло не так - никакие записи не выбираем
                     else {
@@ -274,8 +274,8 @@ namespace CSharpStudyNetFramework.Forms
                         Title = book.Title,
                         Group = book.Group == null ? "-" : book.Group.ToString(),
                         Bookmaker = book.Bookmaker == null ? "-" : book.Bookmaker.ToString(),
-                        YearPublication = book.YearPublication,
-                        YearRegistr = book.YearRegistr,
+                        PublicationYear = book.PublicationYear,
+                        RegistrationDate = book.RegistrationDate,
                     }).ToList();
                     grid.DataSource = data_for_grid;
 
@@ -283,16 +283,16 @@ namespace CSharpStudyNetFramework.Forms
                     replaces.Add("Title", "Название");
                     replaces.Add("Group", "Жанр");
                     replaces.Add("Bookmaker", "Издатель");
-                    replaces.Add("YearPublication", "Год издания");
-                    replaces.Add("YearRegistr", "Дата регистрации в библиотеке");
+                    replaces.Add("PublicationYear", "Год издания");
+                    replaces.Add("RegistrationDate", "Дата регистрации в библиотеке");
                 }
                 // Если заполняется вкладка "Справочники" - "Авторы"
                 else if (grid.Equals(this.Grid_References_Author)) {
                     List<Author> data = DatabaseHelper.db.authors.ToList();
                     grid.DataSource = data;
-                    replaces.Add("fName", "Имя");
-                    replaces.Add("lName", "Фамилия");
-                    replaces.Add("mName", "Отчество");
+                    replaces.Add("FirstName", "Имя");
+                    replaces.Add("LastName", "Фамилия");
+                    replaces.Add("MiddleName", "Отчество");
                     data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
                 }
                 // Если заполняется вкладка "Справочники" - "Жанры"
@@ -507,9 +507,9 @@ namespace CSharpStudyNetFramework.Forms
             ExceptionHelper.CheckCode(this, () => {
                 // Создаём и сохраняем нового автора
                 Author new_entity = new Author {
-                    fName = this.TextBox_References_Author_FirstName.Text,
-                    lName = this.TextBox_References_Author_LastName.Text,
-                    mName = this.TextBox_References_Author_MiddleName.Text
+                    FirstName = this.TextBox_References_Author_FirstName.Text,
+                    LastName = this.TextBox_References_Author_LastName.Text,
+                    MiddleName = this.TextBox_References_Author_MiddleName.Text
                 };
                 DatabaseHelper.db.authors.Add(new_entity);
                 DatabaseHelper.db.SaveChanges();
@@ -553,9 +553,9 @@ namespace CSharpStudyNetFramework.Forms
                 // Изменяем и сохраняем выбранного автора в таблице
                 int selected_id = Convert.ToInt32(this.Grid_References_Author.SelectedRows[0].Cells[0].Value);
                 Author found_entity = DatabaseHelper.db.authors.FirstOrDefault(entity => entity.Id == selected_id);
-                found_entity.fName = this.TextBox_References_Author_FirstName.Text;
-                found_entity.lName = this.TextBox_References_Author_LastName.Text;
-                found_entity.mName = this.TextBox_References_Author_MiddleName.Text;
+                found_entity.FirstName = this.TextBox_References_Author_FirstName.Text;
+                found_entity.LastName = this.TextBox_References_Author_LastName.Text;
+                found_entity.MiddleName = this.TextBox_References_Author_MiddleName.Text;
                 DatabaseHelper.db.authors.Update(found_entity);
                 DatabaseHelper.db.SaveChanges();
                 // Обновляем как справочник, так и каталог книг
@@ -665,7 +665,7 @@ namespace CSharpStudyNetFramework.Forms
                 try {
                     selected_author = DatabaseHelper.db.authors.First(
                         // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
-                        entity => (entity.lName + " " + entity.fName + " " + entity.mName).Trim() == this.ComboBox_Registration_Book_Author.Text.Trim()
+                        entity => (entity.LastName + " " + entity.FirstName + " " + entity.MiddleName).Trim() == this.ComboBox_Registration_Book_Author.Text.Trim()
                     );
                 } catch (Exception) {
                     throw new FormException("Выбранный автор не найден в базе данных!");
@@ -715,8 +715,8 @@ namespace CSharpStudyNetFramework.Forms
                     Title = title,
                     Group = selected_group,
                     Bookmaker = selected_bookmaker,
-                    YearPublication = this.NumericUpDown_Registration_Book_Year.Value.ToString(),
-                    YearRegistr = this.DateTime_Registration_Book_RegistrationDate.Value.ToString(),
+                    PublicationYear = this.NumericUpDown_Registration_Book_Year.Value.ToString(),
+                    RegistrationDate = this.DateTime_Registration_Book_RegistrationDate.Value.ToString(),
                     Photo = this.PictureBox_Registration_Book_Cover.Image.ToString()
                 };
                 DatabaseHelper.db.books.Add(new_entity);
@@ -730,13 +730,13 @@ namespace CSharpStudyNetFramework.Forms
         {
 
         }
+
         /// <summary>Событие нажатия на кнопку загрузить изображение книги</summary>
         private void Button_Registration_Book_Cover_Click(object sender, EventArgs e)
         {
-            if (OpenFileDialog_Book.ShowDialog() == System.Windows.Forms.DialogResult.OK) 
-            {
-                PictureBox_Registration_Book_Cover.Load(OpenFileDialog_Book.FileName);
-                PictureBox_Registration_Book_Cover.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (this.OpenFileDialog_Book.ShowDialog() == DialogResult.OK) {
+                this.PictureBox_Registration_Book_Cover.Load(this.OpenFileDialog_Book.FileName);
+                this.PictureBox_Registration_Book_Cover.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
     }

@@ -207,6 +207,7 @@
             this.Button_Registration_Book_Cover = new MetroFramework.Controls.MetroButton();
             this.Label_Registration_Book_Header = new MetroFramework.Controls.MetroLabel();
             this.TabPage_Catalog = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.Grid_Catalog = new MetroFramework.Controls.MetroGrid();
             this.Panel_Catalog_Search_1 = new MetroFramework.Controls.MetroPanel();
             this.RadioButton_Catalog_RegistrationDate = new MetroFramework.Controls.MetroRadioButton();
@@ -298,6 +299,9 @@
             this.Panel_Registration_Book_Author.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Registration_Book_Cover)).BeginInit();
             this.TabPage_Catalog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Catalog)).BeginInit();
             this.Panel_Catalog_Search_1.SuspendLayout();
             this.Panel_Catalog_Search_2.SuspendLayout();
@@ -2582,7 +2586,7 @@
             // TabPage_Catalog
             // 
             this.TabPage_Catalog.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.TabPage_Catalog.Controls.Add(this.Grid_Catalog);
+            this.TabPage_Catalog.Controls.Add(this.splitContainer1);
             this.TabPage_Catalog.Controls.Add(this.Panel_Catalog_Search_1);
             this.TabPage_Catalog.Controls.Add(this.Panel_Catalog_Search_2);
             this.TabPage_Catalog.Location = new System.Drawing.Point(4, 38);
@@ -2590,6 +2594,19 @@
             this.TabPage_Catalog.Size = new System.Drawing.Size(968, 537);
             this.TabPage_Catalog.TabIndex = 3;
             this.TabPage_Catalog.Text = "Каталог книг";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.Grid_Catalog);
+            this.splitContainer1.Size = new System.Drawing.Size(968, 485);
+            this.splitContainer1.SplitterDistance = 670;
+            this.splitContainer1.TabIndex = 21;
             // 
             // Grid_Catalog
             // 
@@ -2635,8 +2652,8 @@
             this.Grid_Catalog.RowHeadersVisible = false;
             this.Grid_Catalog.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_Catalog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Catalog.Size = new System.Drawing.Size(968, 485);
-            this.Grid_Catalog.TabIndex = 18;
+            this.Grid_Catalog.Size = new System.Drawing.Size(670, 485);
+            this.Grid_Catalog.TabIndex = 19;
             // 
             // Panel_Catalog_Search_1
             // 
@@ -2834,7 +2851,7 @@
             this.TabControl_Data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_Data.Location = new System.Drawing.Point(12, 79);
             this.TabControl_Data.Name = "TabControl_Data";
-            this.TabControl_Data.SelectedIndex = 2;
+            this.TabControl_Data.SelectedIndex = 5;
             this.TabControl_Data.Size = new System.Drawing.Size(976, 579);
             this.TabControl_Data.TabIndex = 5;
             this.TabControl_Data.UseSelectable = true;
@@ -2936,6 +2953,9 @@
             this.Panel_Registration_Book_Author.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Registration_Book_Cover)).EndInit();
             this.TabPage_Catalog.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Catalog)).EndInit();
             this.Panel_Catalog_Search_1.ResumeLayout(false);
             this.Panel_Catalog_Search_1.PerformLayout();
@@ -2958,7 +2978,6 @@
         private MetroFramework.Controls.MetroButton Button_Registration_CopyBook_Tab;
         private MetroFramework.Controls.MetroButton Button_Registration_Book_Tab;
         private System.Windows.Forms.TabPage TabPage_Catalog;
-        private MetroFramework.Controls.MetroGrid Grid_Catalog;
         private MetroFramework.Controls.MetroPanel Panel_Catalog_Search_1;
         private MetroFramework.Controls.MetroRadioButton RadioButton_Catalog_RegistrationDate;
         private MetroFramework.Controls.MetroLabel Label_Catalog_3;
@@ -3118,6 +3137,8 @@
         private MetroFramework.Controls.MetroLabel Label_References_Author_Header_2;
         private MetroFramework.Controls.MetroLabel Label_References_Author_Header_1;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog_Book;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private MetroFramework.Controls.MetroGrid Grid_Catalog;
     }
 }
 

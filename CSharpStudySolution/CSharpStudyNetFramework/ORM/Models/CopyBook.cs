@@ -4,17 +4,14 @@
     internal class CopyBook
     {
         public int? Id { get; set; }
-        public string Title { get; set; }
-        public string City { get; set; }
-        public string DaterReciept { get; set; }
-        public int NumberInLibrary { get; set; }
-        public bool IsExist { get; set; }
+        public int Number { get; set; }
+        public bool IsGiven { get; set; }
         public bool IsLost { get; set; }
         public Book Book { get; set; }
 
         public override string ToString()
         {
-            return this.Title;
+            return this.Number.ToString();
         }
     }
 }
