@@ -709,9 +709,17 @@ namespace CSharpStudyNetFramework.Forms
                 // ------------
                 Bookmaker selected_bookmaker;
                 try {
+                    // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
                     selected_bookmaker = DatabaseHelper.db.bookmakers.First(
-                        // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
-                        entity => entity.Title.Trim() == this.ComboBox_Registration_Book_Bookmaker.Text.Trim()
+                        new Func<Bookmaker, bool>((Bookmaker entity) => {
+                            string bookmaker_to_string;
+                            if (entity.City.Trim() == "") {
+                                bookmaker_to_string = entity.Title;
+                            } else {
+                                bookmaker_to_string = entity.Title + " г. " + entity.City;
+                            }
+                            return bookmaker_to_string.Trim() == this.ComboBox_Registration_Book_Bookmaker.Text.Trim();
+                        })
                     );
                 } catch (Exception) {
                     throw new FormException("Выбранный издатель не найден в базе данных!");

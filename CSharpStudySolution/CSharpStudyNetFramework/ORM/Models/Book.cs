@@ -11,6 +11,8 @@
         public Group Group { get; set; }
         public Bookmaker Bookmaker { get; set; }
         public string Photo { get; set; }
+        // TODO: Добавить поле "Заметка к книге"
+        // public string Note { get; set; }
 
         public override string ToString()
         {
