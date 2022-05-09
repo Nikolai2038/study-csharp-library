@@ -53,21 +53,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Label_Data = new MetroFramework.Controls.MetroLabel();
+            this.OpenFileDialog_Book = new System.Windows.Forms.OpenFileDialog();
             this.TabPage_Reports = new System.Windows.Forms.TabPage();
-            this.TabPage_Forms = new System.Windows.Forms.TabPage();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
-            this.Grid_Form_Reader = new MetroFramework.Controls.MetroGrid();
-            this.metroButton11 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel34 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel32 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel31 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel30 = new MetroFramework.Controls.MetroLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Grid_Form_Order = new MetroFramework.Controls.MetroGrid();
             this.TabPage_Returns = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.metroLabel35 = new MetroFramework.Controls.MetroLabel();
@@ -102,21 +89,42 @@
             this.Grid_Return_Order = new MetroFramework.Controls.MetroGrid();
             this.TabPage_Giveaways = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.Button_Issuance_FormReader = new MetroFramework.Controls.MetroButton();
-            this.Button_Issuance_IssueaBook = new MetroFramework.Controls.MetroButton();
-            this.DateTime_Issuance_Return = new MetroFramework.Controls.MetroDateTime();
-            this.DateTime_Issuance_Issuance = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.ComboBox_Issuance_Copy = new MetroFramework.Controls.MetroComboBox();
-            this.ComboBox_Issuance_Book = new MetroFramework.Controls.MetroComboBox();
-            this.ComboBox_Issuance_Reader = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.ComboBox_Issuance_Book = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.ComboBox_Issuance_Reader = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
+            this.DateTime_Issuance_Return = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.DateTime_Issuance_Issuance = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
+            this.Button_Issuance_IssueaBook = new MetroFramework.Controls.MetroButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Grid_Issuance_Order = new MetroFramework.Controls.MetroGrid();
+            this.TabPage_Forms = new System.Windows.Forms.TabPage();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
+            this.Grid_Form_Reader = new MetroFramework.Controls.MetroGrid();
+            this.metroButton11 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel34 = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel32 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel30 = new MetroFramework.Controls.MetroLabel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Grid_Form_Order = new MetroFramework.Controls.MetroGrid();
             this.TabPage_References = new System.Windows.Forms.TabPage();
             this.SplitContainer_References = new System.Windows.Forms.SplitContainer();
             this.Button_References_Bookmaker_Tab = new MetroFramework.Controls.MetroButton();
@@ -224,18 +232,9 @@
             this.Label_Catalog_6 = new MetroFramework.Controls.MetroLabel();
             this.Button_Catalog_Reset = new MetroFramework.Controls.MetroButton();
             this.TabControl_Data = new MetroFramework.Controls.MetroTabControl();
-            this.OpenFileDialog_Book = new System.Windows.Forms.OpenFileDialog();
-            this.TabPage_Forms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
-            this.splitContainer4.Panel1.SuspendLayout();
-            this.splitContainer4.Panel2.SuspendLayout();
-            this.splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
-            this.splitContainer5.Panel1.SuspendLayout();
-            this.splitContainer5.Panel2.SuspendLayout();
-            this.splitContainer5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_Form_Reader)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_Form_Order)).BeginInit();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.TabPage_Returns.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
@@ -252,8 +251,28 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
+            this.splitContainer7.Panel2.SuspendLayout();
+            this.splitContainer7.SuspendLayout();
+            this.metroPanel3.SuspendLayout();
+            this.metroPanel2.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
+            this.metroPanel5.SuspendLayout();
+            this.metroPanel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Issuance_Order)).BeginInit();
+            this.TabPage_Forms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
+            this.splitContainer4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.Panel2.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Form_Reader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Form_Order)).BeginInit();
             this.TabPage_References.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_References)).BeginInit();
             this.SplitContainer_References.Panel1.SuspendLayout();
@@ -317,6 +336,10 @@
             this.Label_Data.TabIndex = 2;
             this.Label_Data.Text = " ";
             // 
+            // OpenFileDialog_Book
+            // 
+            this.OpenFileDialog_Book.FileName = "image";
+            // 
             // TabPage_Reports
             // 
             this.TabPage_Reports.Location = new System.Drawing.Point(4, 38);
@@ -324,252 +347,6 @@
             this.TabPage_Reports.Size = new System.Drawing.Size(968, 537);
             this.TabPage_Reports.TabIndex = 5;
             this.TabPage_Reports.Text = "Отчёты";
-            // 
-            // TabPage_Forms
-            // 
-            this.TabPage_Forms.Controls.Add(this.splitContainer4);
-            this.TabPage_Forms.Location = new System.Drawing.Point(4, 38);
-            this.TabPage_Forms.Name = "TabPage_Forms";
-            this.TabPage_Forms.Size = new System.Drawing.Size(968, 537);
-            this.TabPage_Forms.TabIndex = 4;
-            this.TabPage_Forms.Text = "Формуляры";
-            // 
-            // splitContainer4
-            // 
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer4.Name = "splitContainer4";
-            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer4.Panel1
-            // 
-            this.splitContainer4.Panel1.Controls.Add(this.splitContainer5);
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.label3);
-            this.splitContainer4.Panel2.Controls.Add(this.Grid_Form_Order);
-            this.splitContainer4.Size = new System.Drawing.Size(968, 537);
-            this.splitContainer4.SplitterDistance = 261;
-            this.splitContainer4.TabIndex = 7;
-            // 
-            // splitContainer5
-            // 
-            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer5.Name = "splitContainer5";
-            // 
-            // splitContainer5.Panel1
-            // 
-            this.splitContainer5.Panel1.Controls.Add(this.metroLabel29);
-            this.splitContainer5.Panel1.Controls.Add(this.Grid_Form_Reader);
-            // 
-            // splitContainer5.Panel2
-            // 
-            this.splitContainer5.Panel2.Controls.Add(this.metroButton11);
-            this.splitContainer5.Panel2.Controls.Add(this.metroLabel34);
-            this.splitContainer5.Panel2.Controls.Add(this.metroTextBox4);
-            this.splitContainer5.Panel2.Controls.Add(this.metroLabel33);
-            this.splitContainer5.Panel2.Controls.Add(this.metroLabel32);
-            this.splitContainer5.Panel2.Controls.Add(this.metroLabel31);
-            this.splitContainer5.Panel2.Controls.Add(this.metroLabel30);
-            this.splitContainer5.Size = new System.Drawing.Size(968, 261);
-            this.splitContainer5.SplitterDistance = 685;
-            this.splitContainer5.TabIndex = 7;
-            // 
-            // metroLabel29
-            // 
-            this.metroLabel29.AutoSize = true;
-            this.metroLabel29.Location = new System.Drawing.Point(39, 50);
-            this.metroLabel29.Name = "metroLabel29";
-            this.metroLabel29.Size = new System.Drawing.Size(246, 38);
-            this.metroLabel29.TabIndex = 1;
-            this.metroLabel29.Text = "тут таблица читателей столбцы:\r\nНомер читателя / ФИО / Информация";
-            // 
-            // Grid_Form_Reader
-            // 
-            this.Grid_Form_Reader.AllowUserToResizeRows = false;
-            this.Grid_Form_Reader.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_Form_Reader.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Grid_Form_Reader.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.Grid_Form_Reader.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Form_Reader.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.Grid_Form_Reader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_Form_Reader.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Grid_Form_Reader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grid_Form_Reader.EnableHeadersVisualStyles = false;
-            this.Grid_Form_Reader.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Grid_Form_Reader.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_Form_Reader.Location = new System.Drawing.Point(0, 0);
-            this.Grid_Form_Reader.Name = "Grid_Form_Reader";
-            this.Grid_Form_Reader.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Form_Reader.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.Grid_Form_Reader.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Grid_Form_Reader.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Form_Reader.Size = new System.Drawing.Size(685, 261);
-            this.Grid_Form_Reader.TabIndex = 0;
-            // 
-            // metroButton11
-            // 
-            this.metroButton11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroButton11.Location = new System.Drawing.Point(31, 82);
-            this.metroButton11.Name = "metroButton11";
-            this.metroButton11.Size = new System.Drawing.Size(217, 40);
-            this.metroButton11.TabIndex = 48;
-            this.metroButton11.Text = "Просмотреть формуляр";
-            this.metroButton11.UseSelectable = true;
-            // 
-            // metroLabel34
-            // 
-            this.metroLabel34.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroLabel34.Location = new System.Drawing.Point(31, 58);
-            this.metroLabel34.Name = "metroLabel34";
-            this.metroLabel34.Size = new System.Drawing.Size(217, 24);
-            this.metroLabel34.TabIndex = 52;
-            this.metroLabel34.Text = " ";
-            // 
-            // metroTextBox4
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(195, 1);
-            this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox4.CustomButton.TabIndex = 1;
-            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox4.CustomButton.UseSelectable = true;
-            this.metroTextBox4.CustomButton.Visible = false;
-            this.metroTextBox4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroTextBox4.Lines = new string[0];
-            this.metroTextBox4.Location = new System.Drawing.Point(31, 35);
-            this.metroTextBox4.MaxLength = 32767;
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.PasswordChar = '\0';
-            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox4.SelectedText = "";
-            this.metroTextBox4.SelectionLength = 0;
-            this.metroTextBox4.SelectionStart = 0;
-            this.metroTextBox4.ShortcutsEnabled = true;
-            this.metroTextBox4.Size = new System.Drawing.Size(217, 23);
-            this.metroTextBox4.TabIndex = 47;
-            this.metroTextBox4.UseSelectable = true;
-            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel33
-            // 
-            this.metroLabel33.Dock = System.Windows.Forms.DockStyle.Right;
-            this.metroLabel33.Location = new System.Drawing.Point(248, 35);
-            this.metroLabel33.Name = "metroLabel33";
-            this.metroLabel33.Size = new System.Drawing.Size(31, 226);
-            this.metroLabel33.TabIndex = 51;
-            this.metroLabel33.Text = " ";
-            // 
-            // metroLabel32
-            // 
-            this.metroLabel32.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroLabel32.Location = new System.Drawing.Point(0, 35);
-            this.metroLabel32.Name = "metroLabel32";
-            this.metroLabel32.Size = new System.Drawing.Size(31, 226);
-            this.metroLabel32.TabIndex = 50;
-            this.metroLabel32.Text = " ";
-            // 
-            // metroLabel31
-            // 
-            this.metroLabel31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroLabel31.Location = new System.Drawing.Point(0, 35);
-            this.metroLabel31.Name = "metroLabel31";
-            this.metroLabel31.Size = new System.Drawing.Size(279, 226);
-            this.metroLabel31.TabIndex = 49;
-            this.metroLabel31.Text = " ";
-            // 
-            // metroLabel30
-            // 
-            this.metroLabel30.Dock = System.Windows.Forms.DockStyle.Top;
-            this.metroLabel30.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel30.Location = new System.Drawing.Point(0, 0);
-            this.metroLabel30.Name = "metroLabel30";
-            this.metroLabel30.Size = new System.Drawing.Size(279, 35);
-            this.metroLabel30.TabIndex = 46;
-            this.metroLabel30.Text = "Поиск";
-            this.metroLabel30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(810, 26);
-            this.label3.TabIndex = 2;
-            this.label3.Text = resources.GetString("label3.Text");
-            // 
-            // Grid_Form_Order
-            // 
-            this.Grid_Form_Order.AllowUserToResizeRows = false;
-            this.Grid_Form_Order.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_Form_Order.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Grid_Form_Order.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.Grid_Form_Order.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Form_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.Grid_Form_Order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_Form_Order.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Grid_Form_Order.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grid_Form_Order.EnableHeadersVisualStyles = false;
-            this.Grid_Form_Order.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Grid_Form_Order.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_Form_Order.Location = new System.Drawing.Point(0, 0);
-            this.Grid_Form_Order.Name = "Grid_Form_Order";
-            this.Grid_Form_Order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Form_Order.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.Grid_Form_Order.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Grid_Form_Order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Form_Order.Size = new System.Drawing.Size(968, 272);
-            this.Grid_Form_Order.TabIndex = 0;
             // 
             // TabPage_Returns
             // 
@@ -944,23 +721,23 @@
             this.Grid_Return_Order.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid_Return_Order.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grid_Return_Order.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Return_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Return_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Grid_Return_Order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_Return_Order.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_Return_Order.DefaultCellStyle = dataGridViewCellStyle2;
             this.Grid_Return_Order.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Grid_Return_Order.EnableHeadersVisualStyles = false;
             this.Grid_Return_Order.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -968,14 +745,14 @@
             this.Grid_Return_Order.Location = new System.Drawing.Point(3, 16);
             this.Grid_Return_Order.Name = "Grid_Return_Order";
             this.Grid_Return_Order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Return_Order.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Return_Order.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Grid_Return_Order.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_Return_Order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid_Return_Order.Size = new System.Drawing.Size(733, 431);
@@ -999,18 +776,7 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.Button_Issuance_FormReader);
-            this.splitContainer2.Panel1.Controls.Add(this.Button_Issuance_IssueaBook);
-            this.splitContainer2.Panel1.Controls.Add(this.DateTime_Issuance_Return);
-            this.splitContainer2.Panel1.Controls.Add(this.DateTime_Issuance_Issuance);
-            this.splitContainer2.Panel1.Controls.Add(this.ComboBox_Issuance_Copy);
-            this.splitContainer2.Panel1.Controls.Add(this.ComboBox_Issuance_Book);
-            this.splitContainer2.Panel1.Controls.Add(this.ComboBox_Issuance_Reader);
-            this.splitContainer2.Panel1.Controls.Add(this.metroLabel19);
-            this.splitContainer2.Panel1.Controls.Add(this.metroLabel16);
-            this.splitContainer2.Panel1.Controls.Add(this.metroLabel17);
-            this.splitContainer2.Panel1.Controls.Add(this.metroLabel18);
-            this.splitContainer2.Panel1.Controls.Add(this.metroLabel15);
+            this.splitContainer2.Panel1.Controls.Add(this.splitContainer7);
             // 
             // splitContainer2.Panel2
             // 
@@ -1019,114 +785,251 @@
             this.splitContainer2.SplitterDistance = 255;
             this.splitContainer2.TabIndex = 7;
             // 
+            // splitContainer7
+            // 
+            this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer7.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer7.Name = "splitContainer7";
+            // 
+            // splitContainer7.Panel1
+            // 
+            this.splitContainer7.Panel1.Controls.Add(this.metroLabel1);
+            this.splitContainer7.Panel1.Controls.Add(this.Button_Issuance_FormReader);
+            this.splitContainer7.Panel1.Controls.Add(this.metroLabel2);
+            this.splitContainer7.Panel1.Controls.Add(this.metroPanel3);
+            this.splitContainer7.Panel1.Controls.Add(this.metroPanel2);
+            this.splitContainer7.Panel1.Controls.Add(this.metroPanel1);
+            // 
+            // splitContainer7.Panel2
+            // 
+            this.splitContainer7.Panel2.Controls.Add(this.Button_Issuance_IssueaBook);
+            this.splitContainer7.Panel2.Controls.Add(this.metroLabel5);
+            this.splitContainer7.Panel2.Controls.Add(this.metroPanel5);
+            this.splitContainer7.Panel2.Controls.Add(this.metroPanel4);
+            this.splitContainer7.Panel2.Controls.Add(this.metroLabel3);
+            this.splitContainer7.Panel2.Controls.Add(this.metroLabel4);
+            this.splitContainer7.Size = new System.Drawing.Size(968, 255);
+            this.splitContainer7.SplitterDistance = 322;
+            this.splitContainer7.TabIndex = 8;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroLabel1.Location = new System.Drawing.Point(0, 92);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(322, 97);
+            this.metroLabel1.TabIndex = 67;
+            this.metroLabel1.Text = " ";
+            // 
             // Button_Issuance_FormReader
             // 
-            this.Button_Issuance_FormReader.Location = new System.Drawing.Point(41, 185);
+            this.Button_Issuance_FormReader.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Button_Issuance_FormReader.Location = new System.Drawing.Point(0, 189);
             this.Button_Issuance_FormReader.Name = "Button_Issuance_FormReader";
-            this.Button_Issuance_FormReader.Size = new System.Drawing.Size(153, 42);
-            this.Button_Issuance_FormReader.TabIndex = 3;
+            this.Button_Issuance_FormReader.Size = new System.Drawing.Size(322, 42);
+            this.Button_Issuance_FormReader.TabIndex = 10;
             this.Button_Issuance_FormReader.Text = "Формуляр читателя";
             this.Button_Issuance_FormReader.UseSelectable = true;
             // 
-            // Button_Issuance_IssueaBook
+            // metroLabel2
             // 
-            this.Button_Issuance_IssueaBook.Location = new System.Drawing.Point(604, 123);
-            this.Button_Issuance_IssueaBook.Name = "Button_Issuance_IssueaBook";
-            this.Button_Issuance_IssueaBook.Size = new System.Drawing.Size(200, 29);
-            this.Button_Issuance_IssueaBook.TabIndex = 3;
-            this.Button_Issuance_IssueaBook.Text = "Выдать книгу";
-            this.Button_Issuance_IssueaBook.UseSelectable = true;
+            this.metroLabel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.metroLabel2.Location = new System.Drawing.Point(0, 231);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(322, 24);
+            this.metroLabel2.TabIndex = 68;
+            this.metroLabel2.Text = " ";
             // 
-            // DateTime_Issuance_Return
+            // metroPanel3
             // 
-            this.DateTime_Issuance_Return.Location = new System.Drawing.Point(604, 77);
-            this.DateTime_Issuance_Return.MinimumSize = new System.Drawing.Size(4, 29);
-            this.DateTime_Issuance_Return.Name = "DateTime_Issuance_Return";
-            this.DateTime_Issuance_Return.Size = new System.Drawing.Size(200, 29);
-            this.DateTime_Issuance_Return.TabIndex = 2;
-            // 
-            // DateTime_Issuance_Issuance
-            // 
-            this.DateTime_Issuance_Issuance.Location = new System.Drawing.Point(604, 34);
-            this.DateTime_Issuance_Issuance.MinimumSize = new System.Drawing.Size(4, 29);
-            this.DateTime_Issuance_Issuance.Name = "DateTime_Issuance_Issuance";
-            this.DateTime_Issuance_Issuance.Size = new System.Drawing.Size(200, 29);
-            this.DateTime_Issuance_Issuance.TabIndex = 2;
+            this.metroPanel3.Controls.Add(this.ComboBox_Issuance_Copy);
+            this.metroPanel3.Controls.Add(this.metroLabel17);
+            this.metroPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel3.HorizontalScrollbarBarColor = true;
+            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.HorizontalScrollbarSize = 10;
+            this.metroPanel3.Location = new System.Drawing.Point(0, 64);
+            this.metroPanel3.Name = "metroPanel3";
+            this.metroPanel3.Size = new System.Drawing.Size(322, 28);
+            this.metroPanel3.TabIndex = 13;
+            this.metroPanel3.VerticalScrollbarBarColor = true;
+            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.VerticalScrollbarSize = 10;
             // 
             // ComboBox_Issuance_Copy
             // 
+            this.ComboBox_Issuance_Copy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ComboBox_Issuance_Copy.FormattingEnabled = true;
             this.ComboBox_Issuance_Copy.ItemHeight = 23;
-            this.ComboBox_Issuance_Copy.Location = new System.Drawing.Point(182, 123);
+            this.ComboBox_Issuance_Copy.Location = new System.Drawing.Point(129, 0);
             this.ComboBox_Issuance_Copy.Name = "ComboBox_Issuance_Copy";
-            this.ComboBox_Issuance_Copy.Size = new System.Drawing.Size(223, 29);
-            this.ComboBox_Issuance_Copy.TabIndex = 1;
+            this.ComboBox_Issuance_Copy.Size = new System.Drawing.Size(193, 29);
+            this.ComboBox_Issuance_Copy.TabIndex = 7;
             this.ComboBox_Issuance_Copy.UseSelectable = true;
-            // 
-            // ComboBox_Issuance_Book
-            // 
-            this.ComboBox_Issuance_Book.FormattingEnabled = true;
-            this.ComboBox_Issuance_Book.ItemHeight = 23;
-            this.ComboBox_Issuance_Book.Location = new System.Drawing.Point(182, 80);
-            this.ComboBox_Issuance_Book.Name = "ComboBox_Issuance_Book";
-            this.ComboBox_Issuance_Book.Size = new System.Drawing.Size(223, 29);
-            this.ComboBox_Issuance_Book.TabIndex = 1;
-            this.ComboBox_Issuance_Book.UseSelectable = true;
-            // 
-            // ComboBox_Issuance_Reader
-            // 
-            this.ComboBox_Issuance_Reader.FormattingEnabled = true;
-            this.ComboBox_Issuance_Reader.ItemHeight = 23;
-            this.ComboBox_Issuance_Reader.Location = new System.Drawing.Point(182, 34);
-            this.ComboBox_Issuance_Reader.Name = "ComboBox_Issuance_Reader";
-            this.ComboBox_Issuance_Reader.Size = new System.Drawing.Size(223, 29);
-            this.ComboBox_Issuance_Reader.TabIndex = 1;
-            this.ComboBox_Issuance_Reader.UseSelectable = true;
-            // 
-            // metroLabel19
-            // 
-            this.metroLabel19.AutoSize = true;
-            this.metroLabel19.Location = new System.Drawing.Point(473, 87);
-            this.metroLabel19.Name = "metroLabel19";
-            this.metroLabel19.Size = new System.Drawing.Size(99, 19);
-            this.metroLabel19.TabIndex = 0;
-            this.metroLabel19.Text = "Дата возврата:";
-            // 
-            // metroLabel16
-            // 
-            this.metroLabel16.AutoSize = true;
-            this.metroLabel16.Location = new System.Drawing.Point(41, 90);
-            this.metroLabel16.Name = "metroLabel16";
-            this.metroLabel16.Size = new System.Drawing.Size(98, 19);
-            this.metroLabel16.TabIndex = 0;
-            this.metroLabel16.Text = "Введите книгу:";
             // 
             // metroLabel17
             // 
-            this.metroLabel17.AutoSize = true;
-            this.metroLabel17.Location = new System.Drawing.Point(41, 133);
+            this.metroLabel17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroLabel17.Location = new System.Drawing.Point(0, 0);
             this.metroLabel17.Name = "metroLabel17";
-            this.metroLabel17.Size = new System.Drawing.Size(129, 19);
-            this.metroLabel17.TabIndex = 0;
+            this.metroLabel17.Size = new System.Drawing.Size(129, 28);
+            this.metroLabel17.TabIndex = 5;
             this.metroLabel17.Text = "Введите экземпляр:";
+            this.metroLabel17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // metroLabel18
+            // metroPanel2
             // 
-            this.metroLabel18.AutoSize = true;
-            this.metroLabel18.Location = new System.Drawing.Point(473, 44);
-            this.metroLabel18.Name = "metroLabel18";
-            this.metroLabel18.Size = new System.Drawing.Size(89, 19);
-            this.metroLabel18.TabIndex = 0;
-            this.metroLabel18.Text = "Дата выдачи:";
+            this.metroPanel2.Controls.Add(this.ComboBox_Issuance_Book);
+            this.metroPanel2.Controls.Add(this.metroLabel16);
+            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(0, 31);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(322, 33);
+            this.metroPanel2.TabIndex = 12;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // ComboBox_Issuance_Book
+            // 
+            this.ComboBox_Issuance_Book.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBox_Issuance_Book.FormattingEnabled = true;
+            this.ComboBox_Issuance_Book.ItemHeight = 23;
+            this.ComboBox_Issuance_Book.Location = new System.Drawing.Point(129, 0);
+            this.ComboBox_Issuance_Book.Name = "ComboBox_Issuance_Book";
+            this.ComboBox_Issuance_Book.Size = new System.Drawing.Size(193, 29);
+            this.ComboBox_Issuance_Book.TabIndex = 8;
+            this.ComboBox_Issuance_Book.UseSelectable = true;
+            // 
+            // metroLabel16
+            // 
+            this.metroLabel16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroLabel16.Location = new System.Drawing.Point(0, 0);
+            this.metroLabel16.Name = "metroLabel16";
+            this.metroLabel16.Size = new System.Drawing.Size(129, 33);
+            this.metroLabel16.TabIndex = 4;
+            this.metroLabel16.Text = "Введите книгу:";
+            this.metroLabel16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Controls.Add(this.ComboBox_Issuance_Reader);
+            this.metroPanel1.Controls.Add(this.metroLabel15);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(322, 31);
+            this.metroPanel1.TabIndex = 11;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // ComboBox_Issuance_Reader
+            // 
+            this.ComboBox_Issuance_Reader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBox_Issuance_Reader.FormattingEnabled = true;
+            this.ComboBox_Issuance_Reader.ItemHeight = 23;
+            this.ComboBox_Issuance_Reader.Location = new System.Drawing.Point(129, 0);
+            this.ComboBox_Issuance_Reader.Name = "ComboBox_Issuance_Reader";
+            this.ComboBox_Issuance_Reader.Size = new System.Drawing.Size(193, 29);
+            this.ComboBox_Issuance_Reader.TabIndex = 9;
+            this.ComboBox_Issuance_Reader.UseSelectable = true;
             // 
             // metroLabel15
             // 
-            this.metroLabel15.AutoSize = true;
-            this.metroLabel15.Location = new System.Drawing.Point(41, 44);
+            this.metroLabel15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroLabel15.Location = new System.Drawing.Point(0, 0);
             this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(118, 19);
-            this.metroLabel15.TabIndex = 0;
+            this.metroLabel15.Size = new System.Drawing.Size(129, 31);
+            this.metroLabel15.TabIndex = 6;
             this.metroLabel15.Text = "Введите читателя:";
+            this.metroLabel15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // metroPanel5
+            // 
+            this.metroPanel5.Controls.Add(this.DateTime_Issuance_Return);
+            this.metroPanel5.Controls.Add(this.metroLabel19);
+            this.metroPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel5.HorizontalScrollbarBarColor = true;
+            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.HorizontalScrollbarSize = 10;
+            this.metroPanel5.Location = new System.Drawing.Point(0, 29);
+            this.metroPanel5.Name = "metroPanel5";
+            this.metroPanel5.Size = new System.Drawing.Size(314, 30);
+            this.metroPanel5.TabIndex = 10;
+            this.metroPanel5.VerticalScrollbarBarColor = true;
+            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.VerticalScrollbarSize = 10;
+            // 
+            // DateTime_Issuance_Return
+            // 
+            this.DateTime_Issuance_Return.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DateTime_Issuance_Return.Location = new System.Drawing.Point(119, 0);
+            this.DateTime_Issuance_Return.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateTime_Issuance_Return.Name = "DateTime_Issuance_Return";
+            this.DateTime_Issuance_Return.Size = new System.Drawing.Size(195, 29);
+            this.DateTime_Issuance_Return.TabIndex = 6;
+            // 
+            // metroLabel19
+            // 
+            this.metroLabel19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroLabel19.Location = new System.Drawing.Point(0, 0);
+            this.metroLabel19.Name = "metroLabel19";
+            this.metroLabel19.Size = new System.Drawing.Size(119, 30);
+            this.metroLabel19.TabIndex = 4;
+            this.metroLabel19.Text = "Дата возврата:";
+            this.metroLabel19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // metroPanel4
+            // 
+            this.metroPanel4.Controls.Add(this.DateTime_Issuance_Issuance);
+            this.metroPanel4.Controls.Add(this.metroLabel18);
+            this.metroPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroPanel4.HorizontalScrollbarBarColor = true;
+            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.HorizontalScrollbarSize = 10;
+            this.metroPanel4.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel4.Name = "metroPanel4";
+            this.metroPanel4.Size = new System.Drawing.Size(314, 29);
+            this.metroPanel4.TabIndex = 9;
+            this.metroPanel4.VerticalScrollbarBarColor = true;
+            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
+            // DateTime_Issuance_Issuance
+            // 
+            this.DateTime_Issuance_Issuance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DateTime_Issuance_Issuance.Location = new System.Drawing.Point(119, 0);
+            this.DateTime_Issuance_Issuance.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateTime_Issuance_Issuance.Name = "DateTime_Issuance_Issuance";
+            this.DateTime_Issuance_Issuance.Size = new System.Drawing.Size(195, 29);
+            this.DateTime_Issuance_Issuance.TabIndex = 7;
+            // 
+            // metroLabel18
+            // 
+            this.metroLabel18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroLabel18.Location = new System.Drawing.Point(0, 0);
+            this.metroLabel18.Name = "metroLabel18";
+            this.metroLabel18.Size = new System.Drawing.Size(119, 29);
+            this.metroLabel18.TabIndex = 5;
+            this.metroLabel18.Text = "Дата выдачи:";
+            this.metroLabel18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Button_Issuance_IssueaBook
+            // 
+            this.Button_Issuance_IssueaBook.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Button_Issuance_IssueaBook.Location = new System.Drawing.Point(32, 189);
+            this.Button_Issuance_IssueaBook.Name = "Button_Issuance_IssueaBook";
+            this.Button_Issuance_IssueaBook.Size = new System.Drawing.Size(282, 42);
+            this.Button_Issuance_IssueaBook.TabIndex = 8;
+            this.Button_Issuance_IssueaBook.Text = "Выдать книгу";
+            this.Button_Issuance_IssueaBook.UseSelectable = true;
             // 
             // groupBox1
             // 
@@ -1156,23 +1059,23 @@
             this.Grid_Issuance_Order.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid_Issuance_Order.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.Grid_Issuance_Order.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Issuance_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Issuance_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Grid_Issuance_Order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_Issuance_Order.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_Issuance_Order.DefaultCellStyle = dataGridViewCellStyle5;
             this.Grid_Issuance_Order.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Grid_Issuance_Order.EnableHeadersVisualStyles = false;
             this.Grid_Issuance_Order.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1180,6 +1083,242 @@
             this.Grid_Issuance_Order.Location = new System.Drawing.Point(3, 16);
             this.Grid_Issuance_Order.Name = "Grid_Issuance_Order";
             this.Grid_Issuance_Order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Issuance_Order.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.Grid_Issuance_Order.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Grid_Issuance_Order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grid_Issuance_Order.Size = new System.Drawing.Size(962, 259);
+            this.Grid_Issuance_Order.TabIndex = 0;
+            // 
+            // TabPage_Forms
+            // 
+            this.TabPage_Forms.Controls.Add(this.splitContainer4);
+            this.TabPage_Forms.Location = new System.Drawing.Point(4, 38);
+            this.TabPage_Forms.Name = "TabPage_Forms";
+            this.TabPage_Forms.Size = new System.Drawing.Size(968, 537);
+            this.TabPage_Forms.TabIndex = 4;
+            this.TabPage_Forms.Text = "Формуляры";
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.splitContainer5);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.label3);
+            this.splitContainer4.Panel2.Controls.Add(this.Grid_Form_Order);
+            this.splitContainer4.Size = new System.Drawing.Size(968, 537);
+            this.splitContainer4.SplitterDistance = 261;
+            this.splitContainer4.TabIndex = 7;
+            // 
+            // splitContainer5
+            // 
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Name = "splitContainer5";
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.metroLabel29);
+            this.splitContainer5.Panel1.Controls.Add(this.Grid_Form_Reader);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.metroButton11);
+            this.splitContainer5.Panel2.Controls.Add(this.metroLabel34);
+            this.splitContainer5.Panel2.Controls.Add(this.metroTextBox4);
+            this.splitContainer5.Panel2.Controls.Add(this.metroLabel33);
+            this.splitContainer5.Panel2.Controls.Add(this.metroLabel32);
+            this.splitContainer5.Panel2.Controls.Add(this.metroLabel30);
+            this.splitContainer5.Size = new System.Drawing.Size(968, 261);
+            this.splitContainer5.SplitterDistance = 685;
+            this.splitContainer5.TabIndex = 7;
+            // 
+            // metroLabel29
+            // 
+            this.metroLabel29.AutoSize = true;
+            this.metroLabel29.Location = new System.Drawing.Point(39, 50);
+            this.metroLabel29.Name = "metroLabel29";
+            this.metroLabel29.Size = new System.Drawing.Size(246, 38);
+            this.metroLabel29.TabIndex = 1;
+            this.metroLabel29.Text = "тут таблица читателей столбцы:\r\nНомер читателя / ФИО / Информация";
+            // 
+            // Grid_Form_Reader
+            // 
+            this.Grid_Form_Reader.AllowUserToResizeRows = false;
+            this.Grid_Form_Reader.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Grid_Form_Reader.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Grid_Form_Reader.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Grid_Form_Reader.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Form_Reader.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.Grid_Form_Reader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_Form_Reader.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Grid_Form_Reader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid_Form_Reader.EnableHeadersVisualStyles = false;
+            this.Grid_Form_Reader.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Grid_Form_Reader.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Grid_Form_Reader.Location = new System.Drawing.Point(0, 0);
+            this.Grid_Form_Reader.Name = "Grid_Form_Reader";
+            this.Grid_Form_Reader.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Form_Reader.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.Grid_Form_Reader.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Grid_Form_Reader.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grid_Form_Reader.Size = new System.Drawing.Size(685, 261);
+            this.Grid_Form_Reader.TabIndex = 0;
+            // 
+            // metroButton11
+            // 
+            this.metroButton11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroButton11.Location = new System.Drawing.Point(31, 82);
+            this.metroButton11.Name = "metroButton11";
+            this.metroButton11.Size = new System.Drawing.Size(217, 40);
+            this.metroButton11.TabIndex = 48;
+            this.metroButton11.Text = "Просмотреть формуляр";
+            this.metroButton11.UseSelectable = true;
+            // 
+            // metroLabel34
+            // 
+            this.metroLabel34.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroLabel34.Location = new System.Drawing.Point(31, 58);
+            this.metroLabel34.Name = "metroLabel34";
+            this.metroLabel34.Size = new System.Drawing.Size(217, 24);
+            this.metroLabel34.TabIndex = 52;
+            this.metroLabel34.Text = " ";
+            // 
+            // metroTextBox4
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox4.CustomButton.Image = null;
+            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(195, 1);
+            this.metroTextBox4.CustomButton.Name = "";
+            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox4.CustomButton.TabIndex = 1;
+            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox4.CustomButton.UseSelectable = true;
+            this.metroTextBox4.CustomButton.Visible = false;
+            this.metroTextBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroTextBox4.Lines = new string[0];
+            this.metroTextBox4.Location = new System.Drawing.Point(31, 35);
+            this.metroTextBox4.MaxLength = 32767;
+            this.metroTextBox4.Name = "metroTextBox4";
+            this.metroTextBox4.PasswordChar = '\0';
+            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox4.SelectedText = "";
+            this.metroTextBox4.SelectionLength = 0;
+            this.metroTextBox4.SelectionStart = 0;
+            this.metroTextBox4.ShortcutsEnabled = true;
+            this.metroTextBox4.Size = new System.Drawing.Size(217, 23);
+            this.metroTextBox4.TabIndex = 47;
+            this.metroTextBox4.UseSelectable = true;
+            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel33
+            // 
+            this.metroLabel33.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroLabel33.Location = new System.Drawing.Point(248, 35);
+            this.metroLabel33.Name = "metroLabel33";
+            this.metroLabel33.Size = new System.Drawing.Size(31, 226);
+            this.metroLabel33.TabIndex = 51;
+            this.metroLabel33.Text = " ";
+            // 
+            // metroLabel32
+            // 
+            this.metroLabel32.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroLabel32.Location = new System.Drawing.Point(0, 35);
+            this.metroLabel32.Name = "metroLabel32";
+            this.metroLabel32.Size = new System.Drawing.Size(31, 226);
+            this.metroLabel32.TabIndex = 50;
+            this.metroLabel32.Text = " ";
+            // 
+            // metroLabel30
+            // 
+            this.metroLabel30.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroLabel30.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel30.Location = new System.Drawing.Point(0, 0);
+            this.metroLabel30.Name = "metroLabel30";
+            this.metroLabel30.Size = new System.Drawing.Size(279, 35);
+            this.metroLabel30.TabIndex = 46;
+            this.metroLabel30.Text = "Поиск";
+            this.metroLabel30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(58, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(810, 26);
+            this.label3.TabIndex = 2;
+            this.label3.Text = resources.GetString("label3.Text");
+            // 
+            // Grid_Form_Order
+            // 
+            this.Grid_Form_Order.AllowUserToResizeRows = false;
+            this.Grid_Form_Order.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Grid_Form_Order.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Grid_Form_Order.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Grid_Form_Order.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Form_Order.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.Grid_Form_Order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_Form_Order.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Grid_Form_Order.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid_Form_Order.EnableHeadersVisualStyles = false;
+            this.Grid_Form_Order.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Grid_Form_Order.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Grid_Form_Order.Location = new System.Drawing.Point(0, 0);
+            this.Grid_Form_Order.Name = "Grid_Form_Order";
+            this.Grid_Form_Order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1187,11 +1326,11 @@
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Issuance_Order.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.Grid_Issuance_Order.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Grid_Issuance_Order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Issuance_Order.Size = new System.Drawing.Size(962, 259);
-            this.Grid_Issuance_Order.TabIndex = 0;
+            this.Grid_Form_Order.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.Grid_Form_Order.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Grid_Form_Order.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grid_Form_Order.Size = new System.Drawing.Size(968, 272);
+            this.Grid_Form_Order.TabIndex = 0;
             // 
             // TabPage_References
             // 
@@ -2320,7 +2459,7 @@
             this.DateTime_Registration_Book_RegistrationDate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTime_Registration_Book_RegistrationDate.Location = new System.Drawing.Point(119, 2);
             this.DateTime_Registration_Book_RegistrationDate.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
-            this.DateTime_Registration_Book_RegistrationDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateTime_Registration_Book_RegistrationDate.MinimumSize = new System.Drawing.Size(4, 29);
             this.DateTime_Registration_Book_RegistrationDate.Name = "DateTime_Registration_Book_RegistrationDate";
             this.DateTime_Registration_Book_RegistrationDate.Size = new System.Drawing.Size(132, 29);
             this.DateTime_Registration_Book_RegistrationDate.TabIndex = 24;
@@ -2851,14 +2990,37 @@
             this.TabControl_Data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_Data.Location = new System.Drawing.Point(12, 79);
             this.TabControl_Data.Name = "TabControl_Data";
-            this.TabControl_Data.SelectedIndex = 1;
+            this.TabControl_Data.SelectedIndex = 4;
             this.TabControl_Data.Size = new System.Drawing.Size(976, 579);
             this.TabControl_Data.TabIndex = 5;
             this.TabControl_Data.UseSelectable = true;
             // 
-            // OpenFileDialog_Book
+            // metroLabel3
             // 
-            this.OpenFileDialog_Book.FileName = "image";
+            this.metroLabel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroLabel3.Location = new System.Drawing.Point(314, 0);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(328, 231);
+            this.metroLabel3.TabIndex = 68;
+            this.metroLabel3.Text = " ";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.metroLabel4.Location = new System.Drawing.Point(0, 231);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(642, 24);
+            this.metroLabel4.TabIndex = 69;
+            this.metroLabel4.Text = " ";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroLabel5.Location = new System.Drawing.Point(0, 59);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(32, 172);
+            this.metroLabel5.TabIndex = 70;
+            this.metroLabel5.Text = " ";
             // 
             // Form_Data
             // 
@@ -2873,19 +3035,6 @@
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.AeroShadow;
             this.Text = "Библиотека";
             this.Load += new System.EventHandler(this.Form_Data_Load);
-            this.TabPage_Forms.ResumeLayout(false);
-            this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel2.ResumeLayout(false);
-            this.splitContainer4.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
-            this.splitContainer4.ResumeLayout(false);
-            this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.Panel1.PerformLayout();
-            this.splitContainer5.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
-            this.splitContainer5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_Form_Reader)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_Form_Order)).EndInit();
             this.TabPage_Returns.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
@@ -2901,13 +3050,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Return_Order)).EndInit();
             this.TabPage_Giveaways.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
+            this.splitContainer7.ResumeLayout(false);
+            this.metroPanel3.ResumeLayout(false);
+            this.metroPanel2.ResumeLayout(false);
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel5.ResumeLayout(false);
+            this.metroPanel4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Issuance_Order)).EndInit();
+            this.TabPage_Forms.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            this.splitContainer4.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel1.PerformLayout();
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Form_Reader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_Form_Order)).EndInit();
             this.TabPage_References.ResumeLayout(false);
             this.SplitContainer_References.Panel1.ResumeLayout(false);
             this.SplitContainer_References.Panel2.ResumeLayout(false);
@@ -2967,117 +3137,143 @@
 
         #endregion
         private MetroFramework.Controls.MetroLabel Label_Data;
+        private System.Windows.Forms.OpenFileDialog OpenFileDialog_Book;
         private System.Windows.Forms.TabPage TabPage_Reports;
-        private System.Windows.Forms.TabPage TabPage_Forms;
         private System.Windows.Forms.TabPage TabPage_Returns;
-        private System.Windows.Forms.TabPage TabPage_Giveaways;
-        private System.Windows.Forms.TabPage TabPage_References;
-        private System.Windows.Forms.SplitContainer SplitContainer_References;
-        private System.Windows.Forms.TabPage TabPage_Registration;
-        private System.Windows.Forms.SplitContainer SplitContainer_Registration;
-        private MetroFramework.Controls.MetroButton Button_Registration_CopyBook_Tab;
-        private MetroFramework.Controls.MetroButton Button_Registration_Book_Tab;
-        private System.Windows.Forms.TabPage TabPage_Catalog;
-        private MetroFramework.Controls.MetroPanel Panel_Catalog_Search_1;
-        private MetroFramework.Controls.MetroRadioButton RadioButton_Catalog_RegistrationDate;
-        private MetroFramework.Controls.MetroLabel Label_Catalog_3;
-        private MetroFramework.Controls.MetroRadioButton RadioButton_Catalog_Bookmaker;
-        private MetroFramework.Controls.MetroLabel Label_Catalog_2;
-        private MetroFramework.Controls.MetroRadioButton RadioButton_Catalog_Group;
-        private MetroFramework.Controls.MetroLabel Label_Catalog_1;
-        private MetroFramework.Controls.MetroRadioButton RadioButton_Catalog_Author;
-        private MetroFramework.Controls.MetroPanel Panel_Catalog_Search_2;
-        private MetroFramework.Controls.MetroTextBox TextBox_Catalog_Search;
-        private MetroFramework.Controls.MetroLabel Label_Catalog_4;
-        private MetroFramework.Controls.MetroButton Button_Catalog_Search;
-        private MetroFramework.Controls.MetroLabel Label_Catalog_6;
-        private MetroFramework.Controls.MetroButton Button_Catalog_Reset;
-        private MetroFramework.Controls.MetroTabControl TabControl_Data;
-        private MetroFramework.Controls.MetroButton Button_References_Bookmaker_Tab;
-        private MetroFramework.Controls.MetroButton Button_References_Group_Tab;
-        private MetroFramework.Controls.MetroButton Button_References_Author_Tab;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private MetroFramework.Controls.MetroButton Button_Issuance_FormReader;
-        private MetroFramework.Controls.MetroButton Button_Issuance_IssueaBook;
-        private MetroFramework.Controls.MetroDateTime DateTime_Issuance_Return;
-        private MetroFramework.Controls.MetroDateTime DateTime_Issuance_Issuance;
-        private MetroFramework.Controls.MetroComboBox ComboBox_Issuance_Copy;
-        private MetroFramework.Controls.MetroComboBox ComboBox_Issuance_Book;
-        private MetroFramework.Controls.MetroComboBox ComboBox_Issuance_Reader;
-        private MetroFramework.Controls.MetroLabel metroLabel19;
-        private MetroFramework.Controls.MetroLabel metroLabel17;
-        private MetroFramework.Controls.MetroLabel metroLabel18;
-        private MetroFramework.Controls.MetroLabel metroLabel15;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private MetroFramework.Controls.MetroLabel metroLabel16;
-        private MetroFramework.Controls.MetroGrid Grid_Issuance_Order;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private MetroFramework.Controls.MetroLabel metroLabel21;
+        private MetroFramework.Controls.MetroLabel metroLabel35;
+        private MetroFramework.Controls.MetroLabel metroLabel36;
         private MetroFramework.Controls.MetroButton metroButton10;
+        private MetroFramework.Controls.MetroLabel metroLabel25;
         private MetroFramework.Controls.MetroButton metroButton9;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
+        private MetroFramework.Controls.MetroLabel metroLabel23;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MetroFramework.Controls.MetroLabel metroLabel24;
+        private MetroFramework.Controls.MetroTextBox metroTextBox2;
+        private MetroFramework.Controls.MetroLabel metroLabel21;
         private MetroFramework.Controls.MetroRadioButton metroRadioButton4;
         private MetroFramework.Controls.MetroRadioButton metroRadioButton3;
         private MetroFramework.Controls.MetroRadioButton metroRadioButton2;
         private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
-        private MetroFramework.Controls.MetroLabel metroLabel20;
         private MetroFramework.Controls.MetroLabel metroLabel22;
-        private MetroFramework.Controls.MetroLabel metroLabel23;
-        private MetroFramework.Controls.MetroLabel metroLabel25;
-        private MetroFramework.Controls.MetroLabel metroLabel24;
-        private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.SplitContainer splitContainer5;
-        private MetroFramework.Controls.MetroLabel metroLabel29;
-        private MetroFramework.Controls.MetroGrid Grid_Form_Reader;
-        private MetroFramework.Controls.MetroLabel metroLabel33;
-        private MetroFramework.Controls.MetroButton metroButton11;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroLabel metroLabel32;
-        private MetroFramework.Controls.MetroLabel metroLabel31;
-        private MetroFramework.Controls.MetroLabel metroLabel30;
-        private System.Windows.Forms.Label label3;
-        private MetroFramework.Controls.MetroGrid Grid_Form_Order;
-        private MetroFramework.Controls.MetroLabel metroLabel34;
-        private MetroFramework.Controls.MetroLabel metroLabel35;
-        private MetroFramework.Controls.MetroLabel metroLabel36;
+        private MetroFramework.Controls.MetroLabel metroLabel20;
         private System.Windows.Forms.SplitContainer splitContainer6;
-        private MetroFramework.Controls.MetroLabel metroLabel26;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroGrid Grid_Return_Order;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroLabel metroLabel40;
         private MetroFramework.Controls.MetroButton metroButton13;
         private MetroFramework.Controls.MetroLabel metroLabel28;
         private MetroFramework.Controls.MetroButton metroButton12;
         private MetroFramework.Controls.MetroLabel metroLabel37;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroLabel metroLabel26;
         private MetroFramework.Controls.MetroLabel metroLabel39;
         private MetroFramework.Controls.MetroLabel metroLabel38;
         private MetroFramework.Controls.MetroLabel metroLabel27;
-        private System.Windows.Forms.SplitContainer SplitContainer_References_Group;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroGrid Grid_Return_Order;
+        private System.Windows.Forms.TabPage TabPage_Giveaways;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer7;
+        private MetroFramework.Controls.MetroButton Button_Issuance_FormReader;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroPanel metroPanel3;
+        private MetroFramework.Controls.MetroComboBox ComboBox_Issuance_Copy;
+        private MetroFramework.Controls.MetroLabel metroLabel17;
+        private MetroFramework.Controls.MetroPanel metroPanel2;
+        private MetroFramework.Controls.MetroComboBox ComboBox_Issuance_Book;
+        private MetroFramework.Controls.MetroLabel metroLabel16;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroComboBox ComboBox_Issuance_Reader;
+        private MetroFramework.Controls.MetroLabel metroLabel15;
+        private MetroFramework.Controls.MetroButton Button_Issuance_IssueaBook;
+        private MetroFramework.Controls.MetroDateTime DateTime_Issuance_Return;
+        private MetroFramework.Controls.MetroDateTime DateTime_Issuance_Issuance;
+        private MetroFramework.Controls.MetroLabel metroLabel19;
+        private MetroFramework.Controls.MetroLabel metroLabel18;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroGrid Grid_Issuance_Order;
+        private System.Windows.Forms.TabPage TabPage_Forms;
+        private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.SplitContainer splitContainer5;
+        private MetroFramework.Controls.MetroLabel metroLabel29;
+        private MetroFramework.Controls.MetroGrid Grid_Form_Reader;
+        private MetroFramework.Controls.MetroButton metroButton11;
+        private MetroFramework.Controls.MetroLabel metroLabel34;
+        private MetroFramework.Controls.MetroTextBox metroTextBox4;
+        private MetroFramework.Controls.MetroLabel metroLabel33;
+        private MetroFramework.Controls.MetroLabel metroLabel32;
+        private MetroFramework.Controls.MetroLabel metroLabel30;
+        private System.Windows.Forms.Label label3;
+        private MetroFramework.Controls.MetroGrid Grid_Form_Order;
+        private System.Windows.Forms.TabPage TabPage_References;
+        private System.Windows.Forms.SplitContainer SplitContainer_References;
+        private MetroFramework.Controls.MetroButton Button_References_Bookmaker_Tab;
+        private MetroFramework.Controls.MetroButton Button_References_Group_Tab;
+        private MetroFramework.Controls.MetroButton Button_References_Author_Tab;
+        private MetroFramework.Controls.MetroPanel Panel_References_Bookmaker;
+        private System.Windows.Forms.SplitContainer SplitContainer_References_Bookmaker;
         private MetroFramework.Controls.MetroGrid Grid_References_Bookmaker;
-        private MetroFramework.Controls.MetroButton Button_References_Bookmaker_Edit;
-        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Edit;
         private MetroFramework.Controls.MetroButton Button_References_Bookmaker_Delete;
         private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Delete;
+        private MetroFramework.Controls.MetroButton Button_References_Bookmaker_Edit;
+        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Edit;
         private MetroFramework.Controls.MetroButton Button_References_Bookmaker_Create;
+        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Create;
+        private MetroFramework.Controls.MetroTextBox TextBox_References_Bookmaker_City;
+        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_City;
         private MetroFramework.Controls.MetroTextBox TextBox_References_Bookmaker_Title;
         private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Title;
         private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Header_2;
-        private System.Windows.Forms.SplitContainer SplitContainer_References_Bookmaker;
+        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Header_1;
+        private MetroFramework.Controls.MetroPanel Panel_References_Group;
+        private System.Windows.Forms.SplitContainer SplitContainer_References_Group;
         private MetroFramework.Controls.MetroGrid Grid_References_Group;
+        private MetroFramework.Controls.MetroButton Button_References_Group_Delete;
+        private MetroFramework.Controls.MetroLabel Label_References_Group_Delete;
         private MetroFramework.Controls.MetroButton Button_References_Group_Edit;
         private MetroFramework.Controls.MetroLabel Label_References_Group_Edit;
-        private MetroFramework.Controls.MetroButton Button_References_Group_Delete;
-        private MetroFramework.Controls.MetroLabel Label_References_Group_Create;
         private MetroFramework.Controls.MetroButton Button_References_Group_Create;
-        private MetroFramework.Controls.MetroLabel Label_References_Group_Delete;
+        private MetroFramework.Controls.MetroLabel Label_References_Group_Create;
         private MetroFramework.Controls.MetroTextBox TextBox_References_Group_Title;
         private MetroFramework.Controls.MetroLabel Label_References_Group_Title;
         private MetroFramework.Controls.MetroLabel Label_References_Group_Header_2;
+        private MetroFramework.Controls.MetroLabel Label_References_Group_Header_1;
+        private MetroFramework.Controls.MetroPanel Panel_References_Author;
+        private System.Windows.Forms.SplitContainer SplitContainer_References_Author;
+        private MetroFramework.Controls.MetroGrid Grid_References_Author;
+        private MetroFramework.Controls.MetroButton Button_References_Author_Delete;
+        private MetroFramework.Controls.MetroLabel Label_References_Author_Delete;
+        private MetroFramework.Controls.MetroButton Button_References_Author_Edit;
+        private MetroFramework.Controls.MetroLabel Label_References_Author_Edit;
+        private MetroFramework.Controls.MetroButton Button_References_Author_Create;
+        private MetroFramework.Controls.MetroLabel Label_References_Author_Create;
+        private MetroFramework.Controls.MetroTextBox TextBox_References_Author_MiddleName;
+        private MetroFramework.Controls.MetroLabel Label_References_Author_MiddleName;
+        private MetroFramework.Controls.MetroTextBox TextBox_References_Author_LastName;
+        private MetroFramework.Controls.MetroLabel Label_References_Author_LastName;
+        private MetroFramework.Controls.MetroTextBox TextBox_References_Author_FirstName;
+        private MetroFramework.Controls.MetroLabel Label_References_Author_FirstName;
+        private MetroFramework.Controls.MetroLabel Label_References_Author_Header_2;
+        private MetroFramework.Controls.MetroLabel Label_References_Author_Header_1;
+        private System.Windows.Forms.TabPage TabPage_Registration;
+        private System.Windows.Forms.SplitContainer SplitContainer_Registration;
+        private MetroFramework.Controls.MetroButton Button_Registration_CopyBook_Tab;
+        private MetroFramework.Controls.MetroButton Button_Registration_Book_Tab;
+        private MetroFramework.Controls.MetroPanel Panel_Registration_CopyBook;
+        private MetroFramework.Controls.MetroButton Button_Registration_CopyBook_Register;
+        private MetroFramework.Controls.MetroLabel Label_Registration_CopyBook_BeforeButton;
+        private MetroFramework.Controls.MetroPanel Panel_Registration_CopyBook_Title;
+        private MetroFramework.Controls.MetroTextBox TextBox_Registration_CopyBook_Title;
+        private MetroFramework.Controls.MetroLabel Label_Registration_CopyBook_Title;
+        private MetroFramework.Controls.MetroPanel Panel_Registration_CopyBook_Book;
+        private System.Windows.Forms.ComboBox ComboBox_Registration_CopyBook_Book;
+        private MetroFramework.Controls.MetroLabel Label_Registration_CopyBook_Book;
+        private MetroFramework.Controls.MetroLabel Label_Registration_CopyBook_Header;
         private MetroFramework.Controls.MetroPanel Panel_Registration_Book;
+        private MetroFramework.Controls.MetroButton Button_Registration_Book_Register;
+        private MetroFramework.Controls.MetroLabel Label_Registration_Book_BeforeButton;
         private System.Windows.Forms.SplitContainer SplitContainer_Registration_Book;
         private MetroFramework.Controls.MetroPanel Panel_Registration_Book_RegistrationDate;
         private MetroFramework.Controls.MetroDateTime DateTime_Registration_Book_RegistrationDate;
@@ -3099,46 +3295,30 @@
         private MetroFramework.Controls.MetroLabel Label_Registration_Book_Author;
         private System.Windows.Forms.PictureBox PictureBox_Registration_Book_Cover;
         private MetroFramework.Controls.MetroButton Button_Registration_Book_Cover;
-        private MetroFramework.Controls.MetroButton Button_Registration_Book_Register;
         private MetroFramework.Controls.MetroLabel Label_Registration_Book_Header;
-        private MetroFramework.Controls.MetroPanel Panel_Registration_CopyBook;
-        private MetroFramework.Controls.MetroButton Button_Registration_CopyBook_Register;
-        private MetroFramework.Controls.MetroLabel Label_Registration_CopyBook_Header;
-        private MetroFramework.Controls.MetroPanel Panel_Registration_CopyBook_Title;
-        private MetroFramework.Controls.MetroTextBox TextBox_Registration_CopyBook_Title;
-        private MetroFramework.Controls.MetroLabel Label_Registration_CopyBook_Title;
-        private MetroFramework.Controls.MetroPanel Panel_Registration_CopyBook_Book;
-        private System.Windows.Forms.ComboBox ComboBox_Registration_CopyBook_Book;
-        private MetroFramework.Controls.MetroLabel Label_Registration_CopyBook_Book;
-        private MetroFramework.Controls.MetroLabel Label_Registration_CopyBook_BeforeButton;
-        private MetroFramework.Controls.MetroLabel Label_Registration_Book_BeforeButton;
-        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Create;
-        private MetroFramework.Controls.MetroTextBox TextBox_References_Bookmaker_City;
-        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_City;
-        private MetroFramework.Controls.MetroPanel Panel_References_Author;
-        private MetroFramework.Controls.MetroPanel Panel_References_Bookmaker;
-        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Header_1;
-        private MetroFramework.Controls.MetroPanel Panel_References_Group;
-        private MetroFramework.Controls.MetroLabel Label_References_Group_Header_1;
-        private System.Windows.Forms.SplitContainer SplitContainer_References_Author;
-        private MetroFramework.Controls.MetroGrid Grid_References_Author;
-        private MetroFramework.Controls.MetroButton Button_References_Author_Edit;
-        private MetroFramework.Controls.MetroLabel Label_References_Author_Edit;
-        private MetroFramework.Controls.MetroButton Button_References_Author_Delete;
-        private MetroFramework.Controls.MetroLabel Label_References_Author_Delete;
-        private MetroFramework.Controls.MetroButton Button_References_Author_Create;
-        private MetroFramework.Controls.MetroLabel Label_References_Author_Create;
-        private MetroFramework.Controls.MetroTextBox TextBox_References_Author_MiddleName;
-        private MetroFramework.Controls.MetroLabel Label_References_Author_MiddleName;
-        private MetroFramework.Controls.MetroTextBox TextBox_References_Author_LastName;
-        private MetroFramework.Controls.MetroLabel Label_References_Author_LastName;
-        private MetroFramework.Controls.MetroTextBox TextBox_References_Author_FirstName;
-        private MetroFramework.Controls.MetroLabel Label_References_Author_FirstName;
-        private MetroFramework.Controls.MetroLabel Label_References_Author_Header_2;
-        private MetroFramework.Controls.MetroLabel Label_References_Author_Header_1;
-        private System.Windows.Forms.OpenFileDialog OpenFileDialog_Book;
+        private System.Windows.Forms.TabPage TabPage_Catalog;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private MetroFramework.Controls.MetroGrid Grid_Catalog;
+        private MetroFramework.Controls.MetroPanel Panel_Catalog_Search_1;
+        private MetroFramework.Controls.MetroRadioButton RadioButton_Catalog_RegistrationDate;
+        private MetroFramework.Controls.MetroLabel Label_Catalog_3;
+        private MetroFramework.Controls.MetroRadioButton RadioButton_Catalog_Bookmaker;
+        private MetroFramework.Controls.MetroLabel Label_Catalog_2;
+        private MetroFramework.Controls.MetroRadioButton RadioButton_Catalog_Group;
+        private MetroFramework.Controls.MetroLabel Label_Catalog_1;
+        private MetroFramework.Controls.MetroRadioButton RadioButton_Catalog_Author;
+        private MetroFramework.Controls.MetroPanel Panel_Catalog_Search_2;
+        private MetroFramework.Controls.MetroTextBox TextBox_Catalog_Search;
+        private MetroFramework.Controls.MetroLabel Label_Catalog_4;
+        private MetroFramework.Controls.MetroButton Button_Catalog_Search;
+        private MetroFramework.Controls.MetroLabel Label_Catalog_6;
+        private MetroFramework.Controls.MetroButton Button_Catalog_Reset;
+        private MetroFramework.Controls.MetroTabControl TabControl_Data;
+        private MetroFramework.Controls.MetroPanel metroPanel5;
+        private MetroFramework.Controls.MetroPanel metroPanel4;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
     }
 }
 
