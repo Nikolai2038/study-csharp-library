@@ -11,10 +11,16 @@ namespace CSharpStudyNetFramework.Helpers
     /// <summary>Вспомогательный класс для обработки исключений</summary>
     internal abstract class ExceptionHelper
     {
-        public static void CheckCode(Form owner, ExceptionHelperDelegate function)
+        /// <summary>Изолированно выполняет переданный код - в случае исключения выводит форму для его обработки</summary>
+        /// <param name="owner">Форма, в которой выполняется код</param>
+        /// <param name="function">Сам код, который необходимо выполнить</param>
+        /// <param name="is_block_form">Блокировать ли форму на время выполнения кода</param>
+        public static void CheckCode(Form owner, bool is_block_form, ExceptionHelperDelegate function)
         {
             // Блокируем форму от нажатий
-            owner.Enabled = false;
+            if (is_block_form) {
+                owner.Enabled = false;
+            }
 
             try {
                 // Вызываем код
@@ -54,13 +60,15 @@ namespace CSharpStudyNetFramework.Helpers
                 // Если была выбрана попытка повторить
                 else if (dialogResult == DialogResult.Retry) {
                     // Вызываем весь метод заново
-                    CheckCode(owner, function);
+                    CheckCode(owner, is_block_form, function);
                 }
                 // Иначе выполнение программы будет продолжено
             }
 
             // Разблокируем форму
-            owner.Enabled = true;
+            if (is_block_form) {
+                owner.Enabled = true;
+            }
         }
     }
 }

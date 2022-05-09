@@ -7,25 +7,25 @@ namespace CSharpStudyNetFramework.ORM
     internal class CustomDbContext : DbContext
     {
         /// <summary>Таблица "Авторы"</summary>
-        public DbSet<Author> authors { get; set; }
+        public DbSet<Author> Authors { get; set; }
 
         /// <summary>Таблица "Книги"</summary>
-        public DbSet<Book> books { get; set; }
+        public DbSet<Book> Books { get; set; }
 
         /// <summary>Таблица "Издатели"</summary>
-        public DbSet<Bookmaker> bookmakers { get; set; }
+        public DbSet<Bookmaker> Bookmakers { get; set; }
 
         /// <summary>Таблица "Экземпляры книги"</summary>
-        public DbSet<CopyBook> copybooks { get; set; }
+        public DbSet<CopyBook> Copybooks { get; set; }
 
         /// <summary>Таблица "Жанры книг"</summary>
-        public DbSet<Group> groups { get; set; }
+        public DbSet<Group> Groups { get; set; }
 
         /// <summary>Таблица "Записи"</summary>
-        public DbSet<Order> orders { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         /// <summary>Таблица "Читатели"</summary>
-        public DbSet<Reader> readers { get; set; }
+        public DbSet<Reader> Readers { get; set; }
 
         public CustomDbContext()
         {
@@ -35,7 +35,7 @@ namespace CSharpStudyNetFramework.ORM
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=library_data_v_1_0_3.db");
+            optionsBuilder.UseSqlite("Filename=library_data_v_1_0_5.db");
         }
     }
 }
