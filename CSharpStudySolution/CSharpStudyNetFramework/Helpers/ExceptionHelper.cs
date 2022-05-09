@@ -1,6 +1,5 @@
 ﻿using CSharpStudyNetFramework.Extra;
 using CSharpStudyNetFramework.Forms;
-using MetroFramework;
 using System;
 using System.Windows.Forms;
 
@@ -12,8 +11,11 @@ namespace CSharpStudyNetFramework.Helpers
     /// <summary>Вспомогательный класс для обработки исключений</summary>
     internal abstract class ExceptionHelper
     {
-        public static void CheckCode(IWin32Window owner, ExceptionHelperDelegate function)
+        public static void CheckCode(Form owner, ExceptionHelperDelegate function)
         {
+            // Блокируем форму от нажатий
+            owner.Enabled = false;
+
             try {
                 // Вызываем код
                 function();
@@ -21,13 +23,7 @@ namespace CSharpStudyNetFramework.Helpers
             // Если возникло исключение заполнения формы
             catch (FormException exception) {
                 // Выводим сообщение и игнорируем ошибку
-                MetroMessageBox.Show(
-                    owner,
-                    exception.GetBaseException().Message,
-                    "Возникла ошибка!",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+                FormHelper.SendErrorMessage(owner, exception.GetBaseException().Message);
             }
             // Если возникло исключение
             catch (Exception exception) {
@@ -62,6 +58,9 @@ namespace CSharpStudyNetFramework.Helpers
                 }
                 // Иначе выполнение программы будет продолжено
             }
+
+            // Разблокируем форму
+            owner.Enabled = true;
         }
     }
 }

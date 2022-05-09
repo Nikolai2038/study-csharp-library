@@ -514,6 +514,7 @@ namespace CSharpStudyNetFramework.Forms
                 DatabaseHelper.db.authors.Add(new_entity);
                 DatabaseHelper.db.SaveChanges();
                 this.UpdateCurrentSelectedTab();
+                FormHelper.SendSuccessMessage(this, "Автор успешно добавлен!");
             });
         }
 
@@ -528,6 +529,7 @@ namespace CSharpStudyNetFramework.Forms
                 DatabaseHelper.db.groups.Add(new_entity);
                 DatabaseHelper.db.SaveChanges();
                 this.UpdateCurrentSelectedTab();
+                FormHelper.SendSuccessMessage(this, "Жанр успешно добавлен!");
             });
         }
 
@@ -543,6 +545,7 @@ namespace CSharpStudyNetFramework.Forms
                 DatabaseHelper.db.bookmakers.Add(new_entity);
                 DatabaseHelper.db.SaveChanges();
                 this.UpdateCurrentSelectedTab();
+                FormHelper.SendSuccessMessage(this, "Издатель успешно добавлен!");
             });
         }
 
@@ -563,6 +566,7 @@ namespace CSharpStudyNetFramework.Forms
                     this.Grid_Catalog,
                     this.Grid_References_Author,
                 });
+                FormHelper.SendSuccessMessage(this, "Информация об авторе успешно отредактирована!");
             }
         }
 
@@ -581,6 +585,7 @@ namespace CSharpStudyNetFramework.Forms
                     this.Grid_Catalog,
                     this.Grid_References_Group,
                 });
+                FormHelper.SendSuccessMessage(this, "Информация о жанре успешно отредактирована!");
             }
         }
 
@@ -600,6 +605,7 @@ namespace CSharpStudyNetFramework.Forms
                     this.Grid_Catalog,
                     this.Grid_References_Bookmaker,
                 });
+                FormHelper.SendSuccessMessage(this, "Информация об издателе успешно отредактирована!");
             }
         }
 
@@ -617,6 +623,7 @@ namespace CSharpStudyNetFramework.Forms
                     this.Grid_Catalog,
                     this.Grid_References_Author,
                 });
+                FormHelper.SendSuccessMessage(this, "Автор успешно удалён!");
             }
         }
 
@@ -634,6 +641,7 @@ namespace CSharpStudyNetFramework.Forms
                     this.Grid_Catalog,
                     this.Grid_References_Group,
                 });
+                FormHelper.SendSuccessMessage(this, "Жанр успешно удалён!");
             }
         }
 
@@ -651,6 +659,7 @@ namespace CSharpStudyNetFramework.Forms
                     this.Grid_Catalog,
                     this.Grid_References_Bookmaker,
                 });
+                FormHelper.SendSuccessMessage(this, "Издатель успешно удалён!");
             }
         }
 
@@ -709,6 +718,15 @@ namespace CSharpStudyNetFramework.Forms
                 }
                 // ------------
 
+                // ------------
+                // Обложка книги
+                // ------------
+                string photo = null;
+                if (this.PictureBox_Registration_Book_Cover.Image != null) {
+                    photo = this.PictureBox_Registration_Book_Cover.Image.ToString();
+                }
+                // ------------
+
                 // Создаём и сохраняем новую книгу
                 Book new_entity = new Book {
                     Author = selected_author,
@@ -717,11 +735,12 @@ namespace CSharpStudyNetFramework.Forms
                     Bookmaker = selected_bookmaker,
                     PublicationYear = this.NumericUpDown_Registration_Book_Year.Value.ToString(),
                     RegistrationDate = this.DateTime_Registration_Book_RegistrationDate.Value.ToString(),
-                    Photo = this.PictureBox_Registration_Book_Cover.Image.ToString()
+                    Photo = photo
                 };
                 DatabaseHelper.db.books.Add(new_entity);
                 DatabaseHelper.db.SaveChanges();
                 this.UpdateCurrentSelectedTab();
+                FormHelper.SendSuccessMessage(this, "Книга успешно зарегистрирована!");
             });
         }
 
