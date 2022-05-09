@@ -716,7 +716,8 @@ namespace CSharpStudyNetFramework.Forms
                     Group = selected_group,
                     Bookmaker = selected_bookmaker,
                     YearPublication = this.NumericUpDown_Registration_Book_Year.Value.ToString(),
-                    YearRegistr = this.DateTime_Registration_Book_RegistrationDate.Value.ToString()
+                    YearRegistr = this.DateTime_Registration_Book_RegistrationDate.Value.ToString(),
+                    Photo = this.PictureBox_Registration_Book_Cover.Image.ToString()
                 };
                 DatabaseHelper.db.books.Add(new_entity);
                 DatabaseHelper.db.SaveChanges();
@@ -728,6 +729,15 @@ namespace CSharpStudyNetFramework.Forms
         private void Button_Registration_CopyBook_Register_Click(object sender, EventArgs e)
         {
 
+        }
+        /// <summary>Событие нажатия на кнопку загрузить изображение книги</summary>
+        private void Button_Registration_Book_Cover_Click(object sender, EventArgs e)
+        {
+            if (OpenFileDialog_Book.ShowDialog() == System.Windows.Forms.DialogResult.OK) 
+            {
+                PictureBox_Registration_Book_Cover.Load(OpenFileDialog_Book.FileName);
+                PictureBox_Registration_Book_Cover.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
     }
 }
