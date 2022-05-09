@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extra\FormException.cs" />
     <Compile Include="Forms\Form_Base.cs">
       <SubType>Form</SubType>
     </Compile>

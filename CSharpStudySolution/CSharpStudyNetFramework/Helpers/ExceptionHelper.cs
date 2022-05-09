@@ -1,4 +1,6 @@
-﻿using CSharpStudyNetFramework.Forms;
+﻿using CSharpStudyNetFramework.Extra;
+using CSharpStudyNetFramework.Forms;
+using MetroFramework;
 using System;
 using System.Windows.Forms;
 
@@ -15,6 +17,17 @@ namespace CSharpStudyNetFramework.Helpers
             try {
                 // Вызываем код
                 function();
+            }
+            // Если возникло исключение заполнения формы
+            catch (FormException exception) {
+                // Выводим сообщение и игнорируем ошибку
+                MetroMessageBox.Show(
+                    owner,
+                    exception.GetBaseException().Message,
+                    "Возникла ошибка!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
             // Если возникло исключение
             catch (Exception exception) {

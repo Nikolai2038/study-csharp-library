@@ -1,4 +1,5 @@
-﻿using CSharpStudyNetFramework.Helpers;
+﻿using CSharpStudyNetFramework.Extra;
+using CSharpStudyNetFramework.Helpers;
 using CSharpStudyNetFramework.ORM.Models;
 using MetroFramework.Controls;
 using System;
@@ -89,6 +90,12 @@ namespace CSharpStudyNetFramework.Forms
                     new List<ComboBox>() {
                         this.ComboBox_Registration_Book_Bookmaker
                     }
+                },
+                {
+                    this.Grid_Catalog,
+                    new List<ComboBox>() {
+                        this.ComboBox_Registration_CopyBook_Book
+                    }
                 }
             };
         }
@@ -116,78 +123,21 @@ namespace CSharpStudyNetFramework.Forms
                 this.Button_References_Author_Tab
             );
             // -----------------------------
+
+            // Несмотря на обновление, данные, видимо, не успевают загрузиться, из-за чего зависимые сущности
+            // всех записей равны null - поэтому вызываем повторный раз обновление каталога
+            this.UpdateData(this.Grid_Catalog);
+            this.UnfocusAll();
         }
 
-        /// <summary>Событие нажатия на кнопку обновления данных</summary>
-        private void Button_UpdateData_Click(object sender, EventArgs e)
+        /// <summary>Убирает фокус со всех элементов</summary>
+        private void UnfocusAll()
         {
-            // Обновление данных таблиц
-            this.UpdateData();
+            // Убираем фокус с любого элемента
+            this.ActiveControl = null;
         }
 
-        /// <summary>Событие нажатия на кнопку удаления выбранной записи</summary>
-        private void Button_DeleteData_Click(object sender, EventArgs e)
-        {
-            // Должна быть выбрана строчка
-            if (this.Grid_References_Author.SelectedRows.Count > 0) {
-                // Находим ID строчки, которую нужно выбрать после удаления данных
-                int first_selected_row_id = this.Grid_References_Author.SelectedRows[0].Index;
-                int last_selected_row_id = this.Grid_References_Author.SelectedRows[this.Grid_References_Author.SelectedRows.Count - 1].Index;
-                int row_id_to_select = first_selected_row_id;
-                if (last_selected_row_id < first_selected_row_id) {
-                    row_id_to_select = last_selected_row_id;
-                }
-
-                // Удаляем все выбранные записи
-                foreach (DataGridViewRow row in this.Grid_References_Author.SelectedRows) {
-                    // Находим ID записи, которую необходимо удалить
-                    int selected_row_id = row.Index;
-                    int item_id = Convert.ToInt32(this.Grid_References_Author.Rows[selected_row_id].Cells[0].Value);
-
-                    ExceptionHelper.CheckCode(this, () => {
-                        // Ищем запись с нужным ID
-                        Author item = DatabaseHelper.db.authors.FirstOrDefault(c => c.Id == item_id);
-
-                        // Если запись не найдена - вызываем исключение
-                        if (item == null) {
-                            throw new Exception("Запись с ID = " + item_id + " не найдена!");
-                        }
-                        // Иначе - удаляем найденную запись и сохраняем БД
-                        else {
-                            DatabaseHelper.db.authors.Remove(item);
-                            DatabaseHelper.db.SaveChanges();
-                        }
-                    });
-                }
-
-                // Так как таблица обновилась - выбираем ранее сохранённую строчку
-                this.Grid_References_Author.ClearSelection();
-                if (row_id_to_select < this.Grid_References_Author.Rows.Count) {
-                    this.Grid_References_Author.Rows[row_id_to_select].Selected = true;
-                }
-
-                // Обновление данных таблицы
-                this.UpdateData();
-            }
-        }
-
-        /// <summary>Событие нажатия на кнопку создания новой записи</summary>
-        private void Button_Author_Create_Click(object sender, EventArgs e)
-        {
-            ExceptionHelper.CheckCode(this, () => {
-                // Создаём и добавляем в БД новую запись
-                Author item = new Author {
-                    fName = this.TextBox_References_Author_FirstName.Text,
-                    lName = this.TextBox_References_Author_LastName.Text,
-                    mName = this.TextBox_References_Author_MiddleName.Text
-                };
-                DatabaseHelper.db.authors.Add(item);
-                DatabaseHelper.db.SaveChanges();
-            });
-            // Обновление данных таблицы
-            this.UpdateData(this.Grid_References_Author);
-        }
-
+        /// <summary>Обновляет таблицу. привязанную к текущей вкладке</summary>
         private void UpdateCurrentSelectedTab()
         {
             int selected_tab_index = this.TabControl_Data.SelectedIndex;
@@ -195,8 +145,6 @@ namespace CSharpStudyNetFramework.Forms
 
             switch (selected_tab_index) {
                 case 0:
-                    grid_to_update = this.Grid_References_Author;
-                    break;
                 case 1:
                     grid_to_update = this.Grid_Catalog;
                     break;
@@ -281,15 +229,30 @@ namespace CSharpStudyNetFramework.Forms
                     Func<Book, bool> filter_function;
                     // Если выбрана фильтрация по полю "Автор"
                     if (this.RadioButton_Catalog_Author.Checked) {
-                        filter_function = book => book.Author.FullName.Contains(filter_string);
+                        filter_function = book => {
+                            if (book.Author == null) {
+                                return false;
+                            }
+                            return book.Author.FullName.Contains(filter_string);
+                        };
                     }
                     // Если выбрана фильтрация по полю "Жанр"
                     else if (this.RadioButton_Catalog_Group.Checked) {
-                        filter_function = book => book.Group.Title.Contains(filter_string);
+                        filter_function = book => {
+                            if (book.Group == null) {
+                                return true;
+                            }
+                            return book.Group.Title.Contains(filter_string);
+                        };
                     }
                     // Если выбрана фильтрация по полю "Издатель"
                     else if (this.RadioButton_Catalog_Bookmaker.Checked) {
-                        filter_function = book => book.Bookmaker.Title.Contains(filter_string);
+                        filter_function = book => {
+                            if (book.Bookmaker == null) {
+                                return true;
+                            }
+                            return book.Bookmaker.Title.Contains(filter_string);
+                        };
                     }
                     // Если выбрана фильтрация по полю "Дата регистрации"
                     else if (this.RadioButton_Catalog_RegistrationDate.Checked) {
@@ -300,7 +263,28 @@ namespace CSharpStudyNetFramework.Forms
                         filter_function = book => false;
                     }
 
-                    grid.DataSource = DatabaseHelper.db.books.Where(filter_function).ToList();
+                    // Из-за изменения полей выборки, её результат не является списком книг - это список
+                    // анонимных объектов. Поэтому, обрабатываем отдельно значения для комбобоксов, чтобы
+                    // в них успешно применились методы ToString()
+                    IEnumerable<Book> data = DatabaseHelper.db.books.Where(filter_function);
+                    data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data.ToList());
+                    var data_for_grid = data.Select(book => new {
+                        Id = book.Id,
+                        Author = book.Author == null ? "-" : book.Author.ToString(),
+                        Title = book.Title,
+                        Group = book.Group == null ? "-" : book.Group.ToString(),
+                        Bookmaker = book.Bookmaker == null ? "-" : book.Bookmaker.ToString(),
+                        YearPublication = book.YearPublication,
+                        YearRegistr = book.YearRegistr,
+                    }).ToList();
+                    grid.DataSource = data_for_grid;
+
+                    replaces.Add("Author", "Автор");
+                    replaces.Add("Title", "Название");
+                    replaces.Add("Group", "Жанр");
+                    replaces.Add("Bookmaker", "Издатель");
+                    replaces.Add("YearPublication", "Год издания");
+                    replaces.Add("YearRegistr", "Дата регистрации в библиотеке");
                 }
                 // Если заполняется вкладка "Справочники" - "Авторы"
                 else if (grid.Equals(this.Grid_References_Author)) {
@@ -359,6 +343,7 @@ namespace CSharpStudyNetFramework.Forms
         private void Button_Catalog_Search_Click(object sender, EventArgs e)
         {
             this.UpdateData(this.Grid_Catalog);
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку "Сбросить фильтр" на вкладке "Каталог книг"</summary>
@@ -367,6 +352,7 @@ namespace CSharpStudyNetFramework.Forms
             this.RadioButton_Catalog_Author.Select();
             this.TextBox_Catalog_Search.Text = "";
             this.UpdateData(this.Grid_Catalog);
+            this.UnfocusAll();
         }
 
 
@@ -410,8 +396,7 @@ namespace CSharpStudyNetFramework.Forms
                 }
             }
 
-            // Убираем фокус с любого элемента
-            this.ActiveControl = null;
+            this.UnfocusAll();
         }
 
         /// <summary>Нажатие на кнопку-вкладку на вкладке "Регистрация книг"</summary>
@@ -573,7 +558,11 @@ namespace CSharpStudyNetFramework.Forms
                 found_entity.mName = this.TextBox_References_Author_MiddleName.Text;
                 DatabaseHelper.db.authors.Update(found_entity);
                 DatabaseHelper.db.SaveChanges();
-                this.UpdateCurrentSelectedTab();
+                // Обновляем как справочник, так и каталог книг
+                this.UpdateData(new List<MetroGrid>() {
+                    this.Grid_Catalog,
+                    this.Grid_References_Author,
+                });
             }
         }
 
@@ -587,7 +576,11 @@ namespace CSharpStudyNetFramework.Forms
                 found_entity.Title = this.TextBox_References_Group_Title.Text;
                 DatabaseHelper.db.groups.Update(found_entity);
                 DatabaseHelper.db.SaveChanges();
-                this.UpdateCurrentSelectedTab();
+                // Обновляем как справочник, так и каталог книг
+                this.UpdateData(new List<MetroGrid>() {
+                    this.Grid_Catalog,
+                    this.Grid_References_Group,
+                });
             }
         }
 
@@ -602,7 +595,11 @@ namespace CSharpStudyNetFramework.Forms
                 found_entity.City = this.TextBox_References_Bookmaker_City.Text;
                 DatabaseHelper.db.bookmakers.Update(found_entity);
                 DatabaseHelper.db.SaveChanges();
-                this.UpdateCurrentSelectedTab();
+                // Обновляем как справочник, так и каталог книг
+                this.UpdateData(new List<MetroGrid>() {
+                    this.Grid_Catalog,
+                    this.Grid_References_Bookmaker,
+                });
             }
         }
 
@@ -615,7 +612,11 @@ namespace CSharpStudyNetFramework.Forms
                 Author found_entity = DatabaseHelper.db.authors.FirstOrDefault(entity => entity.Id == selected_id);
                 DatabaseHelper.db.authors.Remove(found_entity);
                 DatabaseHelper.db.SaveChanges();
-                this.UpdateCurrentSelectedTab();
+                // Обновляем как справочник, так и каталог книг
+                this.UpdateData(new List<MetroGrid>() {
+                    this.Grid_Catalog,
+                    this.Grid_References_Author,
+                });
             }
         }
 
@@ -628,7 +629,11 @@ namespace CSharpStudyNetFramework.Forms
                 Group found_entity = DatabaseHelper.db.groups.FirstOrDefault(entity => entity.Id == selected_id);
                 DatabaseHelper.db.groups.Remove(found_entity);
                 DatabaseHelper.db.SaveChanges();
-                this.UpdateCurrentSelectedTab();
+                // Обновляем как справочник, так и каталог книг
+                this.UpdateData(new List<MetroGrid>() {
+                    this.Grid_Catalog,
+                    this.Grid_References_Group,
+                });
             }
         }
 
@@ -641,11 +646,86 @@ namespace CSharpStudyNetFramework.Forms
                 Bookmaker found_entity = DatabaseHelper.db.bookmakers.FirstOrDefault(entity => entity.Id == selected_id);
                 DatabaseHelper.db.bookmakers.Remove(found_entity);
                 DatabaseHelper.db.SaveChanges();
-                this.UpdateCurrentSelectedTab();
+                // Обновляем как справочник, так и каталог книг
+                this.UpdateData(new List<MetroGrid>() {
+                    this.Grid_Catalog,
+                    this.Grid_References_Bookmaker,
+                });
             }
         }
 
-        private void ComboBox_Registration_Book_Author_TextUpdate(object sender, EventArgs e)
+        /// <summary>Событие нажатия на кнопку регистрации новой книги</summary>
+        private void Button_Registration_Book_Register_Click(object sender, EventArgs e)
+        {
+            ExceptionHelper.CheckCode(this, () => {
+                // ------------
+                // Автор книги
+                // ------------
+                Author selected_author;
+                try {
+                    selected_author = DatabaseHelper.db.authors.First(
+                        // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
+                        entity => (entity.lName + " " + entity.fName + " " + entity.mName).Trim() == this.ComboBox_Registration_Book_Author.Text.Trim()
+                    );
+                } catch (Exception) {
+                    throw new FormException("Выбранный автор не найден в базе данных!");
+                }
+                // ------------
+
+                // ------------
+                // Название книги
+                // ------------
+                string title = this.TextBox_Registration_Book_Title.Text.Trim();
+                if (title == "") {
+                    throw new FormException("Необходимо указать название книги!");
+                }
+                // ------------
+
+                // ------------
+                // Жанр книги
+                // ------------
+                Group selected_group;
+                try {
+                    selected_group = DatabaseHelper.db.groups.First(
+                        // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
+                        entity => entity.Title.Trim() == this.ComboBox_Registration_Book_Group.Text.Trim()
+                    );
+                } catch (Exception) {
+                    throw new FormException("Выбранный жанр не найден в базе данных!");
+                }
+                // ------------
+
+                // ------------
+                // Издатель книги
+                // ------------
+                Bookmaker selected_bookmaker;
+                try {
+                    selected_bookmaker = DatabaseHelper.db.bookmakers.First(
+                        // Тут нужно указывать поля сущностей напрямую, так как они транслируются в чистый SQL
+                        entity => entity.Title.Trim() == this.ComboBox_Registration_Book_Bookmaker.Text.Trim()
+                    );
+                } catch (Exception) {
+                    throw new FormException("Выбранный издатель не найден в базе данных!");
+                }
+                // ------------
+
+                // Создаём и сохраняем новую книгу
+                Book new_entity = new Book {
+                    Author = selected_author,
+                    Title = title,
+                    Group = selected_group,
+                    Bookmaker = selected_bookmaker,
+                    YearPublication = this.NumericUpDown_Registration_Book_Year.Value.ToString(),
+                    YearRegistr = this.DateTime_Registration_Book_RegistrationDate.Value.ToString()
+                };
+                DatabaseHelper.db.books.Add(new_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+            });
+        }
+
+        /// <summary>Событие нажатия на кнопку регистрации нового экземпляра книги</summary>
+        private void Button_Registration_CopyBook_Register_Click(object sender, EventArgs e)
         {
 
         }
