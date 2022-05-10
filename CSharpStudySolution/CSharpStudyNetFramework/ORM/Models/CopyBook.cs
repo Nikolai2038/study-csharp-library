@@ -4,6 +4,7 @@
     internal class CopyBook
     {
         public int? Id { get; set; }
+        // TODO: Не забыть поменять на string
         public int Number { get; set; }
         public bool IsGiven { get; set; }
         public bool IsLost { get; set; }

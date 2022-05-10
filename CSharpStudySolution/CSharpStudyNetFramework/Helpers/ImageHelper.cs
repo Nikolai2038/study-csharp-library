@@ -1,32 +1,37 @@
 ﻿using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
-using System.Text;
 
 namespace CSharpStudyNetFramework.Helpers
 {
     /// <summary>Вспомогательный класс для работы с изображениями</summary>
     internal abstract class ImageHelper
     {
-        /// <summary>Преобразует изображение в строчку</summary>
-        /// <param name="source">Изображение</param>
-        /// <returns>Строчка</returns>
-        public static string GetStringFromBitmap(Image source)
+        /// <summary>Преобразовывает содержимое изображения в массив байт</summary>
+        /// <param name="image">Изображение</param>
+        /// <returns>Массив байт</returns>
+        public static byte[] ImageToByteArray(Image image)
         {
-            ImageConverter image_converter = new ImageConverter();
-            return image_converter.ConvertToString(source);
+            if (image == null) {
+                return null;
+            }
+            using (MemoryStream stream = new MemoryStream()) {
+                image.Save(stream, ImageFormat.Png);
+                return stream.ToArray();
+            }
         }
 
-        /// <summary>Преобразует строчку в изображение</summary>
-        /// <param name="source">Строчка</param>
+        /// <summary>Преобразовывает массив байт в изображение</summary>
+        /// <param name="bytes">Массив байт</param>
         /// <returns>Изображение</returns>
-        public static Bitmap GetBitmapFromString(string source)
+        public static Image ByteArrayToImage(byte[] bytes)
         {
-            // ImageConverter image_converter = new ImageConverter();
-            // return image_converter.ConvertFromString(source) as Bitmap;
-
-            byte[] image_bytes = Encoding.Unicode.GetBytes(source);
-            using (MemoryStream stream = new MemoryStream(image_bytes)) {
-                return new Bitmap(stream);
+            if (bytes == null) {
+                return null;
+            }
+            using (MemoryStream stream = new MemoryStream(bytes)) {
+                Image returnImage = Image.FromStream(stream, true, true);
+                return returnImage;
             }
         }
     }

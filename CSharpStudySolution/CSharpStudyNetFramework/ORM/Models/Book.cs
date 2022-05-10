@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSharpStudyNetFramework.ORM.Models
 {
@@ -12,7 +13,7 @@ namespace CSharpStudyNetFramework.ORM.Models
         public DateTime RegistrationDate { get; set; }
         public Group Group { get; set; }
         public Bookmaker Bookmaker { get; set; }
-        public string Photo { get; set; }
+        public byte[] Photo { get; set; }
         public string Note { get; set; }
 
         public override string ToString()

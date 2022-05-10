@@ -83,7 +83,9 @@
             this.TextBox_Exception.CustomButton.Location = new System.Drawing.Point(542, 1);
             this.TextBox_Exception.CustomButton.Name = "";
             this.TextBox_Exception.CustomButton.Size = new System.Drawing.Size(57, 57);
+            this.TextBox_Exception.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextBox_Exception.CustomButton.TabIndex = 1;
+            this.TextBox_Exception.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBox_Exception.CustomButton.UseSelectable = true;
             this.TextBox_Exception.CustomButton.Visible = false;
             this.TextBox_Exception.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -124,7 +126,9 @@
             this.TextBox_Stack.CustomButton.Location = new System.Drawing.Point(526, 1);
             this.TextBox_Stack.CustomButton.Name = "";
             this.TextBox_Stack.CustomButton.Size = new System.Drawing.Size(73, 73);
+            this.TextBox_Stack.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.TextBox_Stack.CustomButton.TabIndex = 1;
+            this.TextBox_Stack.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TextBox_Stack.CustomButton.UseSelectable = true;
             this.TextBox_Stack.CustomButton.Visible = false;
             this.TextBox_Stack.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -242,6 +246,7 @@
             this.MinimumSize = new System.Drawing.Size(640, 320);
             this.Name = "Form_Exception";
             this.Text = "Возникло исключение!";
+            this.TopMost = true;
             this.SplitContainer_Main.Panel1.ResumeLayout(false);
             this.SplitContainer_Main.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Main)).EndInit();
