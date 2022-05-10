@@ -73,6 +73,7 @@
     <Compile Include="Helpers\ThemeHelper.cs" />
     <Compile Include="ORM\CustomDbContext.cs" />
     <Compile Include="ORM\Models\Author.cs" />
+    <Compile Include="ORM\Models\IEntity.cs" />
     <Compile Include="ORM\Models\Order.cs" />
     <Compile Include="ORM\Models\Book.cs" />
     <Compile Include="ORM\Models\CopyBook.cs" />

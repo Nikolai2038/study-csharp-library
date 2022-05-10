@@ -1,7 +1,7 @@
 ﻿namespace CSharpStudyNetFramework.ORM.Models
 {
     /// <summary>Сущность "Экземпляр книги"</summary>
-    internal class CopyBook
+    internal class CopyBook : IEntity
     {
         public int? Id { get; set; }
         // TODO: Не забыть поменять на string

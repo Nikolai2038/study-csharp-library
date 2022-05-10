@@ -1,10 +1,9 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CSharpStudyNetFramework.ORM.Models
 {
     /// <summary>Сущность "Книга"</summary>
-    internal class Book
+    internal class Book : IEntity
     {
         public int? Id { get; set; }
         public Author Author { get; set; }

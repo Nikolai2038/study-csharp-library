@@ -1,7 +1,7 @@
 ﻿namespace CSharpStudyNetFramework.ORM.Models
 {
     /// <summary>Сущность "Автор"</summary>
-    internal class Author
+    internal class Author : IEntity
     {
         public int? Id { get; set; }
         public string FirstName { get; set; }

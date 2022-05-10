@@ -1,7 +1,7 @@
 ﻿namespace CSharpStudyNetFramework.ORM.Models
 {
     /// <summary>Сущность "Издатель"</summary>
-    internal class Bookmaker
+    internal class Bookmaker : IEntity
     {
         public int? Id { get; set; }
         public string Title { get; set; }
