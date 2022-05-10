@@ -54,11 +54,35 @@
     <Compile Include="Forms\Form_Base.Designer.cs">
       <DependentUpon>Form_Base.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Data.cs">
+    <Compile Include="Forms\Form_Data_Divided\Form_Data.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Data.Designer.cs">
+    <Compile Include="Forms\Form_Data_Divided\Form_Data.Designer.cs">
       <DependentUpon>Form_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_Extra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_1_Books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_2_CopyBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_3_References.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_4_Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_6_Returns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_5_Issuance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_7_Reports.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form_Exception.cs">
       <SubType>Form</SubType>
@@ -85,7 +109,7 @@
     <EmbeddedResource Include="Forms\Form_Base.resx">
       <DependentUpon>Form_Base.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Data.resx">
+    <EmbeddedResource Include="Forms\Form_Data_Divided\Form_Data.resx">
       <DependentUpon>Form_Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Exception.resx">
