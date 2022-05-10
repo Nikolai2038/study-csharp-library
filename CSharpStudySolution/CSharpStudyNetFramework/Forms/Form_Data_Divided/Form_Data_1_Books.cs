@@ -15,7 +15,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
     /// <summary>Форма с данными</summary>
     public partial class Form_Data : Form_Base
     {
-        /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Книги"</summary>
+        /// <summary>Событие изменения выбранной строчки в таблице "Книги"</summary>
         private void Grid_Books_SelectionChanged(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, false, () => {
@@ -212,28 +212,22 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
             });
         }
 
-        /// <summary>Событие изменения параметров фильтрации на вкладке "Книги"</summary>
+        /// <summary>Событие изменения параметров фильтрации</summary>
         private void Component_Books_Search_ConditionsChanged(object sender, EventArgs e)
         {
             // Обновляем данные только если установлена галочка "Поиск в реальном времени"
             if (this.CheckBox_Books_Search_IsInRealTime.Checked) {
+                // Нужно обновить только одну таблицу и ничего больше - поэтому не используем UpdateCurrentSelectedTab()
                 this.UpdateData(this.Grid_Books);
             }
         }
 
-        /// <summary>Событие нажатия на кнопку "Поиск" на вкладке "Книги"</summary>
+        /// <summary>Событие нажатия на кнопку "Поиск"</summary>
         private void Button_Books_Search_Click(object sender, EventArgs e)
         {
+            // Нужно обновить только одну таблицу и ничего больше - поэтому не используем UpdateCurrentSelectedTab()
             this.UpdateData(this.Grid_Books);
-            this.UnfocusAll();
-        }
 
-        /// <summary>Событие нажатия на кнопку "Сбросить фильтр" на вкладке "Книги"</summary>
-        private void Button_Books_Search_Reset_Click(object sender, EventArgs e)
-        {
-            this.RadioButton_Books_Search_Author.Select();
-            this.TextBox_Books_Search.Text = "";
-            this.UpdateData(this.Grid_Books);
             this.UnfocusAll();
         }
 
@@ -243,8 +237,22 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
             // Блокируем кнопку поиска, если включён поиск в реальном времени, и наоборот
             this.Button_Books_Search.Enabled = !this.CheckBox_Books_Search_IsInRealTime.Checked;
 
+            // Нужно обновить только одну таблицу и ничего больше - поэтому не используем UpdateCurrentSelectedTab()
             this.UpdateData(this.Grid_Books);
+
             this.UnfocusAll();
+        }
+
+        /// <summary>Событие нажатия на кнопку "Сбросить фильтр"</summary>
+        private void Button_Books_Search_Reset_Click(object sender, EventArgs e)
+        {
+            // Очищаем фильтр и фокусируемся на текстовом поле ввода
+            this.RadioButton_Books_Search_Author.Checked = true;
+            this.TextBox_Books_Search.Text = "";
+            this.TextBox_Books_Search.Focus();
+
+            // Нужно обновить только одну таблицу и ничего больше - поэтому не используем UpdateCurrentSelectedTab()
+            this.UpdateData(this.Grid_Books);
         }
     }
 }

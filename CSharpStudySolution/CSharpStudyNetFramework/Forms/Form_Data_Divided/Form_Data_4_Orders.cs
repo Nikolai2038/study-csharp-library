@@ -12,9 +12,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
     public partial class Form_Data : Form_Base
     {
         // ======================================================================
-        // Таблица "Читатели" на вкладке "Формуляры"
+        // Таблица "Читатели"
         // ======================================================================
-        /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Формуляры"</summary>
+        /// <summary>Событие изменения выбранной строчки в таблице "Читатели"</summary>
         private void Grid_Orders_Readers_SelectionChanged(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, false, () => {
@@ -43,13 +43,23 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     this.TextBox_Orders_Reader_MiddleName.Clear();
                     this.TextBox_Orders_Reader_Info.Clear();
                 }
+
+                // Обновляем таблицу записей (фильтрация идёт внутри метода)
+                this.UpdateData(this.Grid_Orders_Orders);
             });
         }
 
-        /// <summary>Событие нажатия на кнопку создания во вкладке "Формуляры"</summary>
+        /// <summary>Событие изменения текста в форме добавления/редактирования читателя</summary>
+        private void TextBox_Orders_Reader_TextChanged(object sender, EventArgs e)
+        {
+            // Кнопка создания доступна только если введена фамилия и имя читателя
+            this.Button_Orders_Readers_Create.Enabled = (this.TextBox_Orders_Reader_LastName.Text.Trim() != "") && (this.TextBox_Orders_Reader_FirstName.Text.Trim() != "");
+        }
+
+        /// <summary>Событие нажатия на кнопку "Добавить читателя"</summary>
         private void Button_Orders_Readers_Add_Click(object sender, EventArgs e)
         {
-            ExceptionHelper.CheckCode(this, false, () => {
+            ExceptionHelper.CheckCode(this, true, () => {
                 // Создаём и сохраняем нового читателя
                 Reader new_entity = new Reader {
                     LastName = this.TextBox_Orders_Reader_LastName.Text,
@@ -65,56 +75,102 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.Grid_Orders_Readers.ClearSelection();
                 this.Grid_Orders_Readers.Rows[this.Grid_Orders_Readers.Rows.Count - 1].Selected = true;
 
+                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Читатель успешно добавлен!");
             });
         }
 
+        /// <summary>Событие нажатия на кнопку "Изменить информацию о читателе"</summary>
         private void Button_Orders_Readers_Edit_Click(object sender, EventArgs e)
         {
+            ExceptionHelper.CheckCode(this, true, () => {
+                // TODO: Изменение выбранного в таблице читателя
+                // ...
 
+                this.UnfocusAll();
+                FormHelper.SendSuccessMessage(this, "Информация о читателе успешно изменена!");
+            });
         }
 
+        /// <summary>Событие нажатия на кнопку "Удалить читателя"</summary>
         private void Button_Orders_Readers_Delete_Click(object sender, EventArgs e)
         {
+            ExceptionHelper.CheckCode(this, true, () => {
+                // TODO: Удаление выбранного в таблице читателя
+                // ...
 
+                this.UnfocusAll();
+                FormHelper.SendSuccessMessage(this, "Читатель успешно удалён!");
+            });
         }
-        // ======================================================================
 
-        // ======================================================================
-        // Фильтрация на вкладке "Формуляры"
-        // ======================================================================
+        // ----------------------------------------------------------------------
+        // Фильтрация таблицы "Читатели"
+        // ----------------------------------------------------------------------
+        /// <summary>Событие изменения параметров фильтрации</summary>
         private void Component_Orders_Readers_Search_ConditionsChanged(object sender, EventArgs e)
         {
-
+            // Обновляем данные только если установлена галочка "Поиск в реальном времени"
+            if (this.CheckBox_Orders_Readers_Search_IsInRealTime.Checked) {
+                // Нужно обновить только одну таблицу и ничего больше - поэтому не используем UpdateCurrentSelectedTab()
+                this.UpdateData(this.Grid_Orders_Readers);
+            }
         }
 
+        /// <summary>Событие нажатия на кнопку "Поиск"</summary>
         private void Button_Orders_Readers_Search_Click(object sender, EventArgs e)
         {
+            // Нужно обновить только одну таблицу и ничего больше - поэтому не используем UpdateCurrentSelectedTab()
+            this.UpdateData(this.Grid_Orders_Readers);
 
+            this.UnfocusAll();
         }
 
+        /// <summary>Событие изменения галочки "Поиск в реальном времени"</summary>
         private void CheckBox_Orders_Readers_Search_IsInRealTime_CheckedChanged(object sender, EventArgs e)
         {
+            // Блокируем кнопку поиска, если включён поиск в реальном времени, и наоборот
+            this.Button_Orders_Readers_Search.Enabled = !this.CheckBox_Orders_Readers_Search_IsInRealTime.Checked;
 
+            // Нужно обновить только одну таблицу и ничего больше - поэтому не используем UpdateCurrentSelectedTab()
+            this.UpdateData(this.Grid_Orders_Readers);
+
+            this.UnfocusAll();
         }
 
+        /// <summary>Событие нажатия на кнопку "Сбросить фильтр"</summary>
         private void Button_Orders_Readers_Search_Reset_Click(object sender, EventArgs e)
         {
-            this.TextBox_Orders_Readers_Search.Clear();
+            // Очищаем фильтр и фокусируемся на текстовом поле ввода
+            this.TextBox_Orders_Readers_Search.Text = "";
+            this.TextBox_Orders_Readers_Search.Focus();
+
+            // Нужно обновить только одну таблицу и ничего больше - поэтому не используем UpdateCurrentSelectedTab()
+            this.UpdateData(this.Grid_Orders_Readers);
         }
+        // ----------------------------------------------------------------------
         // ======================================================================
 
         // ======================================================================
-        // Таблица "Формуляры" на вкладке "Формуляры"
+        // Таблица "Формуляры"
         // ======================================================================
+        /// <summary>Событие изменения выбранной строчки в таблице "Формуляры"</summary>
         private void Grid_Orders_Orders_SelectionChanged(object sender, EventArgs e)
         {
-
+            // Кнопка удаления записей доступна только если выбрана хотя бы одна строчка
+            this.Button_Orders_Orders_Delete.Enabled = this.Grid_Orders_Orders.SelectedRows.Count > 0;
         }
 
+        /// <summary>Событие нажатия на кнопку "Удалить выбранные записи"</summary>
         private void Button_Orders_Orders_Delete_Click(object sender, EventArgs e)
         {
+            ExceptionHelper.CheckCode(this, true, () => {
+                // TODO: В цикле по выбранным строчкам находим запись по её ID и удаляем
+                // ...
 
+                this.UnfocusAll();
+                FormHelper.SendSuccessMessage(this, "Запись успешно удалена!");
+            });
         }
         // ======================================================================
     }

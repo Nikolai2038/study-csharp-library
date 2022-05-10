@@ -244,6 +244,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
 
                     data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
                     grid.DataSource = data;
+
+                    replaces.Add("FirstName", "Имя");
+                    replaces.Add("LastName", "Фамилия");
+                    replaces.Add("MiddleName", "Отчество");
+                    replaces.Add("Info", "Дополнительная информация");
                 }
                 // Если заполняется вкладка "Формуляры" - "Записи"
                 else if (grid.Equals(this.Grid_Orders_Orders)) {

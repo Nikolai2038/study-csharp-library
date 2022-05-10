@@ -69,25 +69,28 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
             });
         }
 
-        /// <summary>Событие изменения текста во вкладке "Справочники" - "Авторы"</summary>
+        /// <summary>Событие изменения текста в полях ввода формы "Автор"</summary>
         private void TextBox_References_Author_TextChanged(object sender, EventArgs e)
         {
-            this.Button_References_Author_Create.Enabled = (this.TextBox_References_Author_FirstName.Text != "") && (this.TextBox_References_Author_LastName.Text != "");
+            // Кнопка создания доступна только если введена фамилия и имя автора
+            this.Button_References_Author_Create.Enabled = (this.TextBox_References_Author_LastName.Text.Trim() != "") && (this.TextBox_References_Author_FirstName.Text.Trim() != "");
         }
 
-        /// <summary>Событие изменения текста во вкладке "Справочники" - "Жанры"</summary>
+        /// <summary>Событие изменения текста в полях ввода формы "Жанр"</summary>
         private void TextBox_References_Group_TextChanged(object sender, EventArgs e)
         {
-            this.Button_References_Group_Create.Enabled = this.TextBox_References_Group_Title.Text != "";
+            // Кнопка создания доступна только если введено название жанра
+            this.Button_References_Group_Create.Enabled = this.TextBox_References_Group_Title.Text.Trim() != "";
         }
 
-        /// <summary>Событие изменения текста во вкладке "Справочники" - "Издатели"</summary>
+        /// <summary>Событие изменения текста в полях ввода формы "Издатель"</summary>
         private void TextBox_References_Bookmaker_TextChanged(object sender, EventArgs e)
         {
-            this.Button_References_Bookmaker_Create.Enabled = this.TextBox_References_Bookmaker_Title.Text != "";
+            // Кнопка создания доступна только если введено название издателя
+            this.Button_References_Bookmaker_Create.Enabled = this.TextBox_References_Bookmaker_Title.Text.Trim() != "";
         }
 
-        /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Справочники" - "Авторы"</summary>
+        /// <summary>Событие изменения выбранной строчки в таблице "Авторы"</summary>
         private void Grid_References_Author_SelectionChanged(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, false, () => {
@@ -117,7 +120,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
             });
         }
 
-        /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Справочники" - "Жанры"</summary>
+        /// <summary>Событие изменения выбранной строчки в таблице "Жанры"</summary>
         private void Grid_References_Group_SelectionChanged(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, false, () => {
@@ -143,7 +146,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
             });
         }
 
-        /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Справочники" - "Издатели"</summary>
+        /// <summary>Событие изменения выбранной строчки в таблице "Издатели"</summary>
         private void Grid_References_Bookmaker_SelectionChanged(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, false, () => {
