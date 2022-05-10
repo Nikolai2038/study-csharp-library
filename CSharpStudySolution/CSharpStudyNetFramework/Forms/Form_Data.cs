@@ -36,7 +36,10 @@ namespace CSharpStudyNetFramework.Forms
                 this.Grid_CopyBooks,
                 this.Grid_References_Author,
                 this.Grid_References_Bookmaker,
-                this.Grid_References_Group
+                this.Grid_References_Group,
+                this.Grid_Orders_Readers,
+                this.Grid_Orders_Orders,
+                this.Grid_Returns
             };
 
             // -------------------------------------------------------
@@ -149,6 +152,13 @@ namespace CSharpStudyNetFramework.Forms
                     } else {
                         return;
                     }
+                    break;
+                case 3:
+                    this.UpdateData(this.Grid_Orders_Readers);
+                    this.UpdateData(this.Grid_Orders_Orders);
+                    return;
+                case 5:
+                    grid_to_update = this.Grid_Returns;
                     break;
                 default:
                     return;
@@ -340,6 +350,25 @@ namespace CSharpStudyNetFramework.Forms
 
                     replaces.Add("Title", "Название");
                     replaces.Add("City", "Город");
+                }
+                // Если заполняется вкладка "Формуляры" - "Читатели"
+                else if (grid.Equals(this.Grid_Orders_Readers)) {
+                    List<Reader> data = DatabaseHelper.db.Readers.ToList();
+
+                    data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
+                    grid.DataSource = data;
+                }
+                // Если заполняется вкладка "Формуляры" - "Записи"
+                else if (grid.Equals(this.Grid_Orders_Orders)) {
+                    List<Order> data = DatabaseHelper.db.Orders.ToList();
+
+                    grid.DataSource = data;
+                }
+                // Если заполняется вкладка "Возврат книг"
+                else if (grid.Equals(this.Grid_Returns)) {
+                    List<Order> data = DatabaseHelper.db.Orders.ToList();
+
+                    grid.DataSource = data;
                 }
 
                 // Замена названий колонок
