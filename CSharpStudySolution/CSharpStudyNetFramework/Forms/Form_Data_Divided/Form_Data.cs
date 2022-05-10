@@ -82,7 +82,14 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 {
                     this.Grid_Books,
                     new List<ComboBox>() {
-                        this.ComboBox_CopyBooks_Book
+                        this.ComboBox_CopyBooks_Book,
+                        this.ComboBox_Issuance_Book
+                    }
+                },
+                {
+                    this.Grid_CopyBooks,
+                    new List<ComboBox>() {
+                        this.ComboBox_Issuance_CopyBook
                     }
                 },
                 {

@@ -35,7 +35,7 @@ namespace CSharpStudyNetFramework.ORM
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=library_data_v_1_0_8.db");
+            optionsBuilder.UseSqlite("Filename=library_data_v_1_0_9.db");
         }
     }
 }

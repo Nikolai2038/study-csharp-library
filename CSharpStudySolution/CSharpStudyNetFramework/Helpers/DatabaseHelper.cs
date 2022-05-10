@@ -50,11 +50,13 @@ namespace CSharpStudyNetFramework.Helpers
         /// <typeparam name="T">Класс сущности</typeparam>
         /// <param name="entities">DbSet сущностей в БД</param>
         /// <param name="text_to_find">Текст, с которым должен совпадать результат метода ToString() для сущности</param>
+        /// <param name="throw_exception_on_not_found">Если true - в случае ненахождения записи вылетит исключение. Если false - просто вернётся null</param>
         /// <returns>Найденная сущность</returns>
         /// <exception cref="FormException">Исключение формы, вызываемое, если сущность не найдена</exception>
         public static T SelectFirstOrFormException<T>(
             DbSet<T> entities,
-            string text_to_find
+            string text_to_find,
+            bool throw_exception_on_not_found = true
         ) where T : class, IEntity
         {
             try {
@@ -68,7 +70,11 @@ namespace CSharpStudyNetFramework.Helpers
             }
             // В случае вызова исключения вызываем исключение формы для его последующей обработки
             catch (Exception) {
-                throw new FormException(EntitiesTexts[typeof(T)][0] + " \"" + text_to_find + "\"" + " не " + EntitiesTexts[typeof(T)][1] + " в базе данных!");
+                if (throw_exception_on_not_found) {
+                    throw new FormException(EntitiesTexts[typeof(T)][0] + " \"" + text_to_find + "\"" + " не " + EntitiesTexts[typeof(T)][1] + " в базе данных!");
+                } else {
+                    return null;
+                }
             }
         }
 
@@ -76,11 +82,13 @@ namespace CSharpStudyNetFramework.Helpers
         /// <typeparam name="T">Класс сущности</typeparam>
         /// <param name="entities">DbSet сущностей в БД</param>
         /// <param name="id_to_find">ID сущности</param>
+        /// <param name="throw_exception_on_not_found">Если true - в случае ненахождения записи вылетит исключение. Если false - просто вернётся null</param>
         /// <returns>Найденная сущность</returns>
         /// <exception cref="FormException">Исключение формы, вызываемое, если сущность не найдена</exception>
         public static T SelectFirstOrFormException<T>(
             DbSet<T> entities,
-            int id_to_find
+            int id_to_find,
+            bool throw_exception_on_not_found = true
         ) where T : class, IEntity
         {
             try {
@@ -94,7 +102,11 @@ namespace CSharpStudyNetFramework.Helpers
             }
             // В случае вызова исключения вызываем исключение формы для его последующей обработки
             catch (Exception) {
-                throw new FormException(EntitiesTexts[typeof(T)][0] + " c ID = " + id_to_find + " не " + EntitiesTexts[typeof(T)][1] + " в базе данных!");
+                if (throw_exception_on_not_found) {
+                    throw new FormException(EntitiesTexts[typeof(T)][0] + " c ID = " + id_to_find + " не " + EntitiesTexts[typeof(T)][1] + " в базе данных!");
+                } else {
+                    return null;
+                }
             }
         }
     }

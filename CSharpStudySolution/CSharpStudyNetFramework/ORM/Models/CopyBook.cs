@@ -11,7 +11,7 @@
 
         public override string ToString()
         {
-            return "[" + this.Number.ToString() + "]" + this.Book?.ToString();
+            return "[#" + this.Number.ToString() + "] " + this.Book?.ToString();
         }
     }
 }

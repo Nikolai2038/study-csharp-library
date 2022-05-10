@@ -15,7 +15,7 @@
 
         public override string ToString()
         {
-            return this.FullName;
+            return this.FullName.Trim();
         }
     }
 }

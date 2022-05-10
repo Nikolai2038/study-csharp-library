@@ -192,6 +192,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.Grid_References_Author.ClearSelection();
                 this.Grid_References_Author.Rows[this.Grid_References_Author.Rows.Count - 1].Selected = true;
 
+                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Автор успешно добавлен!");
             });
         }
@@ -212,6 +213,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.Grid_References_Group.ClearSelection();
                 this.Grid_References_Group.Rows[this.Grid_References_Group.Rows.Count - 1].Selected = true;
 
+                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Жанр успешно добавлен!");
             });
         }
@@ -233,6 +235,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.Grid_References_Bookmaker.ClearSelection();
                 this.Grid_References_Bookmaker.Rows[this.Grid_References_Bookmaker.Rows.Count - 1].Selected = true;
 
+                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Издатель успешно добавлен!");
             });
         }
@@ -261,6 +264,8 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         this.Grid_Books,
                         this.Grid_References_Author,
                     });
+
+                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Информация об авторе успешно отредактирована!");
                 }
             });
@@ -288,6 +293,8 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         this.Grid_Books,
                         this.Grid_References_Group,
                     });
+
+                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Информация о жанре успешно отредактирована!");
                 }
             });
@@ -316,6 +323,8 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         this.Grid_Books,
                         this.Grid_References_Bookmaker,
                     });
+
+                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Информация об издателе успешно отредактирована!");
                 }
             });
@@ -348,6 +357,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Снимаем выделение в таблице
                     this.Grid_References_Author.ClearSelection();
 
+                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Автор успешно удалён!");
                 }
             });
@@ -380,6 +390,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Снимаем выделение в таблице
                     this.Grid_References_Group.ClearSelection();
 
+                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Жанр успешно удалён!");
                 }
             });
@@ -412,6 +423,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Снимаем выделение в таблице
                     this.Grid_References_Bookmaker.ClearSelection();
 
+                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Издатель успешно удалён!");
                 }
             });

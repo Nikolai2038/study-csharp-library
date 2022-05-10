@@ -175,7 +175,6 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // анонимных объектов. Поэтому, обрабатываем отдельно значения для комбобоксов, чтобы
                     // в них успешно применились методы ToString()
                     IEnumerable<Book> data = DatabaseHelper.db.Books.Where(filter_function);
-
                     data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data.ToList());
                     grid.DataSource = data.Select(book => {
                         return new {
@@ -240,7 +239,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 }
                 // Если заполняется вкладка "Формуляры" - "Читатели"
                 else if (grid.Equals(this.Grid_Orders_Readers)) {
-                    List<Reader> data = DatabaseHelper.db.Readers.ToList();
+                    List<Reader> data = DatabaseHelper.db.Readers.Where(
+                        new Func<Reader, bool>((Reader entity) => {
+                            return entity.ToString().Contains(this.TextBox_Orders_Readers_Search.Text.Trim());
+                        })
+                    ).ToList();
 
                     data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
                     grid.DataSource = data;
@@ -252,9 +255,64 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 }
                 // Если заполняется вкладка "Формуляры" - "Записи"
                 else if (grid.Equals(this.Grid_Orders_Orders)) {
-                    List<Order> data = DatabaseHelper.db.Orders.ToList();
+                    // Только если выбран читатель
+                    if (this.Grid_Orders_Readers.SelectedRows.Count > 0) {
+                        // Выбираем записи выбранного читателя в таблице читателей
+                        int selected_reader_id = Convert.ToInt32(this.Grid_Orders_Readers.SelectedRows[0].Cells[0].Value);
+                        Reader selected_reader = DatabaseHelper.SelectFirstOrFormException(DatabaseHelper.db.Readers, selected_reader_id);
 
-                    grid.DataSource = data;
+                        // Из-за изменения полей выборки, её результат не является списком книг - это список
+                        // анонимных объектов. Поэтому, обрабатываем отдельно значения для комбобоксов, чтобы
+                        // в них успешно применились методы ToString()
+                        IEnumerable<Order> data_not_list = DatabaseHelper.db.Orders.Where(
+                            new Func<Order, bool>((Order entity) => {
+                                return entity.Reader.Id == selected_reader.Id;
+                            })
+                        );
+                        data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data_not_list.ToList());
+
+                        grid.DataSource = data_not_list.Select(order => {
+                            // Проверяем связанные поля на существование
+                            string author = "-";
+                            string title = "-";
+                            string number = "-";
+                            if (order.CopyBook != null) {
+                                if (order.CopyBook.Book != null) {
+                                    if (order.CopyBook.Book.Author != null) {
+                                        author = order.CopyBook.Book.Author.ToString();
+                                    }
+                                    title = order.CopyBook.Book.Title;
+                                }
+                                number = order.CopyBook.Number;
+                            }
+
+                            return new {
+                                order.Id,
+                                Author = author,
+                                Title = title,
+                                Number = number,
+                                order.DateGiven,
+                                order.DateReturned,
+                                order.DateReturnedFact,
+                                IsReturned = !order.CopyBook.IsGiven,
+                                order.CopyBook.IsLost
+                            };
+                        }).ToList();
+
+                        replaces.Add("Author", "Автор");
+                        replaces.Add("Title", "Название");
+                        replaces.Add("Number", "Номер экземпляра");
+                        replaces.Add("DateGiven", "Дата выдачи");
+                        replaces.Add("DateReturned", "Дата возврата");
+                        replaces.Add("DateReturnedFact", "Дата фактического возврата");
+                        replaces.Add("IsReturned", "Книга возвращена");
+                        replaces.Add("IsLost", "Книга утеряна");
+                    }
+                    // Если читатель не выбран
+                    else {
+                        // Очищаем таблицу записей
+                        grid.DataSource = null;
+                    }
                 }
                 // Если заполняется вкладка "Возврат книг"
                 else if (grid.Equals(this.Grid_Returns)) {
@@ -277,14 +335,23 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     bool is_exist = this.LinkedComboboxes.TryGetValue(grid, out List<ComboBox> linked_comboboxes);
                     if (is_exist) {
                         linked_comboboxes.ForEach(combobox => {
-                            // Заполнение самого списка
-                            combobox.Items.Clear();
-                            combobox.Items.AddRange(data_for_comboboxes);
-                            // Настройки для автодополнения
-                            combobox.AutoCompleteCustomSource = new AutoCompleteStringCollection();
-                            combobox.AutoCompleteCustomSource.AddRange(data_for_comboboxes);
-                            combobox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                            combobox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                            // Комбобокс "Экземпляр книги" на вкладке "Выдача книг" отображает не все данные из БД
+                            // Поэтому для него вызываем отдельный метод обновления данных
+                            if (combobox.Equals(this.ComboBox_Issuance_CopyBook)) {
+                                // Вызываем метод изменения текста в комбобоксе выбора книги, чтобы пересчитать экземпляры книги
+                                this.ComboBox_Issuance_Book_TextChanged(null, null);
+                            }
+                            // Все другие комбобоксы - содержат все данные
+                            else {
+                                // Заполнение самого списка
+                                combobox.Items.Clear();
+                                combobox.Items.AddRange(data_for_comboboxes);
+                                // Настройки для автодополнения
+                                combobox.AutoCompleteCustomSource = new AutoCompleteStringCollection();
+                                combobox.AutoCompleteCustomSource.AddRange(data_for_comboboxes);
+                                combobox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                                combobox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                            }
                         });
                     }
                 }

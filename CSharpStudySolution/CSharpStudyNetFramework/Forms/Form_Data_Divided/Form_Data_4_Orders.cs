@@ -1,6 +1,9 @@
 ﻿using CSharpStudyNetFramework.Helpers;
 using CSharpStudyNetFramework.ORM.Models;
+using MetroFramework.Controls;
 using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 // ######################################################################
 // Форма данных - Вкладка "Формуляры"
@@ -84,11 +87,31 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_Orders_Readers_Edit_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                // TODO: Изменение выбранного в таблице читателя
-                // ...
+                if (this.Grid_Orders_Readers.SelectedRows.Count > 0) {
+                    // Находим выбранного в таблице читателя в БД
+                    int selected_id = Convert.ToInt32(this.Grid_Orders_Readers.SelectedRows[0].Cells[0].Value);
+                    Reader found_entity = DatabaseHelper.SelectFirstOrFormException(
+                        DatabaseHelper.db.Readers,
+                        selected_id
+                    );
 
-                this.UnfocusAll();
-                FormHelper.SendSuccessMessage(this, "Информация о читателе успешно изменена!");
+                    found_entity.FirstName = this.TextBox_Orders_Reader_LastName.Text;
+                    found_entity.LastName = this.TextBox_Orders_Reader_FirstName.Text;
+                    found_entity.MiddleName = this.TextBox_Orders_Reader_MiddleName.Text;
+                    found_entity.Info = this.TextBox_Orders_Reader_Info.Text;
+
+                    DatabaseHelper.db.Readers.Update(found_entity);
+                    DatabaseHelper.db.SaveChanges();
+
+                    // Обновляем как читателей, так и записи
+                    this.UpdateData(new List<MetroGrid>() {
+                        this.Grid_Orders_Readers,
+                        this.Grid_Orders_Orders,
+                    });
+
+                    this.UnfocusAll();
+                    FormHelper.SendSuccessMessage(this, "Информация о читателе успешно отредактирована!");
+                }
             });
         }
 
@@ -96,11 +119,32 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_Orders_Readers_Delete_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                // TODO: Удаление выбранного в таблице читателя
-                // ...
+                if (this.Grid_Orders_Readers.SelectedRows.Count > 0) {
+                    // Удаляем все выбранные записи
+                    foreach (DataGridViewRow row in this.Grid_Orders_Readers.SelectedRows) {
+                        // Находим выбранного в таблице читателя в БД
+                        int selected_id = Convert.ToInt32(row.Cells[0].Value);
+                        Reader found_entity = DatabaseHelper.SelectFirstOrFormException(
+                            DatabaseHelper.db.Readers,
+                            selected_id
+                        );
 
-                this.UnfocusAll();
-                FormHelper.SendSuccessMessage(this, "Читатель успешно удалён!");
+                        DatabaseHelper.db.Readers.Remove(found_entity);
+                        DatabaseHelper.db.SaveChanges();
+                    }
+
+                    // Обновляем как читателей, так и записи
+                    this.UpdateData(new List<MetroGrid>() {
+                        this.Grid_Orders_Readers,
+                        this.Grid_Orders_Orders,
+                    });
+
+                    // Снимаем выделение в таблице
+                    this.Grid_Orders_Readers.ClearSelection();
+
+                    this.UnfocusAll();
+                    FormHelper.SendSuccessMessage(this, "Читатель успешно удалён!");
+                }
             });
         }
 
@@ -165,11 +209,39 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_Orders_Orders_Delete_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                // TODO: В цикле по выбранным строчкам находим запись по её ID и удаляем
-                // ...
+                if (this.Grid_Orders_Orders.SelectedRows.Count > 0) {
+                    // Удаляем все выбранные записи
+                    foreach (DataGridViewRow row in this.Grid_Orders_Orders.SelectedRows) {
+                        // Находим выбранную в таблице запись в БД
+                        int selected_id = Convert.ToInt32(row.Cells[0].Value);
+                        Order found_entity = DatabaseHelper.SelectFirstOrFormException(
+                            DatabaseHelper.db.Orders,
+                            selected_id
+                        );
 
-                this.UnfocusAll();
-                FormHelper.SendSuccessMessage(this, "Запись успешно удалена!");
+                        // Так как запись удаляем, возвращаем свойства "Выдана ли" и "Потеряна ли"
+                        // так как другого способа вернуть книги из этих свойств не будет
+                        found_entity.CopyBook.IsGiven = false;
+                        found_entity.CopyBook.IsLost = false;
+
+                        DatabaseHelper.db.Orders.Remove(found_entity);
+                        DatabaseHelper.db.SaveChanges();
+                    }
+
+                    // Обновляем все таблицы с записями
+                    this.UpdateData(new List<MetroGrid>() {
+                        this.Grid_Orders_Orders,
+                        this.Grid_Returns,
+                        // Таблицу экземпляров книг тоже нужно обновить, так как там есть чекбоксы, которые могли измениться
+                        this.Grid_CopyBooks,
+                    });
+
+                    // Снимаем выделение в таблице
+                    this.Grid_Orders_Orders.ClearSelection();
+
+                    this.UnfocusAll();
+                    FormHelper.SendSuccessMessage(this, "Запись успешно удалена!");
+                }
             });
         }
         // ======================================================================
