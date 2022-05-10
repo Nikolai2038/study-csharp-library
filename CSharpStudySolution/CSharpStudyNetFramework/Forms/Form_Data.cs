@@ -98,7 +98,7 @@ namespace CSharpStudyNetFramework.Forms
                 ShowAlways = true,
                 UseAnimation = true
             };
-            tool_tip.SetToolTip(this.CheckBox_IsSearchInRealTime, "Если включен поиск в реальном времени, то данные в таблице будут обновляться сразу же после любого изменения параметров фильтрации.");
+            tool_tip.SetToolTip(this.CheckBox_Books_Search_IsInRealTime, "Если включен поиск в реальном времени, то данные в таблице будут обновляться сразу же после любого изменения параметров фильтрации.");
 
             // Обновление данных таблиц
             this.UpdateData();
@@ -230,7 +230,7 @@ namespace CSharpStudyNetFramework.Forms
 
                     Func<Book, bool> filter_function;
                     // Если выбрана фильтрация по полю "Автор"
-                    if (this.RadioButton_Books_Author.Checked) {
+                    if (this.RadioButton_Books_Search_Author.Checked) {
                         filter_function = book => {
                             if (book.Author == null) {
                                 // true будет только в случае, если передана пустая строчка
@@ -240,13 +240,13 @@ namespace CSharpStudyNetFramework.Forms
                         };
                     }
                     // Если выбрана фильтрация по полю "Название"
-                    else if (this.RadioButton_Books_Title.Checked) {
+                    else if (this.RadioButton_Books_Search_Title.Checked) {
                         filter_function = book => {
                             return book.Title.Contains(filter_string);
                         };
                     }
                     // Если выбрана фильтрация по полю "Жанр"
-                    else if (this.RadioButton_Books_Group.Checked) {
+                    else if (this.RadioButton_Books_Search_Group.Checked) {
                         filter_function = book => {
                             if (book.Group == null) {
                                 // true будет только в случае, если передана пустая строчка
@@ -256,7 +256,7 @@ namespace CSharpStudyNetFramework.Forms
                         };
                     }
                     // Если выбрана фильтрация по полю "Издатель"
-                    else if (this.RadioButton_Books_Bookmaker.Checked) {
+                    else if (this.RadioButton_Books_Search_Bookmaker.Checked) {
                         filter_function = book => {
                             if (book.Bookmaker == null) {
                                 // true будет только в случае, если передана пустая строчка
@@ -266,13 +266,13 @@ namespace CSharpStudyNetFramework.Forms
                         };
                     }
                     // Если выбрана фильтрация по полю "Год издания"
-                    else if (this.RadioButton_Books_PublicationYear.Checked) {
+                    else if (this.RadioButton_Books_Search_PublicationYear.Checked) {
                         filter_function = book => {
                             return book.PublicationYear.ToString().Contains(filter_string);
                         };
                     }
                     // Если выбрана фильтрация по полю "Дата регистрации"
-                    else if (this.RadioButton_Books_RegistrationDate.Checked) {
+                    else if (this.RadioButton_Books_Search_RegistrationDate.Checked) {
                         filter_function = book => {
                             return book.RegistrationDate.ToString().Contains(filter_string);
                         };
@@ -479,61 +479,85 @@ namespace CSharpStudyNetFramework.Forms
         /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Справочники" - "Авторы"</summary>
         private void Grid_References_Author_SelectionChanged(object sender, EventArgs e)
         {
-            // Кнопки изменения и удаления записи будут доступны только если выбрана строчка в таблице
-            this.Button_References_Author_Edit.Enabled = this.Button_References_Author_Delete.Enabled =
-                this.Grid_References_Author.SelectedRows.Count > 0;
+            ExceptionHelper.CheckCode(this, true, () => {
+                // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
+                if (this.Grid_References_Author.SelectedRows.Count > 0) {
+                    this.Button_References_Author_Edit.Enabled = this.Button_References_Author_Delete.Enabled = true;
 
-            // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
-            if (this.Grid_References_Author.SelectedRows.Count > 0) {
-                DataGridViewRow selected_row = this.Grid_References_Author.SelectedRows[0];
-                this.TextBox_References_Author_FirstName.Text = selected_row.Cells[1].Value.ToString();
-                this.TextBox_References_Author_LastName.Text = selected_row.Cells[2].Value.ToString();
-                this.TextBox_References_Author_MiddleName.Text = selected_row.Cells[3].Value.ToString();
-            }
-            // Если нет выбора - очищаем текстбоксы
-            else {
-                this.TextBox_References_Author_FirstName.Clear();
-                this.TextBox_References_Author_LastName.Clear();
-                this.TextBox_References_Author_MiddleName.Clear();
-            }
+                    // Находим выбранную запись в БД
+                    int selected_id = Convert.ToInt32(this.Grid_References_Author.SelectedRows[0].Cells[0].Value);
+                    Author found_entity = DatabaseHelper.SelectFirstOrFormException(
+                        DatabaseHelper.db.Authors,
+                        selected_id
+                    );
+
+                    this.TextBox_References_Author_FirstName.Text = found_entity.FirstName;
+                    this.TextBox_References_Author_LastName.Text = found_entity.LastName;
+                    this.TextBox_References_Author_MiddleName.Text = found_entity.MiddleName;
+                }
+                // Если нет выбора - очищаем текстбоксы; блокируем кнопки изменения и удаления
+                else {
+                    this.Button_References_Author_Edit.Enabled = this.Button_References_Author_Delete.Enabled = false;
+
+                    this.TextBox_References_Author_FirstName.Clear();
+                    this.TextBox_References_Author_LastName.Clear();
+                    this.TextBox_References_Author_MiddleName.Clear();
+                }
+            });
         }
 
         /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Справочники" - "Жанры"</summary>
         private void Grid_References_Group_SelectionChanged(object sender, EventArgs e)
         {
-            // Кнопки изменения и удаления записи будут доступны только если выбрана строчка в таблице
-            this.Button_References_Group_Edit.Enabled = this.Button_References_Group_Delete.Enabled =
-                this.Grid_References_Group.SelectedRows.Count > 0;
+            ExceptionHelper.CheckCode(this, true, () => {
+                // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
+                if (this.Grid_References_Group.SelectedRows.Count > 0) {
+                    this.Button_References_Group_Edit.Enabled = this.Button_References_Group_Delete.Enabled = true;
 
-            // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
-            if (this.Grid_References_Group.SelectedRows.Count > 0) {
-                DataGridViewRow selected_row = this.Grid_References_Group.SelectedRows[0];
-                this.TextBox_References_Group_Title.Text = selected_row.Cells[1].Value.ToString();
-            }
-            // Если нет выбора - очищаем текстбоксы
-            else {
-                this.TextBox_References_Group_Title.Clear();
-            }
+                    // Находим выбранную запись в БД
+                    int selected_id = Convert.ToInt32(this.Grid_References_Group.SelectedRows[0].Cells[0].Value);
+                    Group found_entity = DatabaseHelper.SelectFirstOrFormException(
+                        DatabaseHelper.db.Groups,
+                        selected_id
+                    );
+
+                    this.TextBox_References_Group_Title.Text = found_entity.Title;
+                }
+                // Если нет выбора - очищаем текстбоксы; блокируем кнопки изменения и удаления
+                else {
+                    this.Button_References_Group_Edit.Enabled = this.Button_References_Group_Delete.Enabled = false;
+
+                    this.TextBox_References_Group_Title.Clear();
+                }
+            });
         }
 
         /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Справочники" - "Издатели"</summary>
         private void Grid_References_Bookmaker_SelectionChanged(object sender, EventArgs e)
         {
-            // Кнопки изменения и удаления записи будут доступны только если выбрана строчка в таблице
-            this.Button_References_Bookmaker_Edit.Enabled = this.Button_References_Bookmaker_Delete.Enabled =
-                this.Grid_References_Bookmaker.SelectedRows.Count > 0;
+            ExceptionHelper.CheckCode(this, true, () => {
+                // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
+                if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
+                    this.Button_References_Bookmaker_Edit.Enabled = this.Button_References_Bookmaker_Delete.Enabled = true;
 
-            // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
-            if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
-                DataGridViewRow selected_row = this.Grid_References_Bookmaker.SelectedRows[0];
-                this.TextBox_References_Bookmaker_Title.Text = selected_row.Cells[1].Value.ToString();
-                this.TextBox_References_Bookmaker_City.Text = selected_row.Cells[2].Value.ToString();
-            }
-            // Если нет выбора - очищаем текстбоксы
-            else {
-                this.TextBox_References_Bookmaker_Title.Clear();
-                this.TextBox_References_Bookmaker_City.Clear();
-            }
+                    // Находим выбранную запись в БД
+                    int selected_id = Convert.ToInt32(this.Grid_References_Bookmaker.SelectedRows[0].Cells[0].Value);
+                    Bookmaker found_entity = DatabaseHelper.SelectFirstOrFormException(
+                        DatabaseHelper.db.Bookmakers,
+                        selected_id
+                    );
+
+                    this.TextBox_References_Bookmaker_Title.Text = found_entity.Title;
+                    this.TextBox_References_Bookmaker_City.Text = found_entity.City;
+                }
+                // Если нет выбора - очищаем текстбоксы; блокируем кнопки изменения и удаления
+                else {
+                    this.Button_References_Bookmaker_Edit.Enabled = this.Button_References_Bookmaker_Delete.Enabled = false;
+
+                    this.TextBox_References_Bookmaker_Title.Clear();
+                    this.TextBox_References_Bookmaker_City.Clear();
+                }
+            });
         }
 
         /// <summary>Событие нажатия на кнопку создания во вкладке "Справочники" - "Авторы"</summary>
@@ -984,7 +1008,7 @@ namespace CSharpStudyNetFramework.Forms
         private void Component_Books_Search_ConditionsChanged(object sender, EventArgs e)
         {
             // Обновляем данные только если установлена галочка "Поиск в реальном времени"
-            if (this.CheckBox_IsSearchInRealTime.Checked) {
+            if (this.CheckBox_Books_Search_IsInRealTime.Checked) {
                 this.UpdateData(this.Grid_Books);
             }
         }
@@ -997,19 +1021,19 @@ namespace CSharpStudyNetFramework.Forms
         }
 
         /// <summary>Событие нажатия на кнопку "Сбросить фильтр" на вкладке "Книги"</summary>
-        private void Button_Books_Reset_Click(object sender, EventArgs e)
+        private void Button_Books_Search_Reset_Click(object sender, EventArgs e)
         {
-            this.RadioButton_Books_Author.Select();
+            this.RadioButton_Books_Search_Author.Select();
             this.TextBox_Books_Search.Text = "";
             this.UpdateData(this.Grid_Books);
             this.UnfocusAll();
         }
 
         /// <summary>Событие изменения галочки "Поиск в реальном времени"</summary>
-        private void CheckBox_IsSearchInRealTime_CheckedChanged(object sender, EventArgs e)
+        private void CheckBox_Books_Search_IsInRealTime_CheckedChanged(object sender, EventArgs e)
         {
             // Блокируем кнопку поиска, если включён поиск в реальном времени, и наоборот
-            this.Button_Books_Search.Enabled = !this.CheckBox_IsSearchInRealTime.Checked;
+            this.Button_Books_Search.Enabled = !this.CheckBox_Books_Search_IsInRealTime.Checked;
 
             this.UpdateData(this.Grid_Books);
             this.UnfocusAll();
@@ -1176,41 +1200,43 @@ namespace CSharpStudyNetFramework.Forms
         // ======================================================================
         // Вкладка "Формуляры"
         // ======================================================================
+        // ----------------------------------------------------------------------
+        // Таблица "Читатели" на вкладке "Формуляры"
+        // ----------------------------------------------------------------------
         /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Формуляры"</summary>
         private void Grid_Orders_Readers_SelectionChanged(object sender, EventArgs e)
         {
-            ExceptionHelper.CheckCode(this, false, () => {
-                // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
+            ExceptionHelper.CheckCode(this, true, () => {
+                // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
                 if (this.Grid_Orders_Readers.SelectedRows.Count > 0) {
-                    
-                    // Кнопки изменения и удаления записи будут доступны только если выбрана строчка в таблице
-                    this.Button_Orders_Reader_Edit.Enabled = this.Button_Orders_Reader_Delete.Enabled =
-                        this.Grid_Orders_Readers.SelectedRows.Count > 0;
+                    this.Button_Orders_Readers_Edit.Enabled = this.Button_Orders_Readers_Delete.Enabled = true;
 
-                    // -----------------------------------------
-                    // Заполняем форму значениями сущности
-                    // -----------------------------------------
-                    // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
-                    if (this.Grid_Orders_Readers.SelectedRows.Count > 0) {
-                        DataGridViewRow selected_row = this.Grid_References_Author.SelectedRows[0];
-                        this.TextBox_Orders_Reader_LastName.Text = selected_row.Cells[1].Value.ToString();
-                        this.TextBox_Orders_Reader_FirstName.Text = selected_row.Cells[2].Value.ToString();
-                        this.TextBox_Orders_Reader_MiddleName.Text = selected_row.Cells[3].Value.ToString();
-                        this.TextBox_Orders_Reader_Info.Text = selected_row.Cells[4].Value.ToString();
-                    }
-                    // Если нет выбора - очищаем текстбоксы
-                    else {
-                        this.TextBox_Orders_Reader_LastName.Clear();
-                        this.TextBox_Orders_Reader_FirstName.Clear();
-                        this.TextBox_Orders_Reader_MiddleName.Clear();
-                        this.TextBox_Orders_Reader_Info.Clear();
-                    }
-                    
+                    // Находим выбранную запись в БД
+                    int selected_id = Convert.ToInt32(this.Grid_Orders_Readers.SelectedRows[0].Cells[0].Value);
+                    Reader found_entity = DatabaseHelper.SelectFirstOrFormException(
+                        DatabaseHelper.db.Readers,
+                        selected_id
+                    );
+
+                    this.TextBox_Orders_Reader_LastName.Text = found_entity.LastName;
+                    this.TextBox_Orders_Reader_FirstName.Text = found_entity.FirstName;
+                    this.TextBox_Orders_Reader_MiddleName.Text = found_entity.MiddleName;
+                    this.TextBox_Orders_Reader_Info.Text = found_entity.Info;
+                }
+                // Если нет выбора - очищаем текстбоксы; блокируем кнопки изменения и удаления
+                else {
+                    this.Button_Orders_Readers_Edit.Enabled = this.Button_Orders_Readers_Delete.Enabled = false;
+
+                    this.TextBox_Orders_Reader_LastName.Clear();
+                    this.TextBox_Orders_Reader_FirstName.Clear();
+                    this.TextBox_Orders_Reader_MiddleName.Clear();
+                    this.TextBox_Orders_Reader_Info.Clear();
                 }
             });
         }
+
         /// <summary>Событие нажатия на кнопку создания во вкладке "Формуляры"</summary>
-        private void Button_Orders_Reader_Add_Click(object sender, EventArgs e)
+        private void Button_Orders_Readers_Add_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, false, () => {
                 // Создаём и сохраняем нового читателя
@@ -1231,5 +1257,127 @@ namespace CSharpStudyNetFramework.Forms
                 FormHelper.SendSuccessMessage(this, "Читатель успешно добавлен!");
             });
         }
+
+        private void Button_Orders_Readers_Edit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Orders_Readers_Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+        // ----------------------------------------------------------------------
+
+        // ----------------------------------------------------------------------
+        // Фильтрация на вкладке "Формуляры"
+        // ----------------------------------------------------------------------
+        private void Component_Orders_Readers_Search_ConditionsChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Orders_Readers_Search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckBox_Orders_Readers_Search_IsInRealTime_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Orders_Readers_Search_Reset_Click(object sender, EventArgs e)
+        {
+            this.TextBox_Orders_Readers_Search.Clear();
+        }
+        // ----------------------------------------------------------------------
+
+        // ----------------------------------------------------------------------
+        // Таблица "Формуляры" на вкладке "Формуляры"
+        // ----------------------------------------------------------------------
+        private void Grid_Orders_Orders_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Orders_Orders_Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+        // ----------------------------------------------------------------------
+        // ======================================================================
+
+        // ======================================================================
+        // Вкладка "Выдача книг"
+        // ======================================================================
+        private void Button_Issuance_Issue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox_Issuance_Reader_TextUpdate(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox_Issuance_Book_TextUpdate(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox_Issuance_CopyBook_TextUpdate(object sender, EventArgs e)
+        {
+
+        }
+        // ======================================================================
+
+
+        // ======================================================================
+        // Вкладка "Возврат книг"
+        // ======================================================================
+        private void ComboBox_Returns_Reader_TextUpdate(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Grid_Returns_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        // ----------------------------------------------------------------------
+        // Фильтрация на вкладке "Возврат книг"
+        // ----------------------------------------------------------------------
+        private void Component_Returns_Search_ConditionsChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Returns_Search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckBox_Returns_Search_IsInRealTime_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_Returns_Search_Reset_Click(object sender, EventArgs e)
+        {
+
+        }
+        // ----------------------------------------------------------------------
+        // ======================================================================
+
+        // ======================================================================
+        // Вкладка "Отчёты"
+        // ======================================================================
+        private void Button_Reports_Create_Click(object sender, EventArgs e)
+        {
+
+        }
+        // ======================================================================
     }
 }
