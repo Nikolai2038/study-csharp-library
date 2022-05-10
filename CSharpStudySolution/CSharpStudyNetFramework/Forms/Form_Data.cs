@@ -1170,6 +1170,66 @@ namespace CSharpStudyNetFramework.Forms
                 }
             });
         }
+
         // ======================================================================
+
+        // ======================================================================
+        // Вкладка "Формуляры"
+        // ======================================================================
+        /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Формуляры"</summary>
+        private void Grid_Orders_Readers_SelectionChanged(object sender, EventArgs e)
+        {
+            ExceptionHelper.CheckCode(this, false, () => {
+                // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
+                if (this.Grid_Orders_Readers.SelectedRows.Count > 0) {
+                    
+                    // Кнопки изменения и удаления записи будут доступны только если выбрана строчка в таблице
+                    this.Button_Orders_Reader_Edit.Enabled = this.Button_Orders_Reader_Delete.Enabled =
+                        this.Grid_Orders_Readers.SelectedRows.Count > 0;
+
+                    // -----------------------------------------
+                    // Заполняем форму значениями сущности
+                    // -----------------------------------------
+                    // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
+                    if (this.Grid_Orders_Readers.SelectedRows.Count > 0) {
+                        DataGridViewRow selected_row = this.Grid_References_Author.SelectedRows[0];
+                        this.TextBox_Orders_Reader_LastName.Text = selected_row.Cells[1].Value.ToString();
+                        this.TextBox_Orders_Reader_FirstName.Text = selected_row.Cells[2].Value.ToString();
+                        this.TextBox_Orders_Reader_MiddleName.Text = selected_row.Cells[3].Value.ToString();
+                        this.TextBox_Orders_Reader_Info.Text = selected_row.Cells[4].Value.ToString();
+                    }
+                    // Если нет выбора - очищаем текстбоксы
+                    else {
+                        this.TextBox_Orders_Reader_LastName.Clear();
+                        this.TextBox_Orders_Reader_FirstName.Clear();
+                        this.TextBox_Orders_Reader_MiddleName.Clear();
+                        this.TextBox_Orders_Reader_Info.Clear();
+                    }
+                    
+                }
+            });
+        }
+        /// <summary>Событие нажатия на кнопку создания во вкладке "Формуляры"</summary>
+        private void Button_Orders_Reader_Add_Click(object sender, EventArgs e)
+        {
+            ExceptionHelper.CheckCode(this, false, () => {
+                // Создаём и сохраняем нового читателя
+                Reader new_entity = new Reader {
+                    LastName = this.TextBox_Orders_Reader_LastName.Text,
+                    FirstName = this.TextBox_Orders_Reader_FirstName.Text,
+                    MiddleName = this.TextBox_Orders_Reader_MiddleName.Text,
+                    Info = this.TextBox_Orders_Reader_Info.Text
+                };
+                DatabaseHelper.db.Readers.Add(new_entity);
+                DatabaseHelper.db.SaveChanges();
+                this.UpdateCurrentSelectedTab();
+
+                // Выбираем последнюю строчку в таблице
+                this.Grid_Orders_Readers.ClearSelection();
+                this.Grid_Orders_Readers.Rows[this.Grid_Orders_Readers.Rows.Count - 1].Selected = true;
+
+                FormHelper.SendSuccessMessage(this, "Читатель успешно добавлен!");
+            });
+        }
     }
 }
