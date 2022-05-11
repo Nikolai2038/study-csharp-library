@@ -95,8 +95,8 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         selected_id
                     );
 
-                    found_entity.FirstName = this.TextBox_Orders_Reader_LastName.Text;
-                    found_entity.LastName = this.TextBox_Orders_Reader_FirstName.Text;
+                    found_entity.LastName = this.TextBox_Orders_Reader_LastName.Text;
+                    found_entity.FirstName = this.TextBox_Orders_Reader_FirstName.Text;
                     found_entity.MiddleName = this.TextBox_Orders_Reader_MiddleName.Text;
                     found_entity.Info = this.TextBox_Orders_Reader_Info.Text;
 
