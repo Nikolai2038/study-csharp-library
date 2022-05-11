@@ -44,6 +44,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     return false;
                 }
             } else {
+                this.Issuance_SelectedReader = null;
                 return false;
             }
             // ---------------------------------------
@@ -68,6 +69,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     return false;
                 }
             } else {
+                this.Issuance_SelectedCopyBook = null;
                 return false;
             }
             // ---------------------------------

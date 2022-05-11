@@ -271,42 +271,8 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         );
                         data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data_not_list.ToList());
 
-                        grid.DataSource = data_not_list.Select(order => {
-                            // Проверяем связанные поля на существование
-                            string author = "-";
-                            string title = "-";
-                            string number = "-";
-                            if (order.CopyBook != null) {
-                                if (order.CopyBook.Book != null) {
-                                    if (order.CopyBook.Book.Author != null) {
-                                        author = order.CopyBook.Book.Author.ToString();
-                                    }
-                                    title = order.CopyBook.Book.Title;
-                                }
-                                number = order.CopyBook.Number;
-                            }
-
-                            return new {
-                                order.Id,
-                                Author = author,
-                                Title = title,
-                                Number = number,
-                                order.DateGiven,
-                                order.DateReturned,
-                                order.DateReturnedFact,
-                                IsReturned = !order.CopyBook.IsGiven,
-                                order.CopyBook.IsLost
-                            };
-                        }).ToList();
-
-                        replaces.Add("Author", "Автор");
-                        replaces.Add("Title", "Название");
-                        replaces.Add("Number", "Номер экземпляра");
-                        replaces.Add("DateGiven", "Дата выдачи");
-                        replaces.Add("DateReturned", "Дата возврата");
-                        replaces.Add("DateReturnedFact", "Дата фактического возврата");
-                        replaces.Add("IsReturned", "Книга возвращена");
-                        replaces.Add("IsLost", "Книга утеряна");
+                        // Заполняем таблицу записей
+                        this.FillGridAndReplacesForOrders(ref data_not_list, ref grid, ref replaces);
                     }
                     // Если читатель не выбран
                     else {
@@ -316,9 +282,64 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 }
                 // Если заполняется вкладка "Возврат книг"
                 else if (grid.Equals(this.Grid_Returns)) {
-                    List<Order> data = DatabaseHelper.db.Orders.ToList();
+                    // Только если выбран читатель
+                    if (this.Returns_SelectedReader != null) {
+                        // Содержимое текстового поля
+                        string filter_string = this.TextBox_Returns_Search.Text.Trim();
 
-                    grid.DataSource = data;
+                        Func<Order, bool> filter_function;
+                        // Если выбрана фильтрация по полю "Автор"
+                        if (this.RadioButton_Returns_Search_Author.Checked) {
+                            filter_function = order => {
+                                if (order.CopyBook == null || order.CopyBook.Book == null) {
+                                    // true будет только в случае, если передана пустая строчка
+                                    return filter_string == "";
+                                }
+                                return order.CopyBook.Book.Author.FullName.Contains(filter_string);
+                            };
+                        }
+                        // Если выбрана фильтрация по полю "Название"
+                        else if (this.RadioButton_Returns_Search_Title.Checked) {
+                            filter_function = order => {
+                                if (order.CopyBook == null || order.CopyBook.Book == null) {
+                                    // true будет только в случае, если передана пустая строчка
+                                    return filter_string == "";
+                                }
+                                return order.CopyBook.Book.Title.Contains(filter_string);
+                            };
+                        }
+                        // Если выбрана фильтрация по полю "Дата выдачи"
+                        else if (this.RadioButton_Returns_Search_DateGiven.Checked) {
+                            filter_function = order => {
+                                return order.DateGiven.ToString().Contains(filter_string);
+                            };
+                        }
+                        // Иначе что-то пошло не так - никакие записи не выбираем
+                        else {
+                            filter_function = book => {
+                                return false;
+                            };
+                        }
+
+                        // Из-за изменения полей выборки, её результат не является списком книг - это список
+                        // анонимных объектов. Поэтому, обрабатываем отдельно значения для комбобоксов, чтобы
+                        // в них успешно применились методы ToString()
+                        IEnumerable<Order> data_not_list = DatabaseHelper.db.Orders.Where(
+                            new Func<Order, bool>((Order entity) => {
+                                // Выбираем записи только тех экземпляров, которые не были возвращены читателем
+                                return (entity.Reader.Id == this.Returns_SelectedReader.Id) && !entity.IsReturned;
+                            })
+                        ).Where(filter_function); // Фильтруем два раза - сначала по читателю, потом уже по настройкам фильтрации снизу
+                        data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data_not_list.ToList());
+
+                        // Заполняем таблицу записей
+                        this.FillGridAndReplacesForOrders(ref data_not_list, ref grid, ref replaces);
+                    }
+                    // Если читатель не выбран
+                    else {
+                        // Очищаем таблицу записей
+                        grid.DataSource = null;
+                    }
                 }
 
                 // Замена названий колонок
@@ -356,6 +377,50 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     }
                 }
             });
+        }
+
+        /// <summary>Заполняет таблицу и замены для неё для таблицы записей</summary>
+        /// <param name="data_not_list">Подготовленные данные для заполнения</param>
+        /// <param name="grid">Таблица</param>
+        /// <param name="replaces">Ассоциативный массив замен</param>
+        private void FillGridAndReplacesForOrders(ref IEnumerable<Order> data_not_list, ref MetroGrid grid, ref Dictionary<string, string> replaces)
+        {
+            grid.DataSource = data_not_list.Select(order => {
+                // Проверяем связанные поля на существование
+                string author = "-";
+                string title = "-";
+                string number = "-";
+                if (order.CopyBook != null) {
+                    if (order.CopyBook.Book != null) {
+                        if (order.CopyBook.Book.Author != null) {
+                            author = order.CopyBook.Book.Author.ToString();
+                        }
+                        title = order.CopyBook.Book.Title;
+                    }
+                    number = order.CopyBook.Number;
+                }
+
+                return new {
+                    order.Id,
+                    Author = author,
+                    Title = title,
+                    Number = number,
+                    order.DateGiven,
+                    order.DateReturned,
+                    order.DateReturnedFact,
+                    IsReturned = order.IsReturned,
+                    order.CopyBook.IsLost
+                };
+            }).ToList();
+
+            replaces.Add("Author", "Автор");
+            replaces.Add("Title", "Название");
+            replaces.Add("Number", "Номер экземпляра");
+            replaces.Add("DateGiven", "Дата выдачи");
+            replaces.Add("DateReturned", "Дата возврата");
+            replaces.Add("DateReturnedFact", "Дата фактического возврата");
+            replaces.Add("IsReturned", "Книга возвращена");
+            replaces.Add("IsLost", "Книга утеряна");
         }
     }
 }

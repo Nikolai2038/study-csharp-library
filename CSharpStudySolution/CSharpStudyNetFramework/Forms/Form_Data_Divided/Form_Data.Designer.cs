@@ -362,7 +362,7 @@
             this.TabControl_Data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_Data.Location = new System.Drawing.Point(12, 79);
             this.TabControl_Data.Name = "TabControl_Data";
-            this.TabControl_Data.SelectedIndex = 4;
+            this.TabControl_Data.SelectedIndex = 5;
             this.TabControl_Data.Size = new System.Drawing.Size(976, 579);
             this.TabControl_Data.TabIndex = 5;
             this.TabControl_Data.UseSelectable = true;
@@ -2819,7 +2819,7 @@
             this.DateTime_Issuance_DateGiven.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.DateTime_Issuance_DateGiven.Enabled = false;
             this.DateTime_Issuance_DateGiven.Location = new System.Drawing.Point(169, 0);
-            this.DateTime_Issuance_DateGiven.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateTime_Issuance_DateGiven.MinimumSize = new System.Drawing.Size(4, 29);
             this.DateTime_Issuance_DateGiven.Name = "DateTime_Issuance_DateGiven";
             this.DateTime_Issuance_DateGiven.Size = new System.Drawing.Size(303, 29);
             this.DateTime_Issuance_DateGiven.TabIndex = 9;
@@ -2840,7 +2840,7 @@
             this.DateTime_Issuance_DateReturned.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.DateTime_Issuance_DateReturned.Enabled = false;
             this.DateTime_Issuance_DateReturned.Location = new System.Drawing.Point(169, 0);
-            this.DateTime_Issuance_DateReturned.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateTime_Issuance_DateReturned.MinimumSize = new System.Drawing.Size(4, 29);
             this.DateTime_Issuance_DateReturned.Name = "DateTime_Issuance_DateReturned";
             this.DateTime_Issuance_DateReturned.Size = new System.Drawing.Size(323, 29);
             this.DateTime_Issuance_DateReturned.TabIndex = 8;
@@ -3136,7 +3136,7 @@
             this.ComboBox_Returns_Reader.Name = "ComboBox_Returns_Reader";
             this.ComboBox_Returns_Reader.Size = new System.Drawing.Size(835, 28);
             this.ComboBox_Returns_Reader.TabIndex = 50;
-            this.ComboBox_Returns_Reader.TextUpdate += new System.EventHandler(this.ComboBox_Returns_Reader_TextUpdate);
+            this.ComboBox_Returns_Reader.TextChanged += new System.EventHandler(this.ComboBox_Returns_Reader_TextChanged);
             // 
             // Label_Returns_Reader
             // 

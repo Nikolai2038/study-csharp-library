@@ -1,6 +1,9 @@
 ﻿using CSharpStudyNetFramework.Helpers;
 using CSharpStudyNetFramework.ORM.Models;
+using MetroFramework.Controls;
 using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 // ######################################################################
 // Форма данных - Вкладка "Возврат книг"
@@ -15,18 +18,22 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private Reader Returns_SelectedReader = null;
 
         /// <summary>Событие изменения текста в комбобоксе "Читатель"</summary>
-        private void ComboBox_Returns_Reader_TextUpdate(object sender, EventArgs e)
+        private void ComboBox_Returns_Reader_TextChanged(object sender, EventArgs e)
         {
             // ---------------------------------------
             // Проверка введённого читателя
             // ---------------------------------------
-            string selected_reader_as_string = this.ComboBox_Issuance_Reader.Text;
+            string selected_reader_as_string = this.ComboBox_Returns_Reader.Text.Trim();
             // Если в списке комбобокса присутствует введённый текст
-            if (this.ComboBox_Issuance_Reader.Items.Contains(selected_reader_as_string)) {
+            if (this.ComboBox_Returns_Reader.Items.Contains(selected_reader_as_string)) {
+                // Находим выбранного в комбобоксе читателя в БД
+                this.Returns_SelectedReader = DatabaseHelper.SelectFirstOrFormException(
+                    DatabaseHelper.db.Readers,
+                    selected_reader_as_string,
+                    false
+                );
+            } else {
                 this.Returns_SelectedReader = null;
-
-                // TODO: Ищем читателя в БД
-                // ...
             }
             // ---------------------------------------
 
@@ -45,14 +52,39 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_Returns_Return_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                // TODO: Делаем выделенную книгу в таблице возвращённой
-                // ...
+                if (this.Grid_Returns.SelectedRows.Count > 0) {
+                    // Удаляем все выбранные записи
+                    foreach (DataGridViewRow row in this.Grid_Returns.SelectedRows) {
+                        // Находим выбранную в таблице запись в БД
+                        int selected_id = Convert.ToInt32(row.Cells[0].Value);
+                        Order found_entity = DatabaseHelper.SelectFirstOrFormException(
+                            DatabaseHelper.db.Orders,
+                            selected_id
+                        );
 
-                // Обновляем таблицу (отображаются только забранные читателем книги)
-                this.UpdateCurrentSelectedTab();
+                        found_entity.DateReturnedFact = DateTime.Now;
+                        found_entity.IsReturned = true;
+                        found_entity.CopyBook.IsGiven = false;
+                        found_entity.CopyBook.IsLost = false;
 
-                this.UnfocusAll();
-                FormHelper.SendSuccessMessage(this, "Экземпляр книги успешно возвращён!");
+                        DatabaseHelper.db.Orders.Update(found_entity);
+                        DatabaseHelper.db.SaveChanges();
+                    }
+
+                    // Обновляем все таблицы с записями
+                    this.UpdateData(new List<MetroGrid>() {
+                        this.Grid_Orders_Orders,
+                        this.Grid_Returns,
+                        // Таблицу экземпляров книг тоже нужно обновить, так как там есть чекбоксы, которые могли измениться
+                        this.Grid_CopyBooks,
+                    });
+
+                    // Снимаем выделение в таблице
+                    this.Grid_Orders_Orders.ClearSelection();
+
+                    this.UnfocusAll();
+                    FormHelper.SendSuccessMessage(this, "Экземпляр книги успешно возвращён!");
+                }
             });
         }
 
@@ -60,14 +92,36 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_Returns_Lost_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                // TODO: Делаем выделенную книгу в таблице потерянной
-                // ...
+                if (this.Grid_Returns.SelectedRows.Count > 0) {
+                    // Удаляем все выбранные записи
+                    foreach (DataGridViewRow row in this.Grid_Returns.SelectedRows) {
+                        // Находим выбранную в таблице запись в БД
+                        int selected_id = Convert.ToInt32(row.Cells[0].Value);
+                        Order found_entity = DatabaseHelper.SelectFirstOrFormException(
+                            DatabaseHelper.db.Orders,
+                            selected_id
+                        );
 
-                // Обновляем таблицу (отображаются только забранные читателем книги)
-                this.UpdateCurrentSelectedTab();
+                        found_entity.CopyBook.IsLost = true;
 
-                this.UnfocusAll();
-                FormHelper.SendSuccessMessage(this, "Экземпляр книги помечен как потерянный!");
+                        DatabaseHelper.db.Orders.Update(found_entity);
+                        DatabaseHelper.db.SaveChanges();
+                    }
+
+                    // Обновляем все таблицы с записями
+                    this.UpdateData(new List<MetroGrid>() {
+                        this.Grid_Orders_Orders,
+                        this.Grid_Returns,
+                        // Таблицу экземпляров книг тоже нужно обновить, так как там есть чекбоксы, которые могли измениться
+                        this.Grid_CopyBooks,
+                    });
+
+                    // Снимаем выделение в таблице
+                    this.Grid_Orders_Orders.ClearSelection();
+
+                    this.UnfocusAll();
+                    FormHelper.SendSuccessMessage(this, "Экземпляр книги успешно возвращён!");
+                }
             });
         }
 
