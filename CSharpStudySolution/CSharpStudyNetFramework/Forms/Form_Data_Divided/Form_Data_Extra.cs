@@ -47,6 +47,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 case 5:
                     grid_to_update = this.Grid_Returns;
                     break;
+                case 7:
+                    grid_to_update = this.Grid_Reports;
+                    break;
                 default:
                     return;
             }
@@ -335,11 +338,139 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         // Заполняем таблицу записей
                         this.FillGridAndReplacesForOrders(ref data_not_list, ref grid, ref replaces);
                     }
-                    // Если читатель не выбран
-                    else {
-                        // Очищаем таблицу записей
-                        grid.DataSource = null;
+                }
+                // Если заполняется вкладка "Отчёты"
+                else if (grid.Equals(this.Grid_Reports)) {
+                    // Очищаем таблицу записей, так как её столбцы могут меняться, а если они поменяются, то их порядок не сбросится
+                    // Т.е. если в одном представлении шло "Название Автор ...", то если во втором есть такой же столбец "Название"
+                    // то он останется на том же месте, то есть на первом - поэтому нужен сброс заранее
+                    grid.DataSource = null;
+
+                    // Если стоит выбор "Просроченные возвраты"
+                    if (this.RadioButton_Reports_Overdue.Checked) {
+                        IEnumerable<Order> data_not_list = DatabaseHelper.db.Orders.Where(
+                            new Func<Order, bool>((Order entity) => {
+                                // Выбираем записи только тех экземпляров, которые не были возвращены читателем и истекла установленная дата возврата
+                                return !entity.IsReturned && (entity.DateReturned < DateTime.Now);
+                            })
+                        );
+                        data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data_not_list.ToList());
+
+                        grid.DataSource = data_not_list.Select(order => {
+                            string reader = order.Reader == null ? "-" : order.Reader.ToString();
+                            string title = "-";
+                            string author = "-";
+                            string number = "-";
+                            if (order.CopyBook != null) {
+                                if (order.CopyBook.Book != null) {
+                                    title = order.CopyBook.Book.Title;
+                                    author = order.CopyBook.Book.Author.ToString();
+                                }
+                                number = order.CopyBook.Number;
+                            }
+
+                            return new {
+                                Reader = reader,
+                                Title = title,
+                                Author = author,
+                                Number = number,
+                                DateReturned = order.DateReturned.ToString(),
+                            };
+                        }).ToList();
+
+                        replaces.Add("Reader", "Читатель");
+                        replaces.Add("Title", "Название книги");
+                        replaces.Add("Author", "Автор");
+                        replaces.Add("Number", "Номер экземпляра");
+                        replaces.Add("DateReturned", "Вернуть до");
                     }
+                    // Если стоит выбор "Потерянные книги"
+                    else if (this.RadioButton_Reports_Lost.Checked) {
+                        IEnumerable<CopyBook> data_not_list = DatabaseHelper.db.CopyBooks.Where(
+                            new Func<CopyBook, bool>((CopyBook entity) => {
+                                // Выбираем записи только потерянные экземпляры
+                                return entity.IsLost;
+                            })
+                        );
+                        data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data_not_list.ToList());
+
+                        grid.DataSource = data_not_list.Select(copy_book => {
+                            string title = "-";
+                            string author = "-";
+                            if (copy_book.Book != null) {
+                                title = copy_book.Book.Title;
+                                author = copy_book.Book.Author.ToString();
+                            }
+
+                            return new {
+                                Title = title,
+                                Author = author,
+                                copy_book.Number,
+                            };
+                        }).ToList();
+
+                        replaces.Add("Title", "Название книги");
+                        replaces.Add("Author", "Автор");
+                        replaces.Add("Number", "Номер экземпляра");
+                    }
+                    // Если стоит выбор "Формуляр читателя:"
+                    else if (this.RadioButton_Reports_History.Checked) {
+                        // ---------------------------------------
+                        // Проверка введённого читателя
+                        // ---------------------------------------
+                        string selected_reader_as_string = this.ComboBox_Reports_Reader.Text.Trim();
+                        // Если в списке комбобокса присутствует введённый текст
+                        if (this.ComboBox_Reports_Reader.Items.Contains(selected_reader_as_string)) {
+                            // Находим выбранного в комбобоксе читателя в БД
+                            Reader selected_reader = DatabaseHelper.SelectFirstOrFormException(
+                                DatabaseHelper.db.Readers,
+                                selected_reader_as_string,
+                                false
+                            );
+
+                            IEnumerable<Order> data_not_list = DatabaseHelper.db.Orders.Where(
+                                new Func<Order, bool>((Order entity) => {
+                                    // Выбираем записи только выбранного читателя
+                                    return entity.Reader.Id == selected_reader.Id;
+                                })
+                            );
+                            data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data_not_list.ToList());
+
+                            grid.DataSource = data_not_list.Select(order => {
+                                string title = "-";
+                                string author = "-";
+                                string number = "-";
+                                if (order.CopyBook != null) {
+                                    if (order.CopyBook.Book != null) {
+                                        title = order.CopyBook.Book.Title;
+                                        author = order.CopyBook.Book.Author.ToString();
+                                    }
+                                    number = order.CopyBook.Number;
+                                }
+
+                                return new {
+                                    Title = title,
+                                    Author = author,
+                                    Number = number,
+                                    DateGiven = order.DateGiven.ToString(),
+                                    DateReturned = order.DateReturned.ToString(),
+                                };
+                            }).ToList();
+
+                            replaces.Add("Title", "Название книги");
+                            replaces.Add("Author", "Автор");
+                            replaces.Add("Number", "Номер экземпляра");
+                            replaces.Add("DateGiven", "Дата выдачи");
+                            replaces.Add("DateReturned", "Дата возврата");
+                        } else {
+                            // Очищаем таблицу записей
+                            grid.DataSource = null;
+                        }
+                        // ---------------------------------------
+                    }
+
+                    // Кнопка экспорта доступна только если есть какие-то данные
+                    this.Button_Reports_Export.Enabled = grid.Rows.Count > 0;
                 }
 
                 // Замена названий колонок

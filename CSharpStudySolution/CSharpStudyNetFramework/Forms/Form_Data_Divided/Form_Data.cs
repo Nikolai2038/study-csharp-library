@@ -39,7 +39,8 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.Grid_References_Group,
                 this.Grid_Orders_Readers,
                 this.Grid_Orders_Orders,
-                this.Grid_Returns
+                this.Grid_Returns,
+                this.Grid_Reports
             };
 
             // -------------------------------------------------------
