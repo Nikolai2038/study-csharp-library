@@ -67,6 +67,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     sender as Button
                 );
             });
+
+            // Вызываем событие смены вкладки для изменения ширины столбцов таблиц
+            this.TabControl_Data_SelectedIndexChanged(null, null);
         }
 
         /// <summary>Событие изменения текста в полях ввода формы "Автор"</summary>

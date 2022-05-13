@@ -1,4 +1,5 @@
-﻿using MetroFramework.Controls;
+﻿using CSharpStudyNetFramework.Helpers;
+using MetroFramework.Controls;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -21,7 +22,14 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Список соответствующих контейнеров кнопок-вкладок на вкладке "Справочники"</summary>
         private readonly List<Control> TabReferences_TabsContainers;
 
+        /// <summary>Ассоциативный массив привязок комбобоксов к таблицам (при обновлении таблицы будут обновлены и связанные комбобоксы)</summary>
         private readonly Dictionary<MetroGrid, List<ComboBox>> LinkedComboboxes;
+
+        /// <summary>ID предыдущей выбранной вкладки</summary>
+        private int LastSelectedTabIndex = 0;
+
+        /// <summary>Загрузилась ли форма</summary>
+        private bool IsShown = false;
 
         /// <summary>Конструктор формы</summary>
         public Form_Data() : base()
@@ -102,11 +110,47 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     }
                 }
             };
+
+            // --------------------------------------------
+            // Задание ширины столбцов каждой таблицы
+            // (Ширина указывается в относительных единицах друг относительно друга)
+            // --------------------------------------------
+            GridHelper.GridColumnsWidthUnits = new Dictionary<DataGridView, List<int>> {
+                [this.Grid_Books] = new List<int>() {
+                    1, 4, 4, 3, 2, 2, 4
+                },
+                [this.Grid_CopyBooks] = new List<int>() {
+                    1, 10, 2, 2, 2
+                },
+                [this.Grid_References_Author] = new List<int>() {
+                    1, 4, 4, 4
+                },
+                [this.Grid_References_Group] = new List<int>() {
+                    1, 12
+                },
+                [this.Grid_References_Bookmaker] = new List<int>() {
+                    1, 6, 6
+                },
+                [this.Grid_Orders_Readers] = new List<int>() {
+                    1, 4, 4, 4, 8
+                },
+                [this.Grid_Orders_Orders] = new List<int>() {
+                    1, 6, 6, 2, 3, 3, 3, 2, 2
+                },
+                [this.Grid_Returns] = new List<int>() {
+                    1, 6, 6, 2, 3, 3, 3, 2, 2
+                }
+                // Для последней таблицы так пока что не получится сделать, так как количество её колонок непостоянно
+            };
+            // --------------------------------------------
         }
 
         /// <summary>Событие загрузки формы</summary>
         private void Form_Data_Load(object sender, EventArgs e)
         {
+            // Переходим на первую вкладку, так как по умолчанию откроется вкладка, оставленная в дизайнере выбранной
+            this.TabControl_Data.SelectedIndex = 0;
+
             // Добавление всплывающей подсказки для чекбокса "Поиск в реальном времени"
             ToolTip tool_tip = new ToolTip {
                 ToolTipIcon = ToolTipIcon.Info,
@@ -137,11 +181,42 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
             this.UnfocusAll();
         }
 
+        /// <summary>Событие показа формы</summary>
+        private void Form_Data_Shown(object sender, EventArgs e)
+        {
+            this.IsShown = true;
+            // Вызываем событие смены вкладки для изменения ширины столбцов таблиц
+            this.TabControl_Data_SelectedIndexChanged(null, null);
+        }
+
         /// <summary>Убирает фокус со всех элементов</summary>
         private void UnfocusAll()
         {
             // Убираем фокус с любого элемента
             this.ActiveControl = null;
+        }
+
+        /// <summary>Событие переключения вкладки</summary>
+        private void TabControl_Data_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Только если форма уже загрузилась
+            if (this.IsShown) {
+                // Обновляем ширину столбцов в таблицах на вкладке
+                // (потому что изменять их ширину получается только на активной вкладке)
+                List<MetroGrid> grids_to_update = this.GetTabGridsOnTab();
+                foreach (MetroGrid grid in grids_to_update) {
+                    GridHelper.AutoResizeGrid(grid);
+                }
+
+                // Для старой вкладки сохраняем ширину столбцов
+                List<MetroGrid> grids_to_save_columns_width = this.GetTabGridsOnTab(this.LastSelectedTabIndex);
+                foreach (MetroGrid grid in grids_to_save_columns_width) {
+                    GridHelper.SaveGridColumnsWidth(grid);
+                }
+            }
+
+            // Сохраняем ID новой вкладки
+            this.LastSelectedTabIndex = this.TabControl_Data.SelectedIndex;
         }
     }
 }

@@ -95,6 +95,7 @@
     <Compile Include="Helpers\ExcelHelper.cs" />
     <Compile Include="Helpers\ExceptionHelper.cs" />
     <Compile Include="Helpers\FormHelper.cs" />
+    <Compile Include="Helpers\GridHelper.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\ThemeHelper.cs" />
     <Compile Include="ORM\CustomDbContext.cs" />

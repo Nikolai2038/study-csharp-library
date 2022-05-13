@@ -15,47 +15,55 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
     /// <summary>Форма с данными</summary>
     public partial class Form_Data : Form_Base
     {
-        /// <summary>Обновляет таблицу. привязанную к текущей вкладке</summary>
-        private void UpdateCurrentSelectedTab()
+        /// <summary>Возвращает список таблиц, расположенных на текущей вкладке</summary>
+        private List<MetroGrid> GetTabGridsOnTab(int selected_tab_index = -1)
         {
-            int selected_tab_index = this.TabControl_Data.SelectedIndex;
-            MetroGrid grid_to_update;
+            // Если выбранная вкладка не передаётся, то берём текущуб вкладку
+            if (selected_tab_index == -1) {
+                selected_tab_index = this.TabControl_Data.SelectedIndex;
+            }
+
+            List<MetroGrid> grids_to_update = new List<MetroGrid>();
 
             switch (selected_tab_index) {
                 case 0:
-                    grid_to_update = this.Grid_Books;
+                    grids_to_update.Add(this.Grid_Books);
                     break;
                 case 1:
-                    grid_to_update = this.Grid_CopyBooks;
+                    grids_to_update.Add(this.Grid_CopyBooks);
                     break;
                 case 2:
                     // В зависимости от выбора кнопки-вкладки (смотрим на отображение соответствующей панели) будет обновлена соответствующая таблица
                     if (this.Panel_References_Author.Visible) {
-                        grid_to_update = this.Grid_References_Author;
+                        grids_to_update.Add(this.Grid_References_Author);
                     } else if (this.Panel_References_Group.Visible) {
-                        grid_to_update = this.Grid_References_Group;
+                        grids_to_update.Add(this.Grid_References_Group);
                     } else if (this.Panel_References_Bookmaker.Visible) {
-                        grid_to_update = this.Grid_References_Bookmaker;
-                    } else {
-                        return;
+                        grids_to_update.Add(this.Grid_References_Bookmaker);
                     }
                     break;
                 case 3:
-                    this.UpdateData(this.Grid_Orders_Readers);
-                    this.UpdateData(this.Grid_Orders_Orders);
-                    return;
+                    grids_to_update.Add(this.Grid_Orders_Readers);
+                    grids_to_update.Add(this.Grid_Orders_Orders);
+                    break;
                 case 5:
-                    grid_to_update = this.Grid_Returns;
+                    grids_to_update.Add(this.Grid_Returns);
                     break;
                 case 7:
-                    grid_to_update = this.Grid_Reports;
+                    grids_to_update.Add(this.Grid_Reports);
                     break;
                 default:
-                    return;
+                    break;
             }
 
+            return grids_to_update;
+        }
+
+        /// <summary>Обновляет таблицу. привязанную к текущей вкладке</summary>
+        private void UpdateCurrentSelectedTab()
+        {
             // Обновляем данные таблицы на вкладке, на которую перешли
-            this.UpdateData(grid_to_update);
+            this.UpdateData(this.GetTabGridsOnTab());
         }
 
         /// <summary>Обновляет данные во всех таблицах</summary>
@@ -205,10 +213,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
                     grid.DataSource = data;
 
-                    replaces.Add("Number", "Номер");
-                    replaces.Add("IsGiven", "Выдана ли");
-                    replaces.Add("IsLost", "Потеряна ли");
                     replaces.Add("Book", "Книга");
+                    replaces.Add("Number", "Номер экземпляра");
+                    replaces.Add("IsGiven", "Выдан ли");
+                    replaces.Add("IsLost", "Потерян ли");
                 }
                 // Если заполняется вкладка "Справочники" - "Авторы"
                 else if (grid.Equals(this.Grid_References_Author)) {
@@ -337,6 +345,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
 
                         // Заполняем таблицу записей
                         this.FillGridAndReplacesForOrders(ref data_not_list, ref grid, ref replaces);
+                    }
+                    // Если читатель не выбран
+                    else {
+                        // Очищаем таблицу записей
+                        grid.DataSource = null;
                     }
                 }
                 // Если заполняется вкладка "Отчёты"
@@ -480,6 +493,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                             column.HeaderText = replace.Value;
                         }
                     }
+                }
+
+                // Обновляем ширину колонок, так как таблица могла быть пустой до этого
+                if (this.IsShown) {
+                    GridHelper.AutoResizeGrid(grid);
                 }
 
                 // Обновляем данные для комбобоксов, если нужно
