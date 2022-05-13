@@ -20,6 +20,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Событие изменения выбранной строчки в таблице "Читатели"</summary>
         private void Grid_Orders_Readers_SelectionChanged(object sender, EventArgs e)
         {
+            // Если сейчас происходит обновление данных - не реагируем на выделения в таблице
+            if (this.IsDataUpdating) {
+                return;
+            }
+
             ExceptionHelper.CheckCode(this, false, () => {
                 // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
                 if (this.Grid_Orders_Readers.SelectedRows.Count > 0) {
@@ -206,6 +211,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Событие изменения выбранной строчки в таблице "Формуляры"</summary>
         private void Grid_Orders_Orders_SelectionChanged(object sender, EventArgs e)
         {
+            // Если сейчас происходит обновление данных - не реагируем на выделения в таблице
+            if (this.IsDataUpdating) {
+                return;
+            }
+
             // Кнопка удаления записей доступна только если выбрана хотя бы одна строчка
             this.Button_Orders_Orders_Delete.Enabled = this.Grid_Orders_Orders.SelectedRows.Count > 0;
         }

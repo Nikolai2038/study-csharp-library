@@ -15,6 +15,12 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
     /// <summary>Форма с данными</summary>
     public partial class Form_Data : Form_Base
     {
+        /// <summary>
+        /// Обновляются ли данные таблицы в данный момент
+        /// (в это время нужно игнорировать все реакции на выделение в таблицах)
+        /// </summary>
+        private bool IsDataUpdating = false;
+
         /// <summary>Возвращает список таблиц, расположенных на текущей вкладке</summary>
         private List<MetroGrid> GetTabGridsOnTab(int selected_tab_index = -1)
         {
@@ -111,6 +117,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <param name="grid">Таблица данных</param>
         private void FillData(MetroGrid grid)
         {
+            this.IsDataUpdating = true;
             ExceptionHelper.CheckCode(this, false, () => {
                 // Список замен для названий колонок
                 Dictionary<string, string> replaces = new Dictionary<string, string> {
@@ -526,6 +533,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     }
                 }
             });
+            this.IsDataUpdating = false;
         }
 
         /// <summary>Заполняет таблицу и замены для неё для таблицы записей</summary>

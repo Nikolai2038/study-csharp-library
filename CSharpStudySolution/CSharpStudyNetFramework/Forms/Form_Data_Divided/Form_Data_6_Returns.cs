@@ -44,6 +44,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Событие изменения выбранной строчки в таблице "Формуляры"</summary>
         private void Grid_Returns_SelectionChanged(object sender, EventArgs e)
         {
+            // Если сейчас происходит обновление данных - не реагируем на выделения в таблице
+            if (this.IsDataUpdating) {
+                return;
+            }
+
             // Разблокируем кнопки, если выбрана строчка. Иначе - блокируем
             this.Button_Returns_Return.Enabled = this.Button_Returns_Lost.Enabled = this.Grid_Returns.SelectedRows.Count > 0;
         }

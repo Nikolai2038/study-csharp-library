@@ -18,6 +18,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Событие изменения выбранной строчки в таблице во вкладке "Экземпляры книг"</summary>
         private void Grid_CopyBooks_SelectionChanged(object sender, EventArgs e)
         {
+            // Если сейчас происходит обновление данных - не реагируем на выделения в таблице
+            if (this.IsDataUpdating) {
+                return;
+            }
+
             ExceptionHelper.CheckCode(this, false, () => {
                 // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи
                 if (this.Grid_CopyBooks.SelectedRows.Count > 0) {

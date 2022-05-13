@@ -96,6 +96,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Событие изменения выбранной строчки в таблице "Авторы"</summary>
         private void Grid_References_Author_SelectionChanged(object sender, EventArgs e)
         {
+            // Если сейчас происходит обновление данных - не реагируем на выделения в таблице
+            if (this.IsDataUpdating) {
+                return;
+            }
+
             ExceptionHelper.CheckCode(this, false, () => {
                 // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
                 if (this.Grid_References_Author.SelectedRows.Count > 0) {
@@ -126,6 +131,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Событие изменения выбранной строчки в таблице "Жанры"</summary>
         private void Grid_References_Group_SelectionChanged(object sender, EventArgs e)
         {
+            // Если сейчас происходит обновление данных - не реагируем на выделения в таблице
+            if (this.IsDataUpdating) {
+                return;
+            }
+
             ExceptionHelper.CheckCode(this, false, () => {
                 // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
                 if (this.Grid_References_Group.SelectedRows.Count > 0) {
@@ -152,6 +162,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Событие изменения выбранной строчки в таблице "Издатели"</summary>
         private void Grid_References_Bookmaker_SelectionChanged(object sender, EventArgs e)
         {
+            // Если сейчас происходит обновление данных - не реагируем на выделения в таблице
+            if (this.IsDataUpdating) {
+                return;
+            }
+
             ExceptionHelper.CheckCode(this, false, () => {
                 // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
                 if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
