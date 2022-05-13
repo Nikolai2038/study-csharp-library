@@ -368,7 +368,7 @@
             this.TabControl_Data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_Data.Location = new System.Drawing.Point(12, 79);
             this.TabControl_Data.Name = "TabControl_Data";
-            this.TabControl_Data.SelectedIndex = 6;
+            this.TabControl_Data.SelectedIndex = 4;
             this.TabControl_Data.Size = new System.Drawing.Size(976, 579);
             this.TabControl_Data.TabIndex = 5;
             this.TabControl_Data.UseSelectable = true;
@@ -2823,9 +2823,8 @@
             // 
             this.DateTime_Issuance_DateGiven.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTime_Issuance_DateGiven.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.DateTime_Issuance_DateGiven.Enabled = false;
             this.DateTime_Issuance_DateGiven.Location = new System.Drawing.Point(169, 0);
-            this.DateTime_Issuance_DateGiven.MinimumSize = new System.Drawing.Size(4, 29);
+            this.DateTime_Issuance_DateGiven.MinimumSize = new System.Drawing.Size(0, 29);
             this.DateTime_Issuance_DateGiven.Name = "DateTime_Issuance_DateGiven";
             this.DateTime_Issuance_DateGiven.Size = new System.Drawing.Size(303, 29);
             this.DateTime_Issuance_DateGiven.TabIndex = 9;
@@ -2844,9 +2843,8 @@
             // 
             this.DateTime_Issuance_DateReturned.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTime_Issuance_DateReturned.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.DateTime_Issuance_DateReturned.Enabled = false;
             this.DateTime_Issuance_DateReturned.Location = new System.Drawing.Point(169, 0);
-            this.DateTime_Issuance_DateReturned.MinimumSize = new System.Drawing.Size(4, 29);
+            this.DateTime_Issuance_DateReturned.MinimumSize = new System.Drawing.Size(0, 29);
             this.DateTime_Issuance_DateReturned.Name = "DateTime_Issuance_DateReturned";
             this.DateTime_Issuance_DateReturned.Size = new System.Drawing.Size(323, 29);
             this.DateTime_Issuance_DateReturned.TabIndex = 8;
@@ -3447,7 +3445,7 @@
             this.RadioButton_Reports_History.Name = "RadioButton_Reports_History";
             this.RadioButton_Reports_History.Size = new System.Drawing.Size(247, 32);
             this.RadioButton_Reports_History.TabIndex = 0;
-            this.RadioButton_Reports_History.Text = "Формуляр читателя:";
+            this.RadioButton_Reports_History.Text = "Формуляр читателя";
             this.RadioButton_Reports_History.UseSelectable = true;
             this.RadioButton_Reports_History.CheckedChanged += new System.EventHandler(this.Component_Reports_Export_ConditionsChanged);
             // 

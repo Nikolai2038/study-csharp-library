@@ -11,7 +11,11 @@
 
         public override string ToString()
         {
-            return "[#" + this.Number.ToString() + "] " + this.Book?.ToString();
+            string book = "-";
+            if (this.Book != null) {
+                book = this.Book.ToString();
+            }
+            return "[#" + this.Number.ToString() + "] " + book;
         }
     }
 }

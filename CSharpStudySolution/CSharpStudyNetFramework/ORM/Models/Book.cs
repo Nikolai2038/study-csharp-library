@@ -17,7 +17,15 @@ namespace CSharpStudyNetFramework.ORM.Models
 
         public override string ToString()
         {
-            return this.Author?.ToString() + ", " + this.Title + " (" + this.Bookmaker?.ToString() + ", " + this.PublicationYear + " год)";
+            string author = "-";
+            if (this.Author != null) {
+                author = this.Author.ToString();
+            }
+            string bookmaker = "-";
+            if (this.Bookmaker != null) {
+                bookmaker = this.Bookmaker.ToString();
+            }
+            return author + ", " + this.Title + " (" + bookmaker + ", " + this.PublicationYear + " год)";
         }
     }
 }

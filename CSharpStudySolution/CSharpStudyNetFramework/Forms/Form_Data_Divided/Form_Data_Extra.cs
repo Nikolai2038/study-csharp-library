@@ -164,7 +164,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Если выбрана фильтрация по полю "Дата регистрации"
                     else if (this.RadioButton_Books_Search_RegistrationDate.Checked) {
                         filter_function = book => {
-                            return book.RegistrationDate.ToString().Contains(filter_string);
+                            return book.RegistrationDate.ToString(DateTimeHelper.DateTimeFormat).Contains(filter_string);
                         };
                     }
                     // Иначе что-то пошло не так - никакие записи не выбираем
@@ -314,7 +314,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         // Если выбрана фильтрация по полю "Дата выдачи"
                         else if (this.RadioButton_Returns_Search_DateGiven.Checked) {
                             filter_function = order => {
-                                return order.DateGiven.ToString().Contains(filter_string);
+                                return order.DateGiven.ToString(DateTimeHelper.DateTimeFormat).Contains(filter_string);
                             };
                         }
                         // Иначе что-то пошло не так - никакие записи не выбираем
@@ -374,7 +374,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                                 Title = title,
                                 Author = author,
                                 Number = number,
-                                DateReturned = order.DateReturned.ToString(),
+                                DateReturned = order.DateReturned.ToString(DateTimeHelper.DateTimeFormat),
                             };
                         }).ToList();
 
@@ -452,8 +452,8 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                                     Title = title,
                                     Author = author,
                                     Number = number,
-                                    DateGiven = order.DateGiven.ToString(),
-                                    DateReturned = order.DateReturned.ToString(),
+                                    DateGiven = order.DateGiven.ToString(DateTimeHelper.DateTimeFormat),
+                                    DateReturned = order.DateReturned.ToString(DateTimeHelper.DateTimeFormat),
                                 };
                             }).ToList();
 
