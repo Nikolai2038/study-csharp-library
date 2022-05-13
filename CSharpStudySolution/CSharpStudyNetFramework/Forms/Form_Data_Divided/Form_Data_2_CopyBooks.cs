@@ -67,7 +67,6 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         {
             ExceptionHelper.CheckCode(this, true, () => {
                 this.CreateOrEditCopyBook(true);
-                this.UnfocusAll();
 
                 // Выбираем последнюю строчку в таблице
                 this.Grid_CopyBooks.ClearSelection();
@@ -75,6 +74,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
 
                 FormHelper.SendSuccessMessage(this, "Экземпляр книги успешно добавлен!");
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку "Изменить информацию об экземпляре книги"</summary>
@@ -82,9 +82,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         {
             ExceptionHelper.CheckCode(this, true, () => {
                 this.CreateOrEditCopyBook(false);
-                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Экземпляр книги успешно отредактирован!");
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Создаёт новый или изменяет выбранный экземпляр книги (смотрит на поля ввода)</summary>
@@ -102,34 +102,37 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 throw new FormException("Необходимо указать номер экземпляра!");
             }
 
+            // Добавляемый или редактируемый экземпляр книги
+            CopyBook entity;
+
             // Создание новой книги
             if (is_new) {
                 // Создаём и сохраняем новую книгу
-                CopyBook new_entity = new CopyBook {
+                entity = new CopyBook {
                     Book = selected_book,
                     Number = number
                 };
-                DatabaseHelper.db.CopyBooks.Add(new_entity);
             }
             // Изменение выбранной книги
             else {
                 if (this.Grid_CopyBooks.SelectedRows.Count > 0) {
                     // Изменяем и сохраняем выбранного автора в таблице
                     int selected_id = Convert.ToInt32(this.Grid_CopyBooks.SelectedRows[0].Cells[0].Value);
-                    CopyBook found_entity = DatabaseHelper.SelectFirstOrFormException(
+                    entity = DatabaseHelper.SelectFirstOrFormException(
                         DatabaseHelper.db.CopyBooks,
                         selected_id
                     );
 
                     // Обновление полей
-                    found_entity.Book = selected_book;
-                    found_entity.Number = number;
-
-                    DatabaseHelper.db.CopyBooks.Update(found_entity);
+                    entity.Book = selected_book;
+                    entity.Number = number;
                 } else {
                     throw new FormException("Экземпляр книги для изменения не выбран!");
                 }
             }
+
+            // Проверяем, что такой же сущности не существует и добавляем/изменяем её
+            DatabaseHelper.TryToAddOrEditEntity(DatabaseHelper.db.CopyBooks, entity, is_new);
 
             DatabaseHelper.db.SaveChanges();
             this.UpdateCurrentSelectedTab();
@@ -164,6 +167,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     FormHelper.SendSuccessMessage(this, "Экземпляр книги успешно удалён!");
                 }
             });
+            this.UnfocusAll();
         }
     }
 }

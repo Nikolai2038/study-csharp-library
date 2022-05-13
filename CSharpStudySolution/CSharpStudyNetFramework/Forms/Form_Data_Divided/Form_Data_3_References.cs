@@ -184,7 +184,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     LastName = this.TextBox_References_Author_LastName.Text,
                     MiddleName = this.TextBox_References_Author_MiddleName.Text
                 };
-                DatabaseHelper.db.Authors.Add(new_entity);
+
+                // Проверяем, что такой же сущности не существует и добавляем/изменяем её
+                DatabaseHelper.TryToAddOrEditEntity(DatabaseHelper.db.Authors, new_entity, true);
+
                 DatabaseHelper.db.SaveChanges();
                 this.UpdateCurrentSelectedTab();
 
@@ -192,9 +195,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.Grid_References_Author.ClearSelection();
                 this.Grid_References_Author.Rows[this.Grid_References_Author.Rows.Count - 1].Selected = true;
 
-                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Автор успешно добавлен!");
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку создания во вкладке "Справочники" - "Жанры"</summary>
@@ -205,7 +208,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 Group new_entity = new Group {
                     Title = this.TextBox_References_Group_Title.Text
                 };
-                DatabaseHelper.db.Groups.Add(new_entity);
+
+                // Проверяем, что такой же сущности не существует и добавляем/изменяем её
+                DatabaseHelper.TryToAddOrEditEntity(DatabaseHelper.db.Groups, new_entity, true);
+
                 DatabaseHelper.db.SaveChanges();
                 this.UpdateCurrentSelectedTab();
 
@@ -213,9 +219,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.Grid_References_Group.ClearSelection();
                 this.Grid_References_Group.Rows[this.Grid_References_Group.Rows.Count - 1].Selected = true;
 
-                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Жанр успешно добавлен!");
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку создания во вкладке "Справочники" - "Издатели"</summary>
@@ -227,7 +233,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     Title = this.TextBox_References_Bookmaker_Title.Text,
                     City = this.TextBox_References_Bookmaker_City.Text
                 };
-                DatabaseHelper.db.Bookmakers.Add(new_entity);
+
+                // Проверяем, что такой же сущности не существует и добавляем/изменяем её
+                DatabaseHelper.TryToAddOrEditEntity(DatabaseHelper.db.Bookmakers, new_entity, true);
+
                 DatabaseHelper.db.SaveChanges();
                 this.UpdateCurrentSelectedTab();
 
@@ -235,9 +244,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.Grid_References_Bookmaker.ClearSelection();
                 this.Grid_References_Bookmaker.Rows[this.Grid_References_Bookmaker.Rows.Count - 1].Selected = true;
 
-                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Издатель успешно добавлен!");
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку изменения во вкладке "Справочники" - "Авторы"</summary>
@@ -256,7 +265,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     found_entity.LastName = this.TextBox_References_Author_LastName.Text;
                     found_entity.MiddleName = this.TextBox_References_Author_MiddleName.Text;
 
-                    DatabaseHelper.db.Authors.Update(found_entity);
+                    // Проверяем, что такой же сущности не существует и добавляем/изменяем её
+                    DatabaseHelper.TryToAddOrEditEntity(DatabaseHelper.db.Authors, found_entity, false);
+
                     DatabaseHelper.db.SaveChanges();
 
                     // Обновляем как справочник, так и каталог книг
@@ -265,10 +276,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         this.Grid_References_Author,
                     });
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Информация об авторе успешно отредактирована!");
                 }
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку изменения во вкладке "Справочники" - "Жанры"</summary>
@@ -285,7 +296,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
 
                     found_entity.Title = this.TextBox_References_Group_Title.Text;
 
-                    DatabaseHelper.db.Groups.Update(found_entity);
+                    // Проверяем, что такой же сущности не существует и добавляем/изменяем её
+                    DatabaseHelper.TryToAddOrEditEntity(DatabaseHelper.db.Groups, found_entity, false);
+
                     DatabaseHelper.db.SaveChanges();
 
                     // Обновляем как справочник, так и каталог книг
@@ -294,10 +307,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         this.Grid_References_Group,
                     });
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Информация о жанре успешно отредактирована!");
                 }
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку изменения во вкладке "Справочники" - "Издатели"</summary>
@@ -315,7 +328,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     found_entity.Title = this.TextBox_References_Bookmaker_Title.Text;
                     found_entity.City = this.TextBox_References_Bookmaker_City.Text;
 
-                    DatabaseHelper.db.Bookmakers.Update(found_entity);
+                    // Проверяем, что такой же сущности не существует и добавляем/изменяем её
+                    DatabaseHelper.TryToAddOrEditEntity(DatabaseHelper.db.Bookmakers, found_entity, false);
+
                     DatabaseHelper.db.SaveChanges();
 
                     // Обновляем как справочник, так и каталог книг
@@ -324,10 +339,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         this.Grid_References_Bookmaker,
                     });
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Информация об издателе успешно отредактирована!");
                 }
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку удаления во вкладке "Справочники" - "Авторы"</summary>
@@ -357,10 +372,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Снимаем выделение в таблице
                     this.Grid_References_Author.ClearSelection();
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Автор успешно удалён!");
                 }
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку удаления во вкладке "Справочники" - "Жанры"</summary>
@@ -390,10 +405,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Снимаем выделение в таблице
                     this.Grid_References_Group.ClearSelection();
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Жанр успешно удалён!");
                 }
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку удаления во вкладке "Справочники" - "Издатели"</summary>
@@ -423,10 +438,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Снимаем выделение в таблице
                     this.Grid_References_Bookmaker.ClearSelection();
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Издатель успешно удалён!");
                 }
             });
+            this.UnfocusAll();
         }
     }
 }

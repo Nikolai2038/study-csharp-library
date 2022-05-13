@@ -82,10 +82,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Снимаем выделение в таблице
                     this.Grid_Orders_Orders.ClearSelection();
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Экземпляр книги успешно возвращён!");
                 }
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку "Выделенная книга потеряна"</summary>
@@ -119,10 +119,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Снимаем выделение в таблице
                     this.Grid_Orders_Orders.ClearSelection();
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Экземпляр книги успешно возвращён!");
                 }
             });
+            this.UnfocusAll();
         }
 
         // ======================================================================

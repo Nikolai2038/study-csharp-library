@@ -109,5 +109,45 @@ namespace CSharpStudyNetFramework.Helpers
                 }
             }
         }
+
+        /// <summary>
+        /// Проверяет, существует ли уже такая сущность в БД
+        /// (существование проверяется совпадением результатов методов .ToString()).
+        /// Если да - выводит исключение формы. Если нет - добавляет/изменяет переданную сущность в БД
+        /// </summary>
+        /// <typeparam name="T">Класс сущности</typeparam>
+        /// <param name="entities">DbSet сущностей в БД</param>
+        /// <param name="new_entity">Новая/Изменяемая сущность</param>
+        /// <param name="is_new">Добавлять или изменять сущность</param>
+        /// <exception cref="FormException">Исключение формы, вызываемое, если сущность уже существует</exception>
+        public static void TryToAddOrEditEntity<T>(
+            DbSet<T> entities,
+            T new_entity,
+            bool is_new
+        ) where T : class, IEntity
+        {
+            // Пытаемся найти создаваемую сущность в БД (результат метода .ToString() для них должен отличаться)
+            T found_exact_entity = DatabaseHelper.SelectFirstOrFormException(
+                entities,
+                new_entity.ToString(),
+                false
+            );
+
+            // Если сущность создаётся - просто проверяем, что такой ещё нет
+            if ((is_new && found_exact_entity == null)) {
+                entities.Add(new_entity);
+            }
+            // Если сущность изменяется - проверяем, что либо такой сущности нет, либо изменяется она же
+            // (ведь сравнение результатов методов .ToString() не выведет разницы, например, при изменении изображения, а сущность обновить нужно)
+            else if (!is_new && ((found_exact_entity == null) || (found_exact_entity.Id == new_entity.Id))) {
+                entities.Update(new_entity);
+            } else {
+                // Если модель изменялась - сбрасываем её на старые значения
+                if (!is_new) {
+                    DatabaseHelper.db.Entry(new_entity).Reload();
+                }
+                throw new FormException(EntitiesTexts[typeof(T)][0] + " \"" + found_exact_entity.ToString() + "\" уже существует!");
+            }
+        }
     }
 }

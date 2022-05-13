@@ -93,7 +93,6 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         {
             ExceptionHelper.CheckCode(this, true, () => {
                 this.CreateOrEditBook(true);
-                this.UnfocusAll();
 
                 // Выбираем последнюю строчку в таблице
                 this.Grid_Books.ClearSelection();
@@ -101,6 +100,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
 
                 FormHelper.SendSuccessMessage(this, "Книга успешно добавлена!");
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку "Изменить информацию о книге"</summary>
@@ -108,9 +108,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         {
             ExceptionHelper.CheckCode(this, true, () => {
                 this.CreateOrEditBook(false);
-                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Книга успешно отредактирована!");
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Создаёт новую или изменяет выбранную книгу (смотрит на поля ввода)</summary>
@@ -138,10 +138,13 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.ComboBox_Books_Bookmaker.Text
             );
 
+            // Новая или редактируемая книга
+            Book entity;
+
             // Создание новой книги
             if (is_new) {
                 // Создаём и сохраняем новую книгу
-                Book new_entity = new Book {
+                entity = new Book {
                     Author = selected_author,
                     Title = title,
                     Group = selected_group,
@@ -150,32 +153,33 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     RegistrationDate = this.DateTime_Books_CopyBooksDate.Value,
                     Photo = ImageHelper.ImageToByteArray(this.PictureBox_Books_Cover.Image)
                 };
-                DatabaseHelper.db.Books.Add(new_entity);
             }
             // Изменение выбранной книги
             else {
                 if (this.Grid_Books.SelectedRows.Count > 0) {
                     // Изменяем и сохраняем выбранного автора в таблице
                     int selected_id = Convert.ToInt32(this.Grid_Books.SelectedRows[0].Cells[0].Value);
-                    Book found_entity = DatabaseHelper.SelectFirstOrFormException(
+                    entity = DatabaseHelper.SelectFirstOrFormException(
                         DatabaseHelper.db.Books,
                         selected_id
                     );
 
                     // Обновление полей
-                    found_entity.Author = selected_author;
-                    found_entity.Title = title;
-                    found_entity.Group = selected_group;
-                    found_entity.Bookmaker = selected_bookmaker;
-                    found_entity.PublicationYear = Convert.ToInt32(this.NumericUpDown_Books_Year.Value);
-                    found_entity.RegistrationDate = this.DateTime_Books_CopyBooksDate.Value;
-                    found_entity.Photo = ImageHelper.ImageToByteArray(this.PictureBox_Books_Cover.Image);
-
-                    DatabaseHelper.db.Books.Update(found_entity);
+                    entity.Author = selected_author;
+                    entity.Title = title;
+                    entity.Group = selected_group;
+                    entity.Bookmaker = selected_bookmaker;
+                    entity.PublicationYear = Convert.ToInt32(this.NumericUpDown_Books_Year.Value);
+                    entity.RegistrationDate = this.DateTime_Books_CopyBooksDate.Value;
+                    entity.Photo = ImageHelper.ImageToByteArray(this.PictureBox_Books_Cover.Image);
                 } else {
                     throw new FormException("Книга для изменения не выбрана!");
                 }
             }
+
+            // Проверяем, что такой же сущности не существует и добавляем/изменяем её
+            DatabaseHelper.TryToAddOrEditEntity(DatabaseHelper.db.Books, entity, is_new);
+
 
             DatabaseHelper.db.SaveChanges();
             this.UpdateCurrentSelectedTab();
@@ -210,6 +214,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     FormHelper.SendSuccessMessage(this, "Книга успешно удалёна!");
                 }
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие изменения параметров фильтрации</summary>

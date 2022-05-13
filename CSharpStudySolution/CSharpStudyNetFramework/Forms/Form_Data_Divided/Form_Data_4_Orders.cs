@@ -70,7 +70,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     MiddleName = this.TextBox_Orders_Reader_MiddleName.Text,
                     Info = this.TextBox_Orders_Reader_Info.Text
                 };
-                DatabaseHelper.db.Readers.Add(new_entity);
+
+                // Проверяем, что такой же сущности не существует и добавляем/изменяем её
+                DatabaseHelper.TryToAddOrEditEntity(DatabaseHelper.db.Readers, new_entity, true);
+
                 DatabaseHelper.db.SaveChanges();
                 this.UpdateCurrentSelectedTab();
 
@@ -78,9 +81,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.Grid_Orders_Readers.ClearSelection();
                 this.Grid_Orders_Readers.Rows[this.Grid_Orders_Readers.Rows.Count - 1].Selected = true;
 
-                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Читатель успешно добавлен!");
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку "Изменить информацию о читателе"</summary>
@@ -100,7 +103,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     found_entity.MiddleName = this.TextBox_Orders_Reader_MiddleName.Text;
                     found_entity.Info = this.TextBox_Orders_Reader_Info.Text;
 
-                    DatabaseHelper.db.Readers.Update(found_entity);
+                    // Проверяем, что такой же сущности не существует и добавляем/изменяем её
+                    DatabaseHelper.TryToAddOrEditEntity(DatabaseHelper.db.Readers, found_entity, false);
+
                     DatabaseHelper.db.SaveChanges();
 
                     // Обновляем как читателей, так и записи
@@ -109,10 +114,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                         this.Grid_Orders_Orders,
                     });
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Информация о читателе успешно отредактирована!");
                 }
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие нажатия на кнопку "Удалить читателя"</summary>
@@ -142,10 +147,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Снимаем выделение в таблице
                     this.Grid_Orders_Readers.ClearSelection();
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Читатель успешно удалён!");
                 }
             });
+            this.UnfocusAll();
         }
 
         // ----------------------------------------------------------------------
@@ -239,10 +244,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Снимаем выделение в таблице
                     this.Grid_Orders_Orders.ClearSelection();
 
-                    this.UnfocusAll();
                     FormHelper.SendSuccessMessage(this, "Запись успешно удалена!");
                 }
             });
+            this.UnfocusAll();
         }
         // ======================================================================
     }

@@ -26,8 +26,6 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     throw new Exception("При экспорте отчёта не была выбрана ни одна радиокнопка!");
                 }
 
-                this.UnfocusAll();
-
                 // Сам экспорт документа
                 bool is_success = ExcelHelper.ExportDataGridView(this.Grid_Reports, file_name);
 
@@ -36,6 +34,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     FormHelper.SendSuccessMessage(this, "Отчёт успешно экспортирован!");
                 }
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие изменения условий экспорта на вкладке "Отчёты"</summary>

@@ -115,9 +115,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 // Вызываем метод изменения текста в комбобоксе выбора книги, чтобы пересчитать экземпляры книги
                 this.ComboBox_Issuance_Book_TextChanged(sender, e);
 
-                this.UnfocusAll();
                 FormHelper.SendSuccessMessage(this, "Экземпляр книги успешно выдан!");
             });
+            this.UnfocusAll();
         }
 
         /// <summary>Событие обновления текста в комбобоксе "Читатель"</summary>
