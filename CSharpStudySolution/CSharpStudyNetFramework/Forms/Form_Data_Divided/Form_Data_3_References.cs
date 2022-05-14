@@ -94,7 +94,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         }
 
         /// <summary>Событие изменения выбранной строчки в таблице "Авторы"</summary>
-        private void Grid_References_Author_SelectionChanged(object sender, EventArgs e)
+        private void Grid_References_Authors_SelectionChanged(object sender, EventArgs e)
         {
             // Если сейчас происходит обновление данных - не реагируем на выделения в таблице
             if (this.IsDataUpdating) {
@@ -103,11 +103,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
 
             ExceptionHelper.CheckCode(this, false, () => {
                 // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
-                if (this.Grid_References_Author.SelectedRows.Count > 0) {
+                if (this.Grid_References_Authors.SelectedRows.Count > 0) {
                     this.Button_References_Author_Edit.Enabled = this.Button_References_Author_Delete.Enabled = true;
 
                     // Находим выбранную запись в БД
-                    int selected_id = Convert.ToInt32(this.Grid_References_Author.SelectedRows[0].Cells[0].Value);
+                    int selected_id = Convert.ToInt32(this.Grid_References_Authors.SelectedRows[0].Cells[0].Value);
                     Author found_entity = DatabaseHelper.SelectFirstOrFormException(
                         DatabaseHelper.db.Authors,
                         selected_id
@@ -138,11 +138,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
 
             ExceptionHelper.CheckCode(this, false, () => {
                 // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
-                if (this.Grid_References_Group.SelectedRows.Count > 0) {
+                if (this.Grid_References_Groups.SelectedRows.Count > 0) {
                     this.Button_References_Group_Edit.Enabled = this.Button_References_Group_Delete.Enabled = true;
 
                     // Находим выбранную запись в БД
-                    int selected_id = Convert.ToInt32(this.Grid_References_Group.SelectedRows[0].Cells[0].Value);
+                    int selected_id = Convert.ToInt32(this.Grid_References_Groups.SelectedRows[0].Cells[0].Value);
                     Group found_entity = DatabaseHelper.SelectFirstOrFormException(
                         DatabaseHelper.db.Groups,
                         selected_id
@@ -169,11 +169,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
 
             ExceptionHelper.CheckCode(this, false, () => {
                 // Если выбрана строчка - заменяем текст в текстбоксах на значения из выбранной записи; разблокируем кнопки изменения и удаления
-                if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
+                if (this.Grid_References_Bookmakers.SelectedRows.Count > 0) {
                     this.Button_References_Bookmaker_Edit.Enabled = this.Button_References_Bookmaker_Delete.Enabled = true;
 
                     // Находим выбранную запись в БД
-                    int selected_id = Convert.ToInt32(this.Grid_References_Bookmaker.SelectedRows[0].Cells[0].Value);
+                    int selected_id = Convert.ToInt32(this.Grid_References_Bookmakers.SelectedRows[0].Cells[0].Value);
                     Bookmaker found_entity = DatabaseHelper.SelectFirstOrFormException(
                         DatabaseHelper.db.Bookmakers,
                         selected_id
@@ -210,8 +210,8 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.UpdateCurrentSelectedTab();
 
                 // Выбираем последнюю строчку в таблице
-                this.Grid_References_Author.ClearSelection();
-                this.Grid_References_Author.Rows[this.Grid_References_Author.Rows.Count - 1].Selected = true;
+                this.Grid_References_Authors.ClearSelection();
+                this.Grid_References_Authors.Rows[this.Grid_References_Authors.Rows.Count - 1].Selected = true;
 
                 FormHelper.SendSuccessMessage(this, "Автор успешно добавлен!");
             });
@@ -234,8 +234,8 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.UpdateCurrentSelectedTab();
 
                 // Выбираем последнюю строчку в таблице
-                this.Grid_References_Group.ClearSelection();
-                this.Grid_References_Group.Rows[this.Grid_References_Group.Rows.Count - 1].Selected = true;
+                this.Grid_References_Groups.ClearSelection();
+                this.Grid_References_Groups.Rows[this.Grid_References_Groups.Rows.Count - 1].Selected = true;
 
                 FormHelper.SendSuccessMessage(this, "Жанр успешно добавлен!");
             });
@@ -259,8 +259,8 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 this.UpdateCurrentSelectedTab();
 
                 // Выбираем последнюю строчку в таблице
-                this.Grid_References_Bookmaker.ClearSelection();
-                this.Grid_References_Bookmaker.Rows[this.Grid_References_Bookmaker.Rows.Count - 1].Selected = true;
+                this.Grid_References_Bookmakers.ClearSelection();
+                this.Grid_References_Bookmakers.Rows[this.Grid_References_Bookmakers.Rows.Count - 1].Selected = true;
 
                 FormHelper.SendSuccessMessage(this, "Издатель успешно добавлен!");
             });
@@ -271,9 +271,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_References_Author_Edit_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                if (this.Grid_References_Author.SelectedRows.Count > 0) {
+                if (this.Grid_References_Authors.SelectedRows.Count > 0) {
                     // Находим выбранного в таблице автора в БД
-                    int selected_id = Convert.ToInt32(this.Grid_References_Author.SelectedRows[0].Cells[0].Value);
+                    int selected_id = Convert.ToInt32(this.Grid_References_Authors.SelectedRows[0].Cells[0].Value);
                     Author found_entity = DatabaseHelper.SelectFirstOrFormException(
                         DatabaseHelper.db.Authors,
                         selected_id
@@ -291,7 +291,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
-                        this.Grid_References_Author,
+                        this.Grid_References_Authors,
                     });
 
                     FormHelper.SendSuccessMessage(this, "Информация об авторе успешно отредактирована!");
@@ -304,9 +304,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_References_Group_Edit_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                if (this.Grid_References_Group.SelectedRows.Count > 0) {
+                if (this.Grid_References_Groups.SelectedRows.Count > 0) {
                     // Находим выбранный в таблице жанр в БД
-                    int selected_id = Convert.ToInt32(this.Grid_References_Group.SelectedRows[0].Cells[0].Value);
+                    int selected_id = Convert.ToInt32(this.Grid_References_Groups.SelectedRows[0].Cells[0].Value);
                     Group found_entity = DatabaseHelper.SelectFirstOrFormException(
                         DatabaseHelper.db.Groups,
                         selected_id
@@ -322,7 +322,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
-                        this.Grid_References_Group,
+                        this.Grid_References_Groups,
                     });
 
                     FormHelper.SendSuccessMessage(this, "Информация о жанре успешно отредактирована!");
@@ -335,9 +335,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_References_Bookmaker_Edit_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
+                if (this.Grid_References_Bookmakers.SelectedRows.Count > 0) {
                     // Находим выбранного в таблице издателя в БД
-                    int selected_id = Convert.ToInt32(this.Grid_References_Bookmaker.SelectedRows[0].Cells[0].Value);
+                    int selected_id = Convert.ToInt32(this.Grid_References_Bookmakers.SelectedRows[0].Cells[0].Value);
                     Bookmaker found_entity = DatabaseHelper.SelectFirstOrFormException(
                         DatabaseHelper.db.Bookmakers,
                         selected_id
@@ -354,7 +354,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
-                        this.Grid_References_Bookmaker,
+                        this.Grid_References_Bookmakers,
                     });
 
                     FormHelper.SendSuccessMessage(this, "Информация об издателе успешно отредактирована!");
@@ -367,9 +367,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_References_Author_Delete_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                if (this.Grid_References_Author.SelectedRows.Count > 0) {
+                if (this.Grid_References_Authors.SelectedRows.Count > 0) {
                     // Удаляем все выбранные записи
-                    foreach (DataGridViewRow row in this.Grid_References_Author.SelectedRows) {
+                    foreach (DataGridViewRow row in this.Grid_References_Authors.SelectedRows) {
                         // Находим выбранного в таблице автора в БД
                         int selected_id = Convert.ToInt32(row.Cells[0].Value);
                         Author found_entity = DatabaseHelper.SelectFirstOrFormException(
@@ -384,11 +384,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
-                        this.Grid_References_Author,
+                        this.Grid_References_Authors,
                     });
 
                     // Снимаем выделение в таблице
-                    this.Grid_References_Author.ClearSelection();
+                    this.Grid_References_Authors.ClearSelection();
 
                     FormHelper.SendSuccessMessage(this, "Автор успешно удалён!");
                 }
@@ -400,9 +400,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_References_Group_Delete_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                if (this.Grid_References_Group.SelectedRows.Count > 0) {
+                if (this.Grid_References_Groups.SelectedRows.Count > 0) {
                     // Удаляем все выбранные записи
-                    foreach (DataGridViewRow row in this.Grid_References_Group.SelectedRows) {
+                    foreach (DataGridViewRow row in this.Grid_References_Groups.SelectedRows) {
                         // Находим выбранный в таблице жанр в БД
                         int selected_id = Convert.ToInt32(row.Cells[0].Value);
                         Group found_entity = DatabaseHelper.SelectFirstOrFormException(
@@ -417,11 +417,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
-                        this.Grid_References_Group,
+                        this.Grid_References_Groups,
                     });
 
                     // Снимаем выделение в таблице
-                    this.Grid_References_Group.ClearSelection();
+                    this.Grid_References_Groups.ClearSelection();
 
                     FormHelper.SendSuccessMessage(this, "Жанр успешно удалён!");
                 }
@@ -433,9 +433,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         private void Button_References_Bookmaker_Delete_Click(object sender, EventArgs e)
         {
             ExceptionHelper.CheckCode(this, true, () => {
-                if (this.Grid_References_Bookmaker.SelectedRows.Count > 0) {
+                if (this.Grid_References_Bookmakers.SelectedRows.Count > 0) {
                     // Удаляем все выбранные записи
-                    foreach (DataGridViewRow row in this.Grid_References_Bookmaker.SelectedRows) {
+                    foreach (DataGridViewRow row in this.Grid_References_Bookmakers.SelectedRows) {
                         // Находим выбранного в таблице издателя в БД
                         int selected_id = Convert.ToInt32(row.Cells[0].Value);
                         Bookmaker found_entity = DatabaseHelper.SelectFirstOrFormException(
@@ -450,11 +450,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     // Обновляем как справочник, так и каталог книг
                     this.UpdateData(new List<MetroGrid>() {
                         this.Grid_Books,
-                        this.Grid_References_Bookmaker,
+                        this.Grid_References_Bookmakers,
                     });
 
                     // Снимаем выделение в таблице
-                    this.Grid_References_Bookmaker.ClearSelection();
+                    this.Grid_References_Bookmakers.ClearSelection();
 
                     FormHelper.SendSuccessMessage(this, "Издатель успешно удалён!");
                 }

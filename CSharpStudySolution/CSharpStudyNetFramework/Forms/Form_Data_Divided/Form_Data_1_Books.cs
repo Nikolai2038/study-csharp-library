@@ -60,7 +60,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     this.ComboBox_Books_Bookmaker.SelectedIndex = selected_bookmaker_index_in_combobox;
 
                     this.NumericUpDown_Books_Year.Value = selected_book.PublicationYear;
-                    this.DateTime_Books_CopyBooksDate.Value = selected_book.RegistrationDate;
+                    this.DateTime_Books_Date.Value = selected_book.RegistrationDate;
 
                     // Обновляем изображение
                     this.PictureBox_Books_Cover.Image = ImageHelper.ByteArrayToImage(selected_book.Photo);
@@ -77,7 +77,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     this.ComboBox_Books_Group.SelectedIndex = -1;
                     this.ComboBox_Books_Bookmaker.SelectedIndex = -1;
                     this.NumericUpDown_Books_Year.Value = 2000;
-                    this.DateTime_Books_CopyBooksDate.Value = DateTime.Now;
+                    this.DateTime_Books_Date.Value = DateTime.Now;
                     this.PictureBox_Books_Cover.Image = null;
                 }
             });
@@ -155,7 +155,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     Group = selected_group,
                     Bookmaker = selected_bookmaker,
                     PublicationYear = Convert.ToInt32(this.NumericUpDown_Books_Year.Value),
-                    RegistrationDate = this.DateTime_Books_CopyBooksDate.Value,
+                    RegistrationDate = this.DateTime_Books_Date.Value,
                     Photo = ImageHelper.ImageToByteArray(this.PictureBox_Books_Cover.Image)
                 };
             }
@@ -175,7 +175,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     entity.Group = selected_group;
                     entity.Bookmaker = selected_bookmaker;
                     entity.PublicationYear = Convert.ToInt32(this.NumericUpDown_Books_Year.Value);
-                    entity.RegistrationDate = this.DateTime_Books_CopyBooksDate.Value;
+                    entity.RegistrationDate = this.DateTime_Books_Date.Value;
                     entity.Photo = ImageHelper.ImageToByteArray(this.PictureBox_Books_Cover.Image);
                 } else {
                     throw new FormException("Книга для изменения не выбрана!");

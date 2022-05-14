@@ -166,8 +166,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         {
             // Обновляем данные только если установлена галочка "Поиск в реальном времени"
             if (this.CheckBox_Orders_Readers_Search_IsInRealTime.Checked) {
-                // Нужно обновить только одну таблицу и ничего больше - поэтому не используем UpdateCurrentSelectedTab()
-                this.UpdateData(this.Grid_Orders_Readers);
+                this.UpdateCurrentSelectedTab();
             }
         }
 

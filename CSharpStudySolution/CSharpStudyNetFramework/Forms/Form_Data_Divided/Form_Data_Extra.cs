@@ -41,11 +41,11 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 case 2:
                     // В зависимости от выбора кнопки-вкладки (смотрим на отображение соответствующей панели) будет обновлена соответствующая таблица
                     if (this.Panel_References_Author.Visible) {
-                        grids_to_update.Add(this.Grid_References_Author);
+                        grids_to_update.Add(this.Grid_References_Authors);
                     } else if (this.Panel_References_Group.Visible) {
-                        grids_to_update.Add(this.Grid_References_Group);
+                        grids_to_update.Add(this.Grid_References_Groups);
                     } else if (this.Panel_References_Bookmaker.Visible) {
-                        grids_to_update.Add(this.Grid_References_Bookmaker);
+                        grids_to_update.Add(this.Grid_References_Bookmakers);
                     }
                     break;
                 case 3:
@@ -202,7 +202,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                             Group = book.Group == null ? "-" : book.Group.ToString(),
                             Bookmaker = book.Bookmaker == null ? "-" : book.Bookmaker.ToString(),
                             book.PublicationYear,
-                            book.RegistrationDate,
+                            RegistrationDate = book.RegistrationDate.ToString(DateTimeHelper.DateTimeFormat),
                         };
                     }).ToList();
 
@@ -226,7 +226,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     replaces.Add("IsLost", "Потерян ли");
                 }
                 // Если заполняется вкладка "Справочники" - "Авторы"
-                else if (grid.Equals(this.Grid_References_Author)) {
+                else if (grid.Equals(this.Grid_References_Authors)) {
                     List<Author> data = DatabaseHelper.db.Authors.ToList();
 
                     data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
@@ -237,7 +237,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     replaces.Add("MiddleName", "Отчество");
                 }
                 // Если заполняется вкладка "Справочники" - "Жанры"
-                else if (grid.Equals(this.Grid_References_Group)) {
+                else if (grid.Equals(this.Grid_References_Groups)) {
                     List<Group> data = DatabaseHelper.db.Groups.ToList();
 
                     data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
@@ -246,7 +246,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     replaces.Add("Title", "Название");
                 }
                 // Если заполняется вкладка "Справочники" - "Издатели"
-                else if (grid.Equals(this.Grid_References_Bookmaker)) {
+                else if (grid.Equals(this.Grid_References_Bookmakers)) {
                     List<Bookmaker> data = DatabaseHelper.db.Bookmakers.ToList();
 
                     data_for_comboboxes = DatabaseHelper.GetStringArrayForComboBoxes(data);
@@ -493,6 +493,27 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     this.Button_Reports_Export.Enabled = grid.Rows.Count > 0;
                 }
 
+                // ---------------------------------------
+                // Отображение надписи "Нет данных"
+                // ---------------------------------------
+                // Если нет данных
+                if (grid.RowCount == 0) {
+                    // Не отображаем шапку таблицы вообще
+                    grid.DataSource = null;
+                    // Если для таблицы есть соответствующая надпись при отсутствии данных - отображаем её
+                    if (this.GridWhenEmptyLabels.ContainsKey(grid)) {
+                        this.GridWhenEmptyLabels[grid].Visible = true;
+                    }
+                }
+                // Если есть данные
+                else {
+                    // Если для таблицы есть соответствующая надпись при отсутствии данных - скрываем её
+                    if (this.GridWhenEmptyLabels.ContainsKey(grid)) {
+                        this.GridWhenEmptyLabels[grid].Visible = false;
+                    }
+                }
+                // ---------------------------------------
+
                 // Замена названий колонок
                 foreach (DataGridViewColumn column in grid.Columns) {
                     foreach (KeyValuePair<string, string> replace in replaces) {
@@ -562,9 +583,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                     Author = author,
                     Title = title,
                     Number = number,
-                    order.DateGiven,
-                    order.DateReturned,
-                    order.DateReturnedFact,
+                    DateGiven = order.DateGiven.ToString(DateTimeHelper.DateTimeFormat),
+                    DateReturned = order.DateReturned.ToString(DateTimeHelper.DateTimeFormat),
+                    DateReturnedFact = order.DateReturnedFact.ToString(DateTimeHelper.DateTimeFormat),
                     IsReturned = order.IsReturned,
                     order.CopyBook.IsLost
                 };

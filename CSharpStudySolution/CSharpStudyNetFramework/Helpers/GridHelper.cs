@@ -45,6 +45,7 @@ namespace CSharpStudyNetFramework.Helpers
                 // --------------------------------------------
 
                 for (int i = 0; i < grid.ColumnCount; i++) {
+                    grid.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     // Устанавливаем ширину колонки как процент от ширины всей таблицы
                     grid.Columns[i].Width = GetRealWidthFromWidthUnits(grid, i);
                 }

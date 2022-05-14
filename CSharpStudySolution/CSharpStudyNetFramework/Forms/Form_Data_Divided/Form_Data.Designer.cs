@@ -58,6 +58,7 @@
             this.TabControl_Data = new MetroFramework.Controls.MetroTabControl();
             this.TabPage_Books = new System.Windows.Forms.TabPage();
             this.SplitContainer_Books = new System.Windows.Forms.SplitContainer();
+            this.Label_Books_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_Books = new MetroFramework.Controls.MetroGrid();
             this.Button_Books_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_Books_Delete = new MetroFramework.Controls.MetroLabel();
@@ -66,9 +67,9 @@
             this.Button_Books_Create = new MetroFramework.Controls.MetroButton();
             this.Label_Books_Create = new MetroFramework.Controls.MetroLabel();
             this.SplitContainer_Books_Info = new System.Windows.Forms.SplitContainer();
-            this.Panel_Books_CopyBooksDate = new MetroFramework.Controls.MetroPanel();
-            this.DateTime_Books_CopyBooksDate = new MetroFramework.Controls.MetroDateTime();
-            this.Label_Books_CopyBooksDate = new MetroFramework.Controls.MetroLabel();
+            this.Panel_Books_Date = new MetroFramework.Controls.MetroPanel();
+            this.DateTime_Books_Date = new MetroFramework.Controls.MetroDateTime();
+            this.Label_Books_Date = new MetroFramework.Controls.MetroLabel();
             this.Panel_Books_Year = new MetroFramework.Controls.MetroPanel();
             this.NumericUpDown_Books_Year = new System.Windows.Forms.NumericUpDown();
             this.Label_Books_Year = new MetroFramework.Controls.MetroLabel();
@@ -110,6 +111,7 @@
             this.Button_Books_Search_Reset = new MetroFramework.Controls.MetroButton();
             this.TabPage_CopyBooks = new System.Windows.Forms.TabPage();
             this.SplitContainer_CopyBooks = new System.Windows.Forms.SplitContainer();
+            this.Label_CopyBooks_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_CopyBooks = new MetroFramework.Controls.MetroGrid();
             this.Button_CopyBooks_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_CopyBooks_Delete = new MetroFramework.Controls.MetroLabel();
@@ -131,7 +133,8 @@
             this.Button_References_Author_Tab = new MetroFramework.Controls.MetroButton();
             this.Panel_References_Bookmaker = new MetroFramework.Controls.MetroPanel();
             this.SplitContainer_References_Bookmaker = new System.Windows.Forms.SplitContainer();
-            this.Grid_References_Bookmaker = new MetroFramework.Controls.MetroGrid();
+            this.Label_References_Bookmakers_WhenEmpty = new MetroFramework.Controls.MetroLabel();
+            this.Grid_References_Bookmakers = new MetroFramework.Controls.MetroGrid();
             this.Button_References_Bookmaker_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_References_Bookmaker_Delete = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Bookmaker_Edit = new MetroFramework.Controls.MetroButton();
@@ -146,7 +149,8 @@
             this.Label_References_Bookmaker_Header_1 = new MetroFramework.Controls.MetroLabel();
             this.Panel_References_Group = new MetroFramework.Controls.MetroPanel();
             this.SplitContainer_References_Group = new System.Windows.Forms.SplitContainer();
-            this.Grid_References_Group = new MetroFramework.Controls.MetroGrid();
+            this.Label_References_Groups_WhenEmpty = new MetroFramework.Controls.MetroLabel();
+            this.Grid_References_Groups = new MetroFramework.Controls.MetroGrid();
             this.Button_References_Group_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_References_Group_Delete = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Group_Edit = new MetroFramework.Controls.MetroButton();
@@ -159,7 +163,8 @@
             this.Label_References_Group_Header_1 = new MetroFramework.Controls.MetroLabel();
             this.Panel_References_Author = new MetroFramework.Controls.MetroPanel();
             this.SplitContainer_References_Author = new System.Windows.Forms.SplitContainer();
-            this.Grid_References_Author = new MetroFramework.Controls.MetroGrid();
+            this.Label_References_Authors_WhenEmpty = new MetroFramework.Controls.MetroLabel();
+            this.Grid_References_Authors = new MetroFramework.Controls.MetroGrid();
             this.Button_References_Author_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_References_Author_Delete = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Author_Edit = new MetroFramework.Controls.MetroButton();
@@ -177,6 +182,7 @@
             this.TabPage_Forms = new System.Windows.Forms.TabPage();
             this.SplitContainer_Orders = new System.Windows.Forms.SplitContainer();
             this.SplitContainer_Orders_Readers = new System.Windows.Forms.SplitContainer();
+            this.Label_Orders_Readers_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_Orders_Readers = new MetroFramework.Controls.MetroGrid();
             this.Label_Orders_Readers_Search_Header = new MetroFramework.Controls.MetroLabel();
             this.TextBox_Orders_Readers_Search = new MetroFramework.Controls.MetroTextBox();
@@ -202,6 +208,7 @@
             this.Label_Orders_Reader_LastName = new MetroFramework.Controls.MetroLabel();
             this.Label_Orders_Reader_Header = new MetroFramework.Controls.MetroLabel();
             this.SplitContainer_Orders_Orders = new System.Windows.Forms.SplitContainer();
+            this.Label_Orders_Orders_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_Orders_Orders = new MetroFramework.Controls.MetroGrid();
             this.Button_Orders_Orders_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_Orders_Orders_Header = new MetroFramework.Controls.MetroLabel();
@@ -224,6 +231,7 @@
             this.Label_Issuance_Reader = new MetroFramework.Controls.MetroLabel();
             this.Label_Issuance_Header = new MetroFramework.Controls.MetroLabel();
             this.TabPage_Returns = new System.Windows.Forms.TabPage();
+            this.Label_Returns_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_Returns = new MetroFramework.Controls.MetroGrid();
             this.Label_Returns_Table_Header = new MetroFramework.Controls.MetroLabel();
             this.Label_Returns_Table = new MetroFramework.Controls.MetroLabel();
@@ -260,6 +268,7 @@
             this.RadioButton_Reports_Lost = new MetroFramework.Controls.MetroRadioButton();
             this.RadioButton_Reports_Overdue = new MetroFramework.Controls.MetroRadioButton();
             this.Label_Reports_Header = new MetroFramework.Controls.MetroLabel();
+            this.Label_Reports_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_Reports = new MetroFramework.Controls.MetroGrid();
             this.Label_Data = new MetroFramework.Controls.MetroLabel();
             this.TabControl_Data.SuspendLayout();
@@ -273,7 +282,7 @@
             this.SplitContainer_Books_Info.Panel1.SuspendLayout();
             this.SplitContainer_Books_Info.Panel2.SuspendLayout();
             this.SplitContainer_Books_Info.SuspendLayout();
-            this.Panel_Books_CopyBooksDate.SuspendLayout();
+            this.Panel_Books_Date.SuspendLayout();
             this.Panel_Books_Year.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_Books_Year)).BeginInit();
             this.Panel_Books_Bookmaker.SuspendLayout();
@@ -301,19 +310,19 @@
             this.SplitContainer_References_Bookmaker.Panel1.SuspendLayout();
             this.SplitContainer_References_Bookmaker.Panel2.SuspendLayout();
             this.SplitContainer_References_Bookmaker.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Bookmaker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Bookmakers)).BeginInit();
             this.Panel_References_Group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_References_Group)).BeginInit();
             this.SplitContainer_References_Group.Panel1.SuspendLayout();
             this.SplitContainer_References_Group.Panel2.SuspendLayout();
             this.SplitContainer_References_Group.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Group)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Groups)).BeginInit();
             this.Panel_References_Author.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_References_Author)).BeginInit();
             this.SplitContainer_References_Author.Panel1.SuspendLayout();
             this.SplitContainer_References_Author.Panel2.SuspendLayout();
             this.SplitContainer_References_Author.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Author)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Authors)).BeginInit();
             this.TabPage_Forms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Orders)).BeginInit();
             this.SplitContainer_Orders.Panel1.SuspendLayout();
@@ -354,7 +363,7 @@
             // 
             // OpenFileDialog_Book
             // 
-            this.OpenFileDialog_Book.FileName = "image";
+            this.OpenFileDialog_Book.Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
             // 
             // TabControl_Data
             // 
@@ -368,7 +377,7 @@
             this.TabControl_Data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_Data.Location = new System.Drawing.Point(12, 79);
             this.TabControl_Data.Name = "TabControl_Data";
-            this.TabControl_Data.SelectedIndex = 3;
+            this.TabControl_Data.SelectedIndex = 0;
             this.TabControl_Data.Size = new System.Drawing.Size(976, 579);
             this.TabControl_Data.TabIndex = 5;
             this.TabControl_Data.UseSelectable = true;
@@ -395,6 +404,7 @@
             // 
             // SplitContainer_Books.Panel1
             // 
+            this.SplitContainer_Books.Panel1.Controls.Add(this.Label_Books_WhenEmpty);
             this.SplitContainer_Books.Panel1.Controls.Add(this.Grid_Books);
             // 
             // SplitContainer_Books.Panel2
@@ -410,6 +420,16 @@
             this.SplitContainer_Books.Size = new System.Drawing.Size(968, 461);
             this.SplitContainer_Books.SplitterDistance = 580;
             this.SplitContainer_Books.TabIndex = 21;
+            // 
+            // Label_Books_WhenEmpty
+            // 
+            this.Label_Books_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Books_WhenEmpty.Location = new System.Drawing.Point(162, 214);
+            this.Label_Books_WhenEmpty.Name = "Label_Books_WhenEmpty";
+            this.Label_Books_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_Books_WhenEmpty.TabIndex = 27;
+            this.Label_Books_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_Books_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Grid_Books
             // 
@@ -460,6 +480,7 @@
             this.Grid_Books.Size = new System.Drawing.Size(580, 461);
             this.Grid_Books.TabIndex = 19;
             this.Grid_Books.SelectionChanged += new System.EventHandler(this.Grid_Books_SelectionChanged);
+            this.Grid_Books.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
             // Button_Books_Delete
             // 
@@ -529,7 +550,7 @@
             // 
             // SplitContainer_Books_Info.Panel1
             // 
-            this.SplitContainer_Books_Info.Panel1.Controls.Add(this.Panel_Books_CopyBooksDate);
+            this.SplitContainer_Books_Info.Panel1.Controls.Add(this.Panel_Books_Date);
             this.SplitContainer_Books_Info.Panel1.Controls.Add(this.Panel_Books_Year);
             this.SplitContainer_Books_Info.Panel1.Controls.Add(this.Panel_Books_Bookmaker);
             this.SplitContainer_Books_Info.Panel1.Controls.Add(this.Panel_Books_Group);
@@ -544,44 +565,44 @@
             this.SplitContainer_Books_Info.SplitterDistance = 253;
             this.SplitContainer_Books_Info.TabIndex = 72;
             // 
-            // Panel_Books_CopyBooksDate
+            // Panel_Books_Date
             // 
-            this.Panel_Books_CopyBooksDate.Controls.Add(this.DateTime_Books_CopyBooksDate);
-            this.Panel_Books_CopyBooksDate.Controls.Add(this.Label_Books_CopyBooksDate);
-            this.Panel_Books_CopyBooksDate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_Books_CopyBooksDate.HorizontalScrollbarBarColor = true;
-            this.Panel_Books_CopyBooksDate.HorizontalScrollbarHighlightOnWheel = false;
-            this.Panel_Books_CopyBooksDate.HorizontalScrollbarSize = 10;
-            this.Panel_Books_CopyBooksDate.Location = new System.Drawing.Point(0, 160);
-            this.Panel_Books_CopyBooksDate.Name = "Panel_Books_CopyBooksDate";
-            this.Panel_Books_CopyBooksDate.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.Panel_Books_CopyBooksDate.Size = new System.Drawing.Size(253, 32);
-            this.Panel_Books_CopyBooksDate.TabIndex = 32;
-            this.Panel_Books_CopyBooksDate.VerticalScrollbarBarColor = true;
-            this.Panel_Books_CopyBooksDate.VerticalScrollbarHighlightOnWheel = false;
-            this.Panel_Books_CopyBooksDate.VerticalScrollbarSize = 10;
+            this.Panel_Books_Date.Controls.Add(this.DateTime_Books_Date);
+            this.Panel_Books_Date.Controls.Add(this.Label_Books_Date);
+            this.Panel_Books_Date.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Panel_Books_Date.HorizontalScrollbarBarColor = true;
+            this.Panel_Books_Date.HorizontalScrollbarHighlightOnWheel = false;
+            this.Panel_Books_Date.HorizontalScrollbarSize = 10;
+            this.Panel_Books_Date.Location = new System.Drawing.Point(0, 160);
+            this.Panel_Books_Date.Name = "Panel_Books_Date";
+            this.Panel_Books_Date.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.Panel_Books_Date.Size = new System.Drawing.Size(253, 32);
+            this.Panel_Books_Date.TabIndex = 32;
+            this.Panel_Books_Date.VerticalScrollbarBarColor = true;
+            this.Panel_Books_Date.VerticalScrollbarHighlightOnWheel = false;
+            this.Panel_Books_Date.VerticalScrollbarSize = 10;
             // 
-            // DateTime_Books_CopyBooksDate
+            // DateTime_Books_Date
             // 
-            this.DateTime_Books_CopyBooksDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateTime_Books_CopyBooksDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DateTime_Books_CopyBooksDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.DateTime_Books_CopyBooksDate.Location = new System.Drawing.Point(119, 2);
-            this.DateTime_Books_CopyBooksDate.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
-            this.DateTime_Books_CopyBooksDate.MinimumSize = new System.Drawing.Size(4, 29);
-            this.DateTime_Books_CopyBooksDate.Name = "DateTime_Books_CopyBooksDate";
-            this.DateTime_Books_CopyBooksDate.Size = new System.Drawing.Size(134, 29);
-            this.DateTime_Books_CopyBooksDate.TabIndex = 24;
+            this.DateTime_Books_Date.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateTime_Books_Date.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DateTime_Books_Date.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.DateTime_Books_Date.Location = new System.Drawing.Point(119, 2);
+            this.DateTime_Books_Date.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
+            this.DateTime_Books_Date.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DateTime_Books_Date.Name = "DateTime_Books_Date";
+            this.DateTime_Books_Date.Size = new System.Drawing.Size(134, 29);
+            this.DateTime_Books_Date.TabIndex = 24;
             // 
-            // Label_Books_CopyBooksDate
+            // Label_Books_Date
             // 
-            this.Label_Books_CopyBooksDate.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Label_Books_CopyBooksDate.Location = new System.Drawing.Point(0, 2);
-            this.Label_Books_CopyBooksDate.Name = "Label_Books_CopyBooksDate";
-            this.Label_Books_CopyBooksDate.Size = new System.Drawing.Size(119, 28);
-            this.Label_Books_CopyBooksDate.TabIndex = 13;
-            this.Label_Books_CopyBooksDate.Text = "Дата регистрации";
-            this.Label_Books_CopyBooksDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Label_Books_Date.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Label_Books_Date.Location = new System.Drawing.Point(0, 2);
+            this.Label_Books_Date.Name = "Label_Books_Date";
+            this.Label_Books_Date.Size = new System.Drawing.Size(119, 28);
+            this.Label_Books_Date.TabIndex = 13;
+            this.Label_Books_Date.Text = "Дата регистрации";
+            this.Label_Books_Date.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Panel_Books_Year
             // 
@@ -1119,6 +1140,7 @@
             // 
             // SplitContainer_CopyBooks.Panel1
             // 
+            this.SplitContainer_CopyBooks.Panel1.Controls.Add(this.Label_CopyBooks_WhenEmpty);
             this.SplitContainer_CopyBooks.Panel1.Controls.Add(this.Grid_CopyBooks);
             // 
             // SplitContainer_CopyBooks.Panel2
@@ -1135,6 +1157,16 @@
             this.SplitContainer_CopyBooks.Size = new System.Drawing.Size(968, 537);
             this.SplitContainer_CopyBooks.SplitterDistance = 580;
             this.SplitContainer_CopyBooks.TabIndex = 7;
+            // 
+            // Label_CopyBooks_WhenEmpty
+            // 
+            this.Label_CopyBooks_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_CopyBooks_WhenEmpty.Location = new System.Drawing.Point(162, 214);
+            this.Label_CopyBooks_WhenEmpty.Name = "Label_CopyBooks_WhenEmpty";
+            this.Label_CopyBooks_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_CopyBooks_WhenEmpty.TabIndex = 27;
+            this.Label_CopyBooks_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_CopyBooks_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Grid_CopyBooks
             // 
@@ -1184,6 +1216,7 @@
             this.Grid_CopyBooks.Size = new System.Drawing.Size(580, 537);
             this.Grid_CopyBooks.TabIndex = 20;
             this.Grid_CopyBooks.SelectionChanged += new System.EventHandler(this.Grid_CopyBooks_SelectionChanged);
+            this.Grid_CopyBooks.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
             // Button_CopyBooks_Delete
             // 
@@ -1441,7 +1474,8 @@
             // 
             // SplitContainer_References_Bookmaker.Panel1
             // 
-            this.SplitContainer_References_Bookmaker.Panel1.Controls.Add(this.Grid_References_Bookmaker);
+            this.SplitContainer_References_Bookmaker.Panel1.Controls.Add(this.Label_References_Bookmakers_WhenEmpty);
+            this.SplitContainer_References_Bookmaker.Panel1.Controls.Add(this.Grid_References_Bookmakers);
             // 
             // SplitContainer_References_Bookmaker.Panel2
             // 
@@ -1460,14 +1494,24 @@
             this.SplitContainer_References_Bookmaker.SplitterDistance = 170;
             this.SplitContainer_References_Bookmaker.TabIndex = 36;
             // 
-            // Grid_References_Bookmaker
+            // Label_References_Bookmakers_WhenEmpty
             // 
-            this.Grid_References_Bookmaker.AllowUserToResizeRows = false;
-            this.Grid_References_Bookmaker.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Grid_References_Bookmaker.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_References_Bookmaker.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Grid_References_Bookmaker.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.Grid_References_Bookmaker.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Label_References_Bookmakers_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_References_Bookmakers_WhenEmpty.Location = new System.Drawing.Point(-43, 193);
+            this.Label_References_Bookmakers_WhenEmpty.Name = "Label_References_Bookmakers_WhenEmpty";
+            this.Label_References_Bookmakers_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_References_Bookmakers_WhenEmpty.TabIndex = 27;
+            this.Label_References_Bookmakers_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_References_Bookmakers_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Grid_References_Bookmakers
+            // 
+            this.Grid_References_Bookmakers.AllowUserToResizeRows = false;
+            this.Grid_References_Bookmakers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Grid_References_Bookmakers.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Grid_References_Bookmakers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Grid_References_Bookmakers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Grid_References_Bookmakers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1476,8 +1520,8 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_References_Bookmaker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.Grid_References_Bookmaker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_References_Bookmakers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.Grid_References_Bookmakers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1485,15 +1529,15 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_References_Bookmaker.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Grid_References_Bookmaker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grid_References_Bookmaker.EnableHeadersVisualStyles = false;
-            this.Grid_References_Bookmaker.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Grid_References_Bookmaker.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_References_Bookmaker.Location = new System.Drawing.Point(0, 0);
-            this.Grid_References_Bookmaker.Name = "Grid_References_Bookmaker";
-            this.Grid_References_Bookmaker.ReadOnly = true;
-            this.Grid_References_Bookmaker.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Grid_References_Bookmakers.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Grid_References_Bookmakers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid_References_Bookmakers.EnableHeadersVisualStyles = false;
+            this.Grid_References_Bookmakers.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Grid_References_Bookmakers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Grid_References_Bookmakers.Location = new System.Drawing.Point(0, 0);
+            this.Grid_References_Bookmakers.Name = "Grid_References_Bookmakers";
+            this.Grid_References_Bookmakers.ReadOnly = true;
+            this.Grid_References_Bookmakers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1501,14 +1545,15 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_References_Bookmaker.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.Grid_References_Bookmaker.RowHeadersVisible = false;
-            this.Grid_References_Bookmaker.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Grid_References_Bookmaker.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_References_Bookmaker.Size = new System.Drawing.Size(170, 419);
-            this.Grid_References_Bookmaker.TabIndex = 11;
-            this.Grid_References_Bookmaker.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Grid_References_Bookmaker.SelectionChanged += new System.EventHandler(this.Grid_References_Bookmaker_SelectionChanged);
+            this.Grid_References_Bookmakers.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.Grid_References_Bookmakers.RowHeadersVisible = false;
+            this.Grid_References_Bookmakers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Grid_References_Bookmakers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grid_References_Bookmakers.Size = new System.Drawing.Size(170, 419);
+            this.Grid_References_Bookmakers.TabIndex = 11;
+            this.Grid_References_Bookmakers.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Grid_References_Bookmakers.SelectionChanged += new System.EventHandler(this.Grid_References_Bookmaker_SelectionChanged);
+            this.Grid_References_Bookmakers.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
             // Button_References_Bookmaker_Delete
             // 
@@ -1705,7 +1750,8 @@
             // 
             // SplitContainer_References_Group.Panel1
             // 
-            this.SplitContainer_References_Group.Panel1.Controls.Add(this.Grid_References_Group);
+            this.SplitContainer_References_Group.Panel1.Controls.Add(this.Label_References_Groups_WhenEmpty);
+            this.SplitContainer_References_Group.Panel1.Controls.Add(this.Grid_References_Groups);
             // 
             // SplitContainer_References_Group.Panel2
             // 
@@ -1722,14 +1768,24 @@
             this.SplitContainer_References_Group.SplitterDistance = 170;
             this.SplitContainer_References_Group.TabIndex = 37;
             // 
-            // Grid_References_Group
+            // Label_References_Groups_WhenEmpty
             // 
-            this.Grid_References_Group.AllowUserToResizeRows = false;
-            this.Grid_References_Group.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Grid_References_Group.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_References_Group.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Grid_References_Group.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.Grid_References_Group.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Label_References_Groups_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_References_Groups_WhenEmpty.Location = new System.Drawing.Point(-43, 193);
+            this.Label_References_Groups_WhenEmpty.Name = "Label_References_Groups_WhenEmpty";
+            this.Label_References_Groups_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_References_Groups_WhenEmpty.TabIndex = 27;
+            this.Label_References_Groups_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_References_Groups_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Grid_References_Groups
+            // 
+            this.Grid_References_Groups.AllowUserToResizeRows = false;
+            this.Grid_References_Groups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Grid_References_Groups.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Grid_References_Groups.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Grid_References_Groups.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Grid_References_Groups.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1738,8 +1794,8 @@
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_References_Group.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.Grid_References_Group.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_References_Groups.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.Grid_References_Groups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1747,15 +1803,15 @@
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_References_Group.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Grid_References_Group.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grid_References_Group.EnableHeadersVisualStyles = false;
-            this.Grid_References_Group.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Grid_References_Group.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_References_Group.Location = new System.Drawing.Point(0, 0);
-            this.Grid_References_Group.Name = "Grid_References_Group";
-            this.Grid_References_Group.ReadOnly = true;
-            this.Grid_References_Group.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Grid_References_Groups.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Grid_References_Groups.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid_References_Groups.EnableHeadersVisualStyles = false;
+            this.Grid_References_Groups.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Grid_References_Groups.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Grid_References_Groups.Location = new System.Drawing.Point(0, 0);
+            this.Grid_References_Groups.Name = "Grid_References_Groups";
+            this.Grid_References_Groups.ReadOnly = true;
+            this.Grid_References_Groups.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1763,14 +1819,15 @@
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_References_Group.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.Grid_References_Group.RowHeadersVisible = false;
-            this.Grid_References_Group.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Grid_References_Group.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_References_Group.Size = new System.Drawing.Size(170, 419);
-            this.Grid_References_Group.TabIndex = 11;
-            this.Grid_References_Group.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Grid_References_Group.SelectionChanged += new System.EventHandler(this.Grid_References_Group_SelectionChanged);
+            this.Grid_References_Groups.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.Grid_References_Groups.RowHeadersVisible = false;
+            this.Grid_References_Groups.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Grid_References_Groups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grid_References_Groups.Size = new System.Drawing.Size(170, 419);
+            this.Grid_References_Groups.TabIndex = 11;
+            this.Grid_References_Groups.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Grid_References_Groups.SelectionChanged += new System.EventHandler(this.Grid_References_Group_SelectionChanged);
+            this.Grid_References_Groups.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
             // Button_References_Group_Delete
             // 
@@ -1923,7 +1980,8 @@
             // 
             // SplitContainer_References_Author.Panel1
             // 
-            this.SplitContainer_References_Author.Panel1.Controls.Add(this.Grid_References_Author);
+            this.SplitContainer_References_Author.Panel1.Controls.Add(this.Label_References_Authors_WhenEmpty);
+            this.SplitContainer_References_Author.Panel1.Controls.Add(this.Grid_References_Authors);
             // 
             // SplitContainer_References_Author.Panel2
             // 
@@ -1944,14 +2002,24 @@
             this.SplitContainer_References_Author.SplitterDistance = 170;
             this.SplitContainer_References_Author.TabIndex = 36;
             // 
-            // Grid_References_Author
+            // Label_References_Authors_WhenEmpty
             // 
-            this.Grid_References_Author.AllowUserToResizeRows = false;
-            this.Grid_References_Author.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Grid_References_Author.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_References_Author.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Grid_References_Author.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.Grid_References_Author.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Label_References_Authors_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_References_Authors_WhenEmpty.Location = new System.Drawing.Point(-43, 193);
+            this.Label_References_Authors_WhenEmpty.Name = "Label_References_Authors_WhenEmpty";
+            this.Label_References_Authors_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_References_Authors_WhenEmpty.TabIndex = 27;
+            this.Label_References_Authors_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_References_Authors_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Grid_References_Authors
+            // 
+            this.Grid_References_Authors.AllowUserToResizeRows = false;
+            this.Grid_References_Authors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Grid_References_Authors.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Grid_References_Authors.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Grid_References_Authors.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.Grid_References_Authors.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1960,8 +2028,8 @@
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_References_Author.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.Grid_References_Author.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Grid_References_Authors.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.Grid_References_Authors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1969,15 +2037,15 @@
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_References_Author.DefaultCellStyle = dataGridViewCellStyle14;
-            this.Grid_References_Author.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Grid_References_Author.EnableHeadersVisualStyles = false;
-            this.Grid_References_Author.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.Grid_References_Author.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_References_Author.Location = new System.Drawing.Point(0, 0);
-            this.Grid_References_Author.Name = "Grid_References_Author";
-            this.Grid_References_Author.ReadOnly = true;
-            this.Grid_References_Author.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Grid_References_Authors.DefaultCellStyle = dataGridViewCellStyle14;
+            this.Grid_References_Authors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Grid_References_Authors.EnableHeadersVisualStyles = false;
+            this.Grid_References_Authors.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Grid_References_Authors.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Grid_References_Authors.Location = new System.Drawing.Point(0, 0);
+            this.Grid_References_Authors.Name = "Grid_References_Authors";
+            this.Grid_References_Authors.ReadOnly = true;
+            this.Grid_References_Authors.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1985,13 +2053,14 @@
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_References_Author.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.Grid_References_Author.RowHeadersVisible = false;
-            this.Grid_References_Author.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Grid_References_Author.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_References_Author.Size = new System.Drawing.Size(170, 419);
-            this.Grid_References_Author.TabIndex = 8;
-            this.Grid_References_Author.SelectionChanged += new System.EventHandler(this.Grid_References_Author_SelectionChanged);
+            this.Grid_References_Authors.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.Grid_References_Authors.RowHeadersVisible = false;
+            this.Grid_References_Authors.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.Grid_References_Authors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Grid_References_Authors.Size = new System.Drawing.Size(170, 419);
+            this.Grid_References_Authors.TabIndex = 8;
+            this.Grid_References_Authors.SelectionChanged += new System.EventHandler(this.Grid_References_Authors_SelectionChanged);
+            this.Grid_References_Authors.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
             // Button_References_Author_Delete
             // 
@@ -2245,6 +2314,7 @@
             // 
             // SplitContainer_Orders_Readers.Panel1
             // 
+            this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.Label_Orders_Readers_WhenEmpty);
             this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.Grid_Orders_Readers);
             this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.Label_Orders_Readers_Search_Header);
             this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.TextBox_Orders_Readers_Search);
@@ -2271,6 +2341,16 @@
             this.SplitContainer_Orders_Readers.Size = new System.Drawing.Size(968, 338);
             this.SplitContainer_Orders_Readers.SplitterDistance = 685;
             this.SplitContainer_Orders_Readers.TabIndex = 9;
+            // 
+            // Label_Orders_Readers_WhenEmpty
+            // 
+            this.Label_Orders_Readers_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Orders_Readers_WhenEmpty.Location = new System.Drawing.Point(214, 109);
+            this.Label_Orders_Readers_WhenEmpty.Name = "Label_Orders_Readers_WhenEmpty";
+            this.Label_Orders_Readers_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_Orders_Readers_WhenEmpty.TabIndex = 77;
+            this.Label_Orders_Readers_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_Orders_Readers_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Grid_Orders_Readers
             // 
@@ -2321,6 +2401,7 @@
             this.Grid_Orders_Readers.Size = new System.Drawing.Size(685, 238);
             this.Grid_Orders_Readers.TabIndex = 0;
             this.Grid_Orders_Readers.SelectionChanged += new System.EventHandler(this.Grid_Orders_Readers_SelectionChanged);
+            this.Grid_Orders_Readers.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
             // Label_Orders_Readers_Search_Header
             // 
@@ -2694,6 +2775,7 @@
             // 
             // SplitContainer_Orders_Orders.Panel1
             // 
+            this.SplitContainer_Orders_Orders.Panel1.Controls.Add(this.Label_Orders_Orders_WhenEmpty);
             this.SplitContainer_Orders_Orders.Panel1.Controls.Add(this.Grid_Orders_Orders);
             // 
             // SplitContainer_Orders_Orders.Panel2
@@ -2702,6 +2784,16 @@
             this.SplitContainer_Orders_Orders.Size = new System.Drawing.Size(968, 171);
             this.SplitContainer_Orders_Orders.SplitterDistance = 845;
             this.SplitContainer_Orders_Orders.TabIndex = 2;
+            // 
+            // Label_Orders_Orders_WhenEmpty
+            // 
+            this.Label_Orders_Orders_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Orders_Orders_WhenEmpty.Location = new System.Drawing.Point(294, 56);
+            this.Label_Orders_Orders_WhenEmpty.Name = "Label_Orders_Orders_WhenEmpty";
+            this.Label_Orders_Orders_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_Orders_Orders_WhenEmpty.TabIndex = 27;
+            this.Label_Orders_Orders_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_Orders_Orders_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Grid_Orders_Orders
             // 
@@ -2749,8 +2841,9 @@
             this.Grid_Orders_Orders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_Orders_Orders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid_Orders_Orders.Size = new System.Drawing.Size(845, 171);
-            this.Grid_Orders_Orders.TabIndex = 5;
+            this.Grid_Orders_Orders.TabIndex = 28;
             this.Grid_Orders_Orders.SelectionChanged += new System.EventHandler(this.Grid_Orders_Orders_SelectionChanged);
+            this.Grid_Orders_Orders.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
             // Button_Orders_Orders_Delete
             // 
@@ -2994,6 +3087,7 @@
             // 
             // TabPage_Returns
             // 
+            this.TabPage_Returns.Controls.Add(this.Label_Returns_WhenEmpty);
             this.TabPage_Returns.Controls.Add(this.Grid_Returns);
             this.TabPage_Returns.Controls.Add(this.Label_Returns_Table_Header);
             this.TabPage_Returns.Controls.Add(this.Label_Returns_Table);
@@ -3009,6 +3103,16 @@
             this.TabPage_Returns.Size = new System.Drawing.Size(968, 537);
             this.TabPage_Returns.TabIndex = 2;
             this.TabPage_Returns.Text = "Возврат книг";
+            // 
+            // Label_Returns_WhenEmpty
+            // 
+            this.Label_Returns_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Returns_WhenEmpty.Location = new System.Drawing.Point(356, 304);
+            this.Label_Returns_WhenEmpty.Name = "Label_Returns_WhenEmpty";
+            this.Label_Returns_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_Returns_WhenEmpty.TabIndex = 81;
+            this.Label_Returns_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_Returns_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Grid_Returns
             // 
@@ -3059,6 +3163,7 @@
             this.Grid_Returns.Size = new System.Drawing.Size(968, 267);
             this.Grid_Returns.TabIndex = 75;
             this.Grid_Returns.SelectionChanged += new System.EventHandler(this.Grid_Returns_SelectionChanged);
+            this.Grid_Returns.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
             // Label_Returns_Table_Header
             // 
@@ -3400,6 +3505,7 @@
             // 
             // SplitContainer_Reports.Panel2
             // 
+            this.SplitContainer_Reports.Panel2.Controls.Add(this.Label_Reports_WhenEmpty);
             this.SplitContainer_Reports.Panel2.Controls.Add(this.Grid_Reports);
             this.SplitContainer_Reports.Size = new System.Drawing.Size(968, 537);
             this.SplitContainer_Reports.SplitterDistance = 247;
@@ -3492,6 +3598,16 @@
             this.Label_Reports_Header.TabIndex = 70;
             this.Label_Reports_Header.Text = " ";
             // 
+            // Label_Reports_WhenEmpty
+            // 
+            this.Label_Reports_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Reports_WhenEmpty.Location = new System.Drawing.Point(230, 236);
+            this.Label_Reports_WhenEmpty.Name = "Label_Reports_WhenEmpty";
+            this.Label_Reports_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_Reports_WhenEmpty.TabIndex = 77;
+            this.Label_Reports_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_Reports_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Grid_Reports
             // 
             this.Grid_Reports.AllowUserToResizeRows = false;
@@ -3540,6 +3656,7 @@
             this.Grid_Reports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid_Reports.Size = new System.Drawing.Size(717, 537);
             this.Grid_Reports.TabIndex = 76;
+            this.Grid_Reports.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
             // Label_Data
             // 
@@ -3575,7 +3692,7 @@
             this.SplitContainer_Books_Info.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_Books_Info)).EndInit();
             this.SplitContainer_Books_Info.ResumeLayout(false);
-            this.Panel_Books_CopyBooksDate.ResumeLayout(false);
+            this.Panel_Books_Date.ResumeLayout(false);
             this.Panel_Books_Year.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_Books_Year)).EndInit();
             this.Panel_Books_Bookmaker.ResumeLayout(false);
@@ -3605,19 +3722,19 @@
             this.SplitContainer_References_Bookmaker.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_References_Bookmaker)).EndInit();
             this.SplitContainer_References_Bookmaker.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Bookmaker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Bookmakers)).EndInit();
             this.Panel_References_Group.ResumeLayout(false);
             this.SplitContainer_References_Group.Panel1.ResumeLayout(false);
             this.SplitContainer_References_Group.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_References_Group)).EndInit();
             this.SplitContainer_References_Group.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Group)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Groups)).EndInit();
             this.Panel_References_Author.ResumeLayout(false);
             this.SplitContainer_References_Author.Panel1.ResumeLayout(false);
             this.SplitContainer_References_Author.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainer_References_Author)).EndInit();
             this.SplitContainer_References_Author.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Author)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid_References_Authors)).EndInit();
             this.TabPage_Forms.ResumeLayout(false);
             this.SplitContainer_Orders.Panel1.ResumeLayout(false);
             this.SplitContainer_Orders.Panel2.ResumeLayout(false);
@@ -3673,7 +3790,7 @@
         private System.Windows.Forms.SplitContainer SplitContainer_References;
         private MetroFramework.Controls.MetroPanel Panel_References_Bookmaker;
         private System.Windows.Forms.SplitContainer SplitContainer_References_Bookmaker;
-        private MetroFramework.Controls.MetroGrid Grid_References_Bookmaker;
+        private MetroFramework.Controls.MetroGrid Grid_References_Bookmakers;
         private MetroFramework.Controls.MetroButton Button_References_Bookmaker_Delete;
         private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Delete;
         private MetroFramework.Controls.MetroButton Button_References_Bookmaker_Edit;
@@ -3688,7 +3805,7 @@
         private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Header_1;
         private MetroFramework.Controls.MetroPanel Panel_References_Group;
         private System.Windows.Forms.SplitContainer SplitContainer_References_Group;
-        private MetroFramework.Controls.MetroGrid Grid_References_Group;
+        private MetroFramework.Controls.MetroGrid Grid_References_Groups;
         private MetroFramework.Controls.MetroButton Button_References_Group_Delete;
         private MetroFramework.Controls.MetroLabel Label_References_Group_Delete;
         private MetroFramework.Controls.MetroButton Button_References_Group_Edit;
@@ -3701,7 +3818,7 @@
         private MetroFramework.Controls.MetroLabel Label_References_Group_Header_1;
         private MetroFramework.Controls.MetroPanel Panel_References_Author;
         private System.Windows.Forms.SplitContainer SplitContainer_References_Author;
-        private MetroFramework.Controls.MetroGrid Grid_References_Author;
+        private MetroFramework.Controls.MetroGrid Grid_References_Authors;
         private MetroFramework.Controls.MetroButton Button_References_Author_Delete;
         private MetroFramework.Controls.MetroLabel Label_References_Author_Delete;
         private MetroFramework.Controls.MetroButton Button_References_Author_Edit;
@@ -3771,9 +3888,9 @@
         private MetroFramework.Controls.MetroButton Button_Books_Create;
         private MetroFramework.Controls.MetroLabel Label_Books_Create;
         private System.Windows.Forms.SplitContainer SplitContainer_Books_Info;
-        private MetroFramework.Controls.MetroPanel Panel_Books_CopyBooksDate;
-        private MetroFramework.Controls.MetroDateTime DateTime_Books_CopyBooksDate;
-        private MetroFramework.Controls.MetroLabel Label_Books_CopyBooksDate;
+        private MetroFramework.Controls.MetroPanel Panel_Books_Date;
+        private MetroFramework.Controls.MetroDateTime DateTime_Books_Date;
+        private MetroFramework.Controls.MetroLabel Label_Books_Date;
         private MetroFramework.Controls.MetroPanel Panel_Books_Year;
         private System.Windows.Forms.NumericUpDown NumericUpDown_Books_Year;
         private MetroFramework.Controls.MetroLabel Label_Books_Year;
@@ -3849,7 +3966,6 @@
         private MetroFramework.Controls.MetroTextBox TextBox_Orders_Reader_Info;
         private MetroFramework.Controls.MetroLabel Label_Orders_Reader_Info;
         private System.Windows.Forms.SplitContainer SplitContainer_Orders_Orders;
-        private MetroFramework.Controls.MetroGrid Grid_Orders_Orders;
         private MetroFramework.Controls.MetroButton Button_Orders_Orders_Delete;
         private MetroFramework.Controls.MetroLabel Label_Orders_Readers_Search_Header;
         private MetroFramework.Controls.MetroTextBox TextBox_Orders_Readers_Search;
@@ -3870,6 +3986,16 @@
         private System.Windows.Forms.ComboBox ComboBox_Issuance_Book;
         private System.Windows.Forms.ComboBox ComboBox_Issuance_Reader;
         private MetroFramework.Controls.MetroGrid Grid_Reports;
+        private MetroFramework.Controls.MetroLabel Label_Books_WhenEmpty;
+        private MetroFramework.Controls.MetroLabel Label_CopyBooks_WhenEmpty;
+        private MetroFramework.Controls.MetroLabel Label_References_Bookmakers_WhenEmpty;
+        private MetroFramework.Controls.MetroLabel Label_References_Groups_WhenEmpty;
+        private MetroFramework.Controls.MetroLabel Label_References_Authors_WhenEmpty;
+        private MetroFramework.Controls.MetroLabel Label_Orders_Readers_WhenEmpty;
+        private MetroFramework.Controls.MetroLabel Label_Orders_Orders_WhenEmpty;
+        private MetroFramework.Controls.MetroLabel Label_Returns_WhenEmpty;
+        private MetroFramework.Controls.MetroLabel Label_Reports_WhenEmpty;
+        private MetroFramework.Controls.MetroGrid Grid_Orders_Orders;
     }
 }
 

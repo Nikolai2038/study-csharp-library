@@ -2,6 +2,7 @@
 using MetroFramework.Controls;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 // ######################################################################
@@ -31,6 +32,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Загрузилась ли форма</summary>
         private bool IsShown = false;
 
+        /// <summary>Надписи "Нет данных" для каждой таблицы</summary>
+        private readonly Dictionary<DataGridView, Label> GridWhenEmptyLabels;
+
         /// <summary>Конструктор формы</summary>
         public Form_Data() : base()
         {
@@ -42,9 +46,9 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
             this.AllGrids = new List<MetroGrid> {
                 this.Grid_Books,
                 this.Grid_CopyBooks,
-                this.Grid_References_Author,
-                this.Grid_References_Bookmaker,
-                this.Grid_References_Group,
+                this.Grid_References_Authors,
+                this.Grid_References_Bookmakers,
+                this.Grid_References_Groups,
                 this.Grid_Orders_Readers,
                 this.Grid_Orders_Orders,
                 this.Grid_Returns,
@@ -71,19 +75,19 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
             // Комбобоксы, привязанные к таблицам - при обновлении таблиц обновляются и комбобоксы
             this.LinkedComboboxes = new Dictionary<MetroGrid, List<ComboBox>> {
                 {
-                    this.Grid_References_Author,
+                    this.Grid_References_Authors,
                     new List<ComboBox>() {
                         this.ComboBox_Books_Author
                     }
                 },
                 {
-                    this.Grid_References_Group,
+                    this.Grid_References_Groups,
                     new List<ComboBox>() {
                         this.ComboBox_Books_Group
                     }
                 },
                 {
-                    this.Grid_References_Bookmaker,
+                    this.Grid_References_Bookmakers,
                     new List<ComboBox>() {
                         this.ComboBox_Books_Bookmaker
                     }
@@ -122,13 +126,13 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 [this.Grid_CopyBooks] = new List<int>() {
                     1, 10, 2, 2, 2
                 },
-                [this.Grid_References_Author] = new List<int>() {
+                [this.Grid_References_Authors] = new List<int>() {
                     1, 4, 4, 4
                 },
-                [this.Grid_References_Group] = new List<int>() {
+                [this.Grid_References_Groups] = new List<int>() {
                     1, 12
                 },
-                [this.Grid_References_Bookmaker] = new List<int>() {
+                [this.Grid_References_Bookmakers] = new List<int>() {
                     1, 6, 6
                 },
                 [this.Grid_Orders_Readers] = new List<int>() {
@@ -143,11 +147,32 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 // Для последней таблицы так пока что не получится сделать, так как количество её колонок непостоянно
             };
             // --------------------------------------------
+
+            // --------------------------------------------
+            // Надписи "Нет данных для отображения" для таблиц
+            // --------------------------------------------
+            // Каждой таблице соответствует свой Label
+            this.GridWhenEmptyLabels = new Dictionary<DataGridView, Label> {
+                { this.Grid_Books,                  this.Label_Books_WhenEmpty },
+                { this.Grid_CopyBooks,              this.Label_CopyBooks_WhenEmpty },
+                { this.Grid_References_Authors,     this.Label_References_Authors_WhenEmpty },
+                { this.Grid_References_Bookmakers,  this.Label_References_Bookmakers_WhenEmpty },
+                { this.Grid_References_Groups,      this.Label_References_Groups_WhenEmpty },
+                { this.Grid_Orders_Readers,         this.Label_Orders_Readers_WhenEmpty },
+                { this.Grid_Orders_Orders,          this.Label_Orders_Orders_WhenEmpty },
+                { this.Grid_Returns,                this.Label_Returns_WhenEmpty },
+                { this.Grid_Reports,                this.Label_Reports_WhenEmpty }
+            };
+            // --------------------------------------------
         }
 
         /// <summary>Событие загрузки формы</summary>
         private void Form_Data_Load(object sender, EventArgs e)
         {
+            // Переход на эту вкладку необходим, чтобы её прогрузить
+            // Иначе, если стартовать с любой другой вкладки, то потом, при переходе на вкладку 3 ("Формуляры")
+            // вылетит исключение System.NullReferenceException (пока что без понятия, откуда оно берётся - ничего не понимаю)
+            this.TabControl_Data.SelectedIndex = 3;
             // Переходим на первую вкладку, так как по умолчанию откроется вкладка, оставленная в дизайнере выбранной
             this.TabControl_Data.SelectedIndex = 0;
 
@@ -217,6 +242,21 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
 
             // Сохраняем ID новой вкладки
             this.LastSelectedTabIndex = this.TabControl_Data.SelectedIndex;
+        }
+
+        /// <summary>Событие изменения размеров DataGridView</summary>
+        private void Grid_SizeChanged(object sender, EventArgs e)
+        {
+            DataGridView grid = sender as DataGridView;
+            // Если для таблицы есть соответствующая надпись при отсутствии данных
+            if (this.GridWhenEmptyLabels.ContainsKey(grid)) {
+                // Центрируем Label по центру соответствующего ей DataGridView
+                Label label = this.GridWhenEmptyLabels[grid];
+                label.Location = new Point(
+                    grid.Location.X + (grid.Width - label.Width) / 2,
+                    grid.Location.Y + (grid.Height - label.Height) / 2
+                );
+            }
         }
     }
 }
