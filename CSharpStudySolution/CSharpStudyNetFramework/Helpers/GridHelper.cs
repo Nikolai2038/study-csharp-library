@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Components;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -84,6 +85,15 @@ namespace CSharpStudyNetFramework.Helpers
                     GridColumnsWidthUnits[grid].Add(column.Width);
                 }
             }
+        }
+
+        public static void PaintBorderForGridCells(
+            DataGridView grid,
+            DataGridViewCellPaintingEventArgs e,
+            MetroStyleManager style_manager,
+            int border_size = 1
+        )
+        {
         }
     }
 }

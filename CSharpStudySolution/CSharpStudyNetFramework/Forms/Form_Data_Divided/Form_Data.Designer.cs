@@ -60,6 +60,7 @@
             this.SplitContainer_Books = new System.Windows.Forms.SplitContainer();
             this.Label_Books_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_Books = new MetroFramework.Controls.MetroGrid();
+            this.Label_Books_Header = new MetroFramework.Controls.MetroLabel();
             this.Button_Books_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_Books_Delete = new MetroFramework.Controls.MetroLabel();
             this.Button_Books_Edit = new MetroFramework.Controls.MetroButton();
@@ -87,7 +88,7 @@
             this.Label_Books_Author = new MetroFramework.Controls.MetroLabel();
             this.PictureBox_Books_Cover = new System.Windows.Forms.PictureBox();
             this.Button_Books_AddCover = new MetroFramework.Controls.MetroButton();
-            this.Label_Books_Header = new MetroFramework.Controls.MetroLabel();
+            this.Label_Books_Header_Info = new MetroFramework.Controls.MetroLabel();
             this.Label_Books_Search_Header = new MetroFramework.Controls.MetroLabel();
             this.Panel_Books_Search_RadioButtons = new MetroFramework.Controls.MetroPanel();
             this.RadioButton_Books_Search_RegistrationDate = new MetroFramework.Controls.MetroRadioButton();
@@ -113,6 +114,7 @@
             this.SplitContainer_CopyBooks = new System.Windows.Forms.SplitContainer();
             this.Label_CopyBooks_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_CopyBooks = new MetroFramework.Controls.MetroGrid();
+            this.Label_CopyBooks_Header = new MetroFramework.Controls.MetroLabel();
             this.Button_CopyBooks_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_CopyBooks_Delete = new MetroFramework.Controls.MetroLabel();
             this.Button_CopyBooks_Edit = new MetroFramework.Controls.MetroButton();
@@ -125,16 +127,20 @@
             this.Panel_CopyBooks_Book = new MetroFramework.Controls.MetroPanel();
             this.ComboBox_CopyBooks_Book = new System.Windows.Forms.ComboBox();
             this.Label_CopyBooks_Book = new MetroFramework.Controls.MetroLabel();
-            this.Label_CopyBooks_Header = new MetroFramework.Controls.MetroLabel();
+            this.Label_CopyBooks_Header_Info = new MetroFramework.Controls.MetroLabel();
             this.TabPage_References = new System.Windows.Forms.TabPage();
             this.SplitContainer_References = new System.Windows.Forms.SplitContainer();
             this.Button_References_Bookmaker_Tab = new MetroFramework.Controls.MetroButton();
+            this.Label_References_Bookmakers = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Group_Tab = new MetroFramework.Controls.MetroButton();
+            this.Label_References_Groups = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Author_Tab = new MetroFramework.Controls.MetroButton();
+            this.Label_References_Header = new MetroFramework.Controls.MetroLabel();
             this.Panel_References_Bookmaker = new MetroFramework.Controls.MetroPanel();
             this.SplitContainer_References_Bookmaker = new System.Windows.Forms.SplitContainer();
             this.Label_References_Bookmakers_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_References_Bookmakers = new MetroFramework.Controls.MetroGrid();
+            this.Label_References_Bookmaker_Header = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Bookmaker_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_References_Bookmaker_Delete = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Bookmaker_Edit = new MetroFramework.Controls.MetroButton();
@@ -145,12 +151,12 @@
             this.Label_References_Bookmaker_City = new MetroFramework.Controls.MetroLabel();
             this.TextBox_References_Bookmaker_Title = new MetroFramework.Controls.MetroTextBox();
             this.Label_References_Bookmaker_Title = new MetroFramework.Controls.MetroLabel();
-            this.Label_References_Bookmaker_Header_2 = new MetroFramework.Controls.MetroLabel();
-            this.Label_References_Bookmaker_Header_1 = new MetroFramework.Controls.MetroLabel();
+            this.Label_References_Bookmaker_Header_Info = new MetroFramework.Controls.MetroLabel();
             this.Panel_References_Group = new MetroFramework.Controls.MetroPanel();
             this.SplitContainer_References_Group = new System.Windows.Forms.SplitContainer();
             this.Label_References_Groups_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_References_Groups = new MetroFramework.Controls.MetroGrid();
+            this.Label_References_Group_Header = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Group_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_References_Group_Delete = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Group_Edit = new MetroFramework.Controls.MetroButton();
@@ -159,12 +165,12 @@
             this.Label_References_Group_Create = new MetroFramework.Controls.MetroLabel();
             this.TextBox_References_Group_Title = new MetroFramework.Controls.MetroTextBox();
             this.Label_References_Group_Title = new MetroFramework.Controls.MetroLabel();
-            this.Label_References_Group_Header_2 = new MetroFramework.Controls.MetroLabel();
-            this.Label_References_Group_Header_1 = new MetroFramework.Controls.MetroLabel();
+            this.Label_References_Group_Header_Info = new MetroFramework.Controls.MetroLabel();
             this.Panel_References_Author = new MetroFramework.Controls.MetroPanel();
             this.SplitContainer_References_Author = new System.Windows.Forms.SplitContainer();
             this.Label_References_Authors_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_References_Authors = new MetroFramework.Controls.MetroGrid();
+            this.Label_References_Author_Header = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Author_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_References_Author_Delete = new MetroFramework.Controls.MetroLabel();
             this.Button_References_Author_Edit = new MetroFramework.Controls.MetroButton();
@@ -177,13 +183,13 @@
             this.Label_References_Author_FirstName = new MetroFramework.Controls.MetroLabel();
             this.TextBox_References_Author_LastName = new MetroFramework.Controls.MetroTextBox();
             this.Label_References_Author_LastName = new MetroFramework.Controls.MetroLabel();
-            this.Label_References_Author_Header_2 = new MetroFramework.Controls.MetroLabel();
-            this.Label_References_Author_Header_1 = new MetroFramework.Controls.MetroLabel();
+            this.Label_References_Author_Header_Info = new MetroFramework.Controls.MetroLabel();
             this.TabPage_Forms = new System.Windows.Forms.TabPage();
             this.SplitContainer_Orders = new System.Windows.Forms.SplitContainer();
             this.SplitContainer_Orders_Readers = new System.Windows.Forms.SplitContainer();
             this.Label_Orders_Readers_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_Orders_Readers = new MetroFramework.Controls.MetroGrid();
+            this.Label_Orders_Reader_Header = new MetroFramework.Controls.MetroLabel();
             this.Label_Orders_Readers_Search_Header = new MetroFramework.Controls.MetroLabel();
             this.TextBox_Orders_Readers_Search = new MetroFramework.Controls.MetroTextBox();
             this.Panel_Orders_Readers_Search_Fields = new MetroFramework.Controls.MetroPanel();
@@ -191,7 +197,6 @@
             this.Label_Orders_Readers_Search_IsInRealTime = new MetroFramework.Controls.MetroLabel();
             this.Button_Orders_Readers_Search = new MetroFramework.Controls.MetroButton();
             this.Button_Orders_Readers_Search_Reset = new MetroFramework.Controls.MetroButton();
-            this.Label_Orders_Readers_Search_Bottom = new MetroFramework.Controls.MetroLabel();
             this.Button_Orders_Readers_Delete = new MetroFramework.Controls.MetroButton();
             this.Label_Orders_Reader_Delete = new MetroFramework.Controls.MetroLabel();
             this.Button_Orders_Readers_Edit = new MetroFramework.Controls.MetroButton();
@@ -206,7 +211,7 @@
             this.Label_Orders_Reader_FirstName = new MetroFramework.Controls.MetroLabel();
             this.TextBox_Orders_Reader_LastName = new MetroFramework.Controls.MetroTextBox();
             this.Label_Orders_Reader_LastName = new MetroFramework.Controls.MetroLabel();
-            this.Label_Orders_Reader_Header = new MetroFramework.Controls.MetroLabel();
+            this.Label_Orders_Reader_Header_Info = new MetroFramework.Controls.MetroLabel();
             this.SplitContainer_Orders_Orders = new System.Windows.Forms.SplitContainer();
             this.Label_Orders_Orders_WhenEmpty = new MetroFramework.Controls.MetroLabel();
             this.Grid_Orders_Orders = new MetroFramework.Controls.MetroGrid();
@@ -377,7 +382,7 @@
             this.TabControl_Data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl_Data.Location = new System.Drawing.Point(12, 79);
             this.TabControl_Data.Name = "TabControl_Data";
-            this.TabControl_Data.SelectedIndex = 0;
+            this.TabControl_Data.SelectedIndex = 2;
             this.TabControl_Data.Size = new System.Drawing.Size(976, 579);
             this.TabControl_Data.TabIndex = 5;
             this.TabControl_Data.UseSelectable = true;
@@ -406,6 +411,7 @@
             // 
             this.SplitContainer_Books.Panel1.Controls.Add(this.Label_Books_WhenEmpty);
             this.SplitContainer_Books.Panel1.Controls.Add(this.Grid_Books);
+            this.SplitContainer_Books.Panel1.Controls.Add(this.Label_Books_Header);
             // 
             // SplitContainer_Books.Panel2
             // 
@@ -416,7 +422,7 @@
             this.SplitContainer_Books.Panel2.Controls.Add(this.Button_Books_Create);
             this.SplitContainer_Books.Panel2.Controls.Add(this.Label_Books_Create);
             this.SplitContainer_Books.Panel2.Controls.Add(this.SplitContainer_Books_Info);
-            this.SplitContainer_Books.Panel2.Controls.Add(this.Label_Books_Header);
+            this.SplitContainer_Books.Panel2.Controls.Add(this.Label_Books_Header_Info);
             this.SplitContainer_Books.Size = new System.Drawing.Size(968, 461);
             this.SplitContainer_Books.SplitterDistance = 580;
             this.SplitContainer_Books.TabIndex = 21;
@@ -424,12 +430,13 @@
             // Label_Books_WhenEmpty
             // 
             this.Label_Books_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Label_Books_WhenEmpty.Location = new System.Drawing.Point(162, 214);
+            this.Label_Books_WhenEmpty.Location = new System.Drawing.Point(118, 214);
             this.Label_Books_WhenEmpty.Name = "Label_Books_WhenEmpty";
-            this.Label_Books_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_Books_WhenEmpty.Size = new System.Drawing.Size(344, 64);
             this.Label_Books_WhenEmpty.TabIndex = 27;
-            this.Label_Books_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_Books_WhenEmpty.Text = "По выбранным параметрам фильтрации книги не найдены.";
             this.Label_Books_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_Books_WhenEmpty.WrapToLine = true;
             // 
             // Grid_Books
             // 
@@ -462,7 +469,7 @@
             this.Grid_Books.EnableHeadersVisualStyles = false;
             this.Grid_Books.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Grid_Books.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_Books.Location = new System.Drawing.Point(0, 0);
+            this.Grid_Books.Location = new System.Drawing.Point(0, 48);
             this.Grid_Books.Name = "Grid_Books";
             this.Grid_Books.ReadOnly = true;
             this.Grid_Books.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -477,17 +484,30 @@
             this.Grid_Books.RowHeadersVisible = false;
             this.Grid_Books.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_Books.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Books.Size = new System.Drawing.Size(580, 461);
+            this.Grid_Books.Size = new System.Drawing.Size(580, 413);
             this.Grid_Books.TabIndex = 19;
             this.Grid_Books.SelectionChanged += new System.EventHandler(this.Grid_Books_SelectionChanged);
             this.Grid_Books.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
+            // Label_Books_Header
+            // 
+            this.Label_Books_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_Books_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Books_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_Books_Header.Location = new System.Drawing.Point(0, 0);
+            this.Label_Books_Header.Name = "Label_Books_Header";
+            this.Label_Books_Header.Size = new System.Drawing.Size(580, 48);
+            this.Label_Books_Header.TabIndex = 72;
+            this.Label_Books_Header.Text = "Книги";
+            this.Label_Books_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Button_Books_Delete
             // 
             this.Button_Books_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_Books_Delete.Location = new System.Drawing.Point(0, 404);
+            this.Button_Books_Delete.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_Books_Delete.Location = new System.Drawing.Point(0, 408);
             this.Button_Books_Delete.Name = "Button_Books_Delete";
-            this.Button_Books_Delete.Size = new System.Drawing.Size(384, 47);
+            this.Button_Books_Delete.Size = new System.Drawing.Size(384, 48);
             this.Button_Books_Delete.TabIndex = 76;
             this.Button_Books_Delete.Text = "Удалить книгу";
             this.Button_Books_Delete.UseSelectable = true;
@@ -496,7 +516,7 @@
             // Label_Books_Delete
             // 
             this.Label_Books_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Books_Delete.Location = new System.Drawing.Point(0, 392);
+            this.Label_Books_Delete.Location = new System.Drawing.Point(0, 396);
             this.Label_Books_Delete.Name = "Label_Books_Delete";
             this.Label_Books_Delete.Size = new System.Drawing.Size(384, 12);
             this.Label_Books_Delete.TabIndex = 77;
@@ -505,9 +525,10 @@
             // Button_Books_Edit
             // 
             this.Button_Books_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_Books_Edit.Location = new System.Drawing.Point(0, 345);
+            this.Button_Books_Edit.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_Books_Edit.Location = new System.Drawing.Point(0, 348);
             this.Button_Books_Edit.Name = "Button_Books_Edit";
-            this.Button_Books_Edit.Size = new System.Drawing.Size(384, 47);
+            this.Button_Books_Edit.Size = new System.Drawing.Size(384, 48);
             this.Button_Books_Edit.TabIndex = 75;
             this.Button_Books_Edit.Text = "Изменить информацию о книге";
             this.Button_Books_Edit.UseSelectable = true;
@@ -516,7 +537,7 @@
             // Label_Books_Edit
             // 
             this.Label_Books_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Books_Edit.Location = new System.Drawing.Point(0, 333);
+            this.Label_Books_Edit.Location = new System.Drawing.Point(0, 336);
             this.Label_Books_Edit.Name = "Label_Books_Edit";
             this.Label_Books_Edit.Size = new System.Drawing.Size(384, 12);
             this.Label_Books_Edit.TabIndex = 78;
@@ -525,9 +546,10 @@
             // Button_Books_Create
             // 
             this.Button_Books_Create.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_Books_Create.Location = new System.Drawing.Point(0, 286);
+            this.Button_Books_Create.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_Books_Create.Location = new System.Drawing.Point(0, 288);
             this.Button_Books_Create.Name = "Button_Books_Create";
-            this.Button_Books_Create.Size = new System.Drawing.Size(384, 47);
+            this.Button_Books_Create.Size = new System.Drawing.Size(384, 48);
             this.Button_Books_Create.TabIndex = 73;
             this.Button_Books_Create.Text = "Добавить книгу";
             this.Button_Books_Create.UseSelectable = true;
@@ -536,7 +558,7 @@
             // Label_Books_Create
             // 
             this.Label_Books_Create.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Books_Create.Location = new System.Drawing.Point(0, 274);
+            this.Label_Books_Create.Location = new System.Drawing.Point(0, 276);
             this.Label_Books_Create.Name = "Label_Books_Create";
             this.Label_Books_Create.Size = new System.Drawing.Size(384, 12);
             this.Label_Books_Create.TabIndex = 74;
@@ -545,7 +567,7 @@
             // SplitContainer_Books_Info
             // 
             this.SplitContainer_Books_Info.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SplitContainer_Books_Info.Location = new System.Drawing.Point(0, 46);
+            this.SplitContainer_Books_Info.Location = new System.Drawing.Point(0, 48);
             this.SplitContainer_Books_Info.Name = "SplitContainer_Books_Info";
             // 
             // SplitContainer_Books_Info.Panel1
@@ -623,6 +645,7 @@
             // 
             // NumericUpDown_Books_Year
             // 
+            this.NumericUpDown_Books_Year.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NumericUpDown_Books_Year.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NumericUpDown_Books_Year.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NumericUpDown_Books_Year.Location = new System.Drawing.Point(119, 2);
@@ -823,9 +846,9 @@
             // PictureBox_Books_Cover
             // 
             this.PictureBox_Books_Cover.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PictureBox_Books_Cover.Location = new System.Drawing.Point(0, 54);
+            this.PictureBox_Books_Cover.Location = new System.Drawing.Point(0, 60);
             this.PictureBox_Books_Cover.Name = "PictureBox_Books_Cover";
-            this.PictureBox_Books_Cover.Size = new System.Drawing.Size(127, 174);
+            this.PictureBox_Books_Cover.Size = new System.Drawing.Size(127, 168);
             this.PictureBox_Books_Cover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBox_Books_Cover.TabIndex = 22;
             this.PictureBox_Books_Cover.TabStop = false;
@@ -835,23 +858,23 @@
             this.Button_Books_AddCover.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_Books_AddCover.Location = new System.Drawing.Point(0, 0);
             this.Button_Books_AddCover.Name = "Button_Books_AddCover";
-            this.Button_Books_AddCover.Size = new System.Drawing.Size(127, 54);
+            this.Button_Books_AddCover.Size = new System.Drawing.Size(127, 60);
             this.Button_Books_AddCover.TabIndex = 23;
             this.Button_Books_AddCover.Text = "Загрузить\r\nизображение обложки";
             this.Button_Books_AddCover.UseSelectable = true;
             this.Button_Books_AddCover.Click += new System.EventHandler(this.Button_Books_AddCover_Click);
             // 
-            // Label_Books_Header
+            // Label_Books_Header_Info
             // 
-            this.Label_Books_Header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Books_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Label_Books_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Label_Books_Header.Location = new System.Drawing.Point(0, 0);
-            this.Label_Books_Header.Name = "Label_Books_Header";
-            this.Label_Books_Header.Size = new System.Drawing.Size(384, 46);
-            this.Label_Books_Header.TabIndex = 71;
-            this.Label_Books_Header.Text = "Информация о книге";
-            this.Label_Books_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_Books_Header_Info.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_Books_Header_Info.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Books_Header_Info.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_Books_Header_Info.Location = new System.Drawing.Point(0, 0);
+            this.Label_Books_Header_Info.Name = "Label_Books_Header_Info";
+            this.Label_Books_Header_Info.Size = new System.Drawing.Size(384, 48);
+            this.Label_Books_Header_Info.TabIndex = 71;
+            this.Label_Books_Header_Info.Text = "Информация о книге";
+            this.Label_Books_Header_Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Label_Books_Search_Header
             // 
@@ -1142,6 +1165,7 @@
             // 
             this.SplitContainer_CopyBooks.Panel1.Controls.Add(this.Label_CopyBooks_WhenEmpty);
             this.SplitContainer_CopyBooks.Panel1.Controls.Add(this.Grid_CopyBooks);
+            this.SplitContainer_CopyBooks.Panel1.Controls.Add(this.Label_CopyBooks_Header);
             // 
             // SplitContainer_CopyBooks.Panel2
             // 
@@ -1153,7 +1177,7 @@
             this.SplitContainer_CopyBooks.Panel2.Controls.Add(this.Label_CopyBooks_Create);
             this.SplitContainer_CopyBooks.Panel2.Controls.Add(this.Panel_CopyBooks_Number);
             this.SplitContainer_CopyBooks.Panel2.Controls.Add(this.Panel_CopyBooks_Book);
-            this.SplitContainer_CopyBooks.Panel2.Controls.Add(this.Label_CopyBooks_Header);
+            this.SplitContainer_CopyBooks.Panel2.Controls.Add(this.Label_CopyBooks_Header_Info);
             this.SplitContainer_CopyBooks.Size = new System.Drawing.Size(968, 537);
             this.SplitContainer_CopyBooks.SplitterDistance = 580;
             this.SplitContainer_CopyBooks.TabIndex = 7;
@@ -1161,12 +1185,13 @@
             // Label_CopyBooks_WhenEmpty
             // 
             this.Label_CopyBooks_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Label_CopyBooks_WhenEmpty.Location = new System.Drawing.Point(162, 214);
+            this.Label_CopyBooks_WhenEmpty.Location = new System.Drawing.Point(138, 214);
             this.Label_CopyBooks_WhenEmpty.Name = "Label_CopyBooks_WhenEmpty";
-            this.Label_CopyBooks_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_CopyBooks_WhenEmpty.Size = new System.Drawing.Size(305, 48);
             this.Label_CopyBooks_WhenEmpty.TabIndex = 27;
-            this.Label_CopyBooks_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_CopyBooks_WhenEmpty.Text = "Нет добавленных экземпляров книг.";
             this.Label_CopyBooks_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_CopyBooks_WhenEmpty.WrapToLine = true;
             // 
             // Grid_CopyBooks
             // 
@@ -1198,7 +1223,7 @@
             this.Grid_CopyBooks.EnableHeadersVisualStyles = false;
             this.Grid_CopyBooks.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Grid_CopyBooks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_CopyBooks.Location = new System.Drawing.Point(0, 0);
+            this.Grid_CopyBooks.Location = new System.Drawing.Point(0, 48);
             this.Grid_CopyBooks.Name = "Grid_CopyBooks";
             this.Grid_CopyBooks.ReadOnly = true;
             this.Grid_CopyBooks.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1213,17 +1238,30 @@
             this.Grid_CopyBooks.RowHeadersVisible = false;
             this.Grid_CopyBooks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_CopyBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_CopyBooks.Size = new System.Drawing.Size(580, 537);
+            this.Grid_CopyBooks.Size = new System.Drawing.Size(580, 489);
             this.Grid_CopyBooks.TabIndex = 20;
             this.Grid_CopyBooks.SelectionChanged += new System.EventHandler(this.Grid_CopyBooks_SelectionChanged);
             this.Grid_CopyBooks.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
+            // Label_CopyBooks_Header
+            // 
+            this.Label_CopyBooks_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_CopyBooks_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_CopyBooks_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_CopyBooks_Header.Location = new System.Drawing.Point(0, 0);
+            this.Label_CopyBooks_Header.Name = "Label_CopyBooks_Header";
+            this.Label_CopyBooks_Header.Size = new System.Drawing.Size(580, 48);
+            this.Label_CopyBooks_Header.TabIndex = 71;
+            this.Label_CopyBooks_Header.Text = "Экземпляры книг";
+            this.Label_CopyBooks_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Button_CopyBooks_Delete
             // 
             this.Button_CopyBooks_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_CopyBooks_Delete.Location = new System.Drawing.Point(0, 240);
+            this.Button_CopyBooks_Delete.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_CopyBooks_Delete.Location = new System.Drawing.Point(0, 244);
             this.Button_CopyBooks_Delete.Name = "Button_CopyBooks_Delete";
-            this.Button_CopyBooks_Delete.Size = new System.Drawing.Size(384, 47);
+            this.Button_CopyBooks_Delete.Size = new System.Drawing.Size(384, 48);
             this.Button_CopyBooks_Delete.TabIndex = 76;
             this.Button_CopyBooks_Delete.Text = "Удалить экземпляр книги";
             this.Button_CopyBooks_Delete.UseSelectable = true;
@@ -1232,7 +1270,7 @@
             // Label_CopyBooks_Delete
             // 
             this.Label_CopyBooks_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_CopyBooks_Delete.Location = new System.Drawing.Point(0, 228);
+            this.Label_CopyBooks_Delete.Location = new System.Drawing.Point(0, 232);
             this.Label_CopyBooks_Delete.Name = "Label_CopyBooks_Delete";
             this.Label_CopyBooks_Delete.Size = new System.Drawing.Size(384, 12);
             this.Label_CopyBooks_Delete.TabIndex = 77;
@@ -1241,9 +1279,10 @@
             // Button_CopyBooks_Edit
             // 
             this.Button_CopyBooks_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_CopyBooks_Edit.Location = new System.Drawing.Point(0, 181);
+            this.Button_CopyBooks_Edit.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_CopyBooks_Edit.Location = new System.Drawing.Point(0, 184);
             this.Button_CopyBooks_Edit.Name = "Button_CopyBooks_Edit";
-            this.Button_CopyBooks_Edit.Size = new System.Drawing.Size(384, 47);
+            this.Button_CopyBooks_Edit.Size = new System.Drawing.Size(384, 48);
             this.Button_CopyBooks_Edit.TabIndex = 75;
             this.Button_CopyBooks_Edit.Text = "Изменить информацию об экземпляре книги";
             this.Button_CopyBooks_Edit.UseSelectable = true;
@@ -1252,7 +1291,7 @@
             // Label_CopyBooks_Edit
             // 
             this.Label_CopyBooks_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_CopyBooks_Edit.Location = new System.Drawing.Point(0, 169);
+            this.Label_CopyBooks_Edit.Location = new System.Drawing.Point(0, 172);
             this.Label_CopyBooks_Edit.Name = "Label_CopyBooks_Edit";
             this.Label_CopyBooks_Edit.Size = new System.Drawing.Size(384, 12);
             this.Label_CopyBooks_Edit.TabIndex = 78;
@@ -1262,9 +1301,10 @@
             // 
             this.Button_CopyBooks_Create.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_CopyBooks_Create.Enabled = false;
-            this.Button_CopyBooks_Create.Location = new System.Drawing.Point(0, 122);
+            this.Button_CopyBooks_Create.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_CopyBooks_Create.Location = new System.Drawing.Point(0, 124);
             this.Button_CopyBooks_Create.Name = "Button_CopyBooks_Create";
-            this.Button_CopyBooks_Create.Size = new System.Drawing.Size(384, 47);
+            this.Button_CopyBooks_Create.Size = new System.Drawing.Size(384, 48);
             this.Button_CopyBooks_Create.TabIndex = 71;
             this.Button_CopyBooks_Create.Text = "Добавить экземпляр книги";
             this.Button_CopyBooks_Create.UseSelectable = true;
@@ -1273,7 +1313,7 @@
             // Label_CopyBooks_Create
             // 
             this.Label_CopyBooks_Create.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_CopyBooks_Create.Location = new System.Drawing.Point(0, 110);
+            this.Label_CopyBooks_Create.Location = new System.Drawing.Point(0, 112);
             this.Label_CopyBooks_Create.Name = "Label_CopyBooks_Create";
             this.Label_CopyBooks_Create.Size = new System.Drawing.Size(384, 12);
             this.Label_CopyBooks_Create.TabIndex = 74;
@@ -1287,7 +1327,7 @@
             this.Panel_CopyBooks_Number.HorizontalScrollbarBarColor = true;
             this.Panel_CopyBooks_Number.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_CopyBooks_Number.HorizontalScrollbarSize = 10;
-            this.Panel_CopyBooks_Number.Location = new System.Drawing.Point(0, 78);
+            this.Panel_CopyBooks_Number.Location = new System.Drawing.Point(0, 80);
             this.Panel_CopyBooks_Number.Name = "Panel_CopyBooks_Number";
             this.Panel_CopyBooks_Number.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.Panel_CopyBooks_Number.Size = new System.Drawing.Size(384, 32);
@@ -1347,7 +1387,7 @@
             this.Panel_CopyBooks_Book.HorizontalScrollbarBarColor = true;
             this.Panel_CopyBooks_Book.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_CopyBooks_Book.HorizontalScrollbarSize = 10;
-            this.Panel_CopyBooks_Book.Location = new System.Drawing.Point(0, 46);
+            this.Panel_CopyBooks_Book.Location = new System.Drawing.Point(0, 48);
             this.Panel_CopyBooks_Book.Name = "Panel_CopyBooks_Book";
             this.Panel_CopyBooks_Book.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.Panel_CopyBooks_Book.Size = new System.Drawing.Size(384, 32);
@@ -1376,17 +1416,17 @@
             this.Label_CopyBooks_Book.Text = "Книга";
             this.Label_CopyBooks_Book.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Label_CopyBooks_Header
+            // Label_CopyBooks_Header_Info
             // 
-            this.Label_CopyBooks_Header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_CopyBooks_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Label_CopyBooks_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Label_CopyBooks_Header.Location = new System.Drawing.Point(0, 0);
-            this.Label_CopyBooks_Header.Name = "Label_CopyBooks_Header";
-            this.Label_CopyBooks_Header.Size = new System.Drawing.Size(384, 46);
-            this.Label_CopyBooks_Header.TabIndex = 70;
-            this.Label_CopyBooks_Header.Text = "Информация об экземпляре книги";
-            this.Label_CopyBooks_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_CopyBooks_Header_Info.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_CopyBooks_Header_Info.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_CopyBooks_Header_Info.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_CopyBooks_Header_Info.Location = new System.Drawing.Point(0, 0);
+            this.Label_CopyBooks_Header_Info.Name = "Label_CopyBooks_Header_Info";
+            this.Label_CopyBooks_Header_Info.Size = new System.Drawing.Size(384, 48);
+            this.Label_CopyBooks_Header_Info.TabIndex = 70;
+            this.Label_CopyBooks_Header_Info.Text = "Информация об экземпляре книги";
+            this.Label_CopyBooks_Header_Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TabPage_References
             // 
@@ -1406,8 +1446,11 @@
             // SplitContainer_References.Panel1
             // 
             this.SplitContainer_References.Panel1.Controls.Add(this.Button_References_Bookmaker_Tab);
+            this.SplitContainer_References.Panel1.Controls.Add(this.Label_References_Bookmakers);
             this.SplitContainer_References.Panel1.Controls.Add(this.Button_References_Group_Tab);
+            this.SplitContainer_References.Panel1.Controls.Add(this.Label_References_Groups);
             this.SplitContainer_References.Panel1.Controls.Add(this.Button_References_Author_Tab);
+            this.SplitContainer_References.Panel1.Controls.Add(this.Label_References_Header);
             // 
             // SplitContainer_References.Panel2
             // 
@@ -1420,41 +1463,73 @@
             // 
             // Button_References_Bookmaker_Tab
             // 
-            this.Button_References_Bookmaker_Tab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Button_References_Bookmaker_Tab.Location = new System.Drawing.Point(0, 320);
+            this.Button_References_Bookmaker_Tab.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Button_References_Bookmaker_Tab.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Bookmaker_Tab.Location = new System.Drawing.Point(0, 168);
             this.Button_References_Bookmaker_Tab.Name = "Button_References_Bookmaker_Tab";
-            this.Button_References_Bookmaker_Tab.Size = new System.Drawing.Size(162, 50);
+            this.Button_References_Bookmaker_Tab.Size = new System.Drawing.Size(162, 48);
             this.Button_References_Bookmaker_Tab.TabIndex = 24;
-            this.Button_References_Bookmaker_Tab.Text = "Редактировать \r\nиздателей";
+            this.Button_References_Bookmaker_Tab.Text = "Издатели";
             this.Button_References_Bookmaker_Tab.UseSelectable = true;
             this.Button_References_Bookmaker_Tab.Click += new System.EventHandler(this.Button_References_Tab_Click);
             // 
+            // Label_References_Bookmakers
+            // 
+            this.Label_References_Bookmakers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_References_Bookmakers.Location = new System.Drawing.Point(0, 156);
+            this.Label_References_Bookmakers.Name = "Label_References_Bookmakers";
+            this.Label_References_Bookmakers.Size = new System.Drawing.Size(162, 12);
+            this.Label_References_Bookmakers.TabIndex = 60;
+            this.Label_References_Bookmakers.Text = " ";
+            // 
             // Button_References_Group_Tab
             // 
-            this.Button_References_Group_Tab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Button_References_Group_Tab.Location = new System.Drawing.Point(0, 240);
+            this.Button_References_Group_Tab.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Button_References_Group_Tab.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Group_Tab.Location = new System.Drawing.Point(0, 108);
             this.Button_References_Group_Tab.Name = "Button_References_Group_Tab";
-            this.Button_References_Group_Tab.Size = new System.Drawing.Size(162, 50);
+            this.Button_References_Group_Tab.Size = new System.Drawing.Size(162, 48);
             this.Button_References_Group_Tab.TabIndex = 25;
-            this.Button_References_Group_Tab.Text = "Редактировать \r\nжанры";
+            this.Button_References_Group_Tab.Text = "Жанры";
             this.Button_References_Group_Tab.UseSelectable = true;
             this.Button_References_Group_Tab.Click += new System.EventHandler(this.Button_References_Tab_Click);
             // 
+            // Label_References_Groups
+            // 
+            this.Label_References_Groups.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_References_Groups.Location = new System.Drawing.Point(0, 96);
+            this.Label_References_Groups.Name = "Label_References_Groups";
+            this.Label_References_Groups.Size = new System.Drawing.Size(162, 12);
+            this.Label_References_Groups.TabIndex = 59;
+            this.Label_References_Groups.Text = " ";
+            // 
             // Button_References_Author_Tab
             // 
-            this.Button_References_Author_Tab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Button_References_Author_Tab.Location = new System.Drawing.Point(0, 160);
+            this.Button_References_Author_Tab.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Button_References_Author_Tab.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Author_Tab.Location = new System.Drawing.Point(0, 48);
             this.Button_References_Author_Tab.Name = "Button_References_Author_Tab";
-            this.Button_References_Author_Tab.Size = new System.Drawing.Size(162, 50);
+            this.Button_References_Author_Tab.Size = new System.Drawing.Size(162, 48);
             this.Button_References_Author_Tab.TabIndex = 26;
-            this.Button_References_Author_Tab.Text = "Редактировать \r\nавторов";
+            this.Button_References_Author_Tab.Text = "Авторы";
             this.Button_References_Author_Tab.UseSelectable = true;
             this.Button_References_Author_Tab.Click += new System.EventHandler(this.Button_References_Tab_Click);
+            // 
+            // Label_References_Header
+            // 
+            this.Label_References_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_References_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_References_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_References_Header.Location = new System.Drawing.Point(0, 0);
+            this.Label_References_Header.Name = "Label_References_Header";
+            this.Label_References_Header.Size = new System.Drawing.Size(162, 48);
+            this.Label_References_Header.TabIndex = 29;
+            this.Label_References_Header.Text = "Справочники";
+            this.Label_References_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel_References_Bookmaker
             // 
             this.Panel_References_Bookmaker.Controls.Add(this.SplitContainer_References_Bookmaker);
-            this.Panel_References_Bookmaker.Controls.Add(this.Label_References_Bookmaker_Header_1);
             this.Panel_References_Bookmaker.HorizontalScrollbarBarColor = true;
             this.Panel_References_Bookmaker.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_References_Bookmaker.HorizontalScrollbarSize = 10;
@@ -1469,13 +1544,14 @@
             // SplitContainer_References_Bookmaker
             // 
             this.SplitContainer_References_Bookmaker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SplitContainer_References_Bookmaker.Location = new System.Drawing.Point(0, 46);
+            this.SplitContainer_References_Bookmaker.Location = new System.Drawing.Point(0, 0);
             this.SplitContainer_References_Bookmaker.Name = "SplitContainer_References_Bookmaker";
             // 
             // SplitContainer_References_Bookmaker.Panel1
             // 
             this.SplitContainer_References_Bookmaker.Panel1.Controls.Add(this.Label_References_Bookmakers_WhenEmpty);
             this.SplitContainer_References_Bookmaker.Panel1.Controls.Add(this.Grid_References_Bookmakers);
+            this.SplitContainer_References_Bookmaker.Panel1.Controls.Add(this.Label_References_Bookmaker_Header);
             // 
             // SplitContainer_References_Bookmaker.Panel2
             // 
@@ -1489,9 +1565,9 @@
             this.SplitContainer_References_Bookmaker.Panel2.Controls.Add(this.Label_References_Bookmaker_City);
             this.SplitContainer_References_Bookmaker.Panel2.Controls.Add(this.TextBox_References_Bookmaker_Title);
             this.SplitContainer_References_Bookmaker.Panel2.Controls.Add(this.Label_References_Bookmaker_Title);
-            this.SplitContainer_References_Bookmaker.Panel2.Controls.Add(this.Label_References_Bookmaker_Header_2);
-            this.SplitContainer_References_Bookmaker.Size = new System.Drawing.Size(240, 419);
-            this.SplitContainer_References_Bookmaker.SplitterDistance = 170;
+            this.SplitContainer_References_Bookmaker.Panel2.Controls.Add(this.Label_References_Bookmaker_Header_Info);
+            this.SplitContainer_References_Bookmaker.Size = new System.Drawing.Size(240, 465);
+            this.SplitContainer_References_Bookmaker.SplitterDistance = 165;
             this.SplitContainer_References_Bookmaker.TabIndex = 36;
             // 
             // Label_References_Bookmakers_WhenEmpty
@@ -1501,7 +1577,7 @@
             this.Label_References_Bookmakers_WhenEmpty.Name = "Label_References_Bookmakers_WhenEmpty";
             this.Label_References_Bookmakers_WhenEmpty.Size = new System.Drawing.Size(256, 32);
             this.Label_References_Bookmakers_WhenEmpty.TabIndex = 27;
-            this.Label_References_Bookmakers_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_References_Bookmakers_WhenEmpty.Text = "Нет добавленных издателей.";
             this.Label_References_Bookmakers_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Grid_References_Bookmakers
@@ -1534,7 +1610,7 @@
             this.Grid_References_Bookmakers.EnableHeadersVisualStyles = false;
             this.Grid_References_Bookmakers.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Grid_References_Bookmakers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_References_Bookmakers.Location = new System.Drawing.Point(0, 0);
+            this.Grid_References_Bookmakers.Location = new System.Drawing.Point(0, 48);
             this.Grid_References_Bookmakers.Name = "Grid_References_Bookmakers";
             this.Grid_References_Bookmakers.ReadOnly = true;
             this.Grid_References_Bookmakers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1549,18 +1625,31 @@
             this.Grid_References_Bookmakers.RowHeadersVisible = false;
             this.Grid_References_Bookmakers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_References_Bookmakers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_References_Bookmakers.Size = new System.Drawing.Size(170, 419);
+            this.Grid_References_Bookmakers.Size = new System.Drawing.Size(165, 417);
             this.Grid_References_Bookmakers.TabIndex = 11;
             this.Grid_References_Bookmakers.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Grid_References_Bookmakers.SelectionChanged += new System.EventHandler(this.Grid_References_Bookmaker_SelectionChanged);
             this.Grid_References_Bookmakers.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
+            // Label_References_Bookmaker_Header
+            // 
+            this.Label_References_Bookmaker_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_References_Bookmaker_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_References_Bookmaker_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_References_Bookmaker_Header.Location = new System.Drawing.Point(0, 0);
+            this.Label_References_Bookmaker_Header.Name = "Label_References_Bookmaker_Header";
+            this.Label_References_Bookmaker_Header.Size = new System.Drawing.Size(165, 48);
+            this.Label_References_Bookmaker_Header.TabIndex = 28;
+            this.Label_References_Bookmaker_Header.Text = "Издатели";
+            this.Label_References_Bookmaker_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Button_References_Bookmaker_Delete
             // 
             this.Button_References_Bookmaker_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_References_Bookmaker_Delete.Location = new System.Drawing.Point(0, 241);
+            this.Button_References_Bookmaker_Delete.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Bookmaker_Delete.Location = new System.Drawing.Point(0, 274);
             this.Button_References_Bookmaker_Delete.Name = "Button_References_Bookmaker_Delete";
-            this.Button_References_Bookmaker_Delete.Size = new System.Drawing.Size(66, 38);
+            this.Button_References_Bookmaker_Delete.Size = new System.Drawing.Size(71, 48);
             this.Button_References_Bookmaker_Delete.TabIndex = 52;
             this.Button_References_Bookmaker_Delete.Text = "Удалить издателя";
             this.Button_References_Bookmaker_Delete.UseSelectable = true;
@@ -1569,18 +1658,19 @@
             // Label_References_Bookmaker_Delete
             // 
             this.Label_References_Bookmaker_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Bookmaker_Delete.Location = new System.Drawing.Point(0, 229);
+            this.Label_References_Bookmaker_Delete.Location = new System.Drawing.Point(0, 262);
             this.Label_References_Bookmaker_Delete.Name = "Label_References_Bookmaker_Delete";
-            this.Label_References_Bookmaker_Delete.Size = new System.Drawing.Size(66, 12);
+            this.Label_References_Bookmaker_Delete.Size = new System.Drawing.Size(71, 12);
             this.Label_References_Bookmaker_Delete.TabIndex = 51;
             this.Label_References_Bookmaker_Delete.Text = " ";
             // 
             // Button_References_Bookmaker_Edit
             // 
             this.Button_References_Bookmaker_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_References_Bookmaker_Edit.Location = new System.Drawing.Point(0, 191);
+            this.Button_References_Bookmaker_Edit.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Bookmaker_Edit.Location = new System.Drawing.Point(0, 214);
             this.Button_References_Bookmaker_Edit.Name = "Button_References_Bookmaker_Edit";
-            this.Button_References_Bookmaker_Edit.Size = new System.Drawing.Size(66, 38);
+            this.Button_References_Bookmaker_Edit.Size = new System.Drawing.Size(71, 48);
             this.Button_References_Bookmaker_Edit.TabIndex = 54;
             this.Button_References_Bookmaker_Edit.Text = "Изменить информацию об издателе";
             this.Button_References_Bookmaker_Edit.UseSelectable = true;
@@ -1589,9 +1679,9 @@
             // Label_References_Bookmaker_Edit
             // 
             this.Label_References_Bookmaker_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Bookmaker_Edit.Location = new System.Drawing.Point(0, 179);
+            this.Label_References_Bookmaker_Edit.Location = new System.Drawing.Point(0, 202);
             this.Label_References_Bookmaker_Edit.Name = "Label_References_Bookmaker_Edit";
-            this.Label_References_Bookmaker_Edit.Size = new System.Drawing.Size(66, 12);
+            this.Label_References_Bookmaker_Edit.Size = new System.Drawing.Size(71, 12);
             this.Label_References_Bookmaker_Edit.TabIndex = 53;
             this.Label_References_Bookmaker_Edit.Text = " ";
             // 
@@ -1599,9 +1689,10 @@
             // 
             this.Button_References_Bookmaker_Create.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_References_Bookmaker_Create.Enabled = false;
-            this.Button_References_Bookmaker_Create.Location = new System.Drawing.Point(0, 141);
+            this.Button_References_Bookmaker_Create.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Bookmaker_Create.Location = new System.Drawing.Point(0, 154);
             this.Button_References_Bookmaker_Create.Name = "Button_References_Bookmaker_Create";
-            this.Button_References_Bookmaker_Create.Size = new System.Drawing.Size(66, 38);
+            this.Button_References_Bookmaker_Create.Size = new System.Drawing.Size(71, 48);
             this.Button_References_Bookmaker_Create.TabIndex = 49;
             this.Button_References_Bookmaker_Create.Text = "Добавить издателя";
             this.Button_References_Bookmaker_Create.UseSelectable = true;
@@ -1610,9 +1701,9 @@
             // Label_References_Bookmaker_Create
             // 
             this.Label_References_Bookmaker_Create.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Bookmaker_Create.Location = new System.Drawing.Point(0, 129);
+            this.Label_References_Bookmaker_Create.Location = new System.Drawing.Point(0, 142);
             this.Label_References_Bookmaker_Create.Name = "Label_References_Bookmaker_Create";
-            this.Label_References_Bookmaker_Create.Size = new System.Drawing.Size(66, 12);
+            this.Label_References_Bookmaker_Create.Size = new System.Drawing.Size(71, 12);
             this.Label_References_Bookmaker_Create.TabIndex = 57;
             this.Label_References_Bookmaker_Create.Text = " ";
             // 
@@ -1622,7 +1713,7 @@
             // 
             // 
             this.TextBox_References_Bookmaker_City.CustomButton.Image = null;
-            this.TextBox_References_Bookmaker_City.CustomButton.Location = new System.Drawing.Point(44, 1);
+            this.TextBox_References_Bookmaker_City.CustomButton.Location = new System.Drawing.Point(49, 1);
             this.TextBox_References_Bookmaker_City.CustomButton.Name = "";
             this.TextBox_References_Bookmaker_City.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TextBox_References_Bookmaker_City.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1633,7 +1724,7 @@
             this.TextBox_References_Bookmaker_City.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBox_References_Bookmaker_City.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_References_Bookmaker_City.Lines = new string[0];
-            this.TextBox_References_Bookmaker_City.Location = new System.Drawing.Point(0, 106);
+            this.TextBox_References_Bookmaker_City.Location = new System.Drawing.Point(0, 119);
             this.TextBox_References_Bookmaker_City.MaxLength = 32767;
             this.TextBox_References_Bookmaker_City.Name = "TextBox_References_Bookmaker_City";
             this.TextBox_References_Bookmaker_City.PasswordChar = '\0';
@@ -1643,7 +1734,7 @@
             this.TextBox_References_Bookmaker_City.SelectionStart = 0;
             this.TextBox_References_Bookmaker_City.ShortcutsEnabled = true;
             this.TextBox_References_Bookmaker_City.ShowClearButton = true;
-            this.TextBox_References_Bookmaker_City.Size = new System.Drawing.Size(66, 23);
+            this.TextBox_References_Bookmaker_City.Size = new System.Drawing.Size(71, 23);
             this.TextBox_References_Bookmaker_City.TabIndex = 56;
             this.TextBox_References_Bookmaker_City.UseSelectable = true;
             this.TextBox_References_Bookmaker_City.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1653,9 +1744,9 @@
             // Label_References_Bookmaker_City
             // 
             this.Label_References_Bookmaker_City.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Bookmaker_City.Location = new System.Drawing.Point(0, 82);
+            this.Label_References_Bookmaker_City.Location = new System.Drawing.Point(0, 95);
             this.Label_References_Bookmaker_City.Name = "Label_References_Bookmaker_City";
-            this.Label_References_Bookmaker_City.Size = new System.Drawing.Size(66, 24);
+            this.Label_References_Bookmaker_City.Size = new System.Drawing.Size(71, 24);
             this.Label_References_Bookmaker_City.TabIndex = 55;
             this.Label_References_Bookmaker_City.Text = "Город:";
             this.Label_References_Bookmaker_City.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -1666,7 +1757,7 @@
             // 
             // 
             this.TextBox_References_Bookmaker_Title.CustomButton.Image = null;
-            this.TextBox_References_Bookmaker_Title.CustomButton.Location = new System.Drawing.Point(44, 1);
+            this.TextBox_References_Bookmaker_Title.CustomButton.Location = new System.Drawing.Point(49, 1);
             this.TextBox_References_Bookmaker_Title.CustomButton.Name = "";
             this.TextBox_References_Bookmaker_Title.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TextBox_References_Bookmaker_Title.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1677,7 +1768,7 @@
             this.TextBox_References_Bookmaker_Title.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBox_References_Bookmaker_Title.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_References_Bookmaker_Title.Lines = new string[0];
-            this.TextBox_References_Bookmaker_Title.Location = new System.Drawing.Point(0, 59);
+            this.TextBox_References_Bookmaker_Title.Location = new System.Drawing.Point(0, 72);
             this.TextBox_References_Bookmaker_Title.MaxLength = 32767;
             this.TextBox_References_Bookmaker_Title.Name = "TextBox_References_Bookmaker_Title";
             this.TextBox_References_Bookmaker_Title.PasswordChar = '\0';
@@ -1687,7 +1778,7 @@
             this.TextBox_References_Bookmaker_Title.SelectionStart = 0;
             this.TextBox_References_Bookmaker_Title.ShortcutsEnabled = true;
             this.TextBox_References_Bookmaker_Title.ShowClearButton = true;
-            this.TextBox_References_Bookmaker_Title.Size = new System.Drawing.Size(66, 23);
+            this.TextBox_References_Bookmaker_Title.Size = new System.Drawing.Size(71, 23);
             this.TextBox_References_Bookmaker_Title.TabIndex = 48;
             this.TextBox_References_Bookmaker_Title.UseSelectable = true;
             this.TextBox_References_Bookmaker_Title.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1697,40 +1788,28 @@
             // Label_References_Bookmaker_Title
             // 
             this.Label_References_Bookmaker_Title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Bookmaker_Title.Location = new System.Drawing.Point(0, 35);
+            this.Label_References_Bookmaker_Title.Location = new System.Drawing.Point(0, 48);
             this.Label_References_Bookmaker_Title.Name = "Label_References_Bookmaker_Title";
-            this.Label_References_Bookmaker_Title.Size = new System.Drawing.Size(66, 24);
+            this.Label_References_Bookmaker_Title.Size = new System.Drawing.Size(71, 24);
             this.Label_References_Bookmaker_Title.TabIndex = 47;
             this.Label_References_Bookmaker_Title.Text = "Название:";
             this.Label_References_Bookmaker_Title.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // Label_References_Bookmaker_Header_2
+            // Label_References_Bookmaker_Header_Info
             // 
-            this.Label_References_Bookmaker_Header_2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Bookmaker_Header_2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.Label_References_Bookmaker_Header_2.Location = new System.Drawing.Point(0, 0);
-            this.Label_References_Bookmaker_Header_2.Name = "Label_References_Bookmaker_Header_2";
-            this.Label_References_Bookmaker_Header_2.Size = new System.Drawing.Size(66, 35);
-            this.Label_References_Bookmaker_Header_2.TabIndex = 46;
-            this.Label_References_Bookmaker_Header_2.Text = "Информация об издателе";
-            this.Label_References_Bookmaker_Header_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Label_References_Bookmaker_Header_1
-            // 
-            this.Label_References_Bookmaker_Header_1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Bookmaker_Header_1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Label_References_Bookmaker_Header_1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Label_References_Bookmaker_Header_1.Location = new System.Drawing.Point(0, 0);
-            this.Label_References_Bookmaker_Header_1.Name = "Label_References_Bookmaker_Header_1";
-            this.Label_References_Bookmaker_Header_1.Size = new System.Drawing.Size(240, 46);
-            this.Label_References_Bookmaker_Header_1.TabIndex = 12;
-            this.Label_References_Bookmaker_Header_1.Text = "Издатели";
-            this.Label_References_Bookmaker_Header_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_References_Bookmaker_Header_Info.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_References_Bookmaker_Header_Info.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_References_Bookmaker_Header_Info.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_References_Bookmaker_Header_Info.Location = new System.Drawing.Point(0, 0);
+            this.Label_References_Bookmaker_Header_Info.Name = "Label_References_Bookmaker_Header_Info";
+            this.Label_References_Bookmaker_Header_Info.Size = new System.Drawing.Size(71, 48);
+            this.Label_References_Bookmaker_Header_Info.TabIndex = 46;
+            this.Label_References_Bookmaker_Header_Info.Text = "Информация об издателе";
+            this.Label_References_Bookmaker_Header_Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel_References_Group
             // 
             this.Panel_References_Group.Controls.Add(this.SplitContainer_References_Group);
-            this.Panel_References_Group.Controls.Add(this.Label_References_Group_Header_1);
             this.Panel_References_Group.HorizontalScrollbarBarColor = true;
             this.Panel_References_Group.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_References_Group.HorizontalScrollbarSize = 10;
@@ -1745,13 +1824,14 @@
             // SplitContainer_References_Group
             // 
             this.SplitContainer_References_Group.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SplitContainer_References_Group.Location = new System.Drawing.Point(0, 46);
+            this.SplitContainer_References_Group.Location = new System.Drawing.Point(0, 0);
             this.SplitContainer_References_Group.Name = "SplitContainer_References_Group";
             // 
             // SplitContainer_References_Group.Panel1
             // 
             this.SplitContainer_References_Group.Panel1.Controls.Add(this.Label_References_Groups_WhenEmpty);
             this.SplitContainer_References_Group.Panel1.Controls.Add(this.Grid_References_Groups);
+            this.SplitContainer_References_Group.Panel1.Controls.Add(this.Label_References_Group_Header);
             // 
             // SplitContainer_References_Group.Panel2
             // 
@@ -1763,9 +1843,9 @@
             this.SplitContainer_References_Group.Panel2.Controls.Add(this.Label_References_Group_Create);
             this.SplitContainer_References_Group.Panel2.Controls.Add(this.TextBox_References_Group_Title);
             this.SplitContainer_References_Group.Panel2.Controls.Add(this.Label_References_Group_Title);
-            this.SplitContainer_References_Group.Panel2.Controls.Add(this.Label_References_Group_Header_2);
-            this.SplitContainer_References_Group.Size = new System.Drawing.Size(240, 419);
-            this.SplitContainer_References_Group.SplitterDistance = 170;
+            this.SplitContainer_References_Group.Panel2.Controls.Add(this.Label_References_Group_Header_Info);
+            this.SplitContainer_References_Group.Size = new System.Drawing.Size(240, 465);
+            this.SplitContainer_References_Group.SplitterDistance = 165;
             this.SplitContainer_References_Group.TabIndex = 37;
             // 
             // Label_References_Groups_WhenEmpty
@@ -1775,7 +1855,7 @@
             this.Label_References_Groups_WhenEmpty.Name = "Label_References_Groups_WhenEmpty";
             this.Label_References_Groups_WhenEmpty.Size = new System.Drawing.Size(256, 32);
             this.Label_References_Groups_WhenEmpty.TabIndex = 27;
-            this.Label_References_Groups_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_References_Groups_WhenEmpty.Text = "Нет добавленных жанров.";
             this.Label_References_Groups_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Grid_References_Groups
@@ -1808,7 +1888,7 @@
             this.Grid_References_Groups.EnableHeadersVisualStyles = false;
             this.Grid_References_Groups.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Grid_References_Groups.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_References_Groups.Location = new System.Drawing.Point(0, 0);
+            this.Grid_References_Groups.Location = new System.Drawing.Point(0, 48);
             this.Grid_References_Groups.Name = "Grid_References_Groups";
             this.Grid_References_Groups.ReadOnly = true;
             this.Grid_References_Groups.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1823,18 +1903,31 @@
             this.Grid_References_Groups.RowHeadersVisible = false;
             this.Grid_References_Groups.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_References_Groups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_References_Groups.Size = new System.Drawing.Size(170, 419);
+            this.Grid_References_Groups.Size = new System.Drawing.Size(165, 417);
             this.Grid_References_Groups.TabIndex = 11;
             this.Grid_References_Groups.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Grid_References_Groups.SelectionChanged += new System.EventHandler(this.Grid_References_Group_SelectionChanged);
             this.Grid_References_Groups.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
+            // Label_References_Group_Header
+            // 
+            this.Label_References_Group_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_References_Group_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_References_Group_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_References_Group_Header.Location = new System.Drawing.Point(0, 0);
+            this.Label_References_Group_Header.Name = "Label_References_Group_Header";
+            this.Label_References_Group_Header.Size = new System.Drawing.Size(165, 48);
+            this.Label_References_Group_Header.TabIndex = 28;
+            this.Label_References_Group_Header.Text = "Жанры";
+            this.Label_References_Group_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Button_References_Group_Delete
             // 
             this.Button_References_Group_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_References_Group_Delete.Location = new System.Drawing.Point(0, 194);
+            this.Button_References_Group_Delete.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Group_Delete.Location = new System.Drawing.Point(0, 227);
             this.Button_References_Group_Delete.Name = "Button_References_Group_Delete";
-            this.Button_References_Group_Delete.Size = new System.Drawing.Size(66, 38);
+            this.Button_References_Group_Delete.Size = new System.Drawing.Size(71, 48);
             this.Button_References_Group_Delete.TabIndex = 52;
             this.Button_References_Group_Delete.Text = "Удалить жанр";
             this.Button_References_Group_Delete.UseSelectable = true;
@@ -1843,18 +1936,19 @@
             // Label_References_Group_Delete
             // 
             this.Label_References_Group_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Group_Delete.Location = new System.Drawing.Point(0, 182);
+            this.Label_References_Group_Delete.Location = new System.Drawing.Point(0, 215);
             this.Label_References_Group_Delete.Name = "Label_References_Group_Delete";
-            this.Label_References_Group_Delete.Size = new System.Drawing.Size(66, 12);
+            this.Label_References_Group_Delete.Size = new System.Drawing.Size(71, 12);
             this.Label_References_Group_Delete.TabIndex = 50;
             this.Label_References_Group_Delete.Text = " ";
             // 
             // Button_References_Group_Edit
             // 
             this.Button_References_Group_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_References_Group_Edit.Location = new System.Drawing.Point(0, 144);
+            this.Button_References_Group_Edit.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Group_Edit.Location = new System.Drawing.Point(0, 167);
             this.Button_References_Group_Edit.Name = "Button_References_Group_Edit";
-            this.Button_References_Group_Edit.Size = new System.Drawing.Size(66, 38);
+            this.Button_References_Group_Edit.Size = new System.Drawing.Size(71, 48);
             this.Button_References_Group_Edit.TabIndex = 54;
             this.Button_References_Group_Edit.Text = "Изменить информацию о жанре";
             this.Button_References_Group_Edit.UseSelectable = true;
@@ -1863,9 +1957,9 @@
             // Label_References_Group_Edit
             // 
             this.Label_References_Group_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Group_Edit.Location = new System.Drawing.Point(0, 132);
+            this.Label_References_Group_Edit.Location = new System.Drawing.Point(0, 155);
             this.Label_References_Group_Edit.Name = "Label_References_Group_Edit";
-            this.Label_References_Group_Edit.Size = new System.Drawing.Size(66, 12);
+            this.Label_References_Group_Edit.Size = new System.Drawing.Size(71, 12);
             this.Label_References_Group_Edit.TabIndex = 53;
             this.Label_References_Group_Edit.Text = " ";
             // 
@@ -1873,9 +1967,10 @@
             // 
             this.Button_References_Group_Create.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_References_Group_Create.Enabled = false;
-            this.Button_References_Group_Create.Location = new System.Drawing.Point(0, 94);
+            this.Button_References_Group_Create.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Group_Create.Location = new System.Drawing.Point(0, 107);
             this.Button_References_Group_Create.Name = "Button_References_Group_Create";
-            this.Button_References_Group_Create.Size = new System.Drawing.Size(66, 38);
+            this.Button_References_Group_Create.Size = new System.Drawing.Size(71, 48);
             this.Button_References_Group_Create.TabIndex = 49;
             this.Button_References_Group_Create.Text = "Добавить жанр";
             this.Button_References_Group_Create.UseSelectable = true;
@@ -1884,9 +1979,9 @@
             // Label_References_Group_Create
             // 
             this.Label_References_Group_Create.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Group_Create.Location = new System.Drawing.Point(0, 82);
+            this.Label_References_Group_Create.Location = new System.Drawing.Point(0, 95);
             this.Label_References_Group_Create.Name = "Label_References_Group_Create";
-            this.Label_References_Group_Create.Size = new System.Drawing.Size(66, 12);
+            this.Label_References_Group_Create.Size = new System.Drawing.Size(71, 12);
             this.Label_References_Group_Create.TabIndex = 51;
             this.Label_References_Group_Create.Text = " ";
             // 
@@ -1896,7 +1991,7 @@
             // 
             // 
             this.TextBox_References_Group_Title.CustomButton.Image = null;
-            this.TextBox_References_Group_Title.CustomButton.Location = new System.Drawing.Point(44, 1);
+            this.TextBox_References_Group_Title.CustomButton.Location = new System.Drawing.Point(49, 1);
             this.TextBox_References_Group_Title.CustomButton.Name = "";
             this.TextBox_References_Group_Title.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TextBox_References_Group_Title.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -1907,7 +2002,7 @@
             this.TextBox_References_Group_Title.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBox_References_Group_Title.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_References_Group_Title.Lines = new string[0];
-            this.TextBox_References_Group_Title.Location = new System.Drawing.Point(0, 59);
+            this.TextBox_References_Group_Title.Location = new System.Drawing.Point(0, 72);
             this.TextBox_References_Group_Title.MaxLength = 32767;
             this.TextBox_References_Group_Title.Name = "TextBox_References_Group_Title";
             this.TextBox_References_Group_Title.PasswordChar = '\0';
@@ -1917,7 +2012,7 @@
             this.TextBox_References_Group_Title.SelectionStart = 0;
             this.TextBox_References_Group_Title.ShortcutsEnabled = true;
             this.TextBox_References_Group_Title.ShowClearButton = true;
-            this.TextBox_References_Group_Title.Size = new System.Drawing.Size(66, 23);
+            this.TextBox_References_Group_Title.Size = new System.Drawing.Size(71, 23);
             this.TextBox_References_Group_Title.TabIndex = 48;
             this.TextBox_References_Group_Title.UseSelectable = true;
             this.TextBox_References_Group_Title.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -1927,40 +2022,28 @@
             // Label_References_Group_Title
             // 
             this.Label_References_Group_Title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Group_Title.Location = new System.Drawing.Point(0, 35);
+            this.Label_References_Group_Title.Location = new System.Drawing.Point(0, 48);
             this.Label_References_Group_Title.Name = "Label_References_Group_Title";
-            this.Label_References_Group_Title.Size = new System.Drawing.Size(66, 24);
+            this.Label_References_Group_Title.Size = new System.Drawing.Size(71, 24);
             this.Label_References_Group_Title.TabIndex = 47;
             this.Label_References_Group_Title.Text = "Название:";
             this.Label_References_Group_Title.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // Label_References_Group_Header_2
+            // Label_References_Group_Header_Info
             // 
-            this.Label_References_Group_Header_2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Group_Header_2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.Label_References_Group_Header_2.Location = new System.Drawing.Point(0, 0);
-            this.Label_References_Group_Header_2.Name = "Label_References_Group_Header_2";
-            this.Label_References_Group_Header_2.Size = new System.Drawing.Size(66, 35);
-            this.Label_References_Group_Header_2.TabIndex = 46;
-            this.Label_References_Group_Header_2.Text = "Информация о жанре";
-            this.Label_References_Group_Header_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Label_References_Group_Header_1
-            // 
-            this.Label_References_Group_Header_1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Group_Header_1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Label_References_Group_Header_1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Label_References_Group_Header_1.Location = new System.Drawing.Point(0, 0);
-            this.Label_References_Group_Header_1.Name = "Label_References_Group_Header_1";
-            this.Label_References_Group_Header_1.Size = new System.Drawing.Size(240, 46);
-            this.Label_References_Group_Header_1.TabIndex = 12;
-            this.Label_References_Group_Header_1.Text = "Жанры";
-            this.Label_References_Group_Header_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_References_Group_Header_Info.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_References_Group_Header_Info.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_References_Group_Header_Info.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_References_Group_Header_Info.Location = new System.Drawing.Point(0, 0);
+            this.Label_References_Group_Header_Info.Name = "Label_References_Group_Header_Info";
+            this.Label_References_Group_Header_Info.Size = new System.Drawing.Size(71, 48);
+            this.Label_References_Group_Header_Info.TabIndex = 46;
+            this.Label_References_Group_Header_Info.Text = "Информация о жанре";
+            this.Label_References_Group_Header_Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Panel_References_Author
             // 
             this.Panel_References_Author.Controls.Add(this.SplitContainer_References_Author);
-            this.Panel_References_Author.Controls.Add(this.Label_References_Author_Header_1);
             this.Panel_References_Author.HorizontalScrollbarBarColor = true;
             this.Panel_References_Author.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_References_Author.HorizontalScrollbarSize = 10;
@@ -1975,13 +2058,14 @@
             // SplitContainer_References_Author
             // 
             this.SplitContainer_References_Author.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SplitContainer_References_Author.Location = new System.Drawing.Point(0, 46);
+            this.SplitContainer_References_Author.Location = new System.Drawing.Point(0, 0);
             this.SplitContainer_References_Author.Name = "SplitContainer_References_Author";
             // 
             // SplitContainer_References_Author.Panel1
             // 
             this.SplitContainer_References_Author.Panel1.Controls.Add(this.Label_References_Authors_WhenEmpty);
             this.SplitContainer_References_Author.Panel1.Controls.Add(this.Grid_References_Authors);
+            this.SplitContainer_References_Author.Panel1.Controls.Add(this.Label_References_Author_Header);
             // 
             // SplitContainer_References_Author.Panel2
             // 
@@ -1997,9 +2081,9 @@
             this.SplitContainer_References_Author.Panel2.Controls.Add(this.Label_References_Author_FirstName);
             this.SplitContainer_References_Author.Panel2.Controls.Add(this.TextBox_References_Author_LastName);
             this.SplitContainer_References_Author.Panel2.Controls.Add(this.Label_References_Author_LastName);
-            this.SplitContainer_References_Author.Panel2.Controls.Add(this.Label_References_Author_Header_2);
-            this.SplitContainer_References_Author.Size = new System.Drawing.Size(240, 419);
-            this.SplitContainer_References_Author.SplitterDistance = 170;
+            this.SplitContainer_References_Author.Panel2.Controls.Add(this.Label_References_Author_Header_Info);
+            this.SplitContainer_References_Author.Size = new System.Drawing.Size(240, 465);
+            this.SplitContainer_References_Author.SplitterDistance = 165;
             this.SplitContainer_References_Author.TabIndex = 36;
             // 
             // Label_References_Authors_WhenEmpty
@@ -2009,7 +2093,7 @@
             this.Label_References_Authors_WhenEmpty.Name = "Label_References_Authors_WhenEmpty";
             this.Label_References_Authors_WhenEmpty.Size = new System.Drawing.Size(256, 32);
             this.Label_References_Authors_WhenEmpty.TabIndex = 27;
-            this.Label_References_Authors_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_References_Authors_WhenEmpty.Text = "Нет добавленных авторов.";
             this.Label_References_Authors_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Grid_References_Authors
@@ -2042,7 +2126,7 @@
             this.Grid_References_Authors.EnableHeadersVisualStyles = false;
             this.Grid_References_Authors.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Grid_References_Authors.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_References_Authors.Location = new System.Drawing.Point(0, 0);
+            this.Grid_References_Authors.Location = new System.Drawing.Point(0, 48);
             this.Grid_References_Authors.Name = "Grid_References_Authors";
             this.Grid_References_Authors.ReadOnly = true;
             this.Grid_References_Authors.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -2057,17 +2141,30 @@
             this.Grid_References_Authors.RowHeadersVisible = false;
             this.Grid_References_Authors.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_References_Authors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_References_Authors.Size = new System.Drawing.Size(170, 419);
+            this.Grid_References_Authors.Size = new System.Drawing.Size(165, 417);
             this.Grid_References_Authors.TabIndex = 8;
             this.Grid_References_Authors.SelectionChanged += new System.EventHandler(this.Grid_References_Authors_SelectionChanged);
             this.Grid_References_Authors.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
+            // Label_References_Author_Header
+            // 
+            this.Label_References_Author_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_References_Author_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_References_Author_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_References_Author_Header.Location = new System.Drawing.Point(0, 0);
+            this.Label_References_Author_Header.Name = "Label_References_Author_Header";
+            this.Label_References_Author_Header.Size = new System.Drawing.Size(165, 48);
+            this.Label_References_Author_Header.TabIndex = 28;
+            this.Label_References_Author_Header.Text = "Авторы";
+            this.Label_References_Author_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Button_References_Author_Delete
             // 
             this.Button_References_Author_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_References_Author_Delete.Location = new System.Drawing.Point(0, 288);
+            this.Button_References_Author_Delete.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Author_Delete.Location = new System.Drawing.Point(0, 321);
             this.Button_References_Author_Delete.Name = "Button_References_Author_Delete";
-            this.Button_References_Author_Delete.Size = new System.Drawing.Size(66, 38);
+            this.Button_References_Author_Delete.Size = new System.Drawing.Size(71, 48);
             this.Button_References_Author_Delete.TabIndex = 60;
             this.Button_References_Author_Delete.Text = "Удалить автора";
             this.Button_References_Author_Delete.UseSelectable = true;
@@ -2076,18 +2173,19 @@
             // Label_References_Author_Delete
             // 
             this.Label_References_Author_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Author_Delete.Location = new System.Drawing.Point(0, 276);
+            this.Label_References_Author_Delete.Location = new System.Drawing.Point(0, 309);
             this.Label_References_Author_Delete.Name = "Label_References_Author_Delete";
-            this.Label_References_Author_Delete.Size = new System.Drawing.Size(66, 12);
+            this.Label_References_Author_Delete.Size = new System.Drawing.Size(71, 12);
             this.Label_References_Author_Delete.TabIndex = 59;
             this.Label_References_Author_Delete.Text = " ";
             // 
             // Button_References_Author_Edit
             // 
             this.Button_References_Author_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Button_References_Author_Edit.Location = new System.Drawing.Point(0, 238);
+            this.Button_References_Author_Edit.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Author_Edit.Location = new System.Drawing.Point(0, 261);
             this.Button_References_Author_Edit.Name = "Button_References_Author_Edit";
-            this.Button_References_Author_Edit.Size = new System.Drawing.Size(66, 38);
+            this.Button_References_Author_Edit.Size = new System.Drawing.Size(71, 48);
             this.Button_References_Author_Edit.TabIndex = 62;
             this.Button_References_Author_Edit.Text = "Изменить информацию об авторе";
             this.Button_References_Author_Edit.UseSelectable = true;
@@ -2096,9 +2194,9 @@
             // Label_References_Author_Edit
             // 
             this.Label_References_Author_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Author_Edit.Location = new System.Drawing.Point(0, 226);
+            this.Label_References_Author_Edit.Location = new System.Drawing.Point(0, 249);
             this.Label_References_Author_Edit.Name = "Label_References_Author_Edit";
-            this.Label_References_Author_Edit.Size = new System.Drawing.Size(66, 12);
+            this.Label_References_Author_Edit.Size = new System.Drawing.Size(71, 12);
             this.Label_References_Author_Edit.TabIndex = 61;
             this.Label_References_Author_Edit.Text = " ";
             // 
@@ -2106,9 +2204,10 @@
             // 
             this.Button_References_Author_Create.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_References_Author_Create.Enabled = false;
-            this.Button_References_Author_Create.Location = new System.Drawing.Point(0, 188);
+            this.Button_References_Author_Create.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_References_Author_Create.Location = new System.Drawing.Point(0, 201);
             this.Button_References_Author_Create.Name = "Button_References_Author_Create";
-            this.Button_References_Author_Create.Size = new System.Drawing.Size(66, 38);
+            this.Button_References_Author_Create.Size = new System.Drawing.Size(71, 48);
             this.Button_References_Author_Create.TabIndex = 57;
             this.Button_References_Author_Create.Text = "Добавить автора";
             this.Button_References_Author_Create.UseSelectable = true;
@@ -2117,9 +2216,9 @@
             // Label_References_Author_Create
             // 
             this.Label_References_Author_Create.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Author_Create.Location = new System.Drawing.Point(0, 176);
+            this.Label_References_Author_Create.Location = new System.Drawing.Point(0, 189);
             this.Label_References_Author_Create.Name = "Label_References_Author_Create";
-            this.Label_References_Author_Create.Size = new System.Drawing.Size(66, 12);
+            this.Label_References_Author_Create.Size = new System.Drawing.Size(71, 12);
             this.Label_References_Author_Create.TabIndex = 58;
             this.Label_References_Author_Create.Text = " ";
             // 
@@ -2129,7 +2228,7 @@
             // 
             // 
             this.TextBox_References_Author_MiddleName.CustomButton.Image = null;
-            this.TextBox_References_Author_MiddleName.CustomButton.Location = new System.Drawing.Point(44, 1);
+            this.TextBox_References_Author_MiddleName.CustomButton.Location = new System.Drawing.Point(49, 1);
             this.TextBox_References_Author_MiddleName.CustomButton.Name = "";
             this.TextBox_References_Author_MiddleName.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TextBox_References_Author_MiddleName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2140,7 +2239,7 @@
             this.TextBox_References_Author_MiddleName.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBox_References_Author_MiddleName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_References_Author_MiddleName.Lines = new string[0];
-            this.TextBox_References_Author_MiddleName.Location = new System.Drawing.Point(0, 153);
+            this.TextBox_References_Author_MiddleName.Location = new System.Drawing.Point(0, 166);
             this.TextBox_References_Author_MiddleName.MaxLength = 32767;
             this.TextBox_References_Author_MiddleName.Name = "TextBox_References_Author_MiddleName";
             this.TextBox_References_Author_MiddleName.PasswordChar = '\0';
@@ -2150,7 +2249,7 @@
             this.TextBox_References_Author_MiddleName.SelectionStart = 0;
             this.TextBox_References_Author_MiddleName.ShortcutsEnabled = true;
             this.TextBox_References_Author_MiddleName.ShowClearButton = true;
-            this.TextBox_References_Author_MiddleName.Size = new System.Drawing.Size(66, 23);
+            this.TextBox_References_Author_MiddleName.Size = new System.Drawing.Size(71, 23);
             this.TextBox_References_Author_MiddleName.TabIndex = 56;
             this.TextBox_References_Author_MiddleName.UseSelectable = true;
             this.TextBox_References_Author_MiddleName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2160,9 +2259,9 @@
             // Label_References_Author_MiddleName
             // 
             this.Label_References_Author_MiddleName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Author_MiddleName.Location = new System.Drawing.Point(0, 129);
+            this.Label_References_Author_MiddleName.Location = new System.Drawing.Point(0, 142);
             this.Label_References_Author_MiddleName.Name = "Label_References_Author_MiddleName";
-            this.Label_References_Author_MiddleName.Size = new System.Drawing.Size(66, 24);
+            this.Label_References_Author_MiddleName.Size = new System.Drawing.Size(71, 24);
             this.Label_References_Author_MiddleName.TabIndex = 55;
             this.Label_References_Author_MiddleName.Text = "Отчество:";
             this.Label_References_Author_MiddleName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -2173,7 +2272,7 @@
             // 
             // 
             this.TextBox_References_Author_FirstName.CustomButton.Image = null;
-            this.TextBox_References_Author_FirstName.CustomButton.Location = new System.Drawing.Point(44, 1);
+            this.TextBox_References_Author_FirstName.CustomButton.Location = new System.Drawing.Point(49, 1);
             this.TextBox_References_Author_FirstName.CustomButton.Name = "";
             this.TextBox_References_Author_FirstName.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TextBox_References_Author_FirstName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2184,7 +2283,7 @@
             this.TextBox_References_Author_FirstName.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBox_References_Author_FirstName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_References_Author_FirstName.Lines = new string[0];
-            this.TextBox_References_Author_FirstName.Location = new System.Drawing.Point(0, 106);
+            this.TextBox_References_Author_FirstName.Location = new System.Drawing.Point(0, 119);
             this.TextBox_References_Author_FirstName.MaxLength = 32767;
             this.TextBox_References_Author_FirstName.Name = "TextBox_References_Author_FirstName";
             this.TextBox_References_Author_FirstName.PasswordChar = '\0';
@@ -2194,7 +2293,7 @@
             this.TextBox_References_Author_FirstName.SelectionStart = 0;
             this.TextBox_References_Author_FirstName.ShortcutsEnabled = true;
             this.TextBox_References_Author_FirstName.ShowClearButton = true;
-            this.TextBox_References_Author_FirstName.Size = new System.Drawing.Size(66, 23);
+            this.TextBox_References_Author_FirstName.Size = new System.Drawing.Size(71, 23);
             this.TextBox_References_Author_FirstName.TabIndex = 52;
             this.TextBox_References_Author_FirstName.UseSelectable = true;
             this.TextBox_References_Author_FirstName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2204,9 +2303,9 @@
             // Label_References_Author_FirstName
             // 
             this.Label_References_Author_FirstName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Author_FirstName.Location = new System.Drawing.Point(0, 82);
+            this.Label_References_Author_FirstName.Location = new System.Drawing.Point(0, 95);
             this.Label_References_Author_FirstName.Name = "Label_References_Author_FirstName";
-            this.Label_References_Author_FirstName.Size = new System.Drawing.Size(66, 24);
+            this.Label_References_Author_FirstName.Size = new System.Drawing.Size(71, 24);
             this.Label_References_Author_FirstName.TabIndex = 51;
             this.Label_References_Author_FirstName.Text = "Имя:";
             this.Label_References_Author_FirstName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -2217,7 +2316,7 @@
             // 
             // 
             this.TextBox_References_Author_LastName.CustomButton.Image = null;
-            this.TextBox_References_Author_LastName.CustomButton.Location = new System.Drawing.Point(44, 1);
+            this.TextBox_References_Author_LastName.CustomButton.Location = new System.Drawing.Point(49, 1);
             this.TextBox_References_Author_LastName.CustomButton.Name = "";
             this.TextBox_References_Author_LastName.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TextBox_References_Author_LastName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -2228,7 +2327,7 @@
             this.TextBox_References_Author_LastName.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBox_References_Author_LastName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_References_Author_LastName.Lines = new string[0];
-            this.TextBox_References_Author_LastName.Location = new System.Drawing.Point(0, 59);
+            this.TextBox_References_Author_LastName.Location = new System.Drawing.Point(0, 72);
             this.TextBox_References_Author_LastName.MaxLength = 32767;
             this.TextBox_References_Author_LastName.Name = "TextBox_References_Author_LastName";
             this.TextBox_References_Author_LastName.PasswordChar = '\0';
@@ -2238,7 +2337,7 @@
             this.TextBox_References_Author_LastName.SelectionStart = 0;
             this.TextBox_References_Author_LastName.ShortcutsEnabled = true;
             this.TextBox_References_Author_LastName.ShowClearButton = true;
-            this.TextBox_References_Author_LastName.Size = new System.Drawing.Size(66, 23);
+            this.TextBox_References_Author_LastName.Size = new System.Drawing.Size(71, 23);
             this.TextBox_References_Author_LastName.TabIndex = 54;
             this.TextBox_References_Author_LastName.UseSelectable = true;
             this.TextBox_References_Author_LastName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -2248,35 +2347,24 @@
             // Label_References_Author_LastName
             // 
             this.Label_References_Author_LastName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Author_LastName.Location = new System.Drawing.Point(0, 35);
+            this.Label_References_Author_LastName.Location = new System.Drawing.Point(0, 48);
             this.Label_References_Author_LastName.Name = "Label_References_Author_LastName";
-            this.Label_References_Author_LastName.Size = new System.Drawing.Size(66, 24);
+            this.Label_References_Author_LastName.Size = new System.Drawing.Size(71, 24);
             this.Label_References_Author_LastName.TabIndex = 53;
             this.Label_References_Author_LastName.Text = "Фамилия:";
             this.Label_References_Author_LastName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // Label_References_Author_Header_2
+            // Label_References_Author_Header_Info
             // 
-            this.Label_References_Author_Header_2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Author_Header_2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.Label_References_Author_Header_2.Location = new System.Drawing.Point(0, 0);
-            this.Label_References_Author_Header_2.Name = "Label_References_Author_Header_2";
-            this.Label_References_Author_Header_2.Size = new System.Drawing.Size(66, 35);
-            this.Label_References_Author_Header_2.TabIndex = 50;
-            this.Label_References_Author_Header_2.Text = "Информация об авторе";
-            this.Label_References_Author_Header_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Label_References_Author_Header_1
-            // 
-            this.Label_References_Author_Header_1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_References_Author_Header_1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Label_References_Author_Header_1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Label_References_Author_Header_1.Location = new System.Drawing.Point(0, 0);
-            this.Label_References_Author_Header_1.Name = "Label_References_Author_Header_1";
-            this.Label_References_Author_Header_1.Size = new System.Drawing.Size(240, 46);
-            this.Label_References_Author_Header_1.TabIndex = 12;
-            this.Label_References_Author_Header_1.Text = "Авторы";
-            this.Label_References_Author_Header_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_References_Author_Header_Info.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_References_Author_Header_Info.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_References_Author_Header_Info.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_References_Author_Header_Info.Location = new System.Drawing.Point(0, 0);
+            this.Label_References_Author_Header_Info.Name = "Label_References_Author_Header_Info";
+            this.Label_References_Author_Header_Info.Size = new System.Drawing.Size(71, 48);
+            this.Label_References_Author_Header_Info.TabIndex = 50;
+            this.Label_References_Author_Header_Info.Text = "Информация об авторе";
+            this.Label_References_Author_Header_Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TabPage_Forms
             // 
@@ -2303,7 +2391,7 @@
             this.SplitContainer_Orders.Panel2.Controls.Add(this.SplitContainer_Orders_Orders);
             this.SplitContainer_Orders.Panel2.Controls.Add(this.Label_Orders_Orders_Header);
             this.SplitContainer_Orders.Size = new System.Drawing.Size(968, 537);
-            this.SplitContainer_Orders.SplitterDistance = 338;
+            this.SplitContainer_Orders.SplitterDistance = 366;
             this.SplitContainer_Orders.TabIndex = 7;
             // 
             // SplitContainer_Orders_Readers
@@ -2316,10 +2404,10 @@
             // 
             this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.Label_Orders_Readers_WhenEmpty);
             this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.Grid_Orders_Readers);
+            this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.Label_Orders_Reader_Header);
             this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.Label_Orders_Readers_Search_Header);
             this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.TextBox_Orders_Readers_Search);
             this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.Panel_Orders_Readers_Search_Fields);
-            this.SplitContainer_Orders_Readers.Panel1.Controls.Add(this.Label_Orders_Readers_Search_Bottom);
             // 
             // SplitContainer_Orders_Readers.Panel2
             // 
@@ -2337,20 +2425,21 @@
             this.SplitContainer_Orders_Readers.Panel2.Controls.Add(this.Label_Orders_Reader_FirstName);
             this.SplitContainer_Orders_Readers.Panel2.Controls.Add(this.TextBox_Orders_Reader_LastName);
             this.SplitContainer_Orders_Readers.Panel2.Controls.Add(this.Label_Orders_Reader_LastName);
-            this.SplitContainer_Orders_Readers.Panel2.Controls.Add(this.Label_Orders_Reader_Header);
-            this.SplitContainer_Orders_Readers.Size = new System.Drawing.Size(968, 338);
+            this.SplitContainer_Orders_Readers.Panel2.Controls.Add(this.Label_Orders_Reader_Header_Info);
+            this.SplitContainer_Orders_Readers.Size = new System.Drawing.Size(968, 366);
             this.SplitContainer_Orders_Readers.SplitterDistance = 685;
             this.SplitContainer_Orders_Readers.TabIndex = 9;
             // 
             // Label_Orders_Readers_WhenEmpty
             // 
             this.Label_Orders_Readers_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Label_Orders_Readers_WhenEmpty.Location = new System.Drawing.Point(214, 109);
+            this.Label_Orders_Readers_WhenEmpty.Location = new System.Drawing.Point(190, 112);
             this.Label_Orders_Readers_WhenEmpty.Name = "Label_Orders_Readers_WhenEmpty";
-            this.Label_Orders_Readers_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_Orders_Readers_WhenEmpty.Size = new System.Drawing.Size(308, 64);
             this.Label_Orders_Readers_WhenEmpty.TabIndex = 77;
-            this.Label_Orders_Readers_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_Orders_Readers_WhenEmpty.Text = "По выбранным параметрам фильтрации читатели не найдены.";
             this.Label_Orders_Readers_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_Orders_Readers_WhenEmpty.WrapToLine = true;
             // 
             // Grid_Orders_Readers
             // 
@@ -2382,7 +2471,7 @@
             this.Grid_Orders_Readers.EnableHeadersVisualStyles = false;
             this.Grid_Orders_Readers.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Grid_Orders_Readers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_Orders_Readers.Location = new System.Drawing.Point(0, 0);
+            this.Grid_Orders_Readers.Location = new System.Drawing.Point(0, 48);
             this.Grid_Orders_Readers.MultiSelect = false;
             this.Grid_Orders_Readers.Name = "Grid_Orders_Readers";
             this.Grid_Orders_Readers.ReadOnly = true;
@@ -2398,15 +2487,27 @@
             this.Grid_Orders_Readers.RowHeadersVisible = false;
             this.Grid_Orders_Readers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_Orders_Readers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Orders_Readers.Size = new System.Drawing.Size(685, 238);
+            this.Grid_Orders_Readers.Size = new System.Drawing.Size(685, 234);
             this.Grid_Orders_Readers.TabIndex = 0;
             this.Grid_Orders_Readers.SelectionChanged += new System.EventHandler(this.Grid_Orders_Readers_SelectionChanged);
             this.Grid_Orders_Readers.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
             // 
+            // Label_Orders_Reader_Header
+            // 
+            this.Label_Orders_Reader_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_Orders_Reader_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Orders_Reader_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_Orders_Reader_Header.Location = new System.Drawing.Point(0, 0);
+            this.Label_Orders_Reader_Header.Name = "Label_Orders_Reader_Header";
+            this.Label_Orders_Reader_Header.Size = new System.Drawing.Size(685, 48);
+            this.Label_Orders_Reader_Header.TabIndex = 78;
+            this.Label_Orders_Reader_Header.Text = "Читатели";
+            this.Label_Orders_Reader_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Label_Orders_Readers_Search_Header
             // 
             this.Label_Orders_Readers_Search_Header.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Label_Orders_Readers_Search_Header.Location = new System.Drawing.Point(0, 238);
+            this.Label_Orders_Readers_Search_Header.Location = new System.Drawing.Point(0, 282);
             this.Label_Orders_Readers_Search_Header.Name = "Label_Orders_Readers_Search_Header";
             this.Label_Orders_Readers_Search_Header.Size = new System.Drawing.Size(685, 24);
             this.Label_Orders_Readers_Search_Header.TabIndex = 73;
@@ -2429,7 +2530,7 @@
             this.TextBox_Orders_Readers_Search.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.TextBox_Orders_Readers_Search.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_Orders_Readers_Search.Lines = new string[0];
-            this.TextBox_Orders_Readers_Search.Location = new System.Drawing.Point(0, 262);
+            this.TextBox_Orders_Readers_Search.Location = new System.Drawing.Point(0, 306);
             this.TextBox_Orders_Readers_Search.MaxLength = 32767;
             this.TextBox_Orders_Readers_Search.Name = "TextBox_Orders_Readers_Search";
             this.TextBox_Orders_Readers_Search.PasswordChar = '\0';
@@ -2455,9 +2556,10 @@
             this.Panel_Orders_Readers_Search_Fields.HorizontalScrollbarBarColor = true;
             this.Panel_Orders_Readers_Search_Fields.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_Orders_Readers_Search_Fields.HorizontalScrollbarSize = 10;
-            this.Panel_Orders_Readers_Search_Fields.Location = new System.Drawing.Point(0, 288);
+            this.Panel_Orders_Readers_Search_Fields.Location = new System.Drawing.Point(0, 332);
             this.Panel_Orders_Readers_Search_Fields.Name = "Panel_Orders_Readers_Search_Fields";
-            this.Panel_Orders_Readers_Search_Fields.Size = new System.Drawing.Size(685, 26);
+            this.Panel_Orders_Readers_Search_Fields.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.Panel_Orders_Readers_Search_Fields.Size = new System.Drawing.Size(685, 34);
             this.Panel_Orders_Readers_Search_Fields.TabIndex = 74;
             this.Panel_Orders_Readers_Search_Fields.VerticalScrollbarBarColor = true;
             this.Panel_Orders_Readers_Search_Fields.VerticalScrollbarHighlightOnWheel = false;
@@ -2469,7 +2571,7 @@
             this.CheckBox_Orders_Readers_Search_IsInRealTime.Checked = true;
             this.CheckBox_Orders_Readers_Search_IsInRealTime.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBox_Orders_Readers_Search_IsInRealTime.Dock = System.Windows.Forms.DockStyle.Left;
-            this.CheckBox_Orders_Readers_Search_IsInRealTime.Location = new System.Drawing.Point(165, 0);
+            this.CheckBox_Orders_Readers_Search_IsInRealTime.Location = new System.Drawing.Point(165, 4);
             this.CheckBox_Orders_Readers_Search_IsInRealTime.Name = "CheckBox_Orders_Readers_Search_IsInRealTime";
             this.CheckBox_Orders_Readers_Search_IsInRealTime.Size = new System.Drawing.Size(176, 26);
             this.CheckBox_Orders_Readers_Search_IsInRealTime.TabIndex = 71;
@@ -2480,7 +2582,7 @@
             // Label_Orders_Readers_Search_IsInRealTime
             // 
             this.Label_Orders_Readers_Search_IsInRealTime.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Label_Orders_Readers_Search_IsInRealTime.Location = new System.Drawing.Point(142, 0);
+            this.Label_Orders_Readers_Search_IsInRealTime.Location = new System.Drawing.Point(142, 4);
             this.Label_Orders_Readers_Search_IsInRealTime.Name = "Label_Orders_Readers_Search_IsInRealTime";
             this.Label_Orders_Readers_Search_IsInRealTime.Size = new System.Drawing.Size(23, 26);
             this.Label_Orders_Readers_Search_IsInRealTime.TabIndex = 72;
@@ -2490,7 +2592,7 @@
             // 
             this.Button_Orders_Readers_Search.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button_Orders_Readers_Search.Enabled = false;
-            this.Button_Orders_Readers_Search.Location = new System.Drawing.Point(0, 0);
+            this.Button_Orders_Readers_Search.Location = new System.Drawing.Point(0, 4);
             this.Button_Orders_Readers_Search.Name = "Button_Orders_Readers_Search";
             this.Button_Orders_Readers_Search.Size = new System.Drawing.Size(142, 26);
             this.Button_Orders_Readers_Search.TabIndex = 2;
@@ -2501,7 +2603,7 @@
             // Button_Orders_Readers_Search_Reset
             // 
             this.Button_Orders_Readers_Search_Reset.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Button_Orders_Readers_Search_Reset.Location = new System.Drawing.Point(544, 0);
+            this.Button_Orders_Readers_Search_Reset.Location = new System.Drawing.Point(544, 4);
             this.Button_Orders_Readers_Search_Reset.Name = "Button_Orders_Readers_Search_Reset";
             this.Button_Orders_Readers_Search_Reset.Size = new System.Drawing.Size(141, 26);
             this.Button_Orders_Readers_Search_Reset.TabIndex = 2;
@@ -2509,21 +2611,14 @@
             this.Button_Orders_Readers_Search_Reset.UseSelectable = true;
             this.Button_Orders_Readers_Search_Reset.Click += new System.EventHandler(this.Button_Orders_Readers_Search_Reset_Click);
             // 
-            // Label_Orders_Readers_Search_Bottom
-            // 
-            this.Label_Orders_Readers_Search_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Label_Orders_Readers_Search_Bottom.Location = new System.Drawing.Point(0, 314);
-            this.Label_Orders_Readers_Search_Bottom.Name = "Label_Orders_Readers_Search_Bottom";
-            this.Label_Orders_Readers_Search_Bottom.Size = new System.Drawing.Size(685, 24);
-            this.Label_Orders_Readers_Search_Bottom.TabIndex = 76;
-            // 
             // Button_Orders_Readers_Delete
             // 
             this.Button_Orders_Readers_Delete.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_Orders_Readers_Delete.Enabled = false;
-            this.Button_Orders_Readers_Delete.Location = new System.Drawing.Point(0, 307);
+            this.Button_Orders_Readers_Delete.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_Orders_Readers_Delete.Location = new System.Drawing.Point(0, 324);
             this.Button_Orders_Readers_Delete.Name = "Button_Orders_Readers_Delete";
-            this.Button_Orders_Readers_Delete.Size = new System.Drawing.Size(279, 24);
+            this.Button_Orders_Readers_Delete.Size = new System.Drawing.Size(279, 26);
             this.Button_Orders_Readers_Delete.TabIndex = 73;
             this.Button_Orders_Readers_Delete.Text = "Удалить читателя";
             this.Button_Orders_Readers_Delete.UseSelectable = true;
@@ -2532,7 +2627,7 @@
             // Label_Orders_Reader_Delete
             // 
             this.Label_Orders_Reader_Delete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Orders_Reader_Delete.Location = new System.Drawing.Point(0, 295);
+            this.Label_Orders_Reader_Delete.Location = new System.Drawing.Point(0, 312);
             this.Label_Orders_Reader_Delete.Name = "Label_Orders_Reader_Delete";
             this.Label_Orders_Reader_Delete.Size = new System.Drawing.Size(279, 12);
             this.Label_Orders_Reader_Delete.TabIndex = 72;
@@ -2542,9 +2637,10 @@
             // 
             this.Button_Orders_Readers_Edit.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_Orders_Readers_Edit.Enabled = false;
-            this.Button_Orders_Readers_Edit.Location = new System.Drawing.Point(0, 271);
+            this.Button_Orders_Readers_Edit.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_Orders_Readers_Edit.Location = new System.Drawing.Point(0, 286);
             this.Button_Orders_Readers_Edit.Name = "Button_Orders_Readers_Edit";
-            this.Button_Orders_Readers_Edit.Size = new System.Drawing.Size(279, 24);
+            this.Button_Orders_Readers_Edit.Size = new System.Drawing.Size(279, 26);
             this.Button_Orders_Readers_Edit.TabIndex = 75;
             this.Button_Orders_Readers_Edit.Text = "Изменить информацию о читателе";
             this.Button_Orders_Readers_Edit.UseSelectable = true;
@@ -2553,7 +2649,7 @@
             // Label_Orders_Reader_Edit
             // 
             this.Label_Orders_Reader_Edit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Orders_Reader_Edit.Location = new System.Drawing.Point(0, 259);
+            this.Label_Orders_Reader_Edit.Location = new System.Drawing.Point(0, 274);
             this.Label_Orders_Reader_Edit.Name = "Label_Orders_Reader_Edit";
             this.Label_Orders_Reader_Edit.Size = new System.Drawing.Size(279, 12);
             this.Label_Orders_Reader_Edit.TabIndex = 74;
@@ -2563,9 +2659,10 @@
             // 
             this.Button_Orders_Readers_Create.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_Orders_Readers_Create.Enabled = false;
-            this.Button_Orders_Readers_Create.Location = new System.Drawing.Point(0, 235);
+            this.Button_Orders_Readers_Create.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_Orders_Readers_Create.Location = new System.Drawing.Point(0, 248);
             this.Button_Orders_Readers_Create.Name = "Button_Orders_Readers_Create";
-            this.Button_Orders_Readers_Create.Size = new System.Drawing.Size(279, 24);
+            this.Button_Orders_Readers_Create.Size = new System.Drawing.Size(279, 26);
             this.Button_Orders_Readers_Create.TabIndex = 70;
             this.Button_Orders_Readers_Create.Text = "Добавить читателя";
             this.Button_Orders_Readers_Create.UseSelectable = true;
@@ -2574,7 +2671,7 @@
             // Label_Orders_Reader_Create
             // 
             this.Label_Orders_Reader_Create.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Orders_Reader_Create.Location = new System.Drawing.Point(0, 223);
+            this.Label_Orders_Reader_Create.Location = new System.Drawing.Point(0, 236);
             this.Label_Orders_Reader_Create.Name = "Label_Orders_Reader_Create";
             this.Label_Orders_Reader_Create.Size = new System.Drawing.Size(279, 12);
             this.Label_Orders_Reader_Create.TabIndex = 71;
@@ -2597,7 +2694,7 @@
             this.TextBox_Orders_Reader_Info.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBox_Orders_Reader_Info.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_Orders_Reader_Info.Lines = new string[0];
-            this.TextBox_Orders_Reader_Info.Location = new System.Drawing.Point(0, 200);
+            this.TextBox_Orders_Reader_Info.Location = new System.Drawing.Point(0, 213);
             this.TextBox_Orders_Reader_Info.MaxLength = 32767;
             this.TextBox_Orders_Reader_Info.Name = "TextBox_Orders_Reader_Info";
             this.TextBox_Orders_Reader_Info.PasswordChar = '\0';
@@ -2617,7 +2714,7 @@
             // Label_Orders_Reader_Info
             // 
             this.Label_Orders_Reader_Info.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Orders_Reader_Info.Location = new System.Drawing.Point(0, 176);
+            this.Label_Orders_Reader_Info.Location = new System.Drawing.Point(0, 189);
             this.Label_Orders_Reader_Info.Name = "Label_Orders_Reader_Info";
             this.Label_Orders_Reader_Info.Size = new System.Drawing.Size(279, 24);
             this.Label_Orders_Reader_Info.TabIndex = 76;
@@ -2641,7 +2738,7 @@
             this.TextBox_Orders_Reader_MiddleName.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBox_Orders_Reader_MiddleName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_Orders_Reader_MiddleName.Lines = new string[0];
-            this.TextBox_Orders_Reader_MiddleName.Location = new System.Drawing.Point(0, 153);
+            this.TextBox_Orders_Reader_MiddleName.Location = new System.Drawing.Point(0, 166);
             this.TextBox_Orders_Reader_MiddleName.MaxLength = 32767;
             this.TextBox_Orders_Reader_MiddleName.Name = "TextBox_Orders_Reader_MiddleName";
             this.TextBox_Orders_Reader_MiddleName.PasswordChar = '\0';
@@ -2661,7 +2758,7 @@
             // Label_Orders_Reader_MiddleName
             // 
             this.Label_Orders_Reader_MiddleName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Orders_Reader_MiddleName.Location = new System.Drawing.Point(0, 129);
+            this.Label_Orders_Reader_MiddleName.Location = new System.Drawing.Point(0, 142);
             this.Label_Orders_Reader_MiddleName.Name = "Label_Orders_Reader_MiddleName";
             this.Label_Orders_Reader_MiddleName.Size = new System.Drawing.Size(279, 24);
             this.Label_Orders_Reader_MiddleName.TabIndex = 68;
@@ -2685,7 +2782,7 @@
             this.TextBox_Orders_Reader_FirstName.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBox_Orders_Reader_FirstName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_Orders_Reader_FirstName.Lines = new string[0];
-            this.TextBox_Orders_Reader_FirstName.Location = new System.Drawing.Point(0, 106);
+            this.TextBox_Orders_Reader_FirstName.Location = new System.Drawing.Point(0, 119);
             this.TextBox_Orders_Reader_FirstName.MaxLength = 32767;
             this.TextBox_Orders_Reader_FirstName.Name = "TextBox_Orders_Reader_FirstName";
             this.TextBox_Orders_Reader_FirstName.PasswordChar = '\0';
@@ -2705,7 +2802,7 @@
             // Label_Orders_Reader_FirstName
             // 
             this.Label_Orders_Reader_FirstName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Orders_Reader_FirstName.Location = new System.Drawing.Point(0, 82);
+            this.Label_Orders_Reader_FirstName.Location = new System.Drawing.Point(0, 95);
             this.Label_Orders_Reader_FirstName.Name = "Label_Orders_Reader_FirstName";
             this.Label_Orders_Reader_FirstName.Size = new System.Drawing.Size(279, 24);
             this.Label_Orders_Reader_FirstName.TabIndex = 64;
@@ -2729,7 +2826,7 @@
             this.TextBox_Orders_Reader_LastName.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextBox_Orders_Reader_LastName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.TextBox_Orders_Reader_LastName.Lines = new string[0];
-            this.TextBox_Orders_Reader_LastName.Location = new System.Drawing.Point(0, 59);
+            this.TextBox_Orders_Reader_LastName.Location = new System.Drawing.Point(0, 72);
             this.TextBox_Orders_Reader_LastName.MaxLength = 32767;
             this.TextBox_Orders_Reader_LastName.Name = "TextBox_Orders_Reader_LastName";
             this.TextBox_Orders_Reader_LastName.PasswordChar = '\0';
@@ -2749,23 +2846,24 @@
             // Label_Orders_Reader_LastName
             // 
             this.Label_Orders_Reader_LastName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Orders_Reader_LastName.Location = new System.Drawing.Point(0, 35);
+            this.Label_Orders_Reader_LastName.Location = new System.Drawing.Point(0, 48);
             this.Label_Orders_Reader_LastName.Name = "Label_Orders_Reader_LastName";
             this.Label_Orders_Reader_LastName.Size = new System.Drawing.Size(279, 24);
             this.Label_Orders_Reader_LastName.TabIndex = 66;
             this.Label_Orders_Reader_LastName.Text = "Фамилия:";
             this.Label_Orders_Reader_LastName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // Label_Orders_Reader_Header
+            // Label_Orders_Reader_Header_Info
             // 
-            this.Label_Orders_Reader_Header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Orders_Reader_Header.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.Label_Orders_Reader_Header.Location = new System.Drawing.Point(0, 0);
-            this.Label_Orders_Reader_Header.Name = "Label_Orders_Reader_Header";
-            this.Label_Orders_Reader_Header.Size = new System.Drawing.Size(279, 35);
-            this.Label_Orders_Reader_Header.TabIndex = 63;
-            this.Label_Orders_Reader_Header.Text = "Информация о читателе";
-            this.Label_Orders_Reader_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_Orders_Reader_Header_Info.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_Orders_Reader_Header_Info.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Orders_Reader_Header_Info.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.Label_Orders_Reader_Header_Info.Location = new System.Drawing.Point(0, 0);
+            this.Label_Orders_Reader_Header_Info.Name = "Label_Orders_Reader_Header_Info";
+            this.Label_Orders_Reader_Header_Info.Size = new System.Drawing.Size(279, 48);
+            this.Label_Orders_Reader_Header_Info.TabIndex = 63;
+            this.Label_Orders_Reader_Header_Info.Text = "Информация о читателе";
+            this.Label_Orders_Reader_Header_Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SplitContainer_Orders_Orders
             // 
@@ -2781,19 +2879,21 @@
             // SplitContainer_Orders_Orders.Panel2
             // 
             this.SplitContainer_Orders_Orders.Panel2.Controls.Add(this.Button_Orders_Orders_Delete);
-            this.SplitContainer_Orders_Orders.Size = new System.Drawing.Size(968, 171);
-            this.SplitContainer_Orders_Orders.SplitterDistance = 845;
+            this.SplitContainer_Orders_Orders.Size = new System.Drawing.Size(968, 143);
+            this.SplitContainer_Orders_Orders.SplitterDistance = 830;
             this.SplitContainer_Orders_Orders.TabIndex = 2;
             // 
             // Label_Orders_Orders_WhenEmpty
             // 
             this.Label_Orders_Orders_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Label_Orders_Orders_WhenEmpty.Location = new System.Drawing.Point(294, 56);
+            this.Label_Orders_Orders_WhenEmpty.Location = new System.Drawing.Point(194, 55);
             this.Label_Orders_Orders_WhenEmpty.Name = "Label_Orders_Orders_WhenEmpty";
-            this.Label_Orders_Orders_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_Orders_Orders_WhenEmpty.Size = new System.Drawing.Size(439, 71);
             this.Label_Orders_Orders_WhenEmpty.TabIndex = 27;
-            this.Label_Orders_Orders_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_Orders_Orders_WhenEmpty.Text = "Выберите читателя для отображения формуляра. Если читатель уже выбран, значит его" +
+    " формуляр пуст.";
             this.Label_Orders_Orders_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_Orders_Orders_WhenEmpty.WrapToLine = true;
             // 
             // Grid_Orders_Orders
             // 
@@ -2840,7 +2940,7 @@
             this.Grid_Orders_Orders.RowHeadersVisible = false;
             this.Grid_Orders_Orders.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_Orders_Orders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Orders_Orders.Size = new System.Drawing.Size(845, 171);
+            this.Grid_Orders_Orders.Size = new System.Drawing.Size(830, 143);
             this.Grid_Orders_Orders.TabIndex = 28;
             this.Grid_Orders_Orders.SelectionChanged += new System.EventHandler(this.Grid_Orders_Orders_SelectionChanged);
             this.Grid_Orders_Orders.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
@@ -2849,9 +2949,10 @@
             // 
             this.Button_Orders_Orders_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_Orders_Orders_Delete.Enabled = false;
-            this.Button_Orders_Orders_Delete.Location = new System.Drawing.Point(2, 65);
+            this.Button_Orders_Orders_Delete.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_Orders_Orders_Delete.Location = new System.Drawing.Point(2, 49);
             this.Button_Orders_Orders_Delete.Name = "Button_Orders_Orders_Delete";
-            this.Button_Orders_Orders_Delete.Size = new System.Drawing.Size(114, 44);
+            this.Button_Orders_Orders_Delete.Size = new System.Drawing.Size(129, 48);
             this.Button_Orders_Orders_Delete.TabIndex = 77;
             this.Button_Orders_Orders_Delete.Text = "Удалить выбранные записи";
             this.Button_Orders_Orders_Delete.UseSelectable = true;
@@ -2885,9 +2986,10 @@
             // 
             this.Button_Issuance_Issue.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_Issuance_Issue.Enabled = false;
-            this.Button_Issuance_Issue.Location = new System.Drawing.Point(0, 192);
+            this.Button_Issuance_Issue.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_Issuance_Issue.Location = new System.Drawing.Point(0, 208);
             this.Button_Issuance_Issue.Name = "Button_Issuance_Issue";
-            this.Button_Issuance_Issue.Size = new System.Drawing.Size(968, 42);
+            this.Button_Issuance_Issue.Size = new System.Drawing.Size(968, 48);
             this.Button_Issuance_Issue.TabIndex = 76;
             this.Button_Issuance_Issue.Text = "Выдать книгу";
             this.Button_Issuance_Issue.UseSelectable = true;
@@ -2896,7 +2998,7 @@
             // Label_Issuance_Issue
             // 
             this.Label_Issuance_Issue.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Issuance_Issue.Location = new System.Drawing.Point(0, 160);
+            this.Label_Issuance_Issue.Location = new System.Drawing.Point(0, 176);
             this.Label_Issuance_Issue.Name = "Label_Issuance_Issue";
             this.Label_Issuance_Issue.Size = new System.Drawing.Size(968, 32);
             this.Label_Issuance_Issue.TabIndex = 79;
@@ -2905,7 +3007,7 @@
             // SplitContainer_Issuance_Dates
             // 
             this.SplitContainer_Issuance_Dates.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SplitContainer_Issuance_Dates.Location = new System.Drawing.Point(0, 128);
+            this.SplitContainer_Issuance_Dates.Location = new System.Drawing.Point(0, 144);
             this.SplitContainer_Issuance_Dates.Name = "SplitContainer_Issuance_Dates";
             // 
             // SplitContainer_Issuance_Dates.Panel1
@@ -2918,17 +3020,17 @@
             this.SplitContainer_Issuance_Dates.Panel2.Controls.Add(this.DateTime_Issuance_DateReturned);
             this.SplitContainer_Issuance_Dates.Panel2.Controls.Add(this.Label_Issuance_DateReturned);
             this.SplitContainer_Issuance_Dates.Size = new System.Drawing.Size(968, 32);
-            this.SplitContainer_Issuance_Dates.SplitterDistance = 472;
+            this.SplitContainer_Issuance_Dates.SplitterDistance = 480;
             this.SplitContainer_Issuance_Dates.TabIndex = 80;
             // 
             // DateTime_Issuance_DateGiven
             // 
             this.DateTime_Issuance_DateGiven.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTime_Issuance_DateGiven.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.DateTime_Issuance_DateGiven.Location = new System.Drawing.Point(169, 0);
-            this.DateTime_Issuance_DateGiven.MinimumSize = new System.Drawing.Size(4, 29);
+            this.DateTime_Issuance_DateGiven.Location = new System.Drawing.Point(128, 0);
+            this.DateTime_Issuance_DateGiven.MinimumSize = new System.Drawing.Size(0, 29);
             this.DateTime_Issuance_DateGiven.Name = "DateTime_Issuance_DateGiven";
-            this.DateTime_Issuance_DateGiven.Size = new System.Drawing.Size(303, 29);
+            this.DateTime_Issuance_DateGiven.Size = new System.Drawing.Size(352, 29);
             this.DateTime_Issuance_DateGiven.TabIndex = 9;
             // 
             // Label_Issuance_DateGiven
@@ -2936,7 +3038,7 @@
             this.Label_Issuance_DateGiven.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_Issuance_DateGiven.Location = new System.Drawing.Point(0, 0);
             this.Label_Issuance_DateGiven.Name = "Label_Issuance_DateGiven";
-            this.Label_Issuance_DateGiven.Size = new System.Drawing.Size(169, 32);
+            this.Label_Issuance_DateGiven.Size = new System.Drawing.Size(128, 32);
             this.Label_Issuance_DateGiven.TabIndex = 8;
             this.Label_Issuance_DateGiven.Text = "Дата выдачи:";
             this.Label_Issuance_DateGiven.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2946,9 +3048,9 @@
             this.DateTime_Issuance_DateReturned.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTime_Issuance_DateReturned.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.DateTime_Issuance_DateReturned.Location = new System.Drawing.Point(169, 0);
-            this.DateTime_Issuance_DateReturned.MinimumSize = new System.Drawing.Size(4, 29);
+            this.DateTime_Issuance_DateReturned.MinimumSize = new System.Drawing.Size(0, 29);
             this.DateTime_Issuance_DateReturned.Name = "DateTime_Issuance_DateReturned";
-            this.DateTime_Issuance_DateReturned.Size = new System.Drawing.Size(323, 29);
+            this.DateTime_Issuance_DateReturned.Size = new System.Drawing.Size(315, 29);
             this.DateTime_Issuance_DateReturned.TabIndex = 8;
             // 
             // Label_Issuance_DateReturned
@@ -2969,7 +3071,7 @@
             this.Panel_Issuance_CopyBook.HorizontalScrollbarBarColor = true;
             this.Panel_Issuance_CopyBook.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_Issuance_CopyBook.HorizontalScrollbarSize = 10;
-            this.Panel_Issuance_CopyBook.Location = new System.Drawing.Point(0, 96);
+            this.Panel_Issuance_CopyBook.Location = new System.Drawing.Point(0, 112);
             this.Panel_Issuance_CopyBook.Name = "Panel_Issuance_CopyBook";
             this.Panel_Issuance_CopyBook.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.Panel_Issuance_CopyBook.Size = new System.Drawing.Size(968, 32);
@@ -2984,9 +3086,9 @@
             this.ComboBox_Issuance_CopyBook.Enabled = false;
             this.ComboBox_Issuance_CopyBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ComboBox_Issuance_CopyBook.FormattingEnabled = true;
-            this.ComboBox_Issuance_CopyBook.Location = new System.Drawing.Point(169, 2);
+            this.ComboBox_Issuance_CopyBook.Location = new System.Drawing.Point(128, 2);
             this.ComboBox_Issuance_CopyBook.Name = "ComboBox_Issuance_CopyBook";
-            this.ComboBox_Issuance_CopyBook.Size = new System.Drawing.Size(799, 28);
+            this.ComboBox_Issuance_CopyBook.Size = new System.Drawing.Size(840, 28);
             this.ComboBox_Issuance_CopyBook.TabIndex = 22;
             this.ComboBox_Issuance_CopyBook.TextChanged += new System.EventHandler(this.ComboBox_Issuance_CopyBook_TextChanged);
             // 
@@ -2995,7 +3097,7 @@
             this.Label_Issuance_CopyBook.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_Issuance_CopyBook.Location = new System.Drawing.Point(0, 2);
             this.Label_Issuance_CopyBook.Name = "Label_Issuance_CopyBook";
-            this.Label_Issuance_CopyBook.Size = new System.Drawing.Size(169, 28);
+            this.Label_Issuance_CopyBook.Size = new System.Drawing.Size(128, 28);
             this.Label_Issuance_CopyBook.TabIndex = 5;
             this.Label_Issuance_CopyBook.Text = "Экземпляр книги:";
             this.Label_Issuance_CopyBook.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3008,7 +3110,7 @@
             this.Panel_Issuance_Book.HorizontalScrollbarBarColor = true;
             this.Panel_Issuance_Book.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_Issuance_Book.HorizontalScrollbarSize = 10;
-            this.Panel_Issuance_Book.Location = new System.Drawing.Point(0, 64);
+            this.Panel_Issuance_Book.Location = new System.Drawing.Point(0, 80);
             this.Panel_Issuance_Book.Name = "Panel_Issuance_Book";
             this.Panel_Issuance_Book.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.Panel_Issuance_Book.Size = new System.Drawing.Size(968, 32);
@@ -3022,9 +3124,9 @@
             this.ComboBox_Issuance_Book.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ComboBox_Issuance_Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ComboBox_Issuance_Book.FormattingEnabled = true;
-            this.ComboBox_Issuance_Book.Location = new System.Drawing.Point(169, 2);
+            this.ComboBox_Issuance_Book.Location = new System.Drawing.Point(128, 2);
             this.ComboBox_Issuance_Book.Name = "ComboBox_Issuance_Book";
-            this.ComboBox_Issuance_Book.Size = new System.Drawing.Size(799, 28);
+            this.ComboBox_Issuance_Book.Size = new System.Drawing.Size(840, 28);
             this.ComboBox_Issuance_Book.TabIndex = 22;
             this.ComboBox_Issuance_Book.TextChanged += new System.EventHandler(this.ComboBox_Issuance_Book_TextChanged);
             // 
@@ -3033,7 +3135,7 @@
             this.Label_Issuance_Book.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_Issuance_Book.Location = new System.Drawing.Point(0, 2);
             this.Label_Issuance_Book.Name = "Label_Issuance_Book";
-            this.Label_Issuance_Book.Size = new System.Drawing.Size(169, 28);
+            this.Label_Issuance_Book.Size = new System.Drawing.Size(128, 28);
             this.Label_Issuance_Book.TabIndex = 4;
             this.Label_Issuance_Book.Text = "Книга:";
             this.Label_Issuance_Book.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3046,7 +3148,7 @@
             this.Panel_Issuance_Reader.HorizontalScrollbarBarColor = true;
             this.Panel_Issuance_Reader.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_Issuance_Reader.HorizontalScrollbarSize = 10;
-            this.Panel_Issuance_Reader.Location = new System.Drawing.Point(0, 32);
+            this.Panel_Issuance_Reader.Location = new System.Drawing.Point(0, 48);
             this.Panel_Issuance_Reader.Name = "Panel_Issuance_Reader";
             this.Panel_Issuance_Reader.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.Panel_Issuance_Reader.Size = new System.Drawing.Size(968, 32);
@@ -3060,9 +3162,9 @@
             this.ComboBox_Issuance_Reader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ComboBox_Issuance_Reader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ComboBox_Issuance_Reader.FormattingEnabled = true;
-            this.ComboBox_Issuance_Reader.Location = new System.Drawing.Point(169, 2);
+            this.ComboBox_Issuance_Reader.Location = new System.Drawing.Point(128, 2);
             this.ComboBox_Issuance_Reader.Name = "ComboBox_Issuance_Reader";
-            this.ComboBox_Issuance_Reader.Size = new System.Drawing.Size(799, 28);
+            this.ComboBox_Issuance_Reader.Size = new System.Drawing.Size(840, 28);
             this.ComboBox_Issuance_Reader.TabIndex = 22;
             this.ComboBox_Issuance_Reader.TextChanged += new System.EventHandler(this.ComboBox_Issuance_Reader_TextChanged);
             // 
@@ -3071,19 +3173,22 @@
             this.Label_Issuance_Reader.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_Issuance_Reader.Location = new System.Drawing.Point(0, 2);
             this.Label_Issuance_Reader.Name = "Label_Issuance_Reader";
-            this.Label_Issuance_Reader.Size = new System.Drawing.Size(169, 28);
+            this.Label_Issuance_Reader.Size = new System.Drawing.Size(128, 28);
             this.Label_Issuance_Reader.TabIndex = 6;
-            this.Label_Issuance_Reader.Text = "Введите читателя:";
+            this.Label_Issuance_Reader.Text = "Читатель:";
             this.Label_Issuance_Reader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Label_Issuance_Header
             // 
             this.Label_Issuance_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_Issuance_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Issuance_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.Label_Issuance_Header.Location = new System.Drawing.Point(0, 0);
             this.Label_Issuance_Header.Name = "Label_Issuance_Header";
-            this.Label_Issuance_Header.Size = new System.Drawing.Size(968, 32);
+            this.Label_Issuance_Header.Size = new System.Drawing.Size(968, 48);
             this.Label_Issuance_Header.TabIndex = 75;
-            this.Label_Issuance_Header.Text = " ";
+            this.Label_Issuance_Header.Text = " Выдача книг";
+            this.Label_Issuance_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TabPage_Returns
             // 
@@ -3107,12 +3212,13 @@
             // Label_Returns_WhenEmpty
             // 
             this.Label_Returns_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.Label_Returns_WhenEmpty.Location = new System.Drawing.Point(356, 304);
+            this.Label_Returns_WhenEmpty.Location = new System.Drawing.Point(288, 285);
             this.Label_Returns_WhenEmpty.Name = "Label_Returns_WhenEmpty";
-            this.Label_Returns_WhenEmpty.Size = new System.Drawing.Size(256, 32);
-            this.Label_Returns_WhenEmpty.TabIndex = 81;
-            this.Label_Returns_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_Returns_WhenEmpty.Size = new System.Drawing.Size(355, 77);
+            this.Label_Returns_WhenEmpty.TabIndex = 82;
+            this.Label_Returns_WhenEmpty.Text = "По выбранным параметрам фильтрации указанный читатель не имеет взятых книг.";
             this.Label_Returns_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_Returns_WhenEmpty.WrapToLine = true;
             // 
             // Grid_Returns
             // 
@@ -3144,7 +3250,7 @@
             this.Grid_Returns.EnableHeadersVisualStyles = false;
             this.Grid_Returns.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.Grid_Returns.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Grid_Returns.Location = new System.Drawing.Point(0, 194);
+            this.Grid_Returns.Location = new System.Drawing.Point(0, 222);
             this.Grid_Returns.MultiSelect = false;
             this.Grid_Returns.Name = "Grid_Returns";
             this.Grid_Returns.ReadOnly = true;
@@ -3160,7 +3266,7 @@
             this.Grid_Returns.RowHeadersVisible = false;
             this.Grid_Returns.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Grid_Returns.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Returns.Size = new System.Drawing.Size(968, 267);
+            this.Grid_Returns.Size = new System.Drawing.Size(968, 239);
             this.Grid_Returns.TabIndex = 75;
             this.Grid_Returns.SelectionChanged += new System.EventHandler(this.Grid_Returns_SelectionChanged);
             this.Grid_Returns.SizeChanged += new System.EventHandler(this.Grid_SizeChanged);
@@ -3168,7 +3274,7 @@
             // Label_Returns_Table_Header
             // 
             this.Label_Returns_Table_Header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Returns_Table_Header.Location = new System.Drawing.Point(0, 170);
+            this.Label_Returns_Table_Header.Location = new System.Drawing.Point(0, 198);
             this.Label_Returns_Table_Header.Name = "Label_Returns_Table_Header";
             this.Label_Returns_Table_Header.Size = new System.Drawing.Size(968, 24);
             this.Label_Returns_Table_Header.TabIndex = 79;
@@ -3177,7 +3283,7 @@
             // Label_Returns_Table
             // 
             this.Label_Returns_Table.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Returns_Table.Location = new System.Drawing.Point(0, 138);
+            this.Label_Returns_Table.Location = new System.Drawing.Point(0, 166);
             this.Label_Returns_Table.Name = "Label_Returns_Table";
             this.Label_Returns_Table.Size = new System.Drawing.Size(968, 32);
             this.Label_Returns_Table.TabIndex = 78;
@@ -3190,9 +3296,9 @@
             this.Panel_Returns_Buttons.HorizontalScrollbarBarColor = true;
             this.Panel_Returns_Buttons.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_Returns_Buttons.HorizontalScrollbarSize = 10;
-            this.Panel_Returns_Buttons.Location = new System.Drawing.Point(0, 96);
+            this.Panel_Returns_Buttons.Location = new System.Drawing.Point(0, 112);
             this.Panel_Returns_Buttons.Name = "Panel_Returns_Buttons";
-            this.Panel_Returns_Buttons.Size = new System.Drawing.Size(968, 42);
+            this.Panel_Returns_Buttons.Size = new System.Drawing.Size(968, 54);
             this.Panel_Returns_Buttons.TabIndex = 72;
             this.Panel_Returns_Buttons.VerticalScrollbarBarColor = true;
             this.Panel_Returns_Buttons.VerticalScrollbarHighlightOnWheel = false;
@@ -3202,9 +3308,10 @@
             // 
             this.Button_Returns_Lost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Button_Returns_Lost.Enabled = false;
+            this.Button_Returns_Lost.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.Button_Returns_Lost.Location = new System.Drawing.Point(482, 3);
             this.Button_Returns_Lost.Name = "Button_Returns_Lost";
-            this.Button_Returns_Lost.Size = new System.Drawing.Size(200, 36);
+            this.Button_Returns_Lost.Size = new System.Drawing.Size(200, 48);
             this.Button_Returns_Lost.TabIndex = 69;
             this.Button_Returns_Lost.Text = "Выделенная книга утеряна";
             this.Button_Returns_Lost.UseSelectable = true;
@@ -3214,9 +3321,10 @@
             // 
             this.Button_Returns_Return.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Button_Returns_Return.Enabled = false;
+            this.Button_Returns_Return.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.Button_Returns_Return.Location = new System.Drawing.Point(249, 3);
             this.Button_Returns_Return.Name = "Button_Returns_Return";
-            this.Button_Returns_Return.Size = new System.Drawing.Size(200, 36);
+            this.Button_Returns_Return.Size = new System.Drawing.Size(200, 48);
             this.Button_Returns_Return.TabIndex = 70;
             this.Button_Returns_Return.Text = "Возврат выделенной книги";
             this.Button_Returns_Return.UseSelectable = true;
@@ -3225,7 +3333,7 @@
             // Label_Returns_Buttons
             // 
             this.Label_Returns_Buttons.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Returns_Buttons.Location = new System.Drawing.Point(0, 64);
+            this.Label_Returns_Buttons.Location = new System.Drawing.Point(0, 80);
             this.Label_Returns_Buttons.Name = "Label_Returns_Buttons";
             this.Label_Returns_Buttons.Size = new System.Drawing.Size(968, 32);
             this.Label_Returns_Buttons.TabIndex = 80;
@@ -3238,8 +3346,9 @@
             this.Panel_Returns_Reader.HorizontalScrollbarBarColor = true;
             this.Panel_Returns_Reader.HorizontalScrollbarHighlightOnWheel = false;
             this.Panel_Returns_Reader.HorizontalScrollbarSize = 10;
-            this.Panel_Returns_Reader.Location = new System.Drawing.Point(0, 32);
+            this.Panel_Returns_Reader.Location = new System.Drawing.Point(0, 48);
             this.Panel_Returns_Reader.Name = "Panel_Returns_Reader";
+            this.Panel_Returns_Reader.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.Panel_Returns_Reader.Size = new System.Drawing.Size(968, 32);
             this.Panel_Returns_Reader.TabIndex = 71;
             this.Panel_Returns_Reader.VerticalScrollbarBarColor = true;
@@ -3251,20 +3360,20 @@
             this.ComboBox_Returns_Reader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ComboBox_Returns_Reader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ComboBox_Returns_Reader.FormattingEnabled = true;
-            this.ComboBox_Returns_Reader.Location = new System.Drawing.Point(133, 0);
+            this.ComboBox_Returns_Reader.Location = new System.Drawing.Point(128, 2);
             this.ComboBox_Returns_Reader.Name = "ComboBox_Returns_Reader";
-            this.ComboBox_Returns_Reader.Size = new System.Drawing.Size(835, 28);
+            this.ComboBox_Returns_Reader.Size = new System.Drawing.Size(840, 28);
             this.ComboBox_Returns_Reader.TabIndex = 50;
             this.ComboBox_Returns_Reader.TextChanged += new System.EventHandler(this.ComboBox_Returns_Reader_TextChanged);
             // 
             // Label_Returns_Reader
             // 
             this.Label_Returns_Reader.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Label_Returns_Reader.Location = new System.Drawing.Point(0, 0);
+            this.Label_Returns_Reader.Location = new System.Drawing.Point(0, 2);
             this.Label_Returns_Reader.Name = "Label_Returns_Reader";
-            this.Label_Returns_Reader.Size = new System.Drawing.Size(133, 32);
+            this.Label_Returns_Reader.Size = new System.Drawing.Size(128, 28);
             this.Label_Returns_Reader.TabIndex = 49;
-            this.Label_Returns_Reader.Text = "Выберите читателя:";
+            this.Label_Returns_Reader.Text = "Читатель:";
             this.Label_Returns_Reader.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Label_Returns_Search_Header
@@ -3472,10 +3581,14 @@
             // Label_Returns_Header
             // 
             this.Label_Returns_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_Returns_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Returns_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.Label_Returns_Header.Location = new System.Drawing.Point(0, 0);
             this.Label_Returns_Header.Name = "Label_Returns_Header";
-            this.Label_Returns_Header.Size = new System.Drawing.Size(968, 32);
+            this.Label_Returns_Header.Size = new System.Drawing.Size(968, 48);
             this.Label_Returns_Header.TabIndex = 74;
+            this.Label_Returns_Header.Text = "Возврат книг";
+            this.Label_Returns_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TabPage_Reports
             // 
@@ -3515,9 +3628,10 @@
             // 
             this.Button_Reports_Export.Dock = System.Windows.Forms.DockStyle.Top;
             this.Button_Reports_Export.Enabled = false;
-            this.Button_Reports_Export.Location = new System.Drawing.Point(0, 201);
+            this.Button_Reports_Export.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.Button_Reports_Export.Location = new System.Drawing.Point(0, 225);
             this.Button_Reports_Export.Name = "Button_Reports_Export";
-            this.Button_Reports_Export.Size = new System.Drawing.Size(247, 36);
+            this.Button_Reports_Export.Size = new System.Drawing.Size(247, 48);
             this.Button_Reports_Export.TabIndex = 2;
             this.Button_Reports_Export.Text = "Сохранить отчёт в файл Excel";
             this.Button_Reports_Export.UseSelectable = true;
@@ -3526,7 +3640,7 @@
             // Label_Reports_Create
             // 
             this.Label_Reports_Create.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Reports_Create.Location = new System.Drawing.Point(0, 177);
+            this.Label_Reports_Create.Location = new System.Drawing.Point(0, 201);
             this.Label_Reports_Create.Name = "Label_Reports_Create";
             this.Label_Reports_Create.Size = new System.Drawing.Size(247, 24);
             this.Label_Reports_Create.TabIndex = 71;
@@ -3538,7 +3652,7 @@
             this.ComboBox_Reports_Reader.Enabled = false;
             this.ComboBox_Reports_Reader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ComboBox_Reports_Reader.FormattingEnabled = true;
-            this.ComboBox_Reports_Reader.Location = new System.Drawing.Point(0, 149);
+            this.ComboBox_Reports_Reader.Location = new System.Drawing.Point(0, 173);
             this.ComboBox_Reports_Reader.Name = "ComboBox_Reports_Reader";
             this.ComboBox_Reports_Reader.Size = new System.Drawing.Size(247, 28);
             this.ComboBox_Reports_Reader.TabIndex = 72;
@@ -3547,7 +3661,7 @@
             // Label_Reports_Reader
             // 
             this.Label_Reports_Reader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Label_Reports_Reader.Location = new System.Drawing.Point(0, 120);
+            this.Label_Reports_Reader.Location = new System.Drawing.Point(0, 144);
             this.Label_Reports_Reader.Name = "Label_Reports_Reader";
             this.Label_Reports_Reader.Size = new System.Drawing.Size(247, 29);
             this.Label_Reports_Reader.TabIndex = 3;
@@ -3557,7 +3671,7 @@
             // RadioButton_Reports_History
             // 
             this.RadioButton_Reports_History.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RadioButton_Reports_History.Location = new System.Drawing.Point(0, 88);
+            this.RadioButton_Reports_History.Location = new System.Drawing.Point(0, 112);
             this.RadioButton_Reports_History.Name = "RadioButton_Reports_History";
             this.RadioButton_Reports_History.Size = new System.Drawing.Size(247, 32);
             this.RadioButton_Reports_History.TabIndex = 0;
@@ -3568,7 +3682,7 @@
             // RadioButton_Reports_Lost
             // 
             this.RadioButton_Reports_Lost.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RadioButton_Reports_Lost.Location = new System.Drawing.Point(0, 56);
+            this.RadioButton_Reports_Lost.Location = new System.Drawing.Point(0, 80);
             this.RadioButton_Reports_Lost.Name = "RadioButton_Reports_Lost";
             this.RadioButton_Reports_Lost.Size = new System.Drawing.Size(247, 32);
             this.RadioButton_Reports_Lost.TabIndex = 0;
@@ -3580,7 +3694,7 @@
             // 
             this.RadioButton_Reports_Overdue.Checked = true;
             this.RadioButton_Reports_Overdue.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RadioButton_Reports_Overdue.Location = new System.Drawing.Point(0, 24);
+            this.RadioButton_Reports_Overdue.Location = new System.Drawing.Point(0, 48);
             this.RadioButton_Reports_Overdue.Name = "RadioButton_Reports_Overdue";
             this.RadioButton_Reports_Overdue.Size = new System.Drawing.Size(247, 32);
             this.RadioButton_Reports_Overdue.TabIndex = 0;
@@ -3592,21 +3706,25 @@
             // Label_Reports_Header
             // 
             this.Label_Reports_Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Label_Reports_Header.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.Label_Reports_Header.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.Label_Reports_Header.Location = new System.Drawing.Point(0, 0);
             this.Label_Reports_Header.Name = "Label_Reports_Header";
-            this.Label_Reports_Header.Size = new System.Drawing.Size(247, 24);
+            this.Label_Reports_Header.Size = new System.Drawing.Size(247, 48);
             this.Label_Reports_Header.TabIndex = 70;
-            this.Label_Reports_Header.Text = " ";
+            this.Label_Reports_Header.Text = "Отчёты";
+            this.Label_Reports_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Label_Reports_WhenEmpty
             // 
             this.Label_Reports_WhenEmpty.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.Label_Reports_WhenEmpty.Location = new System.Drawing.Point(230, 236);
             this.Label_Reports_WhenEmpty.Name = "Label_Reports_WhenEmpty";
-            this.Label_Reports_WhenEmpty.Size = new System.Drawing.Size(256, 32);
+            this.Label_Reports_WhenEmpty.Size = new System.Drawing.Size(256, 64);
             this.Label_Reports_WhenEmpty.TabIndex = 77;
-            this.Label_Reports_WhenEmpty.Text = "Нет данных для отображения.";
+            this.Label_Reports_WhenEmpty.Text = "По выбранным параметрам нет данных для отображения.";
             this.Label_Reports_WhenEmpty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Label_Reports_WhenEmpty.WrapToLine = true;
             // 
             // Grid_Reports
             // 
@@ -3801,8 +3919,7 @@
         private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_City;
         private MetroFramework.Controls.MetroTextBox TextBox_References_Bookmaker_Title;
         private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Title;
-        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Header_2;
-        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Header_1;
+        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Header_Info;
         private MetroFramework.Controls.MetroPanel Panel_References_Group;
         private System.Windows.Forms.SplitContainer SplitContainer_References_Group;
         private MetroFramework.Controls.MetroGrid Grid_References_Groups;
@@ -3814,8 +3931,7 @@
         private MetroFramework.Controls.MetroLabel Label_References_Group_Create;
         private MetroFramework.Controls.MetroTextBox TextBox_References_Group_Title;
         private MetroFramework.Controls.MetroLabel Label_References_Group_Title;
-        private MetroFramework.Controls.MetroLabel Label_References_Group_Header_2;
-        private MetroFramework.Controls.MetroLabel Label_References_Group_Header_1;
+        private MetroFramework.Controls.MetroLabel Label_References_Group_Header_Info;
         private MetroFramework.Controls.MetroPanel Panel_References_Author;
         private System.Windows.Forms.SplitContainer SplitContainer_References_Author;
         private MetroFramework.Controls.MetroGrid Grid_References_Authors;
@@ -3831,8 +3947,7 @@
         private MetroFramework.Controls.MetroLabel Label_References_Author_LastName;
         private MetroFramework.Controls.MetroTextBox TextBox_References_Author_FirstName;
         private MetroFramework.Controls.MetroLabel Label_References_Author_FirstName;
-        private MetroFramework.Controls.MetroLabel Label_References_Author_Header_2;
-        private MetroFramework.Controls.MetroLabel Label_References_Author_Header_1;
+        private MetroFramework.Controls.MetroLabel Label_References_Author_Header_Info;
         private System.Windows.Forms.TabPage TabPage_CopyBooks;
         private System.Windows.Forms.SplitContainer SplitContainer_CopyBooks;
         private System.Windows.Forms.TabPage TabPage_Books;
@@ -3880,7 +3995,7 @@
         private MetroFramework.Controls.MetroPanel Panel_CopyBooks_Book;
         private System.Windows.Forms.ComboBox ComboBox_CopyBooks_Book;
         private MetroFramework.Controls.MetroLabel Label_CopyBooks_Book;
-        private MetroFramework.Controls.MetroLabel Label_CopyBooks_Header;
+        private MetroFramework.Controls.MetroLabel Label_CopyBooks_Header_Info;
         private MetroFramework.Controls.MetroButton Button_Books_Delete;
         private MetroFramework.Controls.MetroLabel Label_Books_Delete;
         private MetroFramework.Controls.MetroButton Button_Books_Edit;
@@ -3908,7 +4023,7 @@
         private MetroFramework.Controls.MetroLabel Label_Books_Author;
         private System.Windows.Forms.PictureBox PictureBox_Books_Cover;
         private MetroFramework.Controls.MetroButton Button_Books_AddCover;
-        private MetroFramework.Controls.MetroLabel Label_Books_Header;
+        private MetroFramework.Controls.MetroLabel Label_Books_Header_Info;
         private MetroFramework.Controls.MetroButton Button_References_Bookmaker_Tab;
         private MetroFramework.Controls.MetroButton Button_References_Group_Tab;
         private MetroFramework.Controls.MetroButton Button_References_Author_Tab;
@@ -3927,7 +4042,7 @@
         private MetroFramework.Controls.MetroLabel Label_Orders_Reader_FirstName;
         private MetroFramework.Controls.MetroTextBox TextBox_Orders_Reader_LastName;
         private MetroFramework.Controls.MetroLabel Label_Orders_Reader_LastName;
-        private MetroFramework.Controls.MetroLabel Label_Orders_Reader_Header;
+        private MetroFramework.Controls.MetroLabel Label_Orders_Reader_Header_Info;
         private MetroFramework.Controls.MetroLabel Label_Reports_Header;
         private MetroFramework.Controls.MetroGrid Grid_Returns;
         private MetroFramework.Controls.MetroLabel Label_Returns_Table_Header;
@@ -3974,7 +4089,6 @@
         private MetroFramework.Controls.MetroLabel Label_Orders_Readers_Search_IsInRealTime;
         private MetroFramework.Controls.MetroButton Button_Orders_Readers_Search;
         private MetroFramework.Controls.MetroButton Button_Orders_Readers_Search_Reset;
-        private MetroFramework.Controls.MetroLabel Label_Orders_Readers_Search_Bottom;
         private System.Windows.Forms.SplitContainer SplitContainer_Issuance_Dates;
         private MetroFramework.Controls.MetroDateTime DateTime_Issuance_DateGiven;
         private MetroFramework.Controls.MetroLabel Label_Issuance_DateGiven;
@@ -3993,9 +4107,18 @@
         private MetroFramework.Controls.MetroLabel Label_References_Authors_WhenEmpty;
         private MetroFramework.Controls.MetroLabel Label_Orders_Readers_WhenEmpty;
         private MetroFramework.Controls.MetroLabel Label_Orders_Orders_WhenEmpty;
-        private MetroFramework.Controls.MetroLabel Label_Returns_WhenEmpty;
         private MetroFramework.Controls.MetroLabel Label_Reports_WhenEmpty;
         private MetroFramework.Controls.MetroGrid Grid_Orders_Orders;
+        private MetroFramework.Controls.MetroLabel Label_Books_Header;
+        private MetroFramework.Controls.MetroLabel Label_CopyBooks_Header;
+        private MetroFramework.Controls.MetroLabel Label_References_Bookmakers;
+        private MetroFramework.Controls.MetroLabel Label_References_Groups;
+        private MetroFramework.Controls.MetroLabel Label_References_Header;
+        private MetroFramework.Controls.MetroLabel Label_References_Bookmaker_Header;
+        private MetroFramework.Controls.MetroLabel Label_References_Group_Header;
+        private MetroFramework.Controls.MetroLabel Label_References_Author_Header;
+        private MetroFramework.Controls.MetroLabel Label_Orders_Reader_Header;
+        private MetroFramework.Controls.MetroLabel Label_Returns_WhenEmpty;
     }
 }
 

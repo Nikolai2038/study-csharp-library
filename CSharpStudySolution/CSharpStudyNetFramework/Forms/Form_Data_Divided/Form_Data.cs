@@ -183,7 +183,10 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
                 ShowAlways = true,
                 UseAnimation = true
             };
-            tool_tip.SetToolTip(this.CheckBox_Books_Search_IsInRealTime, "Если включен поиск в реальном времени, то данные в таблице будут обновляться сразу же после любого изменения параметров фильтрации.");
+            string tool_tip_message = "Если включен поиск в реальном времени, то данные в таблице будут обновляться сразу же после любого изменения параметров фильтрации.";
+            tool_tip.SetToolTip(this.CheckBox_Books_Search_IsInRealTime, tool_tip_message);
+            tool_tip.SetToolTip(this.CheckBox_Orders_Readers_Search_IsInRealTime, tool_tip_message);
+            tool_tip.SetToolTip(this.CheckBox_Returns_Search_IsInRealTime, tool_tip_message);
 
             // Обновление данных таблиц
             this.UpdateData();
@@ -247,15 +250,18 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Событие изменения размеров DataGridView</summary>
         private void Grid_SizeChanged(object sender, EventArgs e)
         {
-            DataGridView grid = sender as DataGridView;
-            // Если для таблицы есть соответствующая надпись при отсутствии данных
-            if (this.GridWhenEmptyLabels.ContainsKey(grid)) {
-                // Центрируем Label по центру соответствующего ей DataGridView
-                Label label = this.GridWhenEmptyLabels[grid];
-                label.Location = new Point(
-                    grid.Location.X + (grid.Width - label.Width) / 2,
-                    grid.Location.Y + (grid.Height - label.Height) / 2
-                );
+            // Только если форма уже отобразилась
+            if (this.IsShown) {
+                DataGridView grid = sender as DataGridView;
+                // Если для таблицы есть соответствующая надпись при отсутствии данных
+                if (this.GridWhenEmptyLabels.ContainsKey(grid)) {
+                    // Центрируем Label по центру соответствующего ей DataGridView
+                    Label label = this.GridWhenEmptyLabels[grid];
+                    label.Location = new Point(
+                        grid.Location.X + (grid.Width - label.Width) / 2,
+                        grid.Location.Y + (grid.Height - label.Height) / 2
+                    );
+                }
             }
         }
     }
