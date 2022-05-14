@@ -47,17 +47,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extra\FormException.cs" />
     <Compile Include="Forms\Form_Base.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form_Base.Designer.cs">
       <DependentUpon>Form_Base.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Data.cs">
+    <Compile Include="Forms\Form_Data_Divided\Form_Data.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Data.Designer.cs">
+    <Compile Include="Forms\Form_Data_Divided\Form_Data.Designer.cs">
       <DependentUpon>Form_Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_Extra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_1_Books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_2_CopyBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_3_References.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_4_Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_6_Returns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_5_Issuance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Data_Divided\Form_Data_7_Reports.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form_Exception.cs">
       <SubType>Form</SubType>
@@ -66,10 +91,16 @@
       <DependentUpon>Form_Exception.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DatabaseHelper.cs" />
+    <Compile Include="Helpers\DateTimeHelper.cs" />
+    <Compile Include="Helpers\ExcelHelper.cs" />
     <Compile Include="Helpers\ExceptionHelper.cs" />
+    <Compile Include="Helpers\FormHelper.cs" />
+    <Compile Include="Helpers\GridHelper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\ThemeHelper.cs" />
     <Compile Include="ORM\CustomDbContext.cs" />
     <Compile Include="ORM\Models\Author.cs" />
+    <Compile Include="ORM\Models\IEntity.cs" />
     <Compile Include="ORM\Models\Order.cs" />
     <Compile Include="ORM\Models\Book.cs" />
     <Compile Include="ORM\Models\CopyBook.cs" />
@@ -78,7 +109,10 @@
     <Compile Include="ORM\Models\Reader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Form_Data.resx">
+    <EmbeddedResource Include="Forms\Form_Base.resx">
+      <DependentUpon>Form_Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Data_Divided\Form_Data.resx">
       <DependentUpon>Form_Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Exception.resx">
@@ -113,6 +147,35 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
       <Version>3.1.24</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

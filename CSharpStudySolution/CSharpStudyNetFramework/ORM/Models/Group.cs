@@ -1,14 +1,14 @@
 ﻿namespace CSharpStudyNetFramework.ORM.Models
 {
-    internal class Group
+    /// <summary>Сущность "Группа"</summary>
+    internal class Group : IEntity
     {
         public int? Id { get; set; }
         public string Title { get; set; }
 
-        // ===============
-        // Связанные поля
-        // ===============
-        // public List<Book> Books { get; set; }
-        // ===============
+        public override string ToString()
+        {
+            return this.Title;
+        }
     }
 }

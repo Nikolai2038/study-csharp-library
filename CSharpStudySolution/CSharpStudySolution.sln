@@ -5,8 +5,6 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpStudyNetFramework", "CSharpStudyNetFramework\CSharpStudyNetFramework.csproj", "{1F1BF3BF-AE31-4DF0-BF9C-16A17E87B073}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpStudyNetCore", "CSharpStudyNetCore\CSharpStudyNetCore.csproj", "{73659E37-23ED-491D-BC11-31E65EFEC53C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{1F1BF3BF-AE31-4DF0-BF9C-16A17E87B073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F1BF3BF-AE31-4DF0-BF9C-16A17E87B073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F1BF3BF-AE31-4DF0-BF9C-16A17E87B073}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73659E37-23ED-491D-BC11-31E65EFEC53C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73659E37-23ED-491D-BC11-31E65EFEC53C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73659E37-23ED-491D-BC11-31E65EFEC53C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73659E37-23ED-491D-BC11-31E65EFEC53C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

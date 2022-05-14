@@ -1,20 +1,21 @@
 ﻿namespace CSharpStudyNetFramework.ORM.Models
 {
-    internal class CopyBook
+    /// <summary>Сущность "Экземпляр книги"</summary>
+    internal class CopyBook : IEntity
     {
         public int? Id { get; set; }
-        public string Title { get; set; }
-        public string City { get; set; }
-        public string DaterReciept { get; set; }
-        public int NumberInLibrary { get; set; }
-        public bool IsExist { get; set; }
-        public bool IsLost { get; set; }
         public Book Book { get; set; }
+        public string Number { get; set; }
+        public bool IsGiven { get; set; }
+        public bool IsLost { get; set; }
 
-        // ===============
-        // Связанные поля
-        // ===============
-        // public List<Order> Orders { get; set; }
-        // ===============
+        public override string ToString()
+        {
+            string book = "-";
+            if (this.Book != null) {
+                book = this.Book.ToString();
+            }
+            return "[#" + this.Number.ToString() + "] " + book;
+        }
     }
 }

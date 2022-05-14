@@ -1,24 +1,31 @@
-﻿namespace CSharpStudyNetFramework.ORM.Models
+﻿using System;
+
+namespace CSharpStudyNetFramework.ORM.Models
 {
-    internal class Book
+    /// <summary>Сущность "Книга"</summary>
+    internal class Book : IEntity
     {
         public int? Id { get; set; }
-
         public Author Author { get; set; }
         public string Title { get; set; }
-        public string YearPublication { get; set; }
-        public string YearRegistr { get; set; }
+        public int PublicationYear { get; set; }
+        public DateTime RegistrationDate { get; set; }
         public Group Group { get; set; }
         public Bookmaker Bookmaker { get; set; }
-        public string Photo { get; set; }
+        public byte[] Photo { get; set; }
+        public string Note { get; set; }
 
-        // ===============
-        // Связанные поля
-        // ===============
-        // public List<Bookmaker> Bookmakers { get; set; }
-        // public List<Author> Authors { get; set; }
-        // public List<Group> Groups { get; set; }
-        // public List<CopyBook> CopyBooks { get; set; }
-        // ===============
+        public override string ToString()
+        {
+            string author = "-";
+            if (this.Author != null) {
+                author = this.Author.ToString();
+            }
+            string bookmaker = "-";
+            if (this.Bookmaker != null) {
+                bookmaker = this.Bookmaker.ToString();
+            }
+            return author + ", " + this.Title + " (" + bookmaker + ", " + this.PublicationYear + " год)";
+        }
     }
 }

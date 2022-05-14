@@ -1,4 +1,4 @@
-﻿using CSharpStudyNetFramework.Forms;
+﻿using CSharpStudyNetFramework.Forms.Form_Data_Divided;
 using System;
 using System.Windows.Forms;
 
