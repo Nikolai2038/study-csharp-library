@@ -24,7 +24,7 @@ namespace CSharpStudyNetFramework.Forms.Form_Data_Divided
         /// <summary>Возвращает список таблиц, расположенных на текущей вкладке</summary>
         private List<MetroGrid> GetTabGridsOnTab(int selected_tab_index = -1)
         {
-            // Если выбранная вкладка не передаётся, то берём текущуб вкладку
+            // Если выбранная вкладка не передаётся, то берём текущую вкладку
             if (selected_tab_index == -1) {
                 selected_tab_index = this.TabControl_Data.SelectedIndex;
             }

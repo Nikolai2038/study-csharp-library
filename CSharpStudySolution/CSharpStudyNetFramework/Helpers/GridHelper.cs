@@ -86,14 +86,5 @@ namespace CSharpStudyNetFramework.Helpers
                 }
             }
         }
-
-        public static void PaintBorderForGridCells(
-            DataGridView grid,
-            DataGridViewCellPaintingEventArgs e,
-            MetroStyleManager style_manager,
-            int border_size = 1
-        )
-        {
-        }
     }
 }
